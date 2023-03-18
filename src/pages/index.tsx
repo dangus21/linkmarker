@@ -1,52 +1,36 @@
-import { Auth } from "@supabase/auth-ui-react";
+// import { Auth } from "@supabase/auth-ui-react";
+// import { ThemeSupa } from "@supabase/auth-ui-shared";
+
 import { Navbar } from "@/components/navbar";
 import { Profile } from "@/components/profile";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { supabase } from "@/lib/supabaseClient";
-import { useEffect } from "react";
-import { useGlobalState } from "@/utils";
-import { useSession, useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import { useGetProfileInfo } from "@/hooks/useGetProfileInfo";
+import { useGlobalState } from "@/state";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 function Main() {
-	const session = useSession();
 	const supabase = useSupabaseClient();
-	const currentUser = useUser();
-	const globalState = useGlobalState();
+	const { current: currentNavigation } = useGlobalState(state => state.navigation);
 
-	useEffect(() => {
-		async function getProfile() {
-			if (currentUser) {
-				globalState.user.setEmail(currentUser.email);
-				globalState.user.setId(currentUser.id);
-			}
-			if (currentUser?.id) {
-				try {
-					const { data, error, status } = await supabase
-						.from("profiles")
-						.select("username")
-						.eq("id", currentUser?.id)
-						.single();
+	useGetProfileInfo();
 
-					if (error && status !== 406) {
-						throw error;
-					}
-
-					if (data) {
-						globalState.user.setUserName(data.username);
-
-					}
-				} catch (error) {
-					console.warn("Failed loading user data");
-				}
-			}
+	function PageToRender() {
+		if (currentNavigation === "LINKS") {
+			return <p>main</p>;
 		}
-		getProfile();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [session]);
+		if (currentNavigation === "NEW_LINK") {
+			return <p>new link</p>;
+		}
+		if (currentNavigation === "PROFILE") {
+			return <Profile supabase={supabase} />;
+		}
+
+		return <div />;
+	}
 
 	return (
 		<div>
-			{!session ? (
+			{/* {!session ? (
 				<div className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900" style={{ padding: "50px 0 100px 0" }}>
 					<Auth
 						supabaseClient={supabase}
@@ -55,12 +39,13 @@ function Main() {
 						providers={[]}
 					/>
 				</div>
-			) : (
-				<>
-					<Navbar />
-					<Profile supabase={supabase} />
-				</>
-			)}
+			) : ( */}
+			<>
+				<Navbar />
+				<PageToRender />
+
+			</>
+			{/* )} */}
 		</div>
 	);
 }

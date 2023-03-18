@@ -1,5 +1,7 @@
-const { eslint: { configure } } = require("@angusmiguel/es-configs");
+const {
+	eslint: { configure }
+} = require("@angusmiguel/es-configs");
 
 module.exports = configure(["react", "ts"], {
-	extends: "next/core-web-vitals"
+	extends: ["next/core-web-vitals", "prettier"]
 });
