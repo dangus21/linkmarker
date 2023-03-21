@@ -10,9 +10,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Database } from "@/lib/Database";
 import { useGlobalState } from "@/state";
 import Image from "next/image";
-import supabaseLoader, {
-	classNames
-} from "@/utils";
+import supabaseLoader, { classNames } from "@/utils";
 
 function Navbar() {
 	const supabase = useSupabaseClient<Database>();
@@ -30,11 +28,11 @@ function Navbar() {
 
 	return (
 		<Disclosure as="nav" className="bg-gray-800">
-			<div className="mx-auto max-w-7xl px-4 lg:px-8">
+			<div className="px-8 mx-auto max-w-7xl lg:px-8">
 				<div className="flex h-16 justify-between">
 					<div className="flex flex-row">
 						<div className="flex mr-5" onClick={() => globalNavigationState.setCurrentNavigation("LINKS")}>
-							<div className="ml-6 flex items-center space-x-4">
+							<div className="flex items-center space-x-4">
 								<p className="text-white italic font-bold text-lg">LinkMarker</p>
 							</div>
 						</div>

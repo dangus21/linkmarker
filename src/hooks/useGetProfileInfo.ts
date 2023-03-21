@@ -29,6 +29,7 @@ async function useGetProfileInfo() {
 						.select("username")
 						.eq("id", currentUser?.id)
 						.single();
+
 					if (data) {
 						globalUserState.setUserName(data.username);
 					}

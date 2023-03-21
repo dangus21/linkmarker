@@ -11,7 +11,6 @@ async function updateProfileInfo(
 			supabase: SupabaseClient;
 		}
 ) {
-
 	try {
 		const updates = {
 			id: userState.id,

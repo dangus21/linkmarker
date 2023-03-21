@@ -1,32 +1,34 @@
 // import { Auth } from "@supabase/auth-ui-react";
 // import { ThemeSupa } from "@supabase/auth-ui-shared";
 
-import { Navbar } from "@/components/navbar";
-import { Profile } from "@/components/profile";
 import { supabase } from "@/lib/supabaseClient";
 import { useGetProfileInfo } from "@/hooks/useGetProfileInfo";
 import { useGlobalState } from "@/state";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
+// import { useSupabaseClient } from "@supabase/auth-helpers-react";
+
+import { Links, Navbar, Profile } from "@/components";
+import { useCallback } from "react";
 
 function Main() {
-	const supabase = useSupabaseClient();
+	// const supabase = useSupabaseClient();
 	const { current: currentNavigation } = useGlobalState(state => state.navigation);
+	console.log("component called");
 
 	useGetProfileInfo();
 
-	function PageToRender() {
+	const PageToRender = useCallback(() => {
 		if (currentNavigation === "LINKS") {
-			return <p>main</p>;
+			return <Links />;
 		}
 		if (currentNavigation === "NEW_LINK") {
-			return <p>new link</p>;
+			return <>new link</>;
 		}
 		if (currentNavigation === "PROFILE") {
-			return <Profile supabase={supabase} />;
+			return <Profile />;
 		}
 
 		return <div />;
-	}
+	}, [currentNavigation]);
 
 	return (
 		<div>

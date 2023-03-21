@@ -1,3 +1,4 @@
+import { Links } from "@/lib/Database";
 import { create } from "zustand";
 
 const NAVBAR_OPTIONS = {
@@ -26,6 +27,10 @@ export type GlobalState = {
 			file,
 			fileName
 		}: Partial<TAvatar>) => void;
+	};
+	links: {
+		values: Links[] | [];
+		set: (links: Links[]) => void;
 	};
 	navigation: {
 		current: keyof typeof NAVBAR_OPTIONS;
@@ -66,6 +71,12 @@ const useGlobalState = create<GlobalState>()((set) => ({
 					}
 				};
 			});
+		}
+	},
+	links: {
+		values: [],
+		set: function (links) {
+			return set((state) => ({ links: { ...state.links, values: links } }));
 		}
 	},
 	navigation: {

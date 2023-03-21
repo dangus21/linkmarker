@@ -1,12 +1,13 @@
 import { ChangeEvent } from "react";
 import Image from "next/image";
 
-import { SupabaseClient } from "@supabase/supabase-js";
 import { updateProfileInfo } from "@/hooks/updateProfileInfo";
 import { useGlobalState } from "@/state";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import supabaseLoader, { ONE_MB_SIZE, convertBase64 } from "@/utils";
 
-function Profile({ supabase }: { supabase: SupabaseClient }) {
+function Profile() {
+	const supabase = useSupabaseClient();
 	const globalUserState = useGlobalState(state => state.user);
 
 	async function handleFileRead(event: ChangeEvent<HTMLInputElement>) {
