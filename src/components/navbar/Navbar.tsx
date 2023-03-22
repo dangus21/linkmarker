@@ -7,10 +7,10 @@ import { PlusIcon } from "@heroicons/react/20/solid";
 
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 
-import { Database } from "@/lib/Database";
+import { Database } from "@/lib/types";
+import { classNames } from "@/utils";
 import { useGlobalState } from "@/state";
 import Image from "next/image";
-import supabaseLoader, { classNames } from "@/utils";
 
 function Navbar() {
 	const supabase = useSupabaseClient<Database>();
@@ -33,7 +33,7 @@ function Navbar() {
 					<div className="flex flex-row">
 						<div className="flex mr-5" onClick={() => globalNavigationState.setCurrentNavigation("LINKS")}>
 							<div className="flex items-center space-x-4">
-								<p className="text-white italic font-bold text-lg">LinkMarker</p>
+								<p className="text-white italic font-bold text-lg cursor-pointer">LinkMarker</p>
 							</div>
 						</div>
 					</div>
@@ -72,7 +72,6 @@ function Navbar() {
 									</span>
 									<div className="h-10 w-10 rounded-full overflow-hidden hover:opacity-90">
 										<Image
-											loader={supabaseLoader}
 											quality={50}
 											src={globalUserState.avatar.img || "/avatar_placeholder.png"}
 											alt="Profile Picture"

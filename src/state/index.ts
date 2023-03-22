@@ -1,4 +1,4 @@
-import { Links } from "@/lib/Database";
+import { Link } from "@/lib/Database";
 import { create } from "zustand";
 
 const NAVBAR_OPTIONS = {
@@ -18,6 +18,7 @@ export type GlobalState = {
 		id: string;
 		userName: string;
 		email: string;
+		password: string;
 		avatar: TAvatar;
 		setId: (id: string) => void;
 		setUserName: (id: string) => void;
@@ -29,8 +30,8 @@ export type GlobalState = {
 		}: Partial<TAvatar>) => void;
 	};
 	links: {
-		values: Links[] | [];
-		set: (links: Links[]) => void;
+		values: Link[] | [];
+		set: (links: Link[]) => void;
 	};
 	navigation: {
 		current: keyof typeof NAVBAR_OPTIONS;
@@ -43,6 +44,7 @@ const useGlobalState = create<GlobalState>()((set) => ({
 		id: "",
 		userName: "",
 		email: "",
+		password: "",
 		avatar: {
 			img: "",
 			file: "",

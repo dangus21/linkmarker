@@ -1,13 +1,14 @@
 import { ChangeEvent } from "react";
 import Image from "next/image";
 
+import { Database } from "@/lib/types";
+import { ONE_MB_SIZE, convertBase64 } from "@/utils";
 import { updateProfileInfo } from "@/hooks/updateProfileInfo";
 import { useGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import supabaseLoader, { ONE_MB_SIZE, convertBase64 } from "@/utils";
 
 function Profile() {
-	const supabase = useSupabaseClient();
+	const supabase = useSupabaseClient<Database>();
 	const globalUserState = useGlobalState(state => state.user);
 
 	async function handleFileRead(event: ChangeEvent<HTMLInputElement>) {
@@ -41,7 +42,6 @@ function Profile() {
 							{globalUserState.avatar.img ? (
 								<div className="rounded-full w-[150px] h-[150px] overflow-hidden hover:opacity-90">
 									<Image
-										loader={supabaseLoader}
 										quality={50}
 										src={globalUserState.avatar.img || "/avatar_placeholder.png"}
 										alt="Profile Picture"

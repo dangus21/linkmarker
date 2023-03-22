@@ -1,10 +1,10 @@
-import { Links } from "@/lib/Database";
+import { Database, Link } from "@/lib/Database";
 import { useEffect } from "react";
 import { useGlobalState } from "@/state";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
 async function useGetLinks() {
-	const supabase = useSupabaseClient();
+	const supabase = useSupabaseClient<Database>();
 	const currentUser = useUser();
 	const { set: setlinks } = useGlobalState(state => state.links);
 
@@ -15,7 +15,7 @@ async function useGetLinks() {
 				.select()
 				.then(({ data, error }) => {
 					if (data && data?.length > 0) {
-						setlinks(data as Links[]);
+						setlinks(data as Link[]);
 					}
 					if (error) {
 						console.warn({ error });

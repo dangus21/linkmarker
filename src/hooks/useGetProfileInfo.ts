@@ -1,3 +1,4 @@
+import { Database } from "@/lib/Database";
 import { blobToBase64 } from "@/utils";
 import { useEffect } from "react";
 import { useGlobalState } from "@/state";
@@ -6,7 +7,7 @@ import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 async function useGetProfileInfo() {
 	const currentUser = useUser();
 	const globalUserState = useGlobalState(state => state.user);
-	const supabase = useSupabaseClient();
+	const supabase = useSupabaseClient<Database>();
 
 	useEffect(() => {
 		if (currentUser) {
@@ -30,7 +31,7 @@ async function useGetProfileInfo() {
 						.eq("id", currentUser?.id)
 						.single();
 
-					if (data) {
+					if (data && data.username) {
 						globalUserState.setUserName(data.username);
 					}
 
@@ -41,7 +42,7 @@ async function useGetProfileInfo() {
 
 					if (avatarsData) {
 						globalUserState.setAvatar({
-							img: await blobToBase64(avatarsData)
+							img: URL.createObjectURL(avatarsData)
 						});
 					}
 

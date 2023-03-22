@@ -1,9 +1,14 @@
 
 import { CalendarIcon, CheckCircleIcon, MapPinIcon, UsersIcon, XCircleIcon } from "@heroicons/react/20/solid";
+import { Database } from "@/lib/types";
+import { updateLinkInfo } from "@/hooks/updateLinkInfo";
 import { useGetLinks } from "@/hooks/useGetLinks";
 import { useGlobalState } from "@/state";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 function Links() {
+	const supabase = useSupabaseClient<Database>();
+
 	useGetLinks();
 
 	const { values: availableLinks } = useGlobalState(state => state.links);
@@ -13,7 +18,14 @@ function Links() {
 		<div className="mt-6 mx-auto max-w-7xl overflow-hidden bg-white shadow sm:rounded-md" >
 			<ul role="list" className="divide-y divide-gray-200">
 				{availableLinks.map((link) => (
-					<li key={link.id}>
+					<li
+						key={link.id}
+						onClick={() => updateLinkInfo({
+							supabase,
+							link: { origin: "tiktok" },
+							id: link.id
+						})}
+					>
 						<a href="#" className="block hover:bg-gray-100">
 							<div className="px-4 py-4 sm:px-6">
 								<div className="flex items-center justify-between">

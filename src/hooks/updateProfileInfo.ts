@@ -1,3 +1,4 @@
+import { Database } from "@/lib/Database";
 import { GlobalState } from "@/state";
 import { SupabaseClient } from "@supabase/supabase-js";
 
@@ -8,17 +9,16 @@ async function updateProfileInfo(
 	}:
 		{
 			userState: GlobalState["user"];
-			supabase: SupabaseClient;
+			supabase: SupabaseClient<Database>;
 		}
 ) {
 	try {
 		const updates = {
-			id: userState.id,
 			username: userState.userName,
 			updated_at: new Date()
 		};
 
-		const { error } = await supabase.from("profiles").upsert(updates);
+		const { error } = await supabase.from("profiles").update(updates).eq("id", userState.id);
 
 		const { error: avatarError } =
 			await supabase.storage

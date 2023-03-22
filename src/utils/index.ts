@@ -1,5 +1,3 @@
-import { projectId } from "@/lib/supabaseClient";
-
 const ONE_MB_SIZE = 1048576;
 
 function classNames(...classes: string[]) {
@@ -18,6 +16,7 @@ function convertBase64(file: File | undefined): Promise<string> {
 		};
 	});
 }
+
 function blobToBase64(blob: Blob): Promise<string> {
 	return new Promise((resolve, reject) => {
 		const fileReader = new FileReader();
@@ -32,22 +31,9 @@ function blobToBase64(blob: Blob): Promise<string> {
 	});
 }
 
-export default function supabaseLoader({
-	src,
-	width,
-	quality
-}: {
-	src: string;
-	width: number;
-	quality?: number;
-}) {
-	return `https://${projectId}.supabase.co/storage/v1/render/image/public/${src}?width=${width}&quality=${quality || 75}`;
-}
-
 export {
 	classNames,
 	convertBase64,
-	supabaseLoader,
 	blobToBase64,
 	ONE_MB_SIZE
 };

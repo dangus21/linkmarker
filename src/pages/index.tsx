@@ -1,18 +1,17 @@
-// import { Auth } from "@supabase/auth-ui-react";
-// import { ThemeSupa } from "@supabase/auth-ui-shared";
+import { Auth } from "@supabase/auth-ui-react";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
+import { useSession } from "@supabase/auth-helpers-react";
 
-import { supabase } from "@/lib/supabaseClient";
 import { useGetProfileInfo } from "@/hooks/useGetProfileInfo";
 import { useGlobalState } from "@/state";
-// import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 import { Links, Navbar, Profile } from "@/components";
+import { supabaseClient } from "@/lib/supabaseClient";
 import { useCallback } from "react";
 
 function Main() {
-	// const supabase = useSupabaseClient();
+	const session = useSession();
 	const { current: currentNavigation } = useGlobalState(state => state.navigation);
-	console.log("component called");
 
 	useGetProfileInfo();
 
@@ -32,34 +31,24 @@ function Main() {
 
 	return (
 		<div>
-			{/* {!session ? (
+			{!session ? (
 				<div className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900" style={{ padding: "50px 0 100px 0" }}>
 					<Auth
-						supabaseClient={supabase}
+						supabaseClient={supabaseClient}
 						appearance={{ theme: ThemeSupa }}
 						theme="dark"
 						providers={[]}
 					/>
 				</div>
-			) : ( */}
-			<>
-				<Navbar />
-				<PageToRender />
+			) : (
+				<>
+					<Navbar />
+					<PageToRender />
 
-			</>
-			{/* )} */}
+				</>
+			)}
 		</div>
 	);
-}
-
-export async function getServerSideProps() {
-	const { data } = await supabase.from("countries").select();
-
-	return {
-		props: {
-			countries: data
-		}
-	};
 }
 
 export default Main;
