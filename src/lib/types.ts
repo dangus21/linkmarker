@@ -11,32 +11,26 @@ export interface Database {
     Tables: {
       links: {
         Row: {
-          by: string
           id: string
           opened: boolean | null
           origin: string | null
           postedDate: string | null
-          public: boolean | null
           title: string | null
           who: string | null
         }
         Insert: {
-          by: string
           id: string
           opened?: boolean | null
           origin?: string | null
           postedDate?: string | null
-          public?: boolean | null
           title?: string | null
           who?: string | null
         }
         Update: {
-          by?: string
           id?: string
           opened?: boolean | null
           origin?: string | null
           postedDate?: string | null
-          public?: boolean | null
           title?: string | null
           who?: string | null
         }
@@ -75,14 +69,7 @@ export interface Database {
       [_ in never]: never
     }
     Enums: {
-      continents:
-        | "Africa"
-        | "Antarctica"
-        | "Asia"
-        | "Europe"
-        | "Oceania"
-        | "North America"
-        | "South America"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never

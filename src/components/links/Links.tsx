@@ -1,17 +1,16 @@
 
 import { CalendarIcon, CheckCircleIcon, MapPinIcon, UsersIcon, XCircleIcon } from "@heroicons/react/20/solid";
-import { Database } from "@/lib/types";
 import { updateLinkInfo } from "@/hooks/updateLinkInfo";
 import { useGetLinks } from "@/hooks/useGetLinks";
 import { useGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 function Links() {
-	const supabase = useSupabaseClient<Database>();
+	const supabaseClient = useSupabaseClient();
 
 	useGetLinks();
 
-	const { values: availableLinks } = useGlobalState(state => state.links);
+	const { values: availableLinks, update: updateLink } = useGlobalState(state => state.links);
 	const dateFormatter = new Intl.DateTimeFormat("pt-PT");
 
 	return (
@@ -21,9 +20,10 @@ function Links() {
 					<li
 						key={link.id}
 						onClick={() => updateLinkInfo({
-							supabase,
-							link: { origin: "tiktok" },
-							id: link.id
+							link: { opened: true },
+							id: link.id,
+							updateLink,
+							supabaseClient
 						})}
 					>
 						<a href="#" className="block hover:bg-gray-100">
@@ -62,8 +62,8 @@ function Links() {
 									<div className="mt-2 mr-3 flex items-center text-sm text-gray-500 sm:mt-0">
 										<CalendarIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
 										<p>
-											<time dateTime={link.postedDate.toString()}>
-												{dateFormatter.format(new Date(link.postedDate))}
+											<time dateTime={(link.postedDate ?? "").toString()}>
+												{dateFormatter.format(new Date(link.postedDate ?? ""))}
 											</time>
 										</p>
 									</div>

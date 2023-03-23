@@ -1,13 +1,12 @@
-import { Database } from "@/lib/Database";
-import { blobToBase64 } from "@/utils";
 import { useEffect } from "react";
 import { useGlobalState } from "@/state";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
 async function useGetProfileInfo() {
+	const supabaseClient = useSupabaseClient();
+
 	const currentUser = useUser();
 	const globalUserState = useGlobalState(state => state.user);
-	const supabase = useSupabaseClient<Database>();
 
 	useEffect(() => {
 		if (currentUser) {
@@ -25,7 +24,7 @@ async function useGetProfileInfo() {
 		async function getUserAndProfile() {
 			if (currentUser?.id) {
 				try {
-					const { data, error, status } = await supabase
+					const { data, error, status } = await supabaseClient
 						.from("profiles")
 						.select("username")
 						.eq("id", currentUser?.id)
@@ -36,7 +35,7 @@ async function useGetProfileInfo() {
 					}
 
 					const { data: avatarsData, error: avatarsError } =
-						await supabase.storage
+						await supabaseClient.storage
 							.from("avatars")
 							.download(`${currentUser?.id}/avatar.jpg`);
 
@@ -54,10 +53,8 @@ async function useGetProfileInfo() {
 				}
 			}
 		}
-		getUserAndProfile();
-		return () => {
-			globalUserState.setAvatar({ img: "" });
-			globalUserState.setUserName("");
+		if (!globalUserState.userName) {
+			getUserAndProfile();
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentUser?.id]);

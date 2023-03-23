@@ -6,7 +6,7 @@ import { updateProfileInfo } from "@/hooks/updateProfileInfo";
 import { useGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
-function Profile() {
+function NewLink() {
 	const supabaseClient = useSupabaseClient();
 	const globalUserState = useGlobalState(state => state.user);
 
@@ -21,7 +21,6 @@ function Profile() {
 					file,
 					fileName: file.name
 				});
-				globalUserState.setModified(true);
 			}
 		}
 	}
@@ -39,9 +38,9 @@ function Profile() {
 					<div className="flex items-center justify-center bg-grey-lighter">
 						<label className="w-full flex flex-col items-center px-4 py-6 bg-white sm:rounded-lg sm:px-10 tracking-wide uppercase cursor-pointer hover:bg-blue hover:text-slate-400">
 							{globalUserState.avatar.img ? (
-								<div className="rounded-full overflow-hidden hover:opacity-90">
+								<div className="rounded-full w-[150px] h-[150px] overflow-hidden hover:opacity-90">
 									<Image
-										className="w-[150px] h-[150px]"
+										quality={50}
 										src={globalUserState.avatar.img || "/avatar_placeholder.png"}
 										alt="Profile Picture"
 										width={150}
@@ -62,9 +61,10 @@ function Profile() {
 								Select a profile image
 							</span>
 							<input
+								accept="image/jpg"
 								type="file"
 								className="hidden"
-								onChange={(e) => handleFileRead(e)}
+								onChange={handleFileRead}
 							/>
 						</label>
 					</div>
@@ -82,7 +82,6 @@ function Profile() {
 										globalUserState.setUserName(
 											e.currentTarget.value
 										);
-										globalUserState.setModified(true);
 									}}
 									value={globalUserState.userName}
 									type="text"
@@ -105,7 +104,6 @@ function Profile() {
 										globalUserState.setEmail(
 											e.currentTarget.value
 										);
-										globalUserState.setModified(true);
 									}}
 									value={globalUserState.email}
 									id="email"
@@ -153,4 +151,4 @@ function Profile() {
 	);
 }
 
-export { Profile };
+export { NewLink };

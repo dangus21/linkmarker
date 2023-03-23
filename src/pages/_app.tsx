@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 
-import { Database } from "@/lib/Database";
+import { Database } from "@/lib/types";
 import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 

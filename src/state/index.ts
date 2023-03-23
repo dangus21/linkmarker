@@ -1,4 +1,4 @@
-import { Link } from "@/lib/Database";
+import { Database } from "@/lib/types";
 import { create } from "zustand";
 
 const NAVBAR_OPTIONS = {
@@ -9,9 +9,11 @@ const NAVBAR_OPTIONS = {
 
 type TAvatar = {
 	img?: string;
-	file?: File | string;
+	file: File | null;
 	fileName?: string;
 };
+
+export type TLink = Database["public"]["Tables"]["links"]["Row"];
 
 export type GlobalState = {
 	user: {
@@ -20,6 +22,8 @@ export type GlobalState = {
 		email: string;
 		password: string;
 		avatar: TAvatar;
+		modified: boolean;
+		setModified: (isModified: boolean) => void;
 		setId: (id: string) => void;
 		setUserName: (id: string) => void;
 		setEmail: (id: string) => void;
@@ -30,8 +34,9 @@ export type GlobalState = {
 		}: Partial<TAvatar>) => void;
 	};
 	links: {
-		values: Link[] | [];
-		set: (links: Link[]) => void;
+		values: TLink[] | [];
+		set: (links: TLink[]) => void;
+		update: (link: TLink) => void;
 	};
 	navigation: {
 		current: keyof typeof NAVBAR_OPTIONS;
@@ -47,8 +52,12 @@ const useGlobalState = create<GlobalState>()((set) => ({
 		password: "",
 		avatar: {
 			img: "",
-			file: "",
+			file: null,
 			fileName: ""
+		},
+		modified: false,
+		setModified: function (isModified) {
+			return set(state => ({ user: { ...state.user, modified: isModified } }));
 		},
 		setId: function (id) {
 			return set((state) => ({ user: { ...state.user, id } }));
@@ -59,7 +68,7 @@ const useGlobalState = create<GlobalState>()((set) => ({
 			return set((state) => ({ user: { ...state.user, email } }));
 		},
 		setAvatar: function (
-			{ img, file, fileName } = { img: "", file: "", fileName: "" }
+			{ img, file, fileName } = { img: "", file: null, fileName: "" }
 		) {
 			return set((state) => {
 				return {
@@ -67,7 +76,7 @@ const useGlobalState = create<GlobalState>()((set) => ({
 						...state.user,
 						avatar: {
 							img,
-							file,
+							file: file || null,
 							fileName
 						}
 					}
@@ -79,6 +88,15 @@ const useGlobalState = create<GlobalState>()((set) => ({
 		values: [],
 		set: function (links) {
 			return set((state) => ({ links: { ...state.links, values: links } }));
+		},
+		update: function (link) {
+			return set((state) => {
+				const currentLinks = structuredClone(state.links.values);
+				const updateLinkIdx = currentLinks.findIndex(el => el.id === link.id);
+				currentLinks[updateLinkIdx] = link;
+
+				return ({ links: { ...state.links, values: currentLinks } });
+			});
 		}
 	},
 	navigation: {

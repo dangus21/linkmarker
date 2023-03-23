@@ -1,37 +1,39 @@
 import { Fragment } from "react";
 
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
-
 import { BellIcon } from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/20/solid";
 
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 
-import { Database } from "@/lib/types";
 import { classNames } from "@/utils";
 import { useGlobalState } from "@/state";
+import { useRouter } from "next/router";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Image from "next/image";
 
 function Navbar() {
-	const supabase = useSupabaseClient<Database>();
+	const supabaseClient = useSupabaseClient();
+
+	const { push } = useRouter();
 	const globalUserState = useGlobalState(state => state.user);
-	const globalNavigationState = useGlobalState(state => state.navigation);
 
 	const userNavigation = [
 		{
 			name: "Your Profile",
-			href: "#",
-			action: () => globalNavigationState.setCurrentNavigation("PROFILE")
+			action: () => push("/profile")
 		},
-		{ name: "Sign out", href: "#", action: () => supabase.auth.signOut() }
-	] as const;
+		{
+			name: "Sign out",
+			action: () => supabaseClient.auth.signOut()
+		}
+	];
 
 	return (
 		<Disclosure as="nav" className="bg-gray-800">
 			<div className="px-8 mx-auto max-w-7xl lg:px-8">
 				<div className="flex h-16 justify-between">
 					<div className="flex flex-row">
-						<div className="flex mr-5" onClick={() => globalNavigationState.setCurrentNavigation("LINKS")}>
+						<div className="flex mr-5" onClick={() => push("/")}>
 							<div className="flex items-center space-x-4">
 								<p className="text-white italic font-bold text-lg cursor-pointer">LinkMarker</p>
 							</div>
@@ -40,7 +42,7 @@ function Navbar() {
 					<div className="flex items-center">
 						<div className="flex-shrink-0">
 							<button
-								onClick={() => globalNavigationState.setCurrentNavigation("NEW_LINK")}
+								onClick={() => push("/new")}
 								type="button"
 								className="relative inline-flex items-center gap-x-1.5 rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
 							>
@@ -48,7 +50,7 @@ function Navbar() {
 									className="-ml-0.5 h-5 w-5"
 									aria-hidden="true"
 								/>
-								New Link
+								<p className="hidden md:block">New Link</p>
 							</button>
 						</div>
 						<div className="ml-4 flex flex-shrink-0 items-center">
@@ -65,21 +67,27 @@ function Navbar() {
 								/>
 							</button>
 
-							<Menu as="div" className="relative ml-3">
+							<Menu as="div" className="relative ml-3 flex">
 								<Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
 									<span className="sr-only">
 										Open user menu
 									</span>
 									<div className="h-10 w-10 rounded-full overflow-hidden hover:opacity-90">
 										<Image
+											className="h-10"
 											quality={50}
 											src={globalUserState.avatar.img || "/avatar_placeholder.png"}
 											alt="Profile Picture"
-											width={150}
-											height={150}
+											width={250}
+											height={250}
 										/>
 									</div>
 								</Menu.Button>
+								<div className="hidden md:flex h-full place-items-center space-x-4 px-4">
+									<p className="text-white text-lg cursor-pointer">
+										{globalUserState.userName}
+									</p>
+								</div>
 								<Transition
 									as={Fragment}
 									enter="transition ease-out duration-200"
@@ -99,7 +107,6 @@ function Navbar() {
 																? item.action
 																: undefined
 														}
-														href={item.href}
 														className={classNames(
 															active
 																? "bg-gray-100"

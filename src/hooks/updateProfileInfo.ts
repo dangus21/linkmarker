@@ -1,15 +1,14 @@
-import { Database } from "@/lib/Database";
 import { GlobalState } from "@/state";
-import { SupabaseClient } from "@supabase/supabase-js";
+import { SupabaseClient } from "@supabase/auth-helpers-react";
 
 async function updateProfileInfo(
 	{
 		userState,
-		supabase
+		supabaseClient
 	}:
 		{
 			userState: GlobalState["user"];
-			supabase: SupabaseClient<Database>;
+			supabaseClient: SupabaseClient;
 		}
 ) {
 	try {
@@ -18,26 +17,28 @@ async function updateProfileInfo(
 			updated_at: new Date()
 		};
 
-		const { error } = await supabase.from("profiles").update(updates).eq("id", userState.id);
+		const { error } = await supabaseClient
+			.from("profiles")
+			.update(updates)
+			.eq("id", userState.id);
 
-		const { error: avatarError } =
-			await supabase.storage
-				.from("avatars")
-				.upload(
-					`${userState.id}/avatar.${(userState?.avatar?.fileName ?? "").split(".").pop()}`,
-					userState.avatar.file as File,
-					{
-						cacheControl: "3600",
-						upsert: false
-					}
-				);
-
-		if (error || avatarError) {
-			console.warn({ error, avatarError });
+		const { error: avatarError } = await supabaseClient
+			.storage
+			.from("avatars")
+			.upload(
+				`${userState.id}/avatar.jpg`,
+				userState.avatar.file!,
+				{
+					cacheControl: "3600",
+					upsert: true
+				}
+			);
+		if (avatarError) {
+			console.warn({ avatarError });
 		}
 
 		if (error) {
-			throw error;
+			console.warn({ error });
 		}
 	} catch (error) {
 		console.warn(error);
