@@ -1,6 +1,5 @@
-import { Database } from "@/lib/types";
 import { SupabaseClient } from "@supabase/auth-helpers-react";
-import { TLink } from "@/state";
+import { TLinkUpdate } from "@/state";
 
 async function updateLinkInfo(
 	{
@@ -10,9 +9,9 @@ async function updateLinkInfo(
 		supabaseClient
 	}:
 		{
-			link: Database["public"]["Tables"]["links"]["Update"];
+			link: TLinkUpdate;
 			id: string;
-			updateLink: (link: TLink) => void;
+			updateLink: (link: TLinkUpdate) => void;
 			supabaseClient: SupabaseClient;
 		}
 ) {
@@ -32,6 +31,8 @@ async function updateLinkInfo(
 					updateLink(data);
 				}
 				if (error) {
+					console.warn(error);
+
 					throw error;
 				}
 			});

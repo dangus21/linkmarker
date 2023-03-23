@@ -14,6 +14,7 @@ type TAvatar = {
 };
 
 export type TLink = Database["public"]["Tables"]["links"]["Row"];
+export type TLinkUpdate = Database["public"]["Tables"]["links"]["Update"];
 
 export type GlobalState = {
 	user: {
@@ -35,8 +36,10 @@ export type GlobalState = {
 	};
 	links: {
 		values: TLink[] | [];
+		new: TLinkUpdate;
 		set: (links: TLink[]) => void;
 		update: (link: TLink) => void;
+		create: (link: TLinkUpdate) => void;
 	};
 	navigation: {
 		current: keyof typeof NAVBAR_OPTIONS;
@@ -57,15 +60,36 @@ const useGlobalState = create<GlobalState>()((set) => ({
 		},
 		modified: false,
 		setModified: function (isModified) {
-			return set(state => ({ user: { ...state.user, modified: isModified } }));
+			return set(state => ({
+				user: {
+					...state.user,
+					modified: isModified
+				}
+			}));
 		},
 		setId: function (id) {
-			return set((state) => ({ user: { ...state.user, id } }));
+			return set((state) => ({
+				user: {
+					...state.user,
+					id
+				}
+			}));
 		},
-		setUserName: (userName) =>
-			set((state) => ({ user: { ...state.user, userName } })),
+		setUserName: function (userName) {
+			return set((state) => ({
+				user: {
+					...state.user,
+					userName
+				}
+			}));
+		},
 		setEmail: function (email) {
-			return set((state) => ({ user: { ...state.user, email } }));
+			return set((state) => ({
+				user: {
+					...state.user,
+					email
+				}
+			}));
 		},
 		setAvatar: function (
 			{ img, file, fileName } = { img: "", file: null, fileName: "" }
@@ -86,8 +110,25 @@ const useGlobalState = create<GlobalState>()((set) => ({
 	},
 	links: {
 		values: [],
+		new: {},
 		set: function (links) {
-			return set((state) => ({ links: { ...state.links, values: links } }));
+			return set((state) => ({
+				links: {
+					...state.links,
+					values: links
+				}
+			}));
+		},
+		create: function (link) {
+			return set((state) => ({
+				links: {
+					...state.links,
+					new: {
+						...state.links.new,
+						...link
+					}
+				}
+			}));
 		},
 		update: function (link) {
 			return set((state) => {
@@ -102,7 +143,12 @@ const useGlobalState = create<GlobalState>()((set) => ({
 	navigation: {
 		current: "LINKS",
 		setCurrentNavigation: function (option) {
-			return set((state) => ({ navigation: { ...state.navigation, current: option } }));
+			return set((state) => ({
+				navigation: {
+					...state.navigation,
+					current: option
+				}
+			}));
 		}
 	}
 }));
