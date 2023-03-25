@@ -15,6 +15,7 @@ export interface Database {
           opened: boolean | null
           origin: string | null
           postedDate: string | null
+          reaction: string | null
           title: string | null
           who: string | null
         }
@@ -23,6 +24,7 @@ export interface Database {
           opened?: boolean | null
           origin?: string | null
           postedDate?: string | null
+          reaction?: string | null
           title?: string | null
           who?: string | null
         }
@@ -31,34 +33,29 @@ export interface Database {
           opened?: boolean | null
           origin?: string | null
           postedDate?: string | null
+          reaction?: string | null
           title?: string | null
           who?: string | null
         }
       }
       profiles: {
         Row: {
-          avatar_url: string | null
-          full_name: string | null
+          email: string | null
           id: string
           updated_at: string | null
           username: string | null
-          website: string | null
         }
         Insert: {
-          avatar_url?: string | null
-          full_name?: string | null
+          email?: string | null
           id: string
           updated_at?: string | null
           username?: string | null
-          website?: string | null
         }
         Update: {
-          avatar_url?: string | null
-          full_name?: string | null
+          email?: string | null
           id?: string
           updated_at?: string | null
           username?: string | null
-          website?: string | null
         }
       }
     }

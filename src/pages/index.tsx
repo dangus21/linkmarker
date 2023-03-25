@@ -4,10 +4,11 @@ import { useSession, useSupabaseClient, useUser } from "@supabase/auth-helpers-r
 
 import { useGetProfileInfo } from "@/hooks/useGetProfileInfo";
 
+import { Database } from "@/lib/types";
 import { Links, Navbar } from "@/components";
 
 function Main() {
-	const supabaseClient = useSupabaseClient();
+	const supabaseClient = useSupabaseClient<Database>();
 	const session = useSession();
 	const user = useUser();
 

@@ -1,21 +1,22 @@
 import { Fragment } from "react";
 
 import { BellIcon } from "@heroicons/react/24/outline";
-import { PlusIcon } from "@heroicons/react/20/solid";
+import { ChevronDownIcon, PlusIcon } from "@heroicons/react/20/solid";
 
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure, Popover, Transition } from "@headlessui/react";
 
+import { Database } from "@/lib/types";
 import { classNames } from "@/utils";
-import { useGlobalState } from "@/state";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useUserGlobalState } from "@/state";
 import Image from "next/image";
 
 function Navbar() {
-	const supabaseClient = useSupabaseClient();
+	const supabaseClient = useSupabaseClient<Database>();
 
 	const { push } = useRouter();
-	const globalUserState = useGlobalState(state => state.user);
+	const globalUserState = useUserGlobalState();
 
 	const userNavigation = [
 		{
@@ -67,61 +68,50 @@ function Navbar() {
 								/>
 							</button>
 
-							<Menu as="div" className="relative ml-3 flex place-items-center">
-								<Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-									<span className="sr-only">
-										Open user menu
-									</span>
-									<div className="h-10 w-10 rounded-full overflow-hidden hover:opacity-90">
-										<Image
-											className="h-10"
-											quality={50}
-											src={globalUserState.avatar.img || "/avatar_placeholder.png"}
-											alt="Profile Picture"
-											width={250}
-											height={250}
-										/>
+							<Popover className="relative">
+								<Popover.Button className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+									<div className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+										<div className="h-10 w-10 rounded-full overflow-hidden hover:opacity-90">
+											<Image
+												className="h-10"
+												quality={50}
+												src={globalUserState.avatar.img || "/avatar_placeholder.png"}
+												alt="Profile Picture"
+												width={250}
+												height={250}
+											/>
+										</div>
 									</div>
-								</Menu.Button>
-								<div className="hidden md:flex h-full place-items-center space-x-4 px-4">
-									<p className="text-white text-lg cursor-pointer">
-										{globalUserState.userName}
-									</p>
-								</div>
+								</Popover.Button>
+
 								<Transition
 									as={Fragment}
 									enter="transition ease-out duration-200"
-									enterFrom="transform opacity-0 scale-95"
-									enterTo="transform opacity-100 scale-100"
-									leave="transition ease-in duration-75"
-									leaveFrom="transform opacity-100 scale-100"
-									leaveTo="transform opacity-0 scale-95"
+									enterFrom="opacity-0 translate-y-1"
+									enterTo="opacity-100 translate-y-0"
+									leave="transition ease-in duration-150"
+									leaveFrom="opacity-100 translate-y-0"
+									leaveTo="opacity-0 translate-y-1"
 								>
-									<Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-										{userNavigation.map((item) => (
-											<Menu.Item key={item.name}>
-												{({ active }) => (
-													<a
-														onClick={
-															item.action
-																? item.action
-																: undefined
-														}
-														className={classNames(
-															active
-																? "bg-gray-100"
-																: "",
-															"block px-4 py-2 text-sm text-gray-700"
-														)}
-													>
+									<Popover.Panel className="absolute left-1/2 z-10 flex w-screen max-w-[15rem] -translate-x-1/2 px-4">
+										<div className="w-screen max-w-sm flex-auto rounded-3xl bg-white p-4 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+											{userNavigation.map((item) => (
+												<div key={item.name} className="cursor-pointer text-center relative rounded-lg p-4 hover:bg-gray-100/90">
+													<a className="font-semibold text-gray-900">
 														{item.name}
+														<span className="absolute inset-0" />
 													</a>
-												)}
-											</Menu.Item>
-										))}
-									</Menu.Items>
+												</div>
+											))}
+										</div>
+									</Popover.Panel>
 								</Transition>
-							</Menu>
+							</Popover>
+							<div className="hidden md:flex h-full place-items-center space-x-4 px-4">
+								<p className="text-white text-lg cursor-pointer">
+									{globalUserState.userName}
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>

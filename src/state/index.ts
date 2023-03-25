@@ -16,141 +16,76 @@ type TAvatar = {
 export type TLink = Database["public"]["Tables"]["links"]["Row"];
 export type TLinkUpdate = Database["public"]["Tables"]["links"]["Update"];
 
-export type GlobalState = {
-	user: {
-		id: string;
-		userName: string;
-		email: string;
-		password: string;
-		avatar: TAvatar;
-		modified: boolean;
-		setModified: (isModified: boolean) => void;
-		setId: (id: string) => void;
-		setUserName: (id: string) => void;
-		setEmail: (id: string) => void;
-		setAvatar: ({
-			img,
-			file,
-			fileName
-		}: Partial<TAvatar>) => void;
-	};
-	links: {
-		values: TLink[] | [];
-		new: TLinkUpdate;
-		set: (links: TLink[]) => void;
-		update: (link: TLink) => void;
-		create: (link: TLinkUpdate) => void;
-	};
-	navigation: {
-		current: keyof typeof NAVBAR_OPTIONS;
-		setCurrentNavigation: (option: keyof typeof NAVBAR_OPTIONS) => void;
-	};
+export type UserState = {
+	id: string;
+	userName: string;
+	email: string;
+	password: string;
+	avatar: TAvatar;
+	modified: boolean;
+	setModified: (isModified: boolean) => void;
+	setId: (id: string) => void;
+	setUserName: (id: string) => void;
+	setEmail: (id: string) => void;
+	setAvatar: ({
+		img,
+		file,
+		fileName
+	}: Partial<TAvatar>) => void;
 };
 
-const useGlobalState = create<GlobalState>()((set) => ({
-	user: {
-		id: "",
-		userName: "",
-		email: "",
-		password: "",
-		avatar: {
-			img: "",
-			file: null,
-			fileName: ""
-		},
-		modified: false,
-		setModified: function (isModified) {
-			return set(state => ({
-				user: {
-					...state.user,
-					modified: isModified
-				}
-			}));
-		},
-		setId: function (id) {
-			return set((state) => ({
-				user: {
-					...state.user,
-					id
-				}
-			}));
-		},
-		setUserName: function (userName) {
-			return set((state) => ({
-				user: {
-					...state.user,
-					userName
-				}
-			}));
-		},
-		setEmail: function (email) {
-			return set((state) => ({
-				user: {
-					...state.user,
-					email
-				}
-			}));
-		},
-		setAvatar: function (
-			{ img, file, fileName } = { img: "", file: null, fileName: "" }
-		) {
-			return set((state) => {
-				return {
-					user: {
-						...state.user,
-						avatar: {
-							img,
-							file: file || null,
-							fileName
-						}
-					}
-				};
-			});
-		}
-	},
-	links: {
-		values: [],
-		new: {},
-		set: function (links) {
-			return set((state) => ({
-				links: {
-					...state.links,
-					values: links
-				}
-			}));
-		},
-		create: function (link) {
-			return set((state) => ({
-				links: {
-					...state.links,
-					new: {
-						...state.links.new,
-						...link
-					}
-				}
-			}));
-		},
-		update: function (link) {
-			return set((state) => {
-				const currentLinks = structuredClone(state.links.values);
-				const updateLinkIdx = currentLinks.findIndex(el => el.id === link.id);
-				currentLinks[updateLinkIdx] = link;
+export type LinkState = {
+	values: TLink[] | [];
+	new: TLinkUpdate;
+	set: (links: TLink[]) => void;
+	update: (link: TLinkUpdate) => void;
+	create: (link: TLinkUpdate) => void;
+};
 
-				return ({ links: { ...state.links, values: currentLinks } });
-			});
-		}
+const useUserGlobalState = create<UserState>()((set) => ({
+	id: "",
+	userName: "",
+	email: "",
+	password: "",
+	avatar: {
+		img: "",
+		file: null,
+		fileName: ""
 	},
-	navigation: {
-		current: "LINKS",
-		setCurrentNavigation: function (option) {
-			return set((state) => ({
-				navigation: {
-					...state.navigation,
-					current: option
-				}
-			}));
+	modified: false,
+	setId: (id) => set(() => ({ id })),
+	setUserName: (userName) => set(() => ({ userName })),
+	setEmail: (email) => set(() => ({ email })),
+	setAvatar: ({ img, file, fileName }) => set(() => ({
+		avatar: {
+			img: img || "",
+			file: file || null,
+			fileName: fileName || ""
 		}
-	}
+	})),
+	setModified: (isModified) => set(state => ({
+		...state,
+		modified: isModified
+	}))
 }));
 
-export { useGlobalState, NAVBAR_OPTIONS };
+const useLinkGlobalState = create<LinkState>()((set) => ({
+	values: [],
+	new: {},
+	set: (links) => set(() => ({ values: links })),
+	create: (link) => set((state) => ({
+		new: {
+			...state.new,
+			...link
+		}
+	})),
+	update: (link) => set((state) => {
+		const currentLinks = structuredClone(state.values);
+		const updateLinkIdx = currentLinks.findIndex(el => el.id === link.id);
+		currentLinks[updateLinkIdx] = { ...currentLinks[updateLinkIdx], ...link };
+
+		return ({ ...state, values: currentLinks });
+	})
+}));
+
+export { useUserGlobalState, useLinkGlobalState, NAVBAR_OPTIONS };

@@ -1,12 +1,13 @@
+import { Database } from "@/lib/types";
 import { useEffect } from "react";
-import { useGlobalState } from "@/state";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import { useUserGlobalState } from "@/state";
 
 async function useGetProfileInfo() {
-	const supabaseClient = useSupabaseClient();
+	const supabaseClient = useSupabaseClient<Database>();
 
 	const currentUser = useUser();
-	const globalUserState = useGlobalState(state => state.user);
+	const globalUserState = useUserGlobalState();
 
 	useEffect(() => {
 		if (currentUser) {

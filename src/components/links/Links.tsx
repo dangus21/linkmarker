@@ -1,16 +1,17 @@
 
 import { CalendarIcon, CheckCircleIcon, MapPinIcon, UsersIcon, XCircleIcon } from "@heroicons/react/20/solid";
+import { Database } from "@/lib/types";
 import { updateLinkInfo } from "@/hooks/updateLinkInfo";
 import { useGetLinks } from "@/hooks/useGetLinks";
-import { useGlobalState } from "@/state";
+import { useLinkGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 function Links() {
-	const supabaseClient = useSupabaseClient();
+	const supabaseClient = useSupabaseClient<Database>();
 
 	useGetLinks();
 
-	const { values: availableLinks, update: updateLink } = useGlobalState(state => state.links);
+	const { values: availableLinks, update: updateLink } = useLinkGlobalState();
 	const dateFormatter = new Intl.DateTimeFormat("pt-PT");
 
 	return (

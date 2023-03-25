@@ -1,12 +1,13 @@
+import { Database } from "@/lib/types";
 import { useEffect } from "react";
-import { useGlobalState } from "@/state";
+import { useLinkGlobalState } from "@/state";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
 async function useGetLinks() {
-	const supabaseClient = useSupabaseClient();
+	const supabaseClient = useSupabaseClient<Database>();
 
 	const currentUser = useUser();
-	const { set: setlinks } = useGlobalState(state => state.links);
+	const { set: setlinks } = useLinkGlobalState();
 
 	useEffect(() => {
 		try {

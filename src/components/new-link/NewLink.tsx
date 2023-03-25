@@ -1,11 +1,12 @@
+import { Database } from "@/lib/types";
 import { createLink } from "@/hooks/createLink";
-import { useGlobalState } from "@/state";
+import { useLinkGlobalState, useUserGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 function NewLink() {
-	const supabaseClient = useSupabaseClient();
-	const globalUserState = useGlobalState(state => state.user);
-	const globalLinkState = useGlobalState(state => state.links);
+	const supabaseClient = useSupabaseClient<Database>();
+	const globalUserState = useUserGlobalState();
+	const globalLinkState = useLinkGlobalState();
 
 	return (
 		<div className="flex min-h-full flex-col justify-center sm:px-6 lg:px-8">
