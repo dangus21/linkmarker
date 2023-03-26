@@ -7,7 +7,7 @@ import { useGetProfileInfo } from "@/hooks/useGetProfileInfo";
 import { Database } from "@/lib/types";
 import { Navbar, NewLink } from "@/components";
 
-function Main() {
+function NewPage() {
 	const supabaseClient = useSupabaseClient<Database>();
 	const session = useSession();
 
@@ -37,4 +37,4 @@ function Main() {
 	);
 }
 
-export default Main;
+export default NewPage;
