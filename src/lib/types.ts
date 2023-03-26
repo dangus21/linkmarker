@@ -17,6 +17,7 @@ export interface Database {
           postedDate: string | null
           reaction: string | null
           title: string | null
+          url: string | null
           who: string | null
         }
         Insert: {
@@ -26,6 +27,7 @@ export interface Database {
           postedDate?: string | null
           reaction?: string | null
           title?: string | null
+          url?: string | null
           who?: string | null
         }
         Update: {
@@ -35,6 +37,7 @@ export interface Database {
           postedDate?: string | null
           reaction?: string | null
           title?: string | null
+          url?: string | null
           who?: string | null
         }
       }

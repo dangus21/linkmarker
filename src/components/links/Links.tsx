@@ -1,82 +1,141 @@
 
-import { CalendarIcon, CheckCircleIcon, MapPinIcon, UsersIcon, XCircleIcon } from "@heroicons/react/20/solid";
+import {
+	CalendarIcon,
+	CheckCircleIcon,
+	FaceSmileIcon,
+	MapPinIcon,
+	UsersIcon,
+	XCircleIcon
+} from "@heroicons/react/20/solid";
 import { Database } from "@/lib/types";
 import { updateLinkInfo } from "@/hooks/updateLinkInfo";
 import { useGetLinks } from "@/hooks/useGetLinks";
 import { useLinkGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
+import { Fragment } from "react";
+
+import { Popover, Transition } from "@headlessui/react";
+import { REACTIONS } from "@/utils";
+
 function Links() {
 	const supabaseClient = useSupabaseClient<Database>();
 
 	useGetLinks();
+	console.log("LOG ~ file: Links.tsx:111 ~ Object.values(REACTIONS):", Object.entries(REACTIONS));
 
 	const { values: availableLinks, update: updateLink } = useLinkGlobalState();
 	const dateFormatter = new Intl.DateTimeFormat("pt-PT");
 
 	return (
-		<div className="mt-6 mx-auto max-w-7xl overflow-hidden bg-white shadow sm:rounded-md" >
-			<ul role="list" className="divide-y divide-gray-200">
-				{availableLinks.map((link) => (
-					<li
-						key={link.id}
-						onClick={() => updateLinkInfo({
-							link: { opened: true },
-							id: link.id,
-							updateLink,
-							supabaseClient
-						})}
-					>
-						<a href="#" className="block hover:bg-gray-100">
-							<div className="px-4 py-4 sm:px-6">
-								<div className="flex items-center justify-between">
-									<p className="truncate text-sm font-medium text-indigo-600">{link.title}</p>
-									<p className="flex items-center">
-										{
-											link.opened ?
-												<>
-													<span className="whitespace-nowrap">Opened</span>
-													<span className="ml-3">
-														<CheckCircleIcon className="mr-3 h-5 w-5 flex-shrink-0 text-green-500" />
-													</span>
-												</> :
-												<>
-													<span className="whitespace-nowrap">Not Open</span>
-													<span className="ml-3">
-														<XCircleIcon className="mr-3 h-5 w-5 flex-shrink-0 self-center text-red-500" />
-													</span>
-												</>
-										}
-									</p>
-								</div>
-								<div className="mt-2 sm:flex sm:justify-between">
-									<div className="sm:flex">
-										<p className="flex items-center text-sm text-gray-500">
-											<UsersIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-											{link.who}
-										</p>
-										<p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
-											<MapPinIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-											{link.origin}
-										</p>
-									</div>
-									<div className="mt-2 mr-3 flex items-center text-sm text-gray-500 sm:mt-0">
-										<CalendarIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-										<p>
-											<time dateTime={(link.postedDate ?? "").toString()}>
-												{dateFormatter.format(new Date(link.postedDate ?? ""))}
-											</time>
-										</p>
-									</div>
-								</div>
-							</div>
-						</a>
-					</li>
-				))
-				}
-			</ul >
-		</div >
+		<div className="w-full flex justify-center">
+			<div className="mt-6 mx-10 max-w-7xl bg-white shadow sm:rounded-md w-full">
+				{availableLinks.length > 0 ? <ul role="list" className="divide-y divide-gray-200">
+					{availableLinks.map((link) => (
+						<li
+							key={link.id}
 
+						>
+							<div className="flex justify-between divide-x divide-gray-150 ">
+								<a href={link.url!}
+									onClick={() => updateLinkInfo({
+										link: { opened: true },
+										id: link.id,
+										updateLink,
+										supabaseClient
+									})}
+									className="px-4 py-4 sm:px-6 w-full hover:bg-gray-100 cursor-pointer">
+									<div className="flex items-center justify-between">
+										<p className="truncate text-sm font-medium text-indigo-600">{link.title}</p>
+										<p className="flex items-center">
+											{
+												link.opened ?
+													<>
+														<span className="whitespace-nowrap">Opened</span>
+														<span className="ml-3">
+															<CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+														</span>
+													</> :
+													<>
+														<span className="whitespace-nowrap">Not Open</span>
+														<span className="ml-3">
+															<XCircleIcon className="h-5 w-5 flex-shrink-0 self-center text-red-500" />
+														</span>
+													</>
+											}
+										</p>
+									</div>
+									<div className="mt-2 flex justify-between">
+										<div className="flex">
+											<UsersIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
+											<p className="flex items-center text-sm text-gray-500 mr-8 md:mr-8 min-w-[3rem]">
+												{link.who}
+											</p>
+											<MapPinIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
+											<p className="flex items-center text-sm text-gray-500 mr-8 md:mr-8 min-w-[3rem]">
+												{link.origin}
+											</p>
+										</div>
+										<div className="flex items-center text-sm text-gray-500">
+											<CalendarIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
+											<p>
+												<time dateTime={(link.postedDate ?? "").toString()}>
+													{dateFormatter.format(new Date(link.postedDate ?? ""))}
+												</time>
+											</p>
+										</div>
+									</div>
+								</a>
+								<Popover className="relative">
+									<Popover.Button className="h-full w-20 grid place-content-center hover:bg-gray-100">
+										{link.reaction ?
+											<p className="text-4xl">{REACTIONS[link.reaction as keyof typeof REACTIONS]}</p> :
+											<FaceSmileIcon className="h-10 w-10 text-gray-300" aria-hidden="true" />
+										}
+									</Popover.Button>
+									<Transition
+										as={Fragment}
+										enter="transition ease-out duration-200"
+										enterFrom="opacity-0 translate-y-1"
+										enterTo="opacity-100 translate-y-0"
+										leave="transition ease-in duration-150"
+										leaveFrom="opacity-100 translate-y-0"
+										leaveTo="opacity-0 translate-y-1"
+									>
+										<Popover.Panel className="absolute right-1/2 z-10 flex max-w-[15rem] -translate-x-1/2 px-4">
+											{(({ close }) => (
+												<div className="w-auto flex-auto rounded bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 flex flex-row">
+													{Object.entries(REACTIONS).map(([key, icon]) => (
+														<div
+															onClick={() => {
+																updateLinkInfo({
+																	link: { reaction: key },
+																	id: link.id,
+																	supabaseClient,
+																	updateLink
+																});
+																close();
+															}}
+															key={key}
+															className={`cursor-pointer text-center relative hover:bg-gray-200/90 ${link.reaction === key && "bg-neutral-100"}`}
+														>
+															<p className="font-semibold text-gray-900 text-2xl p-3">
+																{icon}
+																<span className="absolute inset-0" />
+															</p>
+														</div>
+													))}
+												</div>
+											))}
+										</Popover.Panel>
+									</Transition>
+								</Popover>
+							</div>
+						</li>
+					))}
+				</ul> : <h2 className="p-10 text-center">Nothing to see here, yet.</h2>}
+			</div >
+		</div>
 	);
 };
 

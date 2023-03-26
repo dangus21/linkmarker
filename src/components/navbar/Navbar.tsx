@@ -1,12 +1,11 @@
 import { Fragment } from "react";
 
 import { BellIcon } from "@heroicons/react/24/outline";
-import { ChevronDownIcon, PlusIcon } from "@heroicons/react/20/solid";
+import { PlusIcon } from "@heroicons/react/20/solid";
 
 import { Disclosure, Popover, Transition } from "@headlessui/react";
 
 import { Database } from "@/lib/types";
-import { classNames } from "@/utils";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUserGlobalState } from "@/state";
@@ -54,10 +53,10 @@ function Navbar() {
 								<p className="hidden md:block">New Link</p>
 							</button>
 						</div>
-						<div className="ml-4 flex flex-shrink-0 items-center">
+						<div className="flex flex-shrink-0 items-center">
 							<button
 								type="button"
-								className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+								className="rounded-full bg-gray-800 mx-5 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
 							>
 								<span className="sr-only">
 									View notifications
@@ -83,7 +82,6 @@ function Navbar() {
 										</div>
 									</div>
 								</Popover.Button>
-
 								<Transition
 									as={Fragment}
 									enter="transition ease-out duration-200"
@@ -93,10 +91,10 @@ function Navbar() {
 									leaveFrom="opacity-100 translate-y-0"
 									leaveTo="opacity-0 translate-y-1"
 								>
-									<Popover.Panel className="absolute left-1/2 z-10 flex w-screen max-w-[15rem] -translate-x-1/2 px-4">
-										<div className="w-screen max-w-sm flex-auto rounded-3xl bg-white p-4 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+									<Popover.Panel className="absolute right-1 z-10 flex max-w-[15rem] -translate-x-1/2 px-4">
+										<div className="w-screen max-w-sm flex-auto rounded bg-white py-2 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
 											{userNavigation.map((item) => (
-												<div key={item.name} className="cursor-pointer text-center relative rounded-lg p-4 hover:bg-gray-100/90">
+												<div key={item.name} className="cursor-pointer text-center relative py-2 hover:bg-gray-100/90">
 													<a className="font-semibold text-gray-900">
 														{item.name}
 														<span className="absolute inset-0" />

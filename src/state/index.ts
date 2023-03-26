@@ -14,6 +14,7 @@ type TAvatar = {
 };
 
 export type TLink = Database["public"]["Tables"]["links"]["Row"];
+export type TLinkNew = Database["public"]["Tables"]["links"]["Insert"];
 export type TLinkUpdate = Database["public"]["Tables"]["links"]["Update"];
 
 export type UserState = {
@@ -39,7 +40,7 @@ export type LinkState = {
 	new: TLinkUpdate;
 	set: (links: TLink[]) => void;
 	update: (link: TLinkUpdate) => void;
-	create: (link: TLinkUpdate) => void;
+	create: (link: Partial<TLinkNew>) => void;
 };
 
 const useUserGlobalState = create<UserState>()((set) => ({

@@ -1,5 +1,5 @@
-import { GlobalState } from "@/state";
 import { SupabaseClient } from "@supabase/auth-helpers-react";
+import { UserState } from "@/state";
 
 async function updateProfileInfo(
 	{
@@ -7,7 +7,7 @@ async function updateProfileInfo(
 		supabaseClient
 	}:
 		{
-			userState: GlobalState["user"];
+			userState: UserState;
 			supabaseClient: SupabaseClient;
 		}
 ) {
