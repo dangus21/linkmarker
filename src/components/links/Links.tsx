@@ -33,7 +33,7 @@ function Links() {
 						{availableLinks.map((link) => {
 							const localReaction =
 								REACTIONS[
-								link.reaction as keyof typeof REACTIONS
+									link.reaction as keyof typeof REACTIONS
 								];
 							return (
 								<li key={link.id}>
@@ -82,7 +82,6 @@ function Links() {
 											<div className="mt-2 flex justify-between">
 												<div className="flex flex-col sm:flex-row">
 													<div className="flex">
-
 														<UsersIcon
 															className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
 															aria-hidden="true"
@@ -116,7 +115,7 @@ function Links() {
 															{dateFormatter.format(
 																new Date(
 																	link.postedDate ??
-																	""
+																		""
 																)
 															)}
 														</time>
@@ -127,7 +126,7 @@ function Links() {
 										<Popover className="relative">
 											<Popover.Button className="h-full w-20 grid place-content-center hover:bg-gray-100">
 												{link.reaction &&
-													localReaction ? (
+												localReaction ? (
 														<span className="text-xl sm:text-4xl">
 															{localReaction}
 														</span>
@@ -177,8 +176,9 @@ function Links() {
 																		key={
 																			key
 																		}
-																		className={`cursor-pointer text-center relative hover:bg-gray-200/90 ${link.reaction ===
-																			key &&
+																		className={`cursor-pointer text-center relative hover:bg-gray-200/90 ${
+																			link.reaction ===
+																				key &&
 																			"bg-neutral-100"
 																		}`}
 																	>
