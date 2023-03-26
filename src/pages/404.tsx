@@ -17,10 +17,7 @@ function NotFound() {
 					Sorry, we couldn’t find the page you’re looking for.
 				</p>
 				<div className="mt-10 flex justify-center">
-					<a
-						href="/"
-						className="text-sm font-semibold leading-7 text-white"
-					>
+					<a href="/" className="text-sm font-semibold leading-7 text-white">
 						<span aria-hidden="true">&larr;</span> Back to home
 					</a>
 				</div>

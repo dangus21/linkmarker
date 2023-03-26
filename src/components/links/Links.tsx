@@ -23,18 +23,17 @@ function Links() {
 	useGetLinks();
 
 	const { values: availableLinks, update: updateLink } = useLinkGlobalState();
-	console.log("LOG ~ file: Links.tsx:27 ~ availableLinks:", availableLinks);
 	const dateFormatter = new Intl.DateTimeFormat("pt-PT");
 
 	return (
 		<div className="w-full flex justify-center">
-			<div className="mt-6 mx-10 max-w-7xl bg-white shadow sm:rounded-md w-full">
+			<div className="mt-6 sm:mx-10 sm:max-w-7xl bg-white shadow sm:rounded-md w-full">
 				{availableLinks.length > 0 ? (
 					<ul role="list" className="divide-y divide-gray-200">
 						{availableLinks.map((link) => {
 							const localReaction =
 								REACTIONS[
-									link.reaction as keyof typeof REACTIONS
+								link.reaction as keyof typeof REACTIONS
 								];
 							return (
 								<li key={link.id}>
@@ -53,9 +52,11 @@ function Links() {
 											className="px-4 py-4 sm:px-6 w-full hover:bg-gray-100 cursor-pointer"
 										>
 											<div className="flex items-center justify-between">
-												<p className="truncate text-sm font-medium text-indigo-600">
-													{link.title}
-												</p>
+												<div className="max-w-[10rem]">
+													<p className="truncate text-sm font-medium text-indigo-600">
+														{link.title}
+													</p>
+												</div>
 												<p className="flex items-center">
 													{link.opened ? (
 														<>
@@ -79,21 +80,26 @@ function Links() {
 												</p>
 											</div>
 											<div className="mt-2 flex justify-between">
-												<div className="flex">
-													<UsersIcon
-														className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-														aria-hidden="true"
-													/>
-													<p className="flex items-center text-sm text-gray-500 mr-8 md:mr-8 min-w-[3rem]">
-														{link.who}
-													</p>
-													<MapPinIcon
-														className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-														aria-hidden="true"
-													/>
-													<p className="flex items-center text-sm text-gray-500 mr-8 md:mr-8 min-w-[3rem]">
-														{link.origin}
-													</p>
+												<div className="flex flex-col sm:flex-row">
+													<div className="flex">
+
+														<UsersIcon
+															className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+															aria-hidden="true"
+														/>
+														<p className="flex items-center text-sm text-gray-500 mr-8 md:mr-8 min-w-[3rem]">
+															{link.who}
+														</p>
+													</div>
+													<div className="flex">
+														<MapPinIcon
+															className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+															aria-hidden="true"
+														/>
+														<p className="flex items-center text-sm text-gray-500 mr-8 md:mr-8 min-w-[3rem]">
+															{link.origin}
+														</p>
+													</div>
 												</div>
 												<div className="flex items-center text-sm text-gray-500">
 													<CalendarIcon
@@ -110,7 +116,7 @@ function Links() {
 															{dateFormatter.format(
 																new Date(
 																	link.postedDate ??
-																		""
+																	""
 																)
 															)}
 														</time>
@@ -121,15 +127,17 @@ function Links() {
 										<Popover className="relative">
 											<Popover.Button className="h-full w-20 grid place-content-center hover:bg-gray-100">
 												{link.reaction &&
-												localReaction ? (
-														<p className="text-4xl">
+													localReaction ? (
+														<span className="text-xl sm:text-4xl">
 															{localReaction}
-														</p>
+														</span>
 													) : (
-														<FaceSmileIcon
-															className="h-10 w-10 text-gray-300"
-															aria-hidden="true"
-														/>
+														<span>
+															<FaceSmileIcon
+																className="h-6 w-6 sm:h-10 s:w-10 text-gray-300"
+																aria-hidden="true"
+															/>
+														</span>
 													)}
 											</Popover.Button>
 											<Transition
@@ -141,7 +149,7 @@ function Links() {
 												leaveFrom="opacity-100 translate-y-0"
 												leaveTo="opacity-0 translate-y-1"
 											>
-												<Popover.Panel className="absolute right-1/2 z-10 flex max-w-[15rem] -translate-x-1/2 px-4">
+												<Popover.Panel className="absolute -right-1/2 sm:right-1/2 z-10 flex max-w-[18rem] -translate-x-1/2 sm:-translate-x-1/4 px-4">
 													{({ close }) => (
 														<div className="w-auto flex-auto rounded bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 flex flex-row">
 															{Object.entries(
@@ -169,13 +177,12 @@ function Links() {
 																		key={
 																			key
 																		}
-																		className={`cursor-pointer text-center relative hover:bg-gray-200/90 ${
-																			link.reaction ===
-																				key &&
+																		className={`cursor-pointer text-center relative hover:bg-gray-200/90 ${link.reaction ===
+																			key &&
 																			"bg-neutral-100"
 																		}`}
 																	>
-																		<p className="font-semibold text-gray-900 text-2xl p-3">
+																		<p className="font-semibold text-gray-900 text-lg sm:text-2xl p-3">
 																			{
 																				icon
 																			}

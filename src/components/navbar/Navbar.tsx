@@ -97,7 +97,7 @@ function Navbar() {
 									leaveFrom="opacity-100 translate-y-0"
 									leaveTo="opacity-0 translate-y-1"
 								>
-									<Popover.Panel className="absolute right-1 z-10 flex max-w-[15rem] -translate-x-1/2 px-4">
+									<Popover.Panel className="absolute right-1 z-10 flex max-w-[15rem] px-4">
 										<div className="w-screen max-w-sm flex-auto rounded bg-white py-2 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
 											{userNavigation.map((item) => (
 												<div
