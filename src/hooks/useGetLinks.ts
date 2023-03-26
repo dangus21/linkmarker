@@ -7,7 +7,7 @@ async function useGetLinks() {
 	const supabaseClient = useSupabaseClient<Database>();
 
 	const currentUser = useUser();
-	const { set: setlinks } = useLinkGlobalState();
+	const { set: setLinks } = useLinkGlobalState();
 
 	useEffect(() => {
 		try {
@@ -16,7 +16,7 @@ async function useGetLinks() {
 				.select()
 				.then(({ data, error }) => {
 					if (data && data?.length > 0) {
-						setlinks(data);
+						setLinks(data);
 					}
 					if (error) {
 						console.warn({ error });
@@ -27,7 +27,7 @@ async function useGetLinks() {
 			console.warn(error);
 		}
 		return () => {
-			setlinks([]);
+			setLinks([]);
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentUser?.id]);
