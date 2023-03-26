@@ -19,7 +19,7 @@ function Navbar() {
 
 	const userNavigation = [
 		{
-			name: "Your Profile",
+			name: "Profile",
 			action: () => push("/profile")
 		},
 		{
@@ -35,7 +35,9 @@ function Navbar() {
 					<div className="flex flex-row">
 						<div className="flex mr-5" onClick={() => push("/")}>
 							<div className="flex items-center space-x-4">
-								<p className="text-white italic font-bold text-lg cursor-pointer">LinkMarker</p>
+								<p className="text-white italic font-bold text-lg cursor-pointer">
+									LinkMarker
+								</p>
 							</div>
 						</div>
 					</div>
@@ -74,7 +76,11 @@ function Navbar() {
 											<Image
 												className="h-10"
 												quality={50}
-												src={globalUserState.avatar.img || "/avatar_placeholder.png"}
+												src={
+													globalUserState.avatar
+														.img ||
+													"/avatar_placeholder.png"
+												}
 												alt="Profile Picture"
 												width={250}
 												height={250}
@@ -94,7 +100,11 @@ function Navbar() {
 									<Popover.Panel className="absolute right-1 z-10 flex max-w-[15rem] -translate-x-1/2 px-4">
 										<div className="w-screen max-w-sm flex-auto rounded bg-white py-2 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
 											{userNavigation.map((item) => (
-												<div key={item.name} className="cursor-pointer text-center relative py-2 hover:bg-gray-100/90">
+												<div
+													key={item.name}
+													onClick={item.action}
+													className="cursor-pointer text-center relative py-2 hover:bg-gray-100/90"
+												>
 													<a className="font-semibold text-gray-900">
 														{item.name}
 														<span className="absolute inset-0" />
@@ -106,9 +116,12 @@ function Navbar() {
 								</Transition>
 							</Popover>
 							<div className="hidden md:flex h-full place-items-center space-x-4 px-4">
-								<p className="text-white text-lg cursor-pointer">
+								<div
+									onClick={() => push("/profile")}
+									className="text-white text-lg cursor-pointer"
+								>
 									{globalUserState.userName}
-								</p>
+								</div>
 							</div>
 						</div>
 					</div>

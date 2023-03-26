@@ -29,8 +29,8 @@ async function useGetLinks() {
 		return () => {
 			setlinks([]);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentUser?.id]);
-
 }
 
 export { useGetLinks };

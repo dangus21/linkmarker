@@ -1,6 +1,10 @@
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
-import { useSession, useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import {
+	useSession,
+	useSupabaseClient,
+	useUser
+} from "@supabase/auth-helpers-react";
 
 import { useGetProfileInfo } from "@/hooks/useGetProfileInfo";
 
@@ -17,7 +21,10 @@ function Main() {
 	return (
 		<div>
 			{!session || !user ? (
-				<div className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900" style={{ padding: "50px 0 100px 0" }}>
+				<div
+					className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900"
+					style={{ padding: "50px 0 100px 0" }}
+				>
 					<Auth
 						supabaseClient={supabaseClient}
 						appearance={{ theme: ThemeSupa }}

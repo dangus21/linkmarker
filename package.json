@@ -6,9 +6,9 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint",
+		"lint": "next lint --fix",
 		"pretty": "prettier --write .",
-		"types": "supabase gen types typescript --project-id \"nirdbezgwuaguyqyfmmn\" --schema public > src/lib/types.ts"
+		"types": "supabase gen types typescript --project-id \"tqurqlgcaemtcetwrqoz\" --schema public > src/lib/types.ts"
 	},
 	"dependencies": {
 		"@angusmiguel/es-configs": "^1.4.0",
@@ -32,6 +32,7 @@
 		"zustand": "^4.3.6"
 	},
 	"devDependencies": {
+		"@types/uuid": "^9.0.1",
 		"autoprefixer": "^10.4.14",
 		"eslint-config-prettier": "^8.7.0",
 		"postcss": "^8.4.21",

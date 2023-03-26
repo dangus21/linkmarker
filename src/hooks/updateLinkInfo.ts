@@ -1,20 +1,18 @@
+import { Database } from "@/lib/types";
 import { SupabaseClient } from "@supabase/auth-helpers-react";
 import { TLinkUpdate } from "@/state";
 
-async function updateLinkInfo(
-	{
-		link,
-		id,
-		updateLink,
-		supabaseClient
-	}:
-		{
-			link: TLinkUpdate;
-			id: string;
-			updateLink: (link: TLinkUpdate) => void;
-			supabaseClient: SupabaseClient;
-		}
-) {
+async function updateLinkInfo({
+	link,
+	id,
+	updateLink,
+	supabaseClient
+}: {
+	link: TLinkUpdate;
+	id: string;
+	updateLink: (link: TLinkUpdate) => void;
+	supabaseClient: SupabaseClient<Database>;
+}) {
 	try {
 		const { error } = await supabaseClient
 			.from("links")
@@ -38,6 +36,8 @@ async function updateLinkInfo(
 			});
 
 		if (error) {
+			console.warn(error);
+
 			throw error;
 		}
 	} catch (error) {

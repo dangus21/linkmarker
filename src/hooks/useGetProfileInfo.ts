@@ -47,6 +47,8 @@ async function useGetProfileInfo() {
 					}
 
 					if ((error && status !== 406) || avatarsError) {
+						console.warn(error);
+
 						throw error;
 					}
 				} catch (error) {
@@ -56,7 +58,7 @@ async function useGetProfileInfo() {
 		}
 		if (!globalUserState.userName) {
 			getUserAndProfile();
-		};
+		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentUser?.id]);
 }

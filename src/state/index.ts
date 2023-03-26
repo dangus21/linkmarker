@@ -28,11 +28,7 @@ export type UserState = {
 	setId: (id: string) => void;
 	setUserName: (id: string) => void;
 	setEmail: (id: string) => void;
-	setAvatar: ({
-		img,
-		file,
-		fileName
-	}: Partial<TAvatar>) => void;
+	setAvatar: ({ img, file, fileName }: Partial<TAvatar>) => void;
 };
 
 export type LinkState = {
@@ -57,36 +53,45 @@ const useUserGlobalState = create<UserState>()((set) => ({
 	setId: (id) => set(() => ({ id })),
 	setUserName: (userName) => set(() => ({ userName })),
 	setEmail: (email) => set(() => ({ email })),
-	setAvatar: ({ img, file, fileName }) => set(() => ({
-		avatar: {
-			img: img || "",
-			file: file || null,
-			fileName: fileName || ""
-		}
-	})),
-	setModified: (isModified) => set(state => ({
-		...state,
-		modified: isModified
-	}))
+	setAvatar: ({ img, file, fileName }) =>
+		set(() => ({
+			avatar: {
+				img: img || "",
+				file: file || null,
+				fileName: fileName || ""
+			}
+		})),
+	setModified: (isModified) =>
+		set((state) => ({
+			...state,
+			modified: isModified
+		}))
 }));
 
 const useLinkGlobalState = create<LinkState>()((set) => ({
 	values: [],
 	new: {},
 	set: (links) => set(() => ({ values: links })),
-	create: (link) => set((state) => ({
-		new: {
-			...state.new,
-			...link
-		}
-	})),
-	update: (link) => set((state) => {
-		const currentLinks = structuredClone(state.values);
-		const updateLinkIdx = currentLinks.findIndex(el => el.id === link.id);
-		currentLinks[updateLinkIdx] = { ...currentLinks[updateLinkIdx], ...link };
+	create: (link) =>
+		set((state) => ({
+			new: {
+				...state.new,
+				...link
+			}
+		})),
+	update: (link) =>
+		set((state) => {
+			const currentLinks = structuredClone(state.values);
+			const updateLinkIdx = currentLinks.findIndex(
+				(el) => el.id === link.id
+			);
+			currentLinks[updateLinkIdx] = {
+				...currentLinks[updateLinkIdx],
+				...link
+			};
 
-		return ({ ...state, values: currentLinks });
-	})
+			return { ...state, values: currentLinks };
+		})
 }));
 
 export { useUserGlobalState, useLinkGlobalState, NAVBAR_OPTIONS };

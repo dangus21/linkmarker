@@ -43,7 +43,10 @@ function Profile() {
 								<div className="rounded-full overflow-hidden hover:opacity-90">
 									<Image
 										className="w-[150px] h-[150px]"
-										src={globalUserState.avatar.img || "/avatar_placeholder.png"}
+										src={
+											globalUserState.avatar.img ||
+											"/avatar_placeholder.png"
+										}
 										alt="Profile Picture"
 										width={150}
 										height={150}
@@ -140,7 +143,12 @@ function Profile() {
 
 						<div>
 							<button
-								onClick={() => updateProfileInfo({ userState: globalUserState, supabaseClient })}
+								onClick={() =>
+									updateProfileInfo({
+										userState: globalUserState,
+										supabaseClient
+									})
+								}
 								type="submit"
 								className="flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 							>

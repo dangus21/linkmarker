@@ -10,7 +10,4 @@ const REACTIONS = {
 	vomit: "🤮"
 } as const;
 
-export {
-	ONE_MB_SIZE,
-	REACTIONS
-};
+export { ONE_MB_SIZE, REACTIONS };

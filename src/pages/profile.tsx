@@ -16,7 +16,10 @@ function Main() {
 	return (
 		<div>
 			{!session ? (
-				<div className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900" style={{ padding: "50px 0 100px 0" }}>
+				<div
+					className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900"
+					style={{ padding: "50px 0 100px 0" }}
+				>
 					<Auth
 						supabaseClient={supabaseClient}
 						appearance={{ theme: ThemeSupa }}
@@ -28,7 +31,6 @@ function Main() {
 				<>
 					<Navbar />
 					<Profile />
-
 				</>
 			)}
 		</div>
