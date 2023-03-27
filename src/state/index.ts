@@ -13,6 +13,7 @@ type TAvatar = {
 	fileName?: string;
 };
 
+export type TPublicUser = Database["public"]["Tables"]["profiles"]["Row"];
 export type TLink = Database["public"]["Tables"]["links"]["Row"];
 export type TLinkNew = Database["public"]["Tables"]["links"]["Insert"];
 export type TLinkUpdate = Database["public"]["Tables"]["links"]["Update"];
@@ -24,6 +25,8 @@ export type UserState = {
 	password: string;
 	avatar: TAvatar;
 	modified: boolean;
+	publicUsers: TPublicUser[];
+	setPublicUsers: (users: TPublicUser[]) => void;
 	setModified: (isModified: boolean) => void;
 	setId: (id: string) => void;
 	setUserName: (id: string) => void;
@@ -50,6 +53,8 @@ const useUserGlobalState = create<UserState>()((set) => ({
 		fileName: ""
 	},
 	modified: false,
+	publicUsers: [],
+	setPublicUsers: (users) => set(() => ({ publicUsers: users })),
 	setId: (id) => set(() => ({ id })),
 	setUserName: (userName) => set(() => ({ userName })),
 	setEmail: (email) => set(() => ({ email })),

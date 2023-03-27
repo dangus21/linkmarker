@@ -14,6 +14,7 @@ export interface Database {
           by: string
           id: string
           isPublic: boolean
+          isShareable: boolean
           opened: boolean | null
           origin: string | null
           postedDate: string | null
@@ -27,6 +28,7 @@ export interface Database {
           by: string
           id?: string
           isPublic?: boolean
+          isShareable?: boolean
           opened?: boolean | null
           origin?: string | null
           postedDate?: string | null
@@ -40,6 +42,7 @@ export interface Database {
           by?: string
           id?: string
           isPublic?: boolean
+          isShareable?: boolean
           opened?: boolean | null
           origin?: string | null
           postedDate?: string | null
@@ -52,28 +55,25 @@ export interface Database {
       }
       profiles: {
         Row: {
-          avatar_url: string | null
           full_name: string | null
           id: string
+          isAccountPublic: boolean
           updated_at: string | null
           username: string | null
-          website: string | null
         }
         Insert: {
-          avatar_url?: string | null
           full_name?: string | null
           id?: string
+          isAccountPublic?: boolean
           updated_at?: string | null
           username?: string | null
-          website?: string | null
         }
         Update: {
-          avatar_url?: string | null
           full_name?: string | null
           id?: string
+          isAccountPublic?: boolean
           updated_at?: string | null
           username?: string | null
-          website?: string | null
         }
       }
     }

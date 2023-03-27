@@ -5,3 +5,4 @@ export { useGetLinks } from "./links/useGetLinks";
 
 export { updateProfileInfo } from "./profile/updateProfileInfo";
 export { useGetProfileInfo } from "./profile/useGetProfileInfo";
+export { useGetPublicProfiles } from "./profile/useGetPublicProfiles";
