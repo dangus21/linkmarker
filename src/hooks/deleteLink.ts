@@ -21,7 +21,7 @@ async function deleteLink({
 			.from("links")
 			.select()
 			.then(({ data, error }) => {
-				if (data && data?.length > 0) {
+				if (data) {
 					setLinks(data);
 				}
 				if (error) {
