@@ -14,7 +14,8 @@ async function useGetPublicProfiles(dep: unknown) {
 				const { data, error, status } = await supabaseClient
 					.from("profiles")
 					.select()
-					.eq("isAccountPublic", true);
+					.eq("isAccountPublic", true)
+					.not("id", "eq", globalUserState.id);
 
 				console.log("LOG ~ ", { data, error, status });
 

@@ -7,9 +7,10 @@
 	"name": "linkmarker",
 	"short_name": "linkmarker",
 	"share_target": {
-		"action": "/share",
+		"action": "/new",
 		"params": {
 			"title": "title",
+			"text": "text",
 			"url": "url"
 		}
 	},

@@ -1,11 +1,12 @@
 import { Database } from "@/lib/types";
-import { Fragment, useState } from "react";
 import { createLink, useGetPublicProfiles } from "@/hooks";
 import { useLinkGlobalState, useUserGlobalState } from "@/state";
+import { useState } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
-import { Combobox, Switch } from "@headlessui/react";;
+import { Combobox, Switch } from "@headlessui/react";
+;
 
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(" ");
@@ -18,7 +19,6 @@ const people = [
 		imageUrl:
 			"https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
 	}
-	// More users...
 ];
 
 function NewLink() {
@@ -30,7 +30,7 @@ function NewLink() {
 	const isLinkShareable = globalLinkState.new.isShareable;
 
 	const [query, setQuery] = useState("");
-	const [selectedPerson, setSelectedPerson] = useState(null);
+	const [selectedPerson, setSelectedPerson] = useState<any[]>([]);
 
 	const selectedUsersForShare = globalUserState.publicUsers;
 
@@ -49,6 +49,7 @@ function NewLink() {
 				<h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
 					Link Information
 				</h2>
+				<h2>{globalUserState.id}</h2>
 			</div>
 			<div className="mt-6 mx-auto w-full max-w-md">
 				<div className="bg-white px-10 py-4 sm:shadow sm:rounded-lg">
@@ -159,13 +160,20 @@ function NewLink() {
 							{
 								isLinkShareable && (
 									<div className="relative">
-										<Combobox as="div" value={selectedPerson} onChange={setSelectedPerson}>
-											<Combobox.Label className="block text-sm font-medium leading-6 text-gray-900">Assigned to</Combobox.Label>
+										<Combobox
+											as="div"
+											value={selectedPerson}
+											onChange={setSelectedPerson}
+											multiple
+										>
+											<Combobox.Label className="block text-sm font-medium leading-6 text-gray-900">To whom?</Combobox.Label>
 											<div className="relative mt-2">
 												<Combobox.Input
 													className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 													onChange={(event) => setQuery(event.target.value)}
-													displayValue={(person: Record<string, string>) => person?.username}
+													displayValue={(person: Record<string, string>[]) => {
+														return person.map(user => user?.username).join(", ");
+													}}
 												/>
 												<Combobox.Button className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
 													<ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
