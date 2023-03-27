@@ -6,6 +6,7 @@ import { useGetProfileInfo } from "@/hooks/useGetProfileInfo";
 
 import { Database } from "@/lib/types";
 import { Navbar, Profile } from "@/components";
+import Head from "next/head";
 
 function ProfilePage() {
 	const supabaseClient = useSupabaseClient<Database>();
@@ -14,26 +15,31 @@ function ProfilePage() {
 	useGetProfileInfo();
 
 	return (
-		<div>
-			{!session ? (
-				<div
-					className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900"
-					style={{ padding: "50px 0 100px 0" }}
-				>
-					<Auth
-						supabaseClient={supabaseClient}
-						appearance={{ theme: ThemeSupa }}
-						theme="dark"
-						providers={[]}
-					/>
-				</div>
-			) : (
-				<>
-					<Navbar />
-					<Profile />
-				</>
-			)}
-		</div>
+		<>
+			<Head>
+				<title>Linkmarker - Profile</title>
+			</Head>
+			<div>
+				{!session ? (
+					<div
+						className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900"
+						style={{ padding: "50px 0 100px 0" }}
+					>
+						<Auth
+							supabaseClient={supabaseClient}
+							appearance={{ theme: ThemeSupa }}
+							theme="dark"
+							providers={[]}
+						/>
+					</div>
+				) : (
+					<>
+						<Navbar />
+						<Profile />
+					</>
+				)}
+			</div>
+		</>
 	);
 }
 
