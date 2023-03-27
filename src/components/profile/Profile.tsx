@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Database } from "@/lib/types";
 import { ONE_MB_SIZE } from "@/utils";
-import { updateProfileInfo } from "@/hooks/updateProfileInfo";
+import { updateProfileInfo } from "@/hooks";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUserGlobalState } from "@/state";
 

@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 import {
 	CalendarIcon,
 	CheckCircleIcon,
@@ -8,16 +10,12 @@ import {
 	XMarkIcon
 } from "@heroicons/react/20/solid";
 import { Database } from "@/lib/types";
-import { updateLinkInfo } from "@/hooks/updateLinkInfo";
-import { useGetLinks } from "@/hooks/useGetLinks";
+import { deleteLink, updateLinkInfo, useGetLinks } from "@/hooks";
 import { useLinkGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
-import { Fragment } from "react";
-
 import { Popover, Transition } from "@headlessui/react";
 import { REACTIONS } from "@/utils";
-import { deleteLink } from "@/hooks/deleteLink";
 
 function Links() {
 	const supabaseClient = useSupabaseClient<Database>();

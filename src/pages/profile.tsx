@@ -2,7 +2,7 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 
-import { useGetProfileInfo } from "@/hooks/useGetProfileInfo";
+import { useGetProfileInfo } from "@/hooks";
 
 import { Database } from "@/lib/types";
 import { Navbar, Profile } from "@/components";

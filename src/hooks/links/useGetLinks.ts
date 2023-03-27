@@ -14,6 +14,7 @@ async function useGetLinks() {
 			supabaseClient
 				.from("links")
 				.select()
+				.or(`by.eq.${currentUser?.id},isPublic.eq.true`)
 				.then(({ data, error }) => {
 					if (data && data?.length > 0) {
 						setLinks(data);

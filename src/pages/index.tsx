@@ -6,7 +6,7 @@ import {
 	useUser
 } from "@supabase/auth-helpers-react";
 
-import { useGetProfileInfo } from "@/hooks/useGetProfileInfo";
+import { useGetProfileInfo } from "@/hooks";
 
 import { Database } from "@/lib/types";
 import { Links, Navbar } from "@/components";
