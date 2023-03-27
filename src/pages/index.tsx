@@ -27,8 +27,7 @@ function Main() {
 			<div>
 				{!session || !user ? (
 					<div
-						className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900"
-						style={{ padding: "50px 0 100px 0" }}
+						className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900 [&>div]:w-96"
 					>
 						<Auth
 							supabaseClient={supabaseClient}
