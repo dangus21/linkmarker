@@ -6,6 +6,13 @@
 	"start_url": "/",
 	"name": "linkmarker",
 	"short_name": "linkmarker",
+	"share_target": {
+		"action": "/share",
+		"params": {
+			"title": "title",
+			"url": "url"
+		}
+	},
 	"icons": [
 		{
 			"src": "/icons/icon-192x192.png",
