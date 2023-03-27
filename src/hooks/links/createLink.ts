@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-
 import { Database } from "@/lib/types";
 import { LinkState, UserState } from "@/state";
 import { SupabaseClient } from "@supabase/auth-helpers-react";
@@ -14,14 +12,15 @@ async function createLink({
 	link: LinkState["new"];
 }) {
 	const newLink = {
-		id: uuidv4(),
-		opened: false,
-		postedDate: new Date() as unknown as string,
 		reaction: null,
 		title: link.title,
 		who: userState.userName,
-		url: link.origin
-	} as Required<LinkState["new"]>;
+		url: link.origin,
+		by: userState.id,
+		isPublic: link.isPublic || false,
+		shareWith: [],
+		origin: ""
+	} satisfies LinkState["new"];
 
 	const newLinkObj = new URL(link.origin?.startsWith("http") ? link.origin : `http://${link.origin}`);
 	const match = newLinkObj.host.match(
