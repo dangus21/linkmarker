@@ -7,7 +7,6 @@ import { Database } from "@/lib/types";
 import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 
-import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 
 export default function App({
@@ -33,7 +32,6 @@ export default function App({
 				<link rel="shortcut icon" href="/favicon.ico" />
 			</Head>
 			<Component {...pageProps} />
-			<Analytics />
 		</SessionContextProvider>
 	);
 }
