@@ -23,7 +23,7 @@ async function createLink({
 		url: link.origin
 	} as Required<LinkState["new"]>;
 
-	const newLinkObj = new URL(link.origin!);
+	const newLinkObj = new URL(link.origin?.startsWith("http") ? link.origin : `http://${link.origin}`);
 	const match = newLinkObj.host.match(
 		/^.*?\b(?:https?:\/\/)?(?:www\.)?([a-z0-9][a-z0-9-]*?[a-z0-9])\.[a-z]{2,}(?:$|\/)/i
 	);
