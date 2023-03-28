@@ -2,6 +2,7 @@
 	"theme_color": "#1f2937",
 	"background_color": "#f69435",
 	"display": "standalone",
+	"method": "POST",
 	"scope": "/",
 	"start_url": "/",
 	"name": "linkmarker",
