@@ -1,11 +1,12 @@
 import { Database } from "@/lib/types";
 import { createLink, useGetPublicProfiles } from "@/hooks";
+import { useEffect, useState } from "react";
 import { useLinkGlobalState, useUserGlobalState } from "@/state";
-import { useState } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { Combobox, Switch } from "@headlessui/react";
+import { useRouter } from "next/router";
 ;
 
 function classNames(...classes: string[]) {
@@ -43,13 +44,23 @@ function NewLink() {
 				return person.name.toLowerCase().includes(query.toLowerCase());
 			});
 
+	const router = useRouter();
+	const isFromShareUI = Object.keys(router.query).some(queryEl => ["text", "url", "title"].includes(queryEl));
+
+	useEffect(() => {
+		if(isFromShareUI && !globalLinkState.new.url){
+			globalLinkState.create({
+				url: router.query.text as string || ""
+			});
+		}
+	}, [isFromShareUI, router.query, globalLinkState]);
+
 	return (
 		<div className="flex min-h-full flex-col justify-center sm:px-6 lg:px-8">
 			<div className="sm:mx-auto sm:w-full sm:max-w-md">
 				<h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
 					Link Information
 				</h2>
-				<h2>{globalUserState.id}</h2>
 			</div>
 			<div className="mt-6 mx-auto w-full max-w-md">
 				<div className="bg-white px-10 py-4 sm:shadow sm:rounded-lg">
@@ -88,6 +99,7 @@ function NewLink() {
 											origin: e.currentTarget.value
 										});
 									}}
+									value={globalLinkState.new.url || ""}
 									type="text"
 									name="name"
 									id="name"
