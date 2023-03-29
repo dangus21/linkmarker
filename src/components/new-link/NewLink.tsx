@@ -48,9 +48,9 @@ function NewLink() {
 	const isFromShareUI = Object.keys(router.query).some(queryEl => ["text", "url", "title"].includes(queryEl));
 
 	useEffect(() => {
-		if(isFromShareUI && !globalLinkState.new.url){
+		if(isFromShareUI && !("origin" in globalLinkState.new)){
 			globalLinkState.create({
-				url: router.query.text as string || ""
+				origin: router.query.text as string || ""
 			});
 		}
 	}, [isFromShareUI, router.query, globalLinkState]);
@@ -99,7 +99,7 @@ function NewLink() {
 											origin: e.currentTarget.value
 										});
 									}}
-									value={globalLinkState.new.url || ""}
+									value={globalLinkState.new.origin || ""}
 									type="text"
 									name="name"
 									id="name"

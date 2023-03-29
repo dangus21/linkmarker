@@ -1,5 +1,6 @@
 import { Database } from "@/lib/types";
 import { create } from "zustand";
+import { mountStoreDevtool } from "simple-zustand-devtools";
 
 const NAVBAR_OPTIONS = {
 	LINKS: "links",
@@ -98,5 +99,10 @@ const useLinkGlobalState = create<LinkState>()((set) => ({
 			return { ...state, values: currentLinks };
 		})
 }));
+
+if (process.env.NODE_ENV === "development") {
+	mountStoreDevtool("users", useUserGlobalState);
+	mountStoreDevtool("links", useLinkGlobalState);
+}
 
 export { useUserGlobalState, useLinkGlobalState, NAVBAR_OPTIONS };
