@@ -49,6 +49,14 @@ function Links() {
 													supabaseClient
 												})
 											}
+											onAuxClick={() =>
+												updateLinkInfo({
+													link: { opened: true },
+													id: link.id,
+													updateLink,
+													supabaseClient
+												})
+											}
 											className="px-4 py-4 sm:px-6 w-full hover:bg-gray-100 cursor-pointer"
 										>
 											<div className="flex flex-col sm:flex-row sm:items-center justify-between">

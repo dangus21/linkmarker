@@ -74,7 +74,7 @@ function Navbar() {
 									<div className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
 										<div className="h-10 w-10 rounded-full overflow-hidden hover:opacity-90">
 											<Image
-												className="h-10"
+												className="h-10 aspect-square"
 												quality={50}
 												src={
 													globalUserState.avatar
@@ -97,7 +97,7 @@ function Navbar() {
 									leaveFrom="opacity-100 translate-y-0"
 									leaveTo="opacity-0 translate-y-1"
 								>
-									<Popover.Panel className="absolute right-1 z-10 flex max-w-[15rem] px-4">
+									<Popover.Panel className="absolute right-0 sm:-right-8 z-10 flex max-w-[15rem] px-4">
 										<div className="w-screen max-w-sm flex-auto rounded bg-white py-2 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
 											{userNavigation.map((item) => (
 												<div

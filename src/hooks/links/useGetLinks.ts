@@ -10,28 +10,21 @@ async function useGetLinks() {
 	const { set: setLinks } = useLinkGlobalState();
 
 	useEffect(() => {
-		try {
-			supabaseClient
-				.from("links")
-				.select()
-				.or(`shareWith.cs.{${currentUser!.id}},or(isPublic.eq.true),or(by.eq.${currentUser!.id})`)
-				.then(({ data, error }) => {
-					if (data) {
-						setLinks(data);
-					}
-					if (error) {
-						console.warn({ error });
-						throw error;
-					}
-				});
-		} catch (error) {
-			console.warn(error);
-		}
-		return () => {
-			setLinks([]);
-		};
+		supabaseClient
+			.from("links")
+			.select()
+			.or(`shareWith.cs.{${currentUser!.id}},or(isPublic.eq.true),or(by.eq.${currentUser!.id})`)
+			.then(({ data, error }) => {
+				if (data) {
+					setLinks(data);
+				}
+				if (error) {
+					console.warn({ error });
+					throw error;
+				}
+			});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [currentUser?.id]);
+	}, []);
 }
 
 export { useGetLinks };

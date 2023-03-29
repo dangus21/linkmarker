@@ -42,7 +42,7 @@ function Profile() {
 							{globalUserState.avatar.img ? (
 								<div className="rounded-full overflow-hidden hover:opacity-90">
 									<Image
-										className="w-[150px] h-[150px]"
+										className="w-[150px] h-[150px] aspect-square"
 										src={
 											globalUserState.avatar.img ||
 											"/avatar_placeholder.png"

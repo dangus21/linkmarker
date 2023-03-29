@@ -31,7 +31,10 @@ export default function App({
 			</Head>
 			<SessionContextProvider
 				supabaseClient={supabase}
-				initialSession={pageProps.initialSession}
+				initialSession={{
+					...pageProps.initialSession,
+					expires_in: 3600 * 2
+				}}
 			>
 				<Component {...pageProps} />
 				<Analytics />
