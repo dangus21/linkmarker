@@ -3,6 +3,8 @@ import { Fragment } from "react";
 import {
 	CalendarIcon,
 	CheckCircleIcon,
+	EyeIcon,
+	EyeSlashIcon,
 	FaceSmileIcon,
 	MapPinIcon,
 	UsersIcon,
@@ -31,32 +33,24 @@ function Links() {
 				{availableLinks.length > 0 ? (
 					<ul role="list" className="divide-y divide-gray-200">
 						{availableLinks.map((link) => {
-							const localReaction =
-								REACTIONS[
-								link.reaction as keyof typeof REACTIONS
-								];
+							const localReaction = REACTIONS[link.reaction as keyof typeof REACTIONS];
+							function openLinkFn() {
+								return updateLinkInfo({
+									link: { opened: true },
+									id: link.id,
+									updateLink,
+									supabaseClient
+								});
+							};
+
 							return (
 								<li key={link.id}>
 									<div className="flex justify-between divide-x divide-gray-150">
 										<a
 											target="_blank"
 											href={link.url!}
-											onClick={() =>
-												updateLinkInfo({
-													link: { opened: true },
-													id: link.id,
-													updateLink,
-													supabaseClient
-												})
-											}
-											onAuxClick={() =>
-												updateLinkInfo({
-													link: { opened: true },
-													id: link.id,
-													updateLink,
-													supabaseClient
-												})
-											}
+											onClick={openLinkFn}
+											onAuxClick={openLinkFn}
 											className="px-4 py-4 sm:px-6 w-full hover:bg-gray-100 cursor-pointer"
 										>
 											<div className="flex flex-col sm:flex-row sm:items-center justify-between">
@@ -64,6 +58,13 @@ function Links() {
 													<p className="text-sm font-medium text-indigo-600">
 														{link.title}
 													</p>
+													<span className="inline-flex items-center text-xs">
+														{
+															link.isPublic ?
+																<><EyeIcon className="h-3.5 flex-shrink-0 text-gray-400 mr-1" /> Public</> :
+																<><EyeSlashIcon className="h-3.5 flex-shrink-0 text-gray-400 mr-1"/> Private</>
+														}
+													</span>
 												</div>
 												<p className="flex items-center">
 													{link.opened ? (
