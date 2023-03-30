@@ -29,7 +29,7 @@ function Links() {
 
 	return (
 		<div className="w-full flex justify-center">
-			<div className="mt-6 sm:mx-10 sm:max-w-7xl bg-white shadow sm:rounded-md w-full">
+			<div className="mt-6 sm:mx-10 sm:max-w-7xl border border-b-gray-300 bg-white sm:shadow sm:rounded-md w-full">
 				{availableLinks.length > 0 ? (
 					<ul role="list" className="divide-y divide-gray-200">
 						{availableLinks.map((link) => {
@@ -169,7 +169,7 @@ function Links() {
 													leaveFrom="opacity-100 translate-y-0"
 													leaveTo="opacity-0 translate-y-1"
 												>
-													<Popover.Panel className="absolute -right-1/2 sm:right-1/2 z-10 flex max-w-[18rem] -translate-x-1/2 sm:-translate-x-1/4 px-4">
+													<Popover.Panel className="absolute -right-[100%] sm:right-1/2 z-10 flex max-w-[18rem] -translate-x-1/2 sm:-translate-x-1/4 px-4">
 														{({ close }) => (
 															<div className="w-auto flex-auto rounded bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 flex flex-row">
 																{Object.entries(

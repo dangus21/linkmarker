@@ -11,13 +11,11 @@ async function useGetPublicProfiles(dep: unknown) {
 	useEffect(() => {
 		async function getUserAndProfile() {
 			try {
-				const { data, error, status } = await supabaseClient
+				const { data } = await supabaseClient
 					.from("profiles")
 					.select()
 					.eq("isAccountPublic", true)
 					.not("id", "eq", globalUserState.id);
-
-				console.log("LOG ~ ", { data, error, status });
 
 				if (data) {
 					globalUserState.setPublicUsers(data);
