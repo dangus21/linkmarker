@@ -40,9 +40,9 @@ function NewLink() {
 			});
 		}
 		if (isFromShareUI && !("title" in globalLinkState.new)) {
-			const isTextQueryLink = isLink(router.query.text as string);
+			const isTextQueryLink = isLink(router.query.title as string);
 			globalLinkState.create({
-				title: !isTextQueryLink ? router.query.text as string : ""
+				title: !isTextQueryLink ? router.query.title as string : ""
 			});
 		}
 	}, [isFromShareUI, router.query, globalLinkState]);
@@ -71,6 +71,7 @@ function NewLink() {
 											title: e.currentTarget.value
 										});
 									}}
+									value={globalLinkState.new.title || ""}
 									type="text"
 									name="name"
 									id="name"
