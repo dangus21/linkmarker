@@ -62,7 +62,7 @@ function Links() {
 														{
 															link.isPublic ?
 																<><EyeIcon className="h-3.5 flex-shrink-0 text-gray-400 mr-1" /> Public</> :
-																<><EyeSlashIcon className="h-3.5 flex-shrink-0 text-gray-400 mr-1"/> Private</>
+																<><EyeSlashIcon className="h-3.5 flex-shrink-0 text-gray-400 mr-1" /> Private</>
 														}
 													</span>
 												</div>
