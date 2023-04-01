@@ -30,6 +30,7 @@ function NewLink() {
 	useGetPublicProfiles(isLinkShareable);
 
 	const router = useRouter();
+	console.log("LOG ~ file: NewLink.tsx:33 ~ router:", router.query);
 	const isFromShareUI = Object.keys(router.query).some(queryEl => ["text", "url", "title"].includes(queryEl));
 
 	useEffect(() => {

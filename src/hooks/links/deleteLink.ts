@@ -20,6 +20,7 @@ async function deleteLink({
 		supabaseClient
 			.from("links")
 			.select()
+			.order("postedDate", { ascending: false })
 			.then(({ data, error }) => {
 				if (data) {
 					setLinks(data);

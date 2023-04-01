@@ -14,6 +14,7 @@ async function useGetLinks() {
 			.from("links")
 			.select()
 			.or(`shareWith.cs.{${currentUser!.id}},or(isPublic.eq.true),or(by.eq.${currentUser!.id})`)
+			.order("postedDate", { ascending: false })
 			.then(({ data, error }) => {
 				if (data) {
 					setLinks(data);
