@@ -12,19 +12,20 @@ import {
 	XMarkIcon
 } from "@heroicons/react/20/solid";
 import { Database } from "@/lib/types";
-import { TLink, useLinkGlobalState } from "@/state";
 import { deleteLink, updateLinkInfo, useGetLinks } from "@/hooks";
+import { /* TLink, */ useLinkGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 import { Popover, Transition } from "@headlessui/react";
 import { REACTIONS } from "@/utils";
 
-function Links({currentLinks}: {currentLinks: TLink[] | []}) {
+// function Links({currentLinks}: {currentLinks: TLink[] | []}) {
+function Links() {
 	const supabaseClient = useSupabaseClient<Database>();
 
-	// useGetLinks();
+	useGetLinks();
 
-	const { update: updateLink, set: setLinks } = useLinkGlobalState();
+	const { values: currentLinks, update: updateLink, set: setLinks } = useLinkGlobalState();
 	const dateFormatter = new Intl.DateTimeFormat("pt-PT");
 
 	return (
