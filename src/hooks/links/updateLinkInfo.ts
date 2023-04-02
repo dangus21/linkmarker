@@ -29,19 +29,19 @@ async function updateLinkInfo({
 					updateLink(data);
 				}
 				if (error) {
-					console.warn(error);
+					console.warn({error});
 
 					throw error;
 				}
 			});
 
 		if (error) {
-			console.warn(error);
+			console.warn({error});
 
 			throw error;
 		}
 	} catch (error) {
-		console.warn(error);
+		console.warn({error});
 	}
 }
 

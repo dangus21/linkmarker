@@ -12,7 +12,52 @@ import { Database } from "@/lib/types";
 import { Links, Navbar } from "@/components";
 import Head from "next/head";
 
-function Main() {
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs"; import ogs from "open-graph-scraper";
+;
+
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+	const supabase = createServerSupabaseClient<Database>(ctx);
+	const {
+		data: { session }
+	} = await supabase.auth.getSession();
+
+	const { data } = await supabase
+		.from("links")
+		.select()
+		.or(`shareWith.cs.{${session?.user.id ?? ""}},or(isPublic.eq.true),or(by.eq.${session?.user.id ?? ""})`)
+		.order("postedDate", { ascending: false });
+
+	const linksOGSOptions = (data ?? []).map(
+		entry => ogs({
+			url: entry.url ?? "",
+			customMetaTags: [{
+				multiple: false, // is there more than one of these tags on a page (normally this is false)
+				property: "hostname", // meta tag name/property attribute
+				fieldName: "hostnameMetaTag" // name of the result variable
+			}]
+		}).then(ogs => ogs.result)
+	);
+
+	const result = await Promise.allSettled(linksOGSOptions).then(vals => vals.map(val => ({
+		value: !("value" in val) ? "" :
+			val.value ?
+				Array.isArray(val.value.ogImage) ?
+					val.value?.ogImage[0] :
+					typeof val.value.ogImage === "object" ?
+						val.value.ogImage?.url :
+						val.value.ogImage : ""
+	})));
+
+	return {
+		props: {
+			links: data || [],
+			ogs: result
+		}
+	};
+}
+
+function Main(props: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	const supabaseClient = useSupabaseClient<Database>();
 	const session = useSession();
 	const user = useUser();
@@ -39,7 +84,7 @@ function Main() {
 				) : (
 					<>
 						<Navbar />
-						<Links />
+						<Links currentLinks={props.links}/>
 					</>
 				)}
 			</div>

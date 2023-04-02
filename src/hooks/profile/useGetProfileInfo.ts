@@ -47,7 +47,7 @@ async function useGetProfileInfo() {
 					}
 
 					if ((error && status !== 406) || avatarsError) {
-						console.warn(error);
+						console.warn({error});
 
 						throw error;
 					}

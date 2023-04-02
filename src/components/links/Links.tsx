@@ -12,27 +12,27 @@ import {
 	XMarkIcon
 } from "@heroicons/react/20/solid";
 import { Database } from "@/lib/types";
+import { TLink, useLinkGlobalState } from "@/state";
 import { deleteLink, updateLinkInfo, useGetLinks } from "@/hooks";
-import { useLinkGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 import { Popover, Transition } from "@headlessui/react";
 import { REACTIONS } from "@/utils";
 
-function Links() {
+function Links({currentLinks}: {currentLinks: TLink[] | []}) {
 	const supabaseClient = useSupabaseClient<Database>();
 
-	useGetLinks();
+	// useGetLinks();
 
-	const { values: availableLinks, update: updateLink, set: setLinks } = useLinkGlobalState();
+	const { update: updateLink, set: setLinks } = useLinkGlobalState();
 	const dateFormatter = new Intl.DateTimeFormat("pt-PT");
 
 	return (
 		<div className="w-full flex justify-center">
 			<div className="mt-6 sm:mx-10 sm:max-w-7xl border border-b-gray-300 bg-white sm:shadow sm:rounded-md w-full">
-				{availableLinks.length > 0 ? (
+				{currentLinks.length > 0 ? (
 					<ul role="list" className="divide-y divide-gray-200">
-						{availableLinks.map((link) => {
+						{currentLinks.map((link) => {
 							const localReaction = REACTIONS[link.reaction as keyof typeof REACTIONS];
 							function openLinkFn() {
 								return updateLinkInfo({

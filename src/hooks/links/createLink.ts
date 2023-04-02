@@ -38,7 +38,7 @@ async function createLink({
 			window.location.replace("/");
 		}
 	} catch (error) {
-		console.warn(error);
+		console.warn({error});
 	}
 }
 
