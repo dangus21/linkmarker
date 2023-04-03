@@ -29,7 +29,7 @@ function Navbar() {
 	];
 
 	return (
-		<Disclosure as="nav" className="bg-gray-800">
+		<Disclosure as="nav" className="bg-gray-800 sticky top-0 z-10">
 			<div className="px-8 mx-auto max-w-7xl lg:px-8">
 				<div className="flex h-16 justify-between">
 					<div className="flex flex-row">
@@ -46,7 +46,7 @@ function Navbar() {
 							<button
 								onClick={() => push("/new")}
 								type="button"
-								className="relative inline-flex items-center gap-x-1.5 rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+								className="mx-5 relative inline-flex items-center gap-x-1.5 rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
 							>
 								<PlusIcon
 									className="-ml-0.5 h-5 w-5"
@@ -56,6 +56,7 @@ function Navbar() {
 							</button>
 						</div>
 						<div className="flex flex-shrink-0 items-center">
+							{/* TODO
 							<button
 								type="button"
 								className="rounded-full bg-gray-800 mx-5 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -67,7 +68,7 @@ function Navbar() {
 									className="h-6 w-6"
 									aria-hidden="true"
 								/>
-							</button>
+							</button> */}
 
 							<Popover className="relative">
 								<Popover.Button className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
@@ -115,14 +116,14 @@ function Navbar() {
 									</Popover.Panel>
 								</Transition>
 							</Popover>
-							<div className="hidden md:flex h-full place-items-center space-x-4 px-4">
+							{/* <div className="hidden md:flex h-full place-items-center space-x-4 px-4">
 								<div
 									onClick={() => push("/profile")}
 									className="text-white text-lg cursor-pointer"
 								>
 									{globalUserState.userName}
 								</div>
-							</div>
+							</div> */}
 						</div>
 					</div>
 				</div>
