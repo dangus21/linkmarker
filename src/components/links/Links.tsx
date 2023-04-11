@@ -1,4 +1,4 @@
-import { Fragment, useMemo } from "react";
+import { Fragment } from "react";
 
 import {
 	CalendarIcon,
@@ -33,26 +33,19 @@ function Links() {
 	} = useLinkGlobalState();
 	const dateFormatter = new Intl.DateTimeFormat("pt-PT");
 
-	const ownershipLinksList = useMemo(() =>
-		ownershipFilter === TABS.ALL ? currentLinks : currentLinks.filter(link => {
-			if (ownershipFilter === TABS.MINE) {
-				return link.by === user?.id;
-			}
-			if (ownershipFilter === TABS.PRIVATE) {
-				return !link.isPublic;
-			}
-			return;
-		}),
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	[currentLinks, ownershipFilter]);
+	const ownershipLinksList = ownershipFilter === TABS.ALL ? currentLinks : currentLinks.filter(link => {
+		if (ownershipFilter === TABS.MINE) {
+			return link.by === user?.id;
+		}
+		if (ownershipFilter === TABS.PRIVATE) {
+			return !link.isPublic;
+		}
+		return;
+	});
 
-	const textFilterLinksList = useMemo(() =>
-		textFilter.length === 0 ?
-			ownershipLinksList :
-			ownershipLinksList.filter(link => link.title.toLowerCase().includes(textFilter)),
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	[currentLinks, textFilter]);
-	console.log("LOG ~ file: Links.tsx:53 ~ textFilterLinksList:", textFilterLinksList);
+	const textFilterLinksList = textFilter.length === 0 ?
+		ownershipLinksList :
+		ownershipLinksList.filter(link => link.title.toLowerCase().includes(textFilter));
 
 	return (
 		<div className="w-full flex justify-center">
