@@ -7,23 +7,30 @@ async function useGetLinks() {
 	const supabaseClient = useSupabaseClient<Database>();
 
 	const currentUser = useUser();
-	const { set: setLinks } = useLinkGlobalState();
+	const { set: setLinks, setLoading } = useLinkGlobalState();
 
 	useEffect(() => {
-		supabaseClient
-			.from("links")
-			.select()
-			.or(`shareWith.cs.{${currentUser!.id}},or(isPublic.eq.true),or(by.eq.${currentUser!.id})`)
-			.order("postedDate", { ascending: false })
-			.then(({ data, error }) => {
-				if (data) {
-					setLinks(data);
-				}
-				if (error) {
-					console.warn({ error });
-					throw error;
-				}
-			});
+		async function getLinks() {
+			setLoading(true);
+			const { data, error } = await supabaseClient
+				.from("links")
+				.select()
+				.or(`shareWith.cs.{${currentUser!.id}},or(isPublic.eq.true),or(by.eq.${currentUser!.id})`)
+				.order("postedDate", { ascending: false });
+
+			if (error) {
+				console.warn({ error });
+				setLoading(false);
+				throw error;
+			}
+
+			if (data) {
+				setLoading(false);
+				setLinks(data);
+			}
+
+		}
+		getLinks();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 }

@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useMemo } from "react";
 
 import {
 	CalendarIcon,
@@ -12,28 +12,54 @@ import {
 	XMarkIcon
 } from "@heroicons/react/20/solid";
 import { Database } from "@/lib/types";
+import { /* TLink, */ TABS, useLinkGlobalState } from "@/state";
 import { deleteLink, updateLinkInfo, useGetLinks } from "@/hooks";
-import { /* TLink, */ useLinkGlobalState } from "@/state";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
 import { Popover, Transition } from "@headlessui/react";
 import { REACTIONS } from "@/utils";
 
-// function Links({currentLinks}: {currentLinks: TLink[] | []}) {
 function Links() {
 	const supabaseClient = useSupabaseClient<Database>();
-
+	const user = useUser();
 	useGetLinks();
 
-	const { values: currentLinks, update: updateLink, set: setLinks } = useLinkGlobalState();
+	const {
+		values: currentLinks,
+		update: updateLink,
+		set: setLinks,
+		ownershipFilter,
+		textFilter
+	} = useLinkGlobalState();
 	const dateFormatter = new Intl.DateTimeFormat("pt-PT");
+
+	const ownershipLinksList = useMemo(() =>
+		ownershipFilter === TABS.ALL ? currentLinks : currentLinks.filter(link => {
+			if (ownershipFilter === TABS.MINE) {
+				return link.by === user?.id;
+			}
+			if (ownershipFilter === TABS.PRIVATE) {
+				return !link.isPublic;
+			}
+			return;
+		}),
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	[currentLinks, ownershipFilter]);
+
+	const textFilterLinksList = useMemo(() =>
+		textFilter.length === 0 ?
+			ownershipLinksList :
+			ownershipLinksList.filter(link => link.title.toLowerCase().includes(textFilter)),
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	[currentLinks, textFilter]);
+	console.log("LOG ~ file: Links.tsx:53 ~ textFilterLinksList:", textFilterLinksList);
 
 	return (
 		<div className="w-full flex justify-center">
-			<div className="my-6 sm:mx-10 sm:max-w-7xl border border-b-gray-300 bg-white sm:shadow sm:rounded-md w-full">
-				{currentLinks.length > 0 ? (
+			{textFilterLinksList.length > 0 ? (
+				<div className="my-6 sm:mx-10 sm:max-w-7xl border border-b-gray-300 bg-white sm:shadow sm:rounded-md w-full">
 					<ul role="list" className="divide-y divide-gray-200">
-						{currentLinks.map((link) => {
+						{textFilterLinksList.map((link) => {
 							const localReaction = REACTIONS[link.reaction as keyof typeof REACTIONS];
 							function openLinkFn() {
 								return updateLinkInfo({
@@ -223,12 +249,13 @@ function Links() {
 							);
 						})}
 					</ul>
-				) : (
-					<h2 className="p-10 text-center">
-						Nothing to see here, yet.
-					</h2>
-				)}
-			</div>
+				</div>
+
+			) : (
+				<h2 className="p-10 text-center">
+					Nothing to see here, yet.
+				</h2>
+			)}
 		</div>
 	);
 }

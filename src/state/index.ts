@@ -35,9 +35,21 @@ export type UserState = {
 	setAvatar: ({ img, file, fileName }: Partial<TAvatar>) => void;
 };
 
+export enum TABS {
+	ALL,
+	MINE,
+	PRIVATE
+}
+
 export type LinkState = {
 	values: TLink[] | [];
-	new: TLinkUpdate;
+	new: TLinkNew | Record<string, unknown>;
+	loading: boolean;
+	ownershipFilter: TABS;
+	textFilter: string;
+	setTextFilter: (filter: string) => void;
+	setOwnershipFilter: (filter: TABS) => void;
+	setLoading: (load: boolean) => void;
 	set: (links: TLink[]) => void;
 	update: (link: TLinkUpdate) => void;
 	create: (link: Partial<TLinkNew>) => void;
@@ -75,8 +87,14 @@ const useUserGlobalState = create<UserState>()((set) => ({
 }));
 
 const useLinkGlobalState = create<LinkState>()((set) => ({
+	loading: false,
 	values: [],
 	new: {},
+	ownershipFilter: TABS.ALL,
+	textFilter: "",
+	setTextFilter: (filter) => set({ textFilter: filter }),
+	setOwnershipFilter: (filter) => set({ ownershipFilter: filter }),
+	setLoading: (isLoading) => set({ loading: isLoading }),
 	set: (links) => set(() => ({ values: links })),
 	create: (link) =>
 		set((state) => ({

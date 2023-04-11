@@ -234,6 +234,7 @@ function NewLink() {
 						</div>
 						<div className="mt-12">
 							<button
+								disabled={ !globalLinkState.new.title || !globalLinkState.new.url }
 								onClick={() =>
 									createLink({
 										supabaseClient,

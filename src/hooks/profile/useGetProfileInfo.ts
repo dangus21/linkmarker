@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { useUserGlobalState } from "@/state";
 
-async function useGetProfileInfo() {
+async function useGetProfileInfo(isUserAuthed = false) {
 	const supabaseClient = useSupabaseClient<Database>();
 
 	const currentUser = useUser();
@@ -56,7 +56,7 @@ async function useGetProfileInfo() {
 				}
 			}
 		}
-		if (!globalUserState.userName) {
+		if (isUserAuthed && !globalUserState.userName) {
 			getUserAndProfile();
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
