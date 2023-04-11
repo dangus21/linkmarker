@@ -43,7 +43,7 @@ export enum TABS {
 
 export type LinkState = {
 	values: TLink[] | [];
-	new: TLinkNew | Record<string, unknown>;
+	new: TLinkNew;
 	loading: boolean;
 	ownershipFilter: TABS;
 	textFilter: string;
@@ -89,7 +89,10 @@ const useUserGlobalState = create<UserState>()((set) => ({
 const useLinkGlobalState = create<LinkState>()((set) => ({
 	loading: false,
 	values: [],
-	new: {},
+	new: {
+		by: "",
+		title: ""
+	},
 	ownershipFilter: TABS.ALL,
 	textFilter: "",
 	setTextFilter: (filter) => set({ textFilter: filter }),
