@@ -35,7 +35,7 @@ function Main() {
 							supabaseClient={supabaseClient}
 							appearance={{ theme: ThemeSupa }}
 							theme="dark"
-							providers={["google", "facebook"]}
+							providers={["google"]}
 						/>
 					</div>
 				) : (
