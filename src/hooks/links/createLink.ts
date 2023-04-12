@@ -27,7 +27,7 @@ async function createLink({
 		/^.*?\b(?:https?:\/\/)?(?:www\.)?([a-z0-9][a-z0-9-]*?[a-z0-9])\.[a-z]{2,}(?:$|\/)/i
 	);
 
-	newLink.origin = match![1];
+	newLink.origin = match?.[1] ?? "unknown origin";
 
 	try {
 		const { error } = await supabaseClient.from("links").insert(newLink);

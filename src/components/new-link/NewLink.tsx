@@ -41,6 +41,8 @@ function NewLink() {
 		}
 	}, [isFromShareUI, router.query, globalLinkState]);
 
+	const isSubmitButtonDisabled = !globalLinkState.new.title || !globalLinkState.new.origin;
+
 	return (
 		<div className="flex min-h-full flex-col justify-center sm:px-6 lg:px-8">
 			<div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -165,7 +167,7 @@ function NewLink() {
 						</div>
 						<div className="mt-12">
 							<button
-								disabled={ !globalLinkState.new.title || !globalLinkState.new.url }
+								disabled={ isSubmitButtonDisabled }
 								onClick={() =>
 									createLink({
 										supabaseClient,
@@ -174,7 +176,7 @@ function NewLink() {
 									})
 								}
 								type="submit"
-								className="flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+								className={classNames("flex w-full justify-center rounded-md  py-2 px-3 text-sm font-semibold text-white shadow-sm", !isSubmitButtonDisabled ? "bg-indigo-600 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" : "bg-neutral-300" )}
 							>
 								Submit
 							</button>
