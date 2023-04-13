@@ -30,7 +30,7 @@ function NewPage() {
 							supabaseClient={supabaseClient}
 							appearance={{ theme: ThemeSupa }}
 							theme="dark"
-							providers={[]}
+							providers={["google"]}
 						/>
 					</div>
 				) : (
