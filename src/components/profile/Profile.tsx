@@ -4,12 +4,14 @@ import Image from "next/image";
 import { Database } from "@/lib/types";
 import { ONE_MB_SIZE } from "@/utils";
 import { updateProfileInfo } from "@/hooks";
+import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUserGlobalState } from "@/state";
 
 function Profile() {
 	const supabaseClient = useSupabaseClient<Database>();
 	const globalUserState = useUserGlobalState();
+	const { push } = useRouter();
 
 	async function handleFileRead(event: ChangeEvent<HTMLInputElement>) {
 		const file = event?.target?.files?.[0];
@@ -143,12 +145,13 @@ function Profile() {
 
 						<div>
 							<button
-								onClick={() =>
+								onClick={() => {
 									updateProfileInfo({
 										userState: globalUserState,
 										supabaseClient
-									})
-								}
+									});
+									push("/");
+								}}
 								type="submit"
 								className="flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 							>
