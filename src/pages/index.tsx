@@ -19,7 +19,6 @@ function Main() {
 	const session = useSession();
 	const user = useUser();
 	useGetProfileInfo(!!session && !!user);
-	console.log("LOG ~ file: index.tsx:36 ~ ThemeSupa:", ThemeSupa);
 
 	return (
 		<>

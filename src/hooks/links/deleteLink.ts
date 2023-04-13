@@ -1,36 +1,37 @@
 import { Database } from "@/lib/types";
 import { LinkState } from "@/state";
-import { SupabaseClient } from "@supabase/auth-helpers-react";
+import { SupabaseClient, User } from "@supabase/auth-helpers-react";
 
 async function deleteLink({
 	supabaseClient,
 	id,
-	setLinks
+	setLinks,
+	currentUser
 }: {
 	supabaseClient: SupabaseClient<Database>;
 	id: string;
 	setLinks: LinkState["set"];
+	currentUser: User["id"];
 }) {
 	try {
-		const { error } = await supabaseClient
+		const { error: deleteError } = await supabaseClient
 			.from("links")
 			.delete()
 			.eq("id", id);
 
-		supabaseClient
+		const { data, error } = await supabaseClient
 			.from("links")
 			.select()
-			.order("postedDate", { ascending: false })
-			.then(({ data, error }) => {
-				if (data) {
-					setLinks(data);
-				}
-				if (error) {
-					console.warn({ error });
-					throw error;
-				}
-			});
+			.or(`shareWith.cs.{${currentUser}},or(isPublic.eq.true),or(by.eq.${currentUser})`)
+			.order("postedDate", { ascending: false });
 
+		if (data) {
+			setLinks(data);
+		}
+
+		if (deleteError) {
+			console.warn({ error: deleteError });
+		}
 		if (error) {
 			console.warn({ error });
 		}

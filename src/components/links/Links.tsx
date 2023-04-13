@@ -154,7 +154,12 @@ function Links() {
 										</a>
 										<div className="flex flex-col sm:flex-row justify-evenly sm:justify-between divide-y sm:divide-x divide-gray-150 sm:divide-y-0">
 											<div
-												onClick={() => deleteLink({ id: link.id, supabaseClient, setLinks })}
+												onClick={() => deleteLink({
+													id: link.id,
+													supabaseClient,
+													setLinks,
+													currentUser: user!.id
+												})}
 												className="relative flex-auto cursor-pointer sm:h-full w-16 sm:w-20 grid place-content-center hover:bg-red-200"
 											>
 												<span>
