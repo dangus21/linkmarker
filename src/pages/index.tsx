@@ -18,7 +18,7 @@ function Main() {
 	const supabaseClient = useSupabaseClient<Database>();
 	const session = useSession();
 	const user = useUser();
-	useGetProfileInfo(!!session && !!user);
+	useGetProfileInfo({user, session});
 
 	return (
 		<>

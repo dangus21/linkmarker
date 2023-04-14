@@ -13,7 +13,7 @@ function NewPage() {
 	const session = useSession();
 	const user = useUser();
 
-	useGetProfileInfo();
+	useGetProfileInfo({user, session});
 
 	return (
 		<>

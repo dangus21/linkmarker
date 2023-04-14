@@ -1,45 +1,43 @@
 import { Database } from "@/lib/types";
+import { Session, User, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useEffect } from "react";
-import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { useUserGlobalState } from "@/state";
 
-async function useGetProfileInfo(isUserAuthed = false) {
+async function useGetProfileInfo({user, session}: {user: User | null; session: Session | null}) {
 	const supabaseClient = useSupabaseClient<Database>();
 
-	const currentUser = useUser();
 	const globalUserState = useUserGlobalState();
 
 	useEffect(() => {
-		if (currentUser) {
-			globalUserState.setEmail(currentUser.email || "");
-			globalUserState.setId(currentUser.id);
+		if (user) {
+			globalUserState.setEmail(user.email || "");
+			globalUserState.setId(user.id);
 		}
 		return () => {
 			globalUserState.setEmail("");
 			globalUserState.setId("");
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [currentUser]);
+	}, [user]);
 
 	useEffect(() => {
 		async function getUserAndProfile() {
-			if (currentUser?.id) {
+			if (user?.id) {
 				try {
 					const { data, error, status } = await supabaseClient
 						.from("profiles")
 						.select("username")
-						.eq("id", currentUser?.id)
+						.eq("id", user?.id)
 						.single();
-
-					if (data && data.username) {
-						globalUserState.setUserName(data.username);
-					}
 
 					const { data: avatarsData, error: avatarsError } =
 						await supabaseClient.storage
 							.from("avatars")
-							.download(`${currentUser?.id}/avatar.jpg`);
+							.download(`${user?.id}/avatar.jpg`);
 
+					if (data && data.username) {
+						globalUserState.setUserName(data.username);
+					}
 					if (avatarsData) {
 						globalUserState.setAvatar({
 							img: URL.createObjectURL(avatarsData)
@@ -56,11 +54,11 @@ async function useGetProfileInfo(isUserAuthed = false) {
 				}
 			}
 		}
-		if (isUserAuthed && !globalUserState.userName) {
+		if (!!user && !!session && !globalUserState.userName) {
 			getUserAndProfile();
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [currentUser?.id]);
+	}, [user]);
 }
 
 export { useGetProfileInfo };
