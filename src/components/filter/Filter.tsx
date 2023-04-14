@@ -4,7 +4,7 @@ function Filter() {
 	const { setTextFilter } = useLinkGlobalState();
 
 	return (
-		<div className="mt-5 w-full">
+		<div className="h-16 w-full sticky top-[127px] bg-white z-10 flex items-center place-content-center">
 			<nav className="relative flex flex-col justify-center w-96 mx-auto" aria-label="Text filter">
 				<label
 					htmlFor="textFilter"

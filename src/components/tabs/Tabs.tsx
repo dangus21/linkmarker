@@ -17,7 +17,7 @@ function Tabs() {
 	];
 
 	return (
-		<div className="mt-5 w-full">
+		<div className="h-16 w-full sticky top-[63px] bg-white z-10 flex items-center place-content-center">
 			<nav className="flex space-x-4 justify-center" aria-label="Tabs">
 				{tabs.map((tab, index: TABS) => (
 					<div
