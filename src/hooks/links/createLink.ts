@@ -11,18 +11,19 @@ async function createLink({
 	userState: UserState;
 	link: LinkState["new"];
 }) {
+	const url = link.origin?.startsWith("http") ? link.origin : `http://${link.origin}`;
 	const newLink = {
 		reaction: null,
 		title: link.title,
 		who: userState.userName,
-		url: link.origin,
+		url,
 		by: userState.id,
 		isPublic: link.isPublic || false,
 		shareWith: [],
 		origin: ""
 	} satisfies LinkState["new"];
 
-	const newLinkObj = new URL(link.origin?.startsWith("http") ? link.origin : `http://${link.origin}`);
+	const newLinkObj = new URL(url);
 	const match = newLinkObj.host.match(
 		/^.*?\b(?:https?:\/\/)?(?:www\.)?([a-z0-9][a-z0-9-]*?[a-z0-9])\.[a-z]{2,}(?:$|\/)/i
 	);

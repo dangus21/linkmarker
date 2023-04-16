@@ -5,10 +5,22 @@ import { useSession, useSupabaseClient, useUser } from "@supabase/auth-helpers-r
 import { useGetProfileInfo } from "@/hooks";
 
 import { Database } from "@/lib/types";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import { Navbar, NewLink } from "@/components";
+import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import Head from "next/head";
 
-function NewPage() {
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+	const supa = createServerSupabaseClient<Database>(ctx);
+	const users = supa.from("profiles").select("username, id");
+	return {
+		props: {
+			users: (await users).data
+		}
+	};
+}
+
+function NewPage({ users }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	const supabaseClient = useSupabaseClient<Database>();
 	const session = useSession();
 	const user = useUser();
@@ -36,7 +48,7 @@ function NewPage() {
 				) : (
 					<>
 						<Navbar />
-						<NewLink />
+						<NewLink users={users}/>
 					</>
 				)}
 			</div>
