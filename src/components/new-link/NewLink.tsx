@@ -1,7 +1,7 @@
 import { Database } from "@/lib/types";
-import { createLink, useGetPublicProfiles } from "@/hooks";
+import { User, useLinkGlobalState, useUserGlobalState } from "@/state";
+import { createLink } from "@/hooks";
 import { useEffect, useState } from "react";
-import { useLinkGlobalState, useUserGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 import { Combobox, Switch } from "@headlessui/react";
@@ -14,12 +14,7 @@ function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(" ");
 }
 
-type User = {
-	id: Database["public"]["Tables"]["profiles"]["Row"]["id"];
-	username: Database["public"]["Tables"]["profiles"]["Row"]["username"];
-};
-
-function NewLink({ users }: User[]) {
+function NewLink({ users }: { users: User[] }) {
 	const supabaseClient = useSupabaseClient<Database>();
 	const globalUserState = useUserGlobalState();
 	const globalLinkState = useLinkGlobalState();
@@ -28,14 +23,11 @@ function NewLink({ users }: User[]) {
 	const isLinkShareable = globalLinkState.new.isShareable;
 
 	const [, setQuery] = useState("");
-	const [selectedPerson, setSelectedPerson] = useState<any[]>([]);
-
-	const selectedUsersForShare = globalUserState.publicUsers;
-
-	useGetPublicProfiles(isLinkShareable);
 
 	const router = useRouter();
 	const isFromShareUI = Object.keys(router.query).some(queryEl => ["text", "url", "title"].includes(queryEl));
+
+	const publicUsers = users.filter(user => user.id !== globalUserState.id);
 
 	useEffect(() => {
 		if (isFromShareUI && !("origin" in globalLinkState.new) && (router.query.text || router.query.url)) {
@@ -52,7 +44,13 @@ function NewLink({ users }: User[]) {
 		}
 	}, [isFromShareUI, router.query, globalLinkState]);
 
-	const isSubmitButtonDisabled = !globalLinkState.new.title || !globalLinkState.new.origin;
+	const isSubmitButtonDisabled = (
+		!globalLinkState.new.title ||
+		!globalLinkState.new.origin || (
+			globalLinkState.new.isShareable &&
+			globalLinkState.new.shareWith?.length === 0
+		)
+	);
 
 	return (
 		<div className="flex min-h-full flex-col justify-center sm:px-6 lg:px-8">
@@ -121,10 +119,12 @@ function NewLink({ users }: User[]) {
 										</Switch.Label>
 									</span>
 									<Switch
-										checked={isLinkPublic}
+										checked={isLinkPublic || false}
 										onChange={(checked) => {
 											globalLinkState.create({
-												isPublic: checked
+												isPublic: checked,
+												...(checked && { shareWith: [] }),
+												...(checked && { isShareable: false })
 											});
 										}} className={classNames(
 											isLinkPublic ? "bg-indigo-600" : "bg-gray-200",
@@ -141,41 +141,50 @@ function NewLink({ users }: User[]) {
 									</Switch>
 								</Switch.Group>
 							</div>
-							<div className="relative">
-								<Switch.Group as="div" className="flex items-center justify-between">
-									<span className="flex flex-grow flex-col">
-										<Switch.Label as="span" className="text-sm font-medium leading-6 text-gray-900" passive>
-											Is this link shareable?
-										</Switch.Label>
-									</span>
-									<Switch
-										checked={isLinkShareable}
-										onChange={(checked) => {
-											globalLinkState.create({
-												isShareable: checked
-											});
-										}} className={classNames(
-											isLinkShareable ? "bg-indigo-600" : "bg-gray-200",
-											"relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
-										)}
-									>
-										<span
-											aria-hidden="true"
+							{
+								!globalLinkState.new.isPublic &&
+								<div className="relative">
+									<Switch.Group as="div" className="flex items-center justify-between">
+										<span className="flex flex-grow flex-col">
+											<Switch.Label as="span" className="text-sm font-medium leading-6 text-gray-900" passive>
+												Is this link shareable?
+											</Switch.Label>
+										</span>
+										<Switch
+											checked={isLinkShareable || false}
+											onChange={(checked) => {
+												globalLinkState.create({
+													isShareable: checked,
+													...(!checked && { shareWith: [] })
+												});
+											}}
 											className={classNames(
-												isLinkShareable ? "translate-x-5" : "translate-x-0",
-												"pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"
+												isLinkShareable ? "bg-indigo-600" : "bg-gray-200",
+												"relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
 											)}
-										/>
-									</Switch>
-								</Switch.Group>
-							</div>
+										>
+											<span
+												aria-hidden="true"
+												className={classNames(
+													isLinkShareable ? "translate-x-5" : "translate-x-0",
+													"pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"
+												)}
+											/>
+										</Switch>
+									</Switch.Group>
+								</div>
+							}
 							{
 								isLinkShareable && (
 									<div className="relative">
 										<Combobox
 											as="div"
-											value={selectedPerson}
-											onChange={setSelectedPerson}
+											value={globalLinkState.new.shareWith || []}
+											onChange={(checked) => {
+												globalLinkState.create({
+													shareWith: checked
+												});
+											}}
 											multiple
 										>
 											<Combobox.Label className="block text-sm font-medium leading-6 text-gray-900">To whom?</Combobox.Label>
@@ -191,12 +200,12 @@ function NewLink({ users }: User[]) {
 													<ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
 												</Combobox.Button>
 
-												{selectedUsersForShare.length > 0 && (
+												{publicUsers.length > 0 && (
 													<Combobox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-														{selectedUsersForShare.map((person) => (
+														{publicUsers.map((user) => (
 															<Combobox.Option
-																key={person.id}
-																value={person}
+																key={user.id}
+																value={user}
 																className={({ active }) =>
 																	classNames(
 																		"relative cursor-default select-none py-2 pl-3 pr-9",
@@ -207,8 +216,7 @@ function NewLink({ users }: User[]) {
 																{({ active, selected }) => (
 																	<>
 																		<div className="flex items-center">
-																			{/* <img src={person.} alt="" className="h-6 w-6 flex-shrink-0 rounded-full" /> */}
-																			<span className={classNames("ml-3 truncate", selected ? "font-semibold" : "")}>{person.username}</span>
+																			<span className={classNames("ml-3 truncate", selected ? "font-semibold" : "")}>{user.username}</span>
 																		</div>
 
 																		{selected && (

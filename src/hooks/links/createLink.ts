@@ -1,5 +1,5 @@
 import { Database } from "@/lib/types";
-import { LinkState, UserState } from "@/state";
+import { LinkState, User, UserState } from "@/state";
 import { SupabaseClient } from "@supabase/auth-helpers-react";
 
 async function createLink({
@@ -19,7 +19,7 @@ async function createLink({
 		url,
 		by: userState.id,
 		isPublic: link.isPublic || false,
-		shareWith: [],
+		shareWith: (link.shareWith || []).map((user) => (user as unknown as User)?.id),
 		origin: ""
 	} satisfies LinkState["new"];
 

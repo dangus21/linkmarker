@@ -5,8 +5,9 @@ import { useSession, useSupabaseClient, useUser } from "@supabase/auth-helpers-r
 import { useGetProfileInfo } from "@/hooks";
 
 import { Database } from "@/lib/types";
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import { GetServerSidePropsContext } from "next";
 import { Navbar, NewLink } from "@/components";
+import { User } from "@/state";
 import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import Head from "next/head";
 
@@ -20,7 +21,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 	};
 }
 
-function NewPage({ users }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+function NewPage({ users }: {users: User[]}) {
 	const supabaseClient = useSupabaseClient<Database>();
 	const session = useSession();
 	const user = useUser();
