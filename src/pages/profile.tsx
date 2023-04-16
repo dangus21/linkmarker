@@ -23,7 +23,7 @@ function ProfilePage() {
 			<div>
 				{!session || !user ? (
 					<div
-						className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900"
+						className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900 [&>div]:w-96"
 						style={{ padding: "50px 0 100px 0" }}
 					>
 						<Auth

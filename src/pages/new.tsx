@@ -21,7 +21,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 	};
 }
 
-function NewPage({ users }: {users: User[]}) {
+function NewPage({ users }: { users: User[] }) {
 	const supabaseClient = useSupabaseClient<Database>();
 	const session = useSession();
 	const user = useUser();
@@ -36,7 +36,7 @@ function NewPage({ users }: {users: User[]}) {
 			<div>
 				{!session || !user ? (
 					<div
-						className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900"
+						className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900 [&>div]:w-96"
 						style={{ padding: "50px 0 100px 0" }}
 					>
 						<Auth
@@ -49,7 +49,7 @@ function NewPage({ users }: {users: User[]}) {
 				) : (
 					<>
 						<Navbar />
-						<NewLink users={users}/>
+						<NewLink users={users} />
 					</>
 				)}
 			</div>
