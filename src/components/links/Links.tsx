@@ -173,13 +173,13 @@ function Links() {
 												<Popover.Button className="h-full w-16 sm:w-20 hover:bg-gray-100">
 													{link.reaction &&
 														localReaction ? (
-															<span className="text-xl sm:text-4xl">
+															<span className="text-xl sm:text-2xl">
 																{localReaction}
 															</span>
 														) : (
 															<span className="grid place-items-center">
 																<FaceSmileIcon
-																	className="h-6 w-6 sm:h-10 s:w-10 text-gray-300"
+																	className="h-8 w-8 sm:h-10 s:w-10 text-gray-300"
 																	aria-hidden="true"
 																/>
 															</span>
