@@ -29,7 +29,7 @@ function Navbar() {
 	];
 
 	return (
-		<Disclosure as="nav" className="bg-gray-800 sticky top-0 z-10">
+		<Disclosure as="nav" className="bg-gray-800 sticky top-0 z-20">
 			<div className="px-8 mx-auto max-w-7xl lg:px-8">
 				<div className="flex h-16 justify-between">
 					<div className="flex flex-row">

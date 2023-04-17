@@ -11,6 +11,7 @@ async function updateProfileInfo({
 }) {
 	try {
 		const updates = {
+			isAccountPublic: userState.isPublic,
 			username: userState.userName,
 			updated_at: new Date() as unknown as string
 		};

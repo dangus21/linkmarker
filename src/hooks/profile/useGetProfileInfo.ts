@@ -26,7 +26,7 @@ async function useGetProfileInfo({user, session}: {user: User | null; session: S
 				try {
 					const { data, error, status } = await supabaseClient
 						.from("profiles")
-						.select("username")
+						.select()
 						.eq("id", user?.id)
 						.single();
 
@@ -37,6 +37,7 @@ async function useGetProfileInfo({user, session}: {user: User | null; session: S
 
 					if (data && data.username) {
 						globalUserState.setUserName(data.username);
+						globalUserState.setIsPublic(data.isAccountPublic);
 					}
 					if (avatarsData) {
 						globalUserState.setAvatar({
