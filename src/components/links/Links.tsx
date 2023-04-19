@@ -12,12 +12,15 @@ import {
 	XMarkIcon
 } from "@heroicons/react/20/solid";
 import { Database } from "@/lib/types";
-import { /* TLink, */ TABS, useLinkGlobalState } from "@/state";
+import { TABS, useLinkGlobalState } from "@/state";
 import { deleteLink, updateLinkInfo, useGetLinks } from "@/hooks";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
 import { Popover, Transition } from "@headlessui/react";
-import { REACTIONS } from "@/utils";
+import { REACTIONS, classNames } from "@/utils";
+
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const no_op = () => { };
 
 function Links() {
 	const supabaseClient = useSupabaseClient<Database>();
@@ -29,8 +32,10 @@ function Links() {
 		update: updateLink,
 		set: setLinks,
 		ownershipFilter,
-		textFilter
+		textFilter,
+		loading
 	} = useLinkGlobalState();
+
 	const dateFormatter = new Intl.DateTimeFormat("pt-PT");
 
 	const ownershipLinksList = ownershipFilter === TABS.ALL ? currentLinks : currentLinks.filter(link => {
@@ -46,6 +51,18 @@ function Links() {
 	const textFilterLinksList = textFilter.length === 0 ?
 		ownershipLinksList :
 		ownershipLinksList.filter(link => link.title.toLowerCase().includes(textFilter));
+
+	if (loading) {
+		return (
+			<div className="w-full flex justify-center">
+				<div
+					className="mt-2 inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]"
+					role="status">
+					<span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<div className="w-full flex justify-center">
@@ -63,6 +80,9 @@ function Links() {
 								});
 							};
 
+							const canDeleteLink = user?.id === link.by || (
+								user?.id !== link.id && link.is_deletable
+							);
 							return (
 								<li key={link.id}>
 									<div className="flex justify-between divide-x divide-gray-150">
@@ -154,17 +174,32 @@ function Links() {
 										</a>
 										<div className="flex flex-col sm:flex-row justify-evenly sm:justify-between divide-y sm:divide-x divide-gray-150 sm:divide-y-0">
 											<div
-												onClick={() => deleteLink({
-													id: link.id,
-													supabaseClient,
-													setLinks,
-													currentUser: user!.id
-												})}
-												className="relative flex-auto cursor-pointer sm:h-full w-16 sm:w-20 grid place-content-center hover:bg-red-200"
+												onClick={() => canDeleteLink ?
+													deleteLink({
+														id: link.id,
+														supabaseClient,
+														setLinks,
+														currentUser: user!.id
+													}) :
+													no_op
+												}
+												className={
+													classNames(
+														"relative flex-auto sm:h-full w-16 sm:w-20 grid place-content-center",
+														canDeleteLink ? "cursor-pointer hover:bg-red-200" : ""
+													)
+												}
 											>
 												<span>
 													<XMarkIcon
-														className="h-8 w-8 sm:h-10 s:w-10 text-red-500"
+														className={
+															classNames(
+																"h-8 w-8 sm:h-10 s:w-10",
+																canDeleteLink ?
+																	"text-red-500" :
+																	"text-gray-400"
+															)
+														}
 														aria-hidden="true"
 													/>
 												</span>

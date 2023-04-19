@@ -1,9 +1,6 @@
 import { TABS, useLinkGlobalState } from "@/state";
+import { classNames } from "@/utils";
 import { useState } from "react";
-
-function classNames(...classes: string[]) {
-	return classes.filter(Boolean).join(" ");
-}
 
 function Tabs() {
 	const { ownershipFilter, setOwnershipFilter } = useLinkGlobalState();

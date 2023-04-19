@@ -16,4 +16,8 @@ function isLink(url: string) {
 	return !!linkRegEx;
 }
 
-export { ONE_MB_SIZE, REACTIONS, isLink };
+function classNames(...classes: string[]) {
+	return classes.filter(Boolean).join(" ");
+}
+
+export { ONE_MB_SIZE, REACTIONS, isLink, classNames };

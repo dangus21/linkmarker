@@ -25,8 +25,8 @@ export type UserState = {
 	password: string;
 	avatar: TAvatar;
 	modified: boolean;
-	isPublic: boolean;
-	setIsPublic: (isPublic: boolean) => void;
+	is_public: boolean;
+	setis_public: (is_public: boolean) => void;
 	setModified: (isModified: boolean) => void;
 	setId: (id: string) => void;
 	setUserName: (id: string) => void;
@@ -70,8 +70,8 @@ const useUserGlobalState = create<UserState>()((set) => ({
 		fileName: ""
 	},
 	modified: false,
-	isPublic: false,
-	setIsPublic: (isPublic) => set(() => ({ isPublic })),
+	is_public: false,
+	setis_public: (is_public) => set(() => ({ is_public })),
 	setId: (id) => set(() => ({ id })),
 	setUserName: (userName) => set(() => ({ userName })),
 	setEmail: (email) => set(() => ({ email })),

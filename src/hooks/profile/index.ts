@@ -1,9 +1,55 @@
-import { Database } from "@/lib/types";
-import { Session, User, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useEffect } from "react";
-import { useUserGlobalState } from "@/state";
 
-async function useGetProfileInfo({user, session}: {user: User | null; session: Session | null}) {
+import { Database } from "@/lib/types";
+import { Session, SupabaseClient, User, useSupabaseClient } from "@supabase/auth-helpers-react";
+import { UserState, useUserGlobalState } from "@/state";
+
+async function updateProfileInfo({
+	userState,
+	supabaseClient
+}: {
+	userState: UserState;
+	supabaseClient: SupabaseClient<Database>;
+}) {
+	try {
+		const updates = {
+			isAccountPublic: userState.is_public,
+			username: userState.userName,
+			updated_at: new Date() as unknown as string
+		};
+
+		const { error } = await supabaseClient
+			.from("profiles")
+			.update(updates)
+			.eq("id", userState.id);
+
+		if (userState.avatar.file) {
+			const { error: avatarError } = await supabaseClient.storage
+				.from("avatars")
+				.upload(`${userState.id}/avatar.jpg`, userState.avatar.file, {
+					cacheControl: "3600",
+					upsert: true
+				});
+			if (avatarError) {
+				console.warn({ avatarError });
+			}
+		}
+
+		if (error) {
+			console.warn({ error });
+		}
+	} catch (error) {
+		console.warn(error);
+	}
+}
+
+async function useGetProfileInfo({
+	user,
+	session
+}: {
+	user: User | null;
+	session: Session | null;
+}) {
 	const supabaseClient = useSupabaseClient<Database>();
 
 	const globalUserState = useUserGlobalState();
@@ -37,7 +83,7 @@ async function useGetProfileInfo({user, session}: {user: User | null; session: S
 
 					if (data && data.username) {
 						globalUserState.setUserName(data.username);
-						globalUserState.setIsPublic(data.isAccountPublic);
+						globalUserState.setis_public(data.isAccountPublic);
 					}
 					if (avatarsData) {
 						globalUserState.setAvatar({
@@ -46,7 +92,7 @@ async function useGetProfileInfo({user, session}: {user: User | null; session: S
 					}
 
 					if ((error && status !== 406) || avatarsError) {
-						console.warn({error});
+						console.warn({ error });
 
 						throw error;
 					}
@@ -62,4 +108,4 @@ async function useGetProfileInfo({user, session}: {user: User | null; session: S
 	}, [user]);
 }
 
-export { useGetProfileInfo };
+export { updateProfileInfo, useGetProfileInfo };

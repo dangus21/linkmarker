@@ -5,14 +5,10 @@ import { useEffect, useState } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 import { Combobox, Switch } from "@headlessui/react";
-import { isLink } from "@/utils";
+import { classNames, isLink } from "@/utils";
 import { useRouter } from "next/router";
 
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
-
-function classNames(...classes: string[]) {
-	return classes.filter(Boolean).join(" ");
-}
 
 function NewLink({ users }: { users: User[] }) {
 	const supabaseClient = useSupabaseClient<Database>();
@@ -21,6 +17,7 @@ function NewLink({ users }: { users: User[] }) {
 
 	const isLinkPublic = globalLinkState.new.is_public;
 	const isLinkShareable = globalLinkState.new.is_shareable;
+	const isLinkDeletable = globalLinkState.new.is_deletable;
 
 	const [, setQuery] = useState("");
 
@@ -104,6 +101,40 @@ function NewLink({ users }: { users: User[] }) {
 									className="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 									placeholder="https://www.tiktok.com/@tiktok"
 								/>
+							</div>
+							<div className="relative">
+								<label
+									htmlFor="name"
+									className="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900"
+								>
+
+								</label>
+								<Switch.Group as="div" className="flex items-center justify-between">
+									<span className="flex flex-grow flex-col">
+										<Switch.Label as="span" className="text-sm font-medium leading-6 text-gray-900" passive>
+											Is this link deletable by others?
+										</Switch.Label>
+									</span>
+									<Switch
+										checked={isLinkDeletable || false}
+										onChange={(checked) => {
+											globalLinkState.create({
+												is_deletable: checked
+											});
+										}} className={classNames(
+											isLinkDeletable ? "bg-indigo-600" : "bg-gray-200",
+											"relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
+										)}
+									>
+										<span
+											aria-hidden="true"
+											className={classNames(
+												isLinkDeletable ? "translate-x-5" : "translate-x-0",
+												"pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"
+											)}
+										/>
+									</Switch>
+								</Switch.Group>
 							</div>
 							<div className="relative">
 								<label

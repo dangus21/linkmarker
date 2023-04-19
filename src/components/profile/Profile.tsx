@@ -2,16 +2,12 @@ import { ChangeEvent } from "react";
 import Image from "next/image";
 
 import { Database } from "@/lib/types";
-import { ONE_MB_SIZE } from "@/utils";
+import { ONE_MB_SIZE, classNames } from "@/utils";
 import { Switch } from "@headlessui/react";
 import { updateProfileInfo } from "@/hooks";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUserGlobalState } from "@/state";
-
-function classNames(...classes: string[]) {
-	return classes.filter(Boolean).join(" ");
-}
 
 function Profile() {
 	const supabaseClient = useSupabaseClient<Database>();
@@ -117,17 +113,17 @@ function Profile() {
 									</Switch.Label>
 								</span>
 								<Switch
-									checked={globalUserState.isPublic || false}
-									onChange={(checked) => globalUserState.setIsPublic(checked)}
+									checked={globalUserState.is_public || false}
+									onChange={(checked) => globalUserState.setis_public(checked)}
 									className={classNames(
-										globalUserState.isPublic ? "bg-indigo-600" : "bg-gray-200",
+										globalUserState.is_public ? "bg-indigo-600" : "bg-gray-200",
 										"relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
 									)}
 								>
 									<span
 										aria-hidden="true"
 										className={classNames(
-											globalUserState.isPublic ? "translate-x-5" : "translate-x-0",
+											globalUserState.is_public ? "translate-x-5" : "translate-x-0",
 											"pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"
 										)}
 									/>
