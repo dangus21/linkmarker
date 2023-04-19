@@ -22,8 +22,8 @@ async function deleteLink({
 		const { data, error } = await supabaseClient
 			.from("links")
 			.select()
-			.or(`shareWith.cs.{${currentUser}},or(isPublic.eq.true),or(by.eq.${currentUser})`)
-			.order("postedDate", { ascending: false });
+			.or(`share_with.cs.{${currentUser}},or(isPublic.eq.true),or(by.eq.${currentUser})`)
+			.order("posted_date", { ascending: false });
 
 		if (data) {
 			setLinks(data);

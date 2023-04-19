@@ -96,7 +96,7 @@ const useLinkGlobalState = create<LinkState>()((set) => ({
 	new: {
 		by: "",
 		title: "",
-		shareWith: []
+		share_with: []
 	},
 	ownershipFilter: TABS.ALL,
 	textFilter: "",

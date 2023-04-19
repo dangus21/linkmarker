@@ -19,8 +19,8 @@ function NewLink({ users }: { users: User[] }) {
 	const globalUserState = useUserGlobalState();
 	const globalLinkState = useLinkGlobalState();
 
-	const isLinkPublic = globalLinkState.new.isPublic;
-	const isLinkShareable = globalLinkState.new.isShareable;
+	const isLinkPublic = globalLinkState.new.is_public;
+	const isLinkShareable = globalLinkState.new.is_shareable;
 
 	const [, setQuery] = useState("");
 
@@ -47,8 +47,8 @@ function NewLink({ users }: { users: User[] }) {
 	const isSubmitButtonDisabled = (
 		!globalLinkState.new.title ||
 		!globalLinkState.new.origin || (
-			globalLinkState.new.isShareable &&
-			globalLinkState.new.shareWith?.length === 0
+			globalLinkState.new.is_shareable &&
+			globalLinkState.new.share_with?.length === 0
 		)
 	);
 
@@ -122,9 +122,9 @@ function NewLink({ users }: { users: User[] }) {
 										checked={isLinkPublic || false}
 										onChange={(checked) => {
 											globalLinkState.create({
-												isPublic: checked,
-												...(checked && { shareWith: [] }),
-												...(checked && { isShareable: false })
+												is_public: checked,
+												...(checked && { share_with: [] }),
+												...(checked && { is_shareable: false })
 											});
 										}} className={classNames(
 											isLinkPublic ? "bg-indigo-600" : "bg-gray-200",
@@ -142,7 +142,7 @@ function NewLink({ users }: { users: User[] }) {
 								</Switch.Group>
 							</div>
 							{
-								!globalLinkState.new.isPublic &&
+								!globalLinkState.new.is_public &&
 								<div className="relative">
 									<Switch.Group as="div" className="flex items-center justify-between">
 										<span className="flex flex-grow flex-col">
@@ -154,8 +154,8 @@ function NewLink({ users }: { users: User[] }) {
 											checked={isLinkShareable || false}
 											onChange={(checked) => {
 												globalLinkState.create({
-													isShareable: checked,
-													...(!checked && { shareWith: [] })
+													is_shareable: checked,
+													...(!checked && { share_with: [] })
 												});
 											}}
 											className={classNames(
@@ -179,10 +179,10 @@ function NewLink({ users }: { users: User[] }) {
 									<div className="relative">
 										<Combobox
 											as="div"
-											value={globalLinkState.new.shareWith || []}
+											value={globalLinkState.new.share_with || []}
 											onChange={(checked) => {
 												globalLinkState.create({
-													shareWith: checked
+													share_with: checked
 												});
 											}}
 											multiple

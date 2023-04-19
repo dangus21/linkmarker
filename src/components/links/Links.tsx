@@ -38,7 +38,7 @@ function Links() {
 			return link.by === user?.id;
 		}
 		if (ownershipFilter === TABS.PRIVATE) {
-			return !link.isPublic;
+			return !link.is_public;
 		}
 		return;
 	});
@@ -80,7 +80,7 @@ function Links() {
 													</p>
 													<span className="inline-flex items-center text-xs">
 														{
-															link.isPublic ?
+															link.is_public ?
 																<><EyeIcon className="h-3.5 flex-shrink-0 text-gray-400 mr-1" /> Public</> :
 																<><EyeSlashIcon className="h-3.5 flex-shrink-0 text-gray-400 mr-1" /> Private</>
 														}
@@ -137,13 +137,13 @@ function Links() {
 													<p>
 														<time
 															dateTime={(
-																link.postedDate ??
+																link.posted_date ??
 																""
 															).toString()}
 														>
 															{dateFormatter.format(
 																new Date(
-																	link.postedDate ??
+																	link.posted_date ??
 																	""
 																)
 															)}

@@ -15,8 +15,8 @@ async function useGetLinks() {
 			const { data, error } = await supabaseClient
 				.from("links")
 				.select()
-				.or(`shareWith.cs.{${currentUser!.id}},or(isPublic.eq.true),or(by.eq.${currentUser!.id})`)
-				.order("postedDate", { ascending: false });
+				.or(`share_with.cs.{${currentUser!.id}},or(isPublic.eq.true),or(by.eq.${currentUser!.id})`)
+				.order("posted_date", { ascending: false });
 
 			if (error) {
 				console.warn({ error });

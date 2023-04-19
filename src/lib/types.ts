@@ -13,41 +13,44 @@ export interface Database {
         Row: {
           by: string
           id: string
-          isPublic: boolean
-          isShareable: boolean
+          is_deletable: boolean | null
+          is_public: boolean
+          is_shareable: boolean
           opened: boolean | null
           origin: string | null
-          postedDate: string | null
+          posted_date: string | null
           reaction: string | null
-          shareWith: string[] | null
+          share_with: string[]
           title: string
           url: string | null
           who: string | null
         }
         Insert: {
-          by: string
+          by?: string
           id?: string
-          isPublic?: boolean
-          isShareable?: boolean
+          is_deletable?: boolean | null
+          is_public?: boolean
+          is_shareable?: boolean
           opened?: boolean | null
           origin?: string | null
-          postedDate?: string | null
+          posted_date?: string | null
           reaction?: string | null
-          shareWith?: string[] | null
-          title: string
+          share_with: string[]
+          title?: string
           url?: string | null
           who?: string | null
         }
         Update: {
           by?: string
           id?: string
-          isPublic?: boolean
-          isShareable?: boolean
+          is_deletable?: boolean | null
+          is_public?: boolean
+          is_shareable?: boolean
           opened?: boolean | null
           origin?: string | null
-          postedDate?: string | null
+          posted_date?: string | null
           reaction?: string | null
-          shareWith?: string[] | null
+          share_with?: string[]
           title?: string
           url?: string | null
           who?: string | null
@@ -55,7 +58,6 @@ export interface Database {
       }
       profiles: {
         Row: {
-          avatar_url: string | null
           full_name: string | null
           id: string
           isAccountPublic: boolean
@@ -63,7 +65,6 @@ export interface Database {
           username: string | null
         }
         Insert: {
-          avatar_url?: string | null
           full_name?: string | null
           id?: string
           isAccountPublic?: boolean
@@ -71,7 +72,6 @@ export interface Database {
           username?: string | null
         }
         Update: {
-          avatar_url?: string | null
           full_name?: string | null
           id?: string
           isAccountPublic?: boolean

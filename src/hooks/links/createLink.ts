@@ -18,8 +18,8 @@ async function createLink({
 		who: userState.userName,
 		url,
 		by: userState.id,
-		isPublic: link.isPublic || false,
-		shareWith: (link.shareWith || []).map((user) => (user as unknown as User)?.id),
+		is_public: link.is_public || false,
+		share_with: (link.share_with || []).map((user) => (user as unknown as User)?.id),
 		origin: ""
 	} satisfies LinkState["new"];
 
