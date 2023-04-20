@@ -109,7 +109,7 @@ function Profile() {
 							<Switch.Group as="div" className="flex items-center justify-between">
 								<span className="flex flex-grow flex-col">
 									<Switch.Label as="span" className="text-sm font-medium leading-6 text-gray-900" passive>
-											Is this link public?
+											Should your profile be public?
 									</Switch.Label>
 								</span>
 								<Switch
