@@ -10,6 +10,7 @@ function Tabs() {
 	const tabs = [
 		{ id: TABS.ALL, name: "All" },
 		{ id: TABS.MINE, name: "Mine" },
+		{ id: TABS.SHARED, name: "Shared" },
 		{ id: TABS.PRIVATE, name: "Private" }
 	];
 

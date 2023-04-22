@@ -41,8 +41,9 @@ function Links() {
 	const ownershipLinksList = ownershipFilter === TABS.ALL ? currentLinks : currentLinks.filter(link => {
 		if (ownershipFilter === TABS.MINE) {
 			return link.by === user?.id;
-		}
-		if (ownershipFilter === TABS.PRIVATE) {
+		} else if (ownershipFilter === TABS.SHARED) {
+			return link.share_with.length > 0;
+		} else if (ownershipFilter === TABS.PRIVATE) {
 			return !link.is_public;
 		}
 		return;

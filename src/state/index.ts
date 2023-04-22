@@ -37,6 +37,7 @@ export type UserState = {
 export enum TABS {
 	ALL,
 	MINE,
+	SHARED,
 	PRIVATE
 }
 
