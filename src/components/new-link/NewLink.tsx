@@ -63,7 +63,7 @@ function NewLink({ users }: { users: User[] }) {
 							<div className="relative">
 								<label
 									htmlFor="name"
-									className="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900"
+									className="absolute -top-6 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900"
 								>
 									Title
 								</label>
@@ -84,7 +84,7 @@ function NewLink({ users }: { users: User[] }) {
 							<div className="relative">
 								<label
 									htmlFor="name"
-									className="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900"
+									className="absolute -top-6 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900"
 								>
 									Url
 								</label>
@@ -286,7 +286,7 @@ function NewLink({ users }: { users: User[] }) {
 								type="submit"
 								className={classNames("flex w-full justify-center rounded-md  py-2 px-3 text-sm font-semibold text-white shadow-sm", !isSubmitButtonDisabled ? "bg-indigo-600 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" : "bg-neutral-300")}
 							>
-								Submit
+								Mark Link
 							</button>
 						</div>
 
