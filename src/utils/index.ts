@@ -20,4 +20,6 @@ function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(" ");
 }
 
-export { ONE_MB_SIZE, REACTIONS, isLink, classNames };
+const dateFormatter = new Intl.DateTimeFormat("pt-PT");
+
+export { ONE_MB_SIZE, REACTIONS, isLink, classNames, dateFormatter };

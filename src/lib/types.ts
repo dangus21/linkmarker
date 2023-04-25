@@ -13,47 +13,47 @@ export interface Database {
         Row: {
           by: string
           id: string
-          is_deletable: boolean | null
+          is_deletable: boolean
           is_public: boolean
           is_shareable: boolean
-          opened: boolean | null
-          origin: string | null
-          posted_date: string | null
+          opened: boolean
+          origin: string
+          posted_date: string
           reaction: string | null
           share_with: string[]
           title: string
-          url: string | null
-          who: string | null
+          url: string
+          who: string
         }
         Insert: {
           by?: string
           id?: string
-          is_deletable?: boolean | null
+          is_deletable?: boolean
           is_public?: boolean
           is_shareable?: boolean
-          opened?: boolean | null
-          origin?: string | null
-          posted_date?: string | null
+          opened?: boolean
+          origin?: string
+          posted_date?: string
           reaction?: string | null
           share_with: string[]
           title?: string
-          url?: string | null
-          who?: string | null
+          url?: string
+          who?: string
         }
         Update: {
           by?: string
           id?: string
-          is_deletable?: boolean | null
+          is_deletable?: boolean
           is_public?: boolean
           is_shareable?: boolean
-          opened?: boolean | null
-          origin?: string | null
-          posted_date?: string | null
+          opened?: boolean
+          origin?: string
+          posted_date?: string
           reaction?: string | null
           share_with?: string[]
           title?: string
-          url?: string | null
-          who?: string | null
+          url?: string
+          who?: string
         }
       }
       profiles: {

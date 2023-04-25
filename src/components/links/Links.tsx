@@ -1,26 +1,21 @@
-import { Fragment } from "react";
-
 import {
-	CalendarIcon,
-	CheckCircleIcon,
-	EyeIcon,
-	EyeSlashIcon,
-	FaceSmileIcon,
 	MapPinIcon,
-	UsersIcon,
-	XCircleIcon,
-	XMarkIcon
+	UsersIcon
 } from "@heroicons/react/20/solid";
+
 import { Database } from "@/lib/types";
 import { TABS, useLinkGlobalState } from "@/state";
-import { deleteLink, updateLinkInfo, useGetLinks } from "@/hooks";
+import { updateLinkInfo, useGetLinks } from "@/hooks";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
-import { Popover, Transition } from "@headlessui/react";
-import { REACTIONS, classNames } from "@/utils";
-
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const no_op = () => { };
+import {
+	LinkDate,
+	LinkDelete,
+	LinkOpenedStatus,
+	LinkReactions,
+	LinkTitle
+} from "./parts";
+import { REACTIONS } from "@/utils";
 
 function Links() {
 	const supabaseClient = useSupabaseClient<Database>();
@@ -30,13 +25,10 @@ function Links() {
 	const {
 		values: currentLinks,
 		update: updateLink,
-		set: setLinks,
 		ownershipFilter,
 		textFilter,
 		loading
 	} = useLinkGlobalState();
-
-	const dateFormatter = new Intl.DateTimeFormat("pt-PT");
 
 	const ownershipLinksList = ownershipFilter === TABS.ALL ? currentLinks : currentLinks.filter(link => {
 		if (ownershipFilter === TABS.MINE) {
@@ -84,6 +76,7 @@ function Links() {
 							const canDeleteLink = user?.id === link.by || (
 								user?.id !== link.id && link.is_deletable
 							);
+
 							return (
 								<li key={link.id}>
 									<div className="flex justify-between divide-x divide-gray-150">
@@ -92,42 +85,17 @@ function Links() {
 											href={link.url!}
 											onClick={openLinkFn}
 											onAuxClick={openLinkFn}
-											className="px-4 py-4 sm:px-6 w-full hover:bg-gray-100 cursor-pointer"
+											className="px-2 py-2 sm:px-6 w-full hover:bg-gray-100 cursor-pointer"
 										>
 											<div className="flex flex-col sm:flex-row sm:items-center justify-between">
-												<div className="max-w-auto sm:max-w-full">
-													<p className="text-sm font-medium text-indigo-600">
-														{link.title}
-													</p>
-													<span className="inline-flex items-center text-xs">
-														{
-															link.is_public ?
-																<><EyeIcon className="h-3.5 flex-shrink-0 text-gray-400 mr-1" /> Public</> :
-																<><EyeSlashIcon className="h-3.5 flex-shrink-0 text-gray-400 mr-1" /> Private</>
-														}
-													</span>
-												</div>
-												<p className="flex items-center">
-													{link.opened ? (
-														<>
-															<span className="whitespace-nowrap">
-																Opened
-															</span>
-															<span className="ml-3">
-																<CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
-															</span>
-														</>
-													) : (
-														<>
-															<span className="whitespace-nowrap">
-																Not Open
-															</span>
-															<span className="ml-3">
-																<XCircleIcon className="h-5 w-5 flex-shrink-0 self-center text-red-500" />
-															</span>
-														</>
-													)}
-												</p>
+												<LinkTitle
+													isPublic={link.is_public}
+													shareWith={link.share_with}
+													title={link.title}
+												/>
+												<LinkOpenedStatus
+													opened={link.opened}
+												/>
 											</div>
 											<div className="mt-2 flex flex-col sm:flex-row justify-between">
 												<div className="flex flex-col sm:flex-row">
@@ -150,133 +118,23 @@ function Links() {
 														</p>
 													</div>
 												</div>
-												<div className="flex items-center text-sm text-gray-500">
-													<CalendarIcon
-														className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-														aria-hidden="true"
-													/>
-													<p>
-														<time
-															dateTime={(
-																link.posted_date ??
-																""
-															).toString()}
-														>
-															{dateFormatter.format(
-																new Date(
-																	link.posted_date ??
-																	""
-																)
-															)}
-														</time>
-													</p>
-												</div>
+												<LinkDate
+													postedDate={link.posted_date}
+												/>
 											</div>
 										</a>
 										<div className="flex flex-col sm:flex-row justify-evenly sm:justify-between divide-y sm:divide-x divide-gray-150 sm:divide-y-0">
-											<div
-												onClick={() => canDeleteLink ?
-													deleteLink({
-														id: link.id,
-														supabaseClient,
-														setLinks,
-														currentUser: user!.id
-													}) :
-													no_op
-												}
-												className={
-													classNames(
-														"relative flex-auto sm:h-full w-16 sm:w-20 grid place-content-center",
-														canDeleteLink ? "cursor-pointer hover:bg-red-200" : ""
-													)
-												}
-											>
-												<span>
-													<XMarkIcon
-														className={
-															classNames(
-																"h-8 w-8 sm:h-10 s:w-10",
-																canDeleteLink ?
-																	"text-red-500" :
-																	"text-gray-400"
-															)
-														}
-														aria-hidden="true"
-													/>
-												</span>
-											</div>
-											<Popover className="relative h-1/2 sm:h-auto">
-												<Popover.Button className="h-full w-16 sm:w-20 hover:bg-gray-100">
-													{link.reaction &&
-														localReaction ? (
-															<span className="text-xl sm:text-2xl">
-																{localReaction}
-															</span>
-														) : (
-															<span className="grid place-items-center">
-																<FaceSmileIcon
-																	className="h-8 w-8 sm:h-10 s:w-10 text-gray-300"
-																	aria-hidden="true"
-																/>
-															</span>
-														)}
-												</Popover.Button>
-												<Transition
-													as={Fragment}
-													enter="transition ease-out duration-200"
-													enterFrom="opacity-0 translate-y-1"
-													enterTo="opacity-100 translate-y-0"
-													leave="transition ease-in duration-150"
-													leaveFrom="opacity-100 translate-y-0"
-													leaveTo="opacity-0 translate-y-1"
-												>
-													<Popover.Panel className="absolute -right-[100%] sm:right-1/2 z-10 flex max-w-[18rem] -translate-x-1/2 sm:-translate-x-1/4 px-4">
-														{({ close }) => (
-															<div className="w-auto flex-auto rounded bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 flex flex-row">
-																{Object.entries(
-																	REACTIONS
-																).map(
-																	([
-																		key,
-																		icon
-																	]) => (
-																		<div
-																			onClick={() => {
-																				updateLinkInfo(
-																					{
-																						link: {
-																							reaction:
-																								key
-																						},
-																						id: link.id,
-																						supabaseClient,
-																						updateLink
-																					}
-																				);
-																				close();
-																			}}
-																			key={
-																				key
-																			}
-																			className={`cursor-pointer text-center relative hover:bg-gray-200/90 ${link.reaction ===
-																				key &&
-																				"bg-neutral-100"
-																			}`}
-																		>
-																			<p className="font-semibold text-gray-900 text-lg sm:text-2xl p-3">
-																				{
-																					icon
-																				}
-																				<span className="absolute inset-0" />
-																			</p>
-																		</div>
-																	)
-																)}
-															</div>
-														)}
-													</Popover.Panel>
-												</Transition>
-											</Popover>
+											<LinkDelete
+												canDeleteLink={canDeleteLink}
+												linkId={link.id}
+												userId={user!.id}
+												supabaseClient={supabaseClient}
+											/>
+											<LinkReactions
+												link={link}
+												reaction={localReaction}
+												supabaseClient={supabaseClient}
+											/>
 										</div>
 									</div>
 								</li>

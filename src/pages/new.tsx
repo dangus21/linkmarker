@@ -16,7 +16,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 	const users = supa.from("profiles").select("username, id");
 	return {
 		props: {
-			users: process.env.NODE_ENV === "development" ?
+			users: process.env.NODE_ENV === "production" ?
 				((await users).data ?? []).filter(user => user.id !== "6550a93e-69c4-45ae-870e-c45f47586ceb") :
 				(await users).data
 		}
