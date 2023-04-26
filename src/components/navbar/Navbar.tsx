@@ -6,6 +6,7 @@ import { PlusIcon } from "@heroicons/react/20/solid";
 import { Disclosure, Popover, Transition } from "@headlessui/react";
 
 import { Database } from "@/lib/types";
+import { Filter } from "../filter";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUserGlobalState } from "@/state";
@@ -30,16 +31,22 @@ function Navbar() {
 
 	return (
 		<Disclosure as="nav" className="bg-gray-800 sticky top-0 z-20">
-			<div className="px-8 mx-auto max-w-7xl lg:px-8">
+			<div className="px-4 sm:px-8 mx-auto max-w-7xl lg:px-8">
 				<div className="flex h-16 justify-between">
 					<div className="flex flex-row">
-						<div className="flex mr-5" onClick={() => push("/")}>
-							<div className="flex items-center space-x-4">
-								<p className="text-white italic font-bold text-lg cursor-pointer">
+						<div className="flex mr-4" onClick={() => push("/")}>
+							<div className="flex items-center">
+								<p className="hidden sm:block text-white italic font-bold text-lg cursor-pointer">
 									LinkMarker
+								</p>
+								<p className="sm:hidden text-white italic font-bold text-lg cursor-pointer">
+									LM
 								</p>
 							</div>
 						</div>
+					</div>
+					<div className="flex items-center">
+						<Filter />
 					</div>
 					<div className="flex items-center">
 						<div className="flex-shrink-0">
@@ -56,20 +63,6 @@ function Navbar() {
 							</button>
 						</div>
 						<div className="flex flex-shrink-0 items-center">
-							{/* TODO
-							<button
-								type="button"
-								className="rounded-full bg-gray-800 mx-5 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-							>
-								<span className="sr-only">
-									View notifications
-								</span>
-								<BellIcon
-									className="h-6 w-6"
-									aria-hidden="true"
-								/>
-							</button> */}
-
 							<Popover className="relative">
 								<Popover.Button className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
 									<div className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">

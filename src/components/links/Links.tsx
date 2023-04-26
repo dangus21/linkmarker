@@ -43,7 +43,17 @@ function Links() {
 
 	const textFilterLinksList = textFilter.length === 0 ?
 		ownershipLinksList :
-		ownershipLinksList.filter(link => link.title.toLowerCase().includes(textFilter));
+		ownershipLinksList.filter(link => {
+			return link.title
+				.toLowerCase()
+				.normalize("NFD")
+				.replace(/\p{Diacritic}/gu, "")
+				.includes(
+					textFilter
+						.normalize("NFD")
+						.replace(/\p{Diacritic}/gu, "")
+				);
+		});
 
 	if (loading) {
 		return (
@@ -60,7 +70,7 @@ function Links() {
 	return (
 		<div className="w-full flex justify-center">
 			{textFilterLinksList.length > 0 ? (
-				<div className="my-6 sm:mx-10 sm:max-w-7xl border border-b-gray-300 bg-white sm:shadow sm:rounded-md w-full">
+				<div className="sm:mx-10 sm:max-w-7xl border border-b-gray-300 bg-white sm:shadow sm:rounded-md w-full">
 					<ul role="list" className="divide-y divide-gray-200">
 						{textFilterLinksList.map((link) => {
 							const localReaction = REACTIONS[link.reaction as keyof typeof REACTIONS];

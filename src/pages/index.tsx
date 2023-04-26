@@ -9,7 +9,6 @@ import {
 import { useGetProfileInfo } from "@/hooks";
 
 import { Database } from "@/lib/types";
-import { Filter } from "@/components/filter";
 import { Links, Navbar } from "@/components";
 import {Tabs} from "@/components/tabs";
 import Head from "next/head";
@@ -41,7 +40,6 @@ function Main() {
 					<>
 						<Navbar />
 						<Tabs />
-						<Filter />
 						<Links />
 					</>
 				)}
