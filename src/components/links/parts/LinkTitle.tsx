@@ -16,10 +16,10 @@ function LinkTitle(
 
 	return (
 		<div className="max-w-auto sm:max-w-full">
-			<p className="text-sm font-medium text-indigo-600">
+			<p className="text-sm font-medium text-gray-300">
 				{title}
 			</p>
-			<span className="inline-flex items-center text-xs">
+			<span className="inline-flex items-center text-xs text-gray-500">
 				<VisibilityIcon className="h-3.5 flex-shrink-0 text-gray-400 mr-1" />
 				{isPublic ? "Public" : "Private"}
 				{shareWith.length > 0 && "/Shared"}

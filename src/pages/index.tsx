@@ -20,11 +20,11 @@ function Main() {
 	useGetProfileInfo({user, session});
 
 	return (
-		<>
+		<div className="bg-gray-900 min-h-screen">
 			<Head>
 				<title>Linkmarker</title>
 			</Head>
-			<div>
+			<>
 				{!session || !user ? (
 					<div
 						className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900 [&>div]:w-96"
@@ -43,8 +43,8 @@ function Main() {
 						<Links />
 					</>
 				)}
-			</div>
-		</>
+			</>
+		</div>
 	);
 }
 

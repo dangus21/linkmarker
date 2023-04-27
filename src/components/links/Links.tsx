@@ -57,9 +57,9 @@ function Links() {
 
 	if (loading) {
 		return (
-			<div className="w-full flex justify-center">
+			<div className="w-full h-screen flex justify-center">
 				<div
-					className="mt-2 inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]"
+					className="text-white mt-14 inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
 					role="status">
 					<span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
 				</div>
@@ -70,8 +70,8 @@ function Links() {
 	return (
 		<div className="w-full flex justify-center">
 			{textFilterLinksList.length > 0 ? (
-				<div className="sm:mx-10 sm:max-w-7xl border border-b-gray-300 bg-white sm:shadow sm:rounded-md w-full">
-					<ul role="list" className="divide-y divide-gray-200">
+				<div className="sm:mx-10 sm:max-w-7xl border-2 border-black border- sm:shadow sm:rounded-md w-full">
+					<ul role="list" className="divide-y-2 divide-black">
 						{textFilterLinksList.map((link) => {
 							const localReaction = REACTIONS[link.reaction as keyof typeof REACTIONS];
 							function openLinkFn() {
@@ -89,13 +89,13 @@ function Links() {
 
 							return (
 								<li key={link.id}>
-									<div className="flex justify-between divide-x divide-gray-150">
+									<div className="flex justify-between divide-x-2 divide-black">
 										<a
 											target="_blank"
 											href={link.url!}
 											onClick={openLinkFn}
 											onAuxClick={openLinkFn}
-											className="px-2 py-2 sm:px-6 w-full hover:bg-gray-100 cursor-pointer"
+											className="px-2 py-2 sm:px-6 w-full hover:bg-gray-800 cursor-pointer"
 										>
 											<div className="flex flex-col sm:flex-row sm:items-center justify-between">
 												<LinkTitle
@@ -133,7 +133,7 @@ function Links() {
 												/>
 											</div>
 										</a>
-										<div className="flex flex-col sm:flex-row justify-evenly sm:justify-between divide-y sm:divide-x divide-gray-150 sm:divide-y-0">
+										<div className="flex flex-col sm:flex-row justify-evenly sm:justify-between divide-y sm:divide-x-2 divide-black sm:divide-y-0">
 											<LinkDelete
 												canDeleteLink={canDeleteLink}
 												linkId={link.id}

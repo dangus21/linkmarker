@@ -39,7 +39,7 @@ function LinkDelete(
 			className={
 				classNames(
 					"relative flex-auto sm:h-full w-16 sm:w-20 grid place-content-center",
-					canDeleteLink ? "cursor-pointer hover:bg-red-200" : ""
+					canDeleteLink ? "cursor-pointer hover:bg-red-900/20" : ""
 				)
 			}
 		>

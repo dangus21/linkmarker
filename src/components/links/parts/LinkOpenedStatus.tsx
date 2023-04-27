@@ -15,7 +15,7 @@ function LinkOpenedStatus(
 		<p className="flex items-center">
 			{opened ? (
 				<>
-					<span className="whitespace-nowrap">
+					<span className="whitespace-nowrap text-gray-500">
 						Opened
 					</span>
 					<span className="ml-3">
@@ -24,7 +24,7 @@ function LinkOpenedStatus(
 				</>
 			) : (
 				<>
-					<span className="whitespace-nowrap">
+					<span className="whitespace-nowrap text-gray-500">
 						Not Opened
 					</span>
 					<span className="ml-3">

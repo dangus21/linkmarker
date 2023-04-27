@@ -57,13 +57,13 @@ function NewLink({ users }: { users: User[] }) {
 				</h2>
 			</div>
 			<div className="mt-6 mx-auto w-full max-w-md">
-				<div className="bg-white px-10 py-4 sm:shadow sm:rounded-lg">
+				<div className="bg-gray-800 px-10 py-4 sm:shadow sm:rounded-lg">
 					<div className="py-6">
 						<div className="grid gap-10">
 							<div className="relative">
 								<label
 									htmlFor="name"
-									className="absolute -top-6 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900"
+									className="absolute -top-6 left-2 inline-block px-1 text-xs font-medium text-gray-300"
 								>
 									Title
 								</label>
@@ -77,14 +77,14 @@ function NewLink({ users }: { users: User[] }) {
 									type="text"
 									name="name"
 									id="name"
-									className="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="bg-gray-900 block w-full rounded-md border-0 py-1.5 pl-4 text-gray-100 ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6 focus-visible:outline focus-visible:outline-1 focus-visible:outline-black"
 									placeholder="How the link will display"
 								/>
 							</div>
 							<div className="relative">
 								<label
 									htmlFor="name"
-									className="absolute -top-6 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900"
+									className="absolute -top-6 left-2 inline-block px-1 text-xs font-medium text-gray-300"
 								>
 									Url
 								</label>
@@ -98,20 +98,14 @@ function NewLink({ users }: { users: User[] }) {
 									type="text"
 									name="name"
 									id="name"
-									className="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+									className="bg-gray-900 block w-full rounded-md border-0 py-1.5 pl-4 text-gray-100 ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6 focus-visible:outline focus-visible:outline-1 focus-visible:outline-black"
 									placeholder="https://www.tiktok.com/@tiktok"
 								/>
 							</div>
 							<div className="relative">
-								<label
-									htmlFor="name"
-									className="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900"
-								>
-
-								</label>
 								<Switch.Group as="div" className="flex items-center justify-between">
 									<span className="flex flex-grow flex-col">
-										<Switch.Label as="span" className="text-sm font-medium leading-6 text-gray-900" passive>
+										<Switch.Label as="span" className="text-sm font-medium leading-6 text-gray-300" passive>
 											Is this link deletable by others?
 										</Switch.Label>
 									</span>
@@ -122,7 +116,7 @@ function NewLink({ users }: { users: User[] }) {
 												is_deletable: checked
 											});
 										}} className={classNames(
-											isLinkDeletable ? "bg-indigo-600" : "bg-gray-200",
+											isLinkDeletable ? "bg-indigo-800" : "bg-gray-700",
 											"relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
 										)}
 									>
@@ -130,22 +124,16 @@ function NewLink({ users }: { users: User[] }) {
 											aria-hidden="true"
 											className={classNames(
 												isLinkDeletable ? "translate-x-5" : "translate-x-0",
-												"pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"
+												"pointer-events-none inline-block h-5 w-5 transform rounded-full bg-indigo-100 shadow ring-0 transition duration-200 ease-in-out"
 											)}
 										/>
 									</Switch>
 								</Switch.Group>
 							</div>
 							<div className="relative">
-								<label
-									htmlFor="name"
-									className="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900"
-								>
-
-								</label>
 								<Switch.Group as="div" className="flex items-center justify-between">
 									<span className="flex flex-grow flex-col">
-										<Switch.Label as="span" className="text-sm font-medium leading-6 text-gray-900" passive>
+										<Switch.Label as="span" className="text-sm font-medium leading-6 text-gray-300" passive>
 											Is this link public?
 										</Switch.Label>
 									</span>
@@ -158,7 +146,7 @@ function NewLink({ users }: { users: User[] }) {
 												...(checked && { is_shareable: false })
 											});
 										}} className={classNames(
-											isLinkPublic ? "bg-indigo-600" : "bg-gray-200",
+											isLinkPublic ? "bg-indigo-800" : "bg-gray-700",
 											"relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
 										)}
 									>
@@ -166,7 +154,7 @@ function NewLink({ users }: { users: User[] }) {
 											aria-hidden="true"
 											className={classNames(
 												isLinkPublic ? "translate-x-5" : "translate-x-0",
-												"pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"
+												"pointer-events-none inline-block h-5 w-5 transform rounded-full bg-indigo-100 shadow ring-0 transition duration-200 ease-in-out"
 											)}
 										/>
 									</Switch>
@@ -177,7 +165,7 @@ function NewLink({ users }: { users: User[] }) {
 								<div className="relative">
 									<Switch.Group as="div" className="flex items-center justify-between">
 										<span className="flex flex-grow flex-col">
-											<Switch.Label as="span" className="text-sm font-medium leading-6 text-gray-900" passive>
+											<Switch.Label as="span" className="text-sm font-medium leading-6 text-gray-300" passive>
 												Is this link shareable?
 											</Switch.Label>
 										</span>
@@ -190,7 +178,7 @@ function NewLink({ users }: { users: User[] }) {
 												});
 											}}
 											className={classNames(
-												isLinkShareable ? "bg-indigo-600" : "bg-gray-200",
+												isLinkShareable ? "bg-indigo-800" : "bg-gray-700",
 												"relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
 											)}
 										>
@@ -198,7 +186,7 @@ function NewLink({ users }: { users: User[] }) {
 												aria-hidden="true"
 												className={classNames(
 													isLinkShareable ? "translate-x-5" : "translate-x-0",
-													"pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"
+													"pointer-events-none inline-block h-5 w-5 transform rounded-full bg-indigo-100 shadow ring-0 transition duration-200 ease-in-out"
 												)}
 											/>
 										</Switch>
@@ -218,10 +206,10 @@ function NewLink({ users }: { users: User[] }) {
 											}}
 											multiple
 										>
-											<Combobox.Label className="block text-sm font-medium leading-6 text-gray-900">To whom?</Combobox.Label>
+											<Combobox.Label className="block text-sm font-medium leading-6 text-gray-300">To whom?</Combobox.Label>
 											<div className="relative mt-2">
 												<Combobox.Input
-													className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+													className="bg-gray-900 block w-full rounded-md border-0 py-1.5 pl-4 text-gray-900 ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6 focus-visible:outline focus-visible:outline-1 focus-visible:outline-black"
 													onChange={(event) => setQuery(event.target.value)}
 													displayValue={(person: Record<string, string>[]) => {
 														return person.map(user => user?.username).join(", ");
@@ -284,7 +272,11 @@ function NewLink({ users }: { users: User[] }) {
 									})
 								}
 								type="submit"
-								className={classNames("flex w-full justify-center rounded-md  py-2 px-3 text-sm font-semibold text-white shadow-sm", !isSubmitButtonDisabled ? "bg-indigo-600 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" : "bg-neutral-300")}
+								className={classNames(
+									"flex w-full justify-center rounded-md  py-2 px-3 text-sm font-semibold shadow-sm",
+									!isSubmitButtonDisabled ? "bg-gray-900 hover:bg-gray-900/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900/hover:bg-gray-900/70 text-white" :
+										"bg-gray-900/30 text-gray-700"
+								)}
 							>
 								Mark Link
 							</button>

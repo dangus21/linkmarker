@@ -3,7 +3,7 @@ import { Popover, Transition } from "@headlessui/react";
 
 import { Database } from "@/lib/types";
 import { FaceSmileIcon } from "@heroicons/react/20/solid";
-import { REACTIONS } from "@/utils";
+import { REACTIONS, classNames } from "@/utils";
 import { SupabaseClient } from "@supabase/auth-helpers-react";
 import { TLink, useLinkGlobalState } from "@/state";
 import { updateLinkInfo } from "@/hooks";
@@ -24,7 +24,7 @@ function LinkReactions(
 
 	return (
 		<Popover className="relative h-1/2 sm:h-auto">
-			<Popover.Button className="h-full w-16 sm:w-20 hover:bg-gray-100">
+			<Popover.Button className="h-full w-16 sm:w-20 hover:bg-gray-800">
 				{link.reaction &&
 					reaction ? (
 						<span className="text-xl sm:text-2xl">
@@ -33,7 +33,7 @@ function LinkReactions(
 					) : (
 						<span className="grid place-items-center">
 							<FaceSmileIcon
-								className="h-8 w-8 sm:h-10 s:w-10 text-gray-300"
+								className="h-8 w-8 sm:h-10 s:w-10 text-gray-600"
 								aria-hidden="true"
 							/>
 						</span>
@@ -50,7 +50,7 @@ function LinkReactions(
 			>
 				<Popover.Panel className="absolute -right-[100%] sm:right-1/2 z-10 flex max-w-[18rem] -translate-x-1/2 sm:-translate-x-1/4 px-4">
 					{({ close }) => (
-						<div className="w-auto flex-auto rounded bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 flex flex-row">
+						<div className="w-auto flex-auto rounded bg-gray-700 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 flex flex-row">
 							{Object.entries(
 								REACTIONS
 							).map(
@@ -76,10 +76,10 @@ function LinkReactions(
 										key={
 											key
 										}
-										className={`cursor-pointer text-center relative hover:bg-gray-200/90 ${link.reaction ===
-											key &&
-											"bg-neutral-100"
-										}`}
+										className={classNames(
+											"cursor-pointer text-center relative hover:bg-gray-600",
+											link.reaction === key ? "bg-gray-800" : ""
+										)}
 									>
 										<p className="font-semibold text-gray-900 text-lg sm:text-2xl p-3">
 											{
