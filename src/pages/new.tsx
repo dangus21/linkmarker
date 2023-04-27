@@ -1,15 +1,10 @@
-import { Auth } from "@supabase/auth-ui-react";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
-import { useSession, useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
-
-import { useGetProfileInfo } from "@/hooks";
 
 import { Database } from "@/lib/types";
 import { GetServerSidePropsContext } from "next";
 import { Navbar, NewLink } from "@/components";
 import { User } from "@/state";
 import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
-import Head from "next/head";
+import SupaAuth from "@/components/supa_auth";
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 	const supa = createServerSupabaseClient<Database>(ctx);
@@ -24,38 +19,11 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 }
 
 function NewPage({ users }: { users: User[] }) {
-	const supabaseClient = useSupabaseClient<Database>();
-	const session = useSession();
-	const user = useUser();
-
-	useGetProfileInfo({ user, session });
-
 	return (
-		<div className="bg-gray-900 h-screen">
-			<Head>
-				<title>Linkmarker - New link</title>
-			</Head>
-			<div>
-				{!session || !user ? (
-					<div
-						className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900 [&>div]:w-96"
-						style={{ padding: "50px 0 100px 0" }}
-					>
-						<Auth
-							supabaseClient={supabaseClient}
-							appearance={{ theme: ThemeSupa }}
-							theme="dark"
-							providers={["google"]}
-						/>
-					</div>
-				) : (
-					<>
-						<Navbar />
-						<NewLink users={users} />
-					</>
-				)}
-			</div>
-		</div>
+		<SupaAuth>
+			<Navbar />
+			<NewLink users={users} />
+		</SupaAuth>
 	);
 }
 
