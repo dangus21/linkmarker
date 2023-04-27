@@ -31,7 +31,7 @@ function NewPage({ users }: { users: User[] }) {
 	useGetProfileInfo({ user, session });
 
 	return (
-		<div  className="bg-gray-900 h-screen">
+		<div className="bg-gray-900 h-screen">
 			<Head>
 				<title>Linkmarker - New link</title>
 			</Head>

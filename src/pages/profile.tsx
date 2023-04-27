@@ -16,7 +16,7 @@ function ProfilePage() {
 	useGetProfileInfo({user, session});
 
 	return (
-		<>
+		<div className="bg-gray-900 h-screen">
 			<Head>
 				<title>Linkmarker - Profile</title>
 			</Head>
@@ -40,7 +40,7 @@ function ProfilePage() {
 					</>
 				)}
 			</div>
-		</>
+		</div>
 	);
 }
 

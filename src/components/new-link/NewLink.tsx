@@ -9,6 +9,7 @@ import { classNames, isLink } from "@/utils";
 import { useRouter } from "next/router";
 
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { Input } from "../input";
 
 function NewLink({ users }: { users: User[] }) {
 	const supabaseClient = useSupabaseClient<Database>();
@@ -67,18 +68,13 @@ function NewLink({ users }: { users: User[] }) {
 								>
 									Title
 								</label>
-								<input
-									onChange={(e) => {
-										globalLinkState.create({
-											title: e.currentTarget.value
-										});
-									}}
+								<Input
+									id="title"
+									placeHolder="How the link will display"
 									value={globalLinkState.new.title || ""}
-									type="text"
-									name="name"
-									id="name"
-									className="bg-gray-900 block w-full rounded-md border-0 py-1.5 pl-4 text-gray-100 ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6 focus-visible:outline focus-visible:outline-1 focus-visible:outline-black"
-									placeholder="How the link will display"
+									fn={(event) => globalLinkState.create({
+										title: event
+									})}
 								/>
 							</div>
 							<div className="relative">
@@ -88,18 +84,13 @@ function NewLink({ users }: { users: User[] }) {
 								>
 									Url
 								</label>
-								<input
-									onChange={(e) => {
-										globalLinkState.create({
-											origin: e.currentTarget.value
-										});
-									}}
+								<Input
+									id="url"
+									placeHolder="https://www.tiktok.com/@tiktok"
 									value={globalLinkState.new.origin || ""}
-									type="text"
-									name="name"
-									id="name"
-									className="bg-gray-900 block w-full rounded-md border-0 py-1.5 pl-4 text-gray-100 ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6 focus-visible:outline focus-visible:outline-1 focus-visible:outline-black"
-									placeholder="https://www.tiktok.com/@tiktok"
+									fn={(event) => globalLinkState.create({
+										origin: event
+									})}
 								/>
 							</div>
 							<div className="relative">
@@ -274,7 +265,7 @@ function NewLink({ users }: { users: User[] }) {
 								type="submit"
 								className={classNames(
 									"flex w-full justify-center rounded-md  py-2 px-3 text-sm font-semibold shadow-sm",
-									!isSubmitButtonDisabled ? "bg-gray-900 hover:bg-gray-900/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900/hover:bg-gray-900/70 text-white" :
+									!isSubmitButtonDisabled ? "bg-indigo-900 hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 text-white" :
 										"bg-gray-900/30 text-gray-700"
 								)}
 							>

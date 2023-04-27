@@ -1,3 +1,4 @@
+import { Input } from "../input";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { useLinkGlobalState } from "@/state";
 
@@ -10,13 +11,11 @@ function Filter() {
 				<div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
 					<MagnifyingGlassIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
 				</div>
-				<input
-					onChange={e => setTextFilter(e.target.value)}
-					type="textFilter"
-					name="textFilter"
+				<Input
+					fn={setTextFilter}
 					id="textFilter"
-					className="bg-gray-900 block w-full rounded-md border-0 py-1.5 pl-10 text-gray-100 ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6 focus-visible:outline focus-visible:outline-1 focus-visible:outline-black"
-					placeholder="Filter links by title"
+					placeHolder="Filter links by title"
+					css="!pl-10"
 				/>
 			</nav>
 		</div>
