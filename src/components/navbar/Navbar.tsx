@@ -5,6 +5,7 @@ import { PlusIcon } from "@heroicons/react/20/solid";
 
 import { Disclosure, Popover, Transition } from "@headlessui/react";
 
+import { Button } from "../button";
 import { Database } from "@/lib/types";
 import { Filter } from "../filter";
 import { useRouter } from "next/router";
@@ -50,17 +51,17 @@ function Navbar() {
 					</div>
 					<div className="flex items-center">
 						<div className="flex-shrink-0">
-							<button
+							<Button
 								onClick={() => push("/new")}
 								type="button"
-								className="mx-5 relative inline-flex items-center gap-x-1.5 rounded-md bg-indigo-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+								className="w-auto mx-5 relative inline-flex items-center gap-x-1.5"
 							>
 								<PlusIcon
 									className="-ml-0.5 h-5 w-5"
 									aria-hidden="true"
 								/>
 								<p className="hidden md:block">New Link</p>
-							</button>
+							</Button>
 						</div>
 						<div className="flex flex-shrink-0 items-center">
 							<Popover className="relative">

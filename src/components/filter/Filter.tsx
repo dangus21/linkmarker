@@ -12,10 +12,10 @@ function Filter() {
 					<MagnifyingGlassIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
 				</div>
 				<Input
-					fn={setTextFilter}
+					onChange={(event) => setTextFilter(event.currentTarget.value)}
 					id="textFilter"
 					placeHolder="Filter links by title"
-					css="!pl-10"
+					className="pl-10"
 				/>
 			</nav>
 		</div>

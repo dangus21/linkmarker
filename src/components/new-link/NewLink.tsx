@@ -8,6 +8,7 @@ import { Combobox, Switch } from "@headlessui/react";
 import { classNames, isLink } from "@/utils";
 import { useRouter } from "next/router";
 
+import { Button } from "../button";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { Input } from "../input";
 
@@ -53,12 +54,12 @@ function NewLink({ users }: { users: User[] }) {
 	return (
 		<div className="flex min-h-full flex-col justify-center sm:px-6 lg:px-8">
 			<div className="sm:mx-auto sm:w-full sm:max-w-md">
-				<h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+				<h2 className="text-gray-100 mt-6 text-center text-3xl font-bold tracking-tight">
 					Link Information
 				</h2>
 			</div>
-			<div className="mt-6 mx-auto w-full max-w-md">
-				<div className="bg-gray-800 px-10 py-4 sm:shadow sm:rounded-lg">
+			<div className="px-4 mt-6 mx-auto w-full max-w-md">
+				<div className="bg-gray-800 px-10 py-4 sm:shadow rounded-md sm:rounded-lg">
 					<div className="py-6">
 						<div className="grid gap-10">
 							<div className="relative">
@@ -72,8 +73,8 @@ function NewLink({ users }: { users: User[] }) {
 									id="title"
 									placeHolder="How the link will display"
 									value={globalLinkState.new.title || ""}
-									fn={(event) => globalLinkState.create({
-										title: event
+									onChange={(event) => globalLinkState.create({
+										title: event.currentTarget.value
 									})}
 								/>
 							</div>
@@ -88,8 +89,8 @@ function NewLink({ users }: { users: User[] }) {
 									id="url"
 									placeHolder="https://www.tiktok.com/@tiktok"
 									value={globalLinkState.new.origin || ""}
-									fn={(event) => globalLinkState.create({
-										origin: event
+									onChange={(event) => globalLinkState.create({
+										origin: event.currentTarget.value
 									})}
 								/>
 							</div>
@@ -253,26 +254,21 @@ function NewLink({ users }: { users: User[] }) {
 						</div>
 
 						<div className="mt-12">
-							<button
-								disabled={isSubmitButtonDisabled}
-								onClick={() =>
-									createLink({
-										supabaseClient,
-										userState: globalUserState,
-										link: globalLinkState.new
-									})
+							<Button
+								onClick={
+									() =>
+										createLink({
+											supabaseClient,
+											userState: globalUserState,
+											link: globalLinkState.new
+										})
 								}
 								type="submit"
-								className={classNames(
-									"flex w-full justify-center rounded-md  py-2 px-3 text-sm font-semibold shadow-sm",
-									!isSubmitButtonDisabled ? "bg-indigo-900 hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 text-white" :
-										"bg-gray-900/30 text-gray-700"
-								)}
+								className={isSubmitButtonDisabled ? "bg-gray-900/30 hover:bg-gray-900/30 text-gray-700 cursor-not-allowed" : ""}
 							>
 								Mark Link
-							</button>
+							</Button>
 						</div>
-
 					</div>
 				</div>
 			</div>

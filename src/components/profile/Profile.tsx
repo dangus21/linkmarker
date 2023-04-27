@@ -1,6 +1,7 @@
 import { ChangeEvent } from "react";
 import Image from "next/image";
 
+import { Button } from "../button";
 import { Database } from "@/lib/types";
 import { Input } from "../input";
 import { ONE_MB_SIZE, classNames } from "@/utils";
@@ -89,8 +90,8 @@ function Profile() {
 							</label>
 							<div className="mt-2">
 								<Input
-									fn={(event) => {
-										globalUserState.setUserName(event);
+									onChange={(event) => {
+										globalUserState.setUserName(event.currentTarget.value);
 										globalUserState.setModified(true);
 									}}
 									value={globalUserState.userName}
@@ -133,7 +134,7 @@ function Profile() {
 						</div>
 
 						<div>
-							<button
+							<Button
 								onClick={() => {
 									updateProfileInfo({
 										userState: globalUserState,
@@ -142,10 +143,9 @@ function Profile() {
 									push("/");
 								}}
 								type="submit"
-								className="flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 							>
 								Submit
-							</button>
+							</Button>
 						</div>
 					</div>
 				</div>

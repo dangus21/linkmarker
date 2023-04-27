@@ -32,13 +32,13 @@ function Links() {
 
 	const ownershipLinksList = ownershipFilter === TABS.ALL ? currentLinks : currentLinks.filter(link => {
 		if (ownershipFilter === TABS.MINE) {
-			return link.by === user?.id;
+			return link.by === user?.id && link.share_with.length === 0;
 		} else if (ownershipFilter === TABS.SHARED) {
 			return link.share_with.length > 0;
 		} else if (ownershipFilter === TABS.PRIVATE) {
 			return !link.is_public;
 		}
-		return;
+		return true;
 	});
 
 	const textFilterLinksList = textFilter.length === 0 ?
@@ -133,7 +133,7 @@ function Links() {
 												/>
 											</div>
 										</a>
-										<div className="flex flex-col sm:flex-row justify-evenly sm:justify-between divide-y sm:divide-x-2 divide-black sm:divide-y-0">
+										<div className="flex flex-col sm:flex-row justify-evenly sm:justify-between divide-y-2 sm:divide-x-2 divide-black sm:divide-y-0">
 											<LinkDelete
 												canDeleteLink={canDeleteLink}
 												linkId={link.id}
@@ -154,7 +154,7 @@ function Links() {
 				</div>
 
 			) : (
-				<h2 className="p-10 text-center">
+				<h2 className="p-10 text-gray-100 text-center">
 					Nothing to see here, yet.
 				</h2>
 			)}
