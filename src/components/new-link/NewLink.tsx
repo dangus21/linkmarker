@@ -201,7 +201,8 @@ function NewLink({ users }: { users: User[] }) {
 											<Combobox.Label className="block text-sm font-medium leading-6 text-gray-300">To whom?</Combobox.Label>
 											<div className="relative mt-2">
 												<Combobox.Input
-													className="bg-gray-900 block w-full rounded-md border-0 py-1.5 pl-4 text-gray-900 ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6 focus-visible:outline focus-visible:outline-1 focus-visible:outline-black"
+													className="bg-gray-900 block w-full rounded-md border-0 py-1.5 pl-4 text-gray-100 ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6 focus-visible:outline focus-visible:outline-1 focus-visible:outline-black"
+													placeholder="Single or multiple user"
 													onChange={(event) => setQuery(event.target.value)}
 													displayValue={(person: Record<string, string>[]) => {
 														return person.map(user => user?.username).join(", ");
@@ -212,15 +213,15 @@ function NewLink({ users }: { users: User[] }) {
 												</Combobox.Button>
 
 												{publicUsers.length > 0 && (
-													<Combobox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+													<Combobox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-gray-900 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
 														{publicUsers.map((user) => (
 															<Combobox.Option
 																key={user.id}
 																value={user}
 																className={({ active }) =>
 																	classNames(
-																		"relative cursor-default select-none py-2 pl-3 pr-9",
-																		active ? "bg-indigo-600 text-white" : "text-gray-900"
+																		"relative cursor-default select-none py-2 pl-3 pr-9 text-white",
+																		active ? "bg-gray-800" : "text-gray-900"
 																	)
 																}
 															>
