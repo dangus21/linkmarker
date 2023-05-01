@@ -30,16 +30,18 @@ function Links() {
 		loading
 	} = useLinkGlobalState();
 
-	const ownershipLinksList = ownershipFilter === TABS.ALL ? currentLinks : currentLinks.filter(link => {
-		if (ownershipFilter === TABS.MINE) {
-			return link.by === user?.id && link.share_with.length === 0;
-		} else if (ownershipFilter === TABS.SHARED) {
-			return link.share_with.length > 0;
-		} else if (ownershipFilter === TABS.PRIVATE) {
-			return !link.is_public;
-		}
-		return true;
-	});
+	const ownershipLinksList = ownershipFilter === TABS.ALL ?
+		currentLinks :
+		currentLinks.filter(link => {
+			if (ownershipFilter === TABS.MINE) {
+				return link.by === user?.id && link.share_with.length === 0;
+			} else if (ownershipFilter === TABS.SHARED) {
+				return link.share_with.length > 0;
+			} else if (ownershipFilter === TABS.PRIVATE) {
+				return !link.is_public;
+			}
+			return true;
+		});
 
 	const textFilterLinksList = textFilter.length === 0 ?
 		ownershipLinksList :

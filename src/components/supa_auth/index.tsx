@@ -7,6 +7,7 @@ import {
 } from "@supabase/auth-helpers-react";
 
 import { Database } from "@/lib/types";
+import { twMerge } from "tailwind-merge";
 import { useGetProfileInfo } from "@/hooks";
 import Head from "next/head";
 
@@ -24,13 +25,18 @@ function SupaAuth({ children }: { children: React.ReactNode }) {
 			<>
 				{!session || !user ? (
 					<div
-						className="text-white h-screen w-screen flex justify-center items-center bg-neutral-900 [&>div]:w-96"
+						className={
+							twMerge(
+								"text-white h-screen w-screen flex",
+								"justify-center items-center bg-neutral-800",
+								"[&>div]:w-[30rem] [&>div]:bg-neutral-900 [&>div]:px-6 [&>div]:py-4 [&>div]:rounded-lg"
+							)}
 					>
 						<Auth
+							theme="dark"
 							supabaseClient={supabaseClient}
 							appearance={{ theme: ThemeSupa }}
-							theme="dark"
-							providers={["google"]}
+							providers={["google", "facebook"]}
 						/>
 					</div>
 				) : children
