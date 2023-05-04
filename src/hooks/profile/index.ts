@@ -70,6 +70,8 @@ async function useGetProfileInfo({
 		async function getUserAndProfile() {
 			if (user?.id) {
 				try {
+					globalUserState.setHasAvatar(true);
+
 					const { data, error, status } = await supabaseClient
 						.from("profiles")
 						.select()
@@ -91,11 +93,18 @@ async function useGetProfileInfo({
 						});
 					}
 
-					if ((error && status !== 406) || avatarsError) {
-						console.warn({ error });
+					if (error && status !== 406) {
+						console.warn({ user_error: error });
 
 						throw error;
 					}
+					if (avatarsError) {
+						globalUserState.setHasAvatar(false);
+						console.warn({ avatarsError });
+
+						throw error;
+					}
+
 				} catch (error) {
 					console.warn("Failed loading user data");
 				}

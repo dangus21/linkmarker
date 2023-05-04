@@ -1,5 +1,5 @@
 import { Navbar, Profile } from "@/components";
-import SupaAuth from "@/components/supa_auth";
+import { SupaAuth } from "@/components/supa_auth";
 
 function ProfilePage() {
 	return (

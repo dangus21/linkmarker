@@ -24,6 +24,7 @@ export type UserState = {
 	email: string;
 	password: string;
 	avatar: TAvatar;
+	hasAvatar: null | boolean;
 	modified: boolean;
 	is_public: boolean;
 	setis_public: (is_public: boolean) => void;
@@ -31,6 +32,7 @@ export type UserState = {
 	setId: (id: string) => void;
 	setUserName: (id: string) => void;
 	setEmail: (id: string) => void;
+	setHasAvatar: (flag: boolean) => void;
 	setAvatar: ({ img, file, fileName }: Partial<TAvatar>) => void;
 };
 
@@ -70,6 +72,7 @@ const useUserGlobalState = create<UserState>()((set) => ({
 		file: null,
 		fileName: ""
 	},
+	hasAvatar: null,
 	modified: false,
 	is_public: false,
 	setis_public: (is_public) => set(() => ({ is_public })),
@@ -88,6 +91,10 @@ const useUserGlobalState = create<UserState>()((set) => ({
 		set((state) => ({
 			...state,
 			modified: isModified
+		})),
+	setHasAvatar: (flag) =>
+		set(() => ({
+			hasAvatar: flag
 		}))
 }));
 

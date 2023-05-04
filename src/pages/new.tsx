@@ -2,9 +2,9 @@
 import { Database } from "@/lib/types";
 import { GetServerSidePropsContext } from "next";
 import { Navbar, NewLink } from "@/components";
+import { SupaAuth } from "@/components/supa_auth";
 import { User } from "@/state";
 import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
-import SupaAuth from "@/components/supa_auth";
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 	const supa = createServerSupabaseClient<Database>(ctx);

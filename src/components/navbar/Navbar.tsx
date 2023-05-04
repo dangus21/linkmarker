@@ -7,11 +7,8 @@ import { Disclosure } from "@headlessui/react";
 import { Button } from "../button";
 import { Filter } from "../filter";
 import { NavbarLogo, NavbarProfile } from "./parts";
-import { useRouter } from "next/router";
 
 function Navbar() {
-	const { push } = useRouter();
-
 	return (
 		<Disclosure as="nav" className="bg-gray-800 sticky top-0 z-20">
 			<div className="px-4 sm:px-8 mx-auto max-w-7xl lg:px-8">
@@ -23,9 +20,8 @@ function Navbar() {
 						<Filter />
 					</div>
 					<div className="flex items-center">
-						<div className="flex-shrink-0">
+						<a href="/new" className="flex-shrink-0">
 							<Button
-								onClick={() => push("/new")}
 								type="button"
 								className="w-auto mx-5 relative inline-flex items-center gap-x-1.5"
 							>
@@ -35,7 +31,7 @@ function Navbar() {
 								/>
 								<p className="hidden md:block">New Link</p>
 							</Button>
-						</div>
+						</a>
 						<div className="flex flex-shrink-0 items-center">
 							<NavbarProfile />
 						</div>

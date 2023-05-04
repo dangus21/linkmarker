@@ -1,6 +1,6 @@
 import { Links, Navbar } from "@/components";
+import { SupaAuth } from "@/components/supa_auth";
 import { Tabs } from "@/components/tabs";
-import SupaAuth from "@/components/supa_auth";
 
 function Main() {
 	return (
