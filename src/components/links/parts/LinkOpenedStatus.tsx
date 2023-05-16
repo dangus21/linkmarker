@@ -5,10 +5,12 @@ import {
 
 function LinkOpenedStatus(
 	{
-		opened
+		opened,
+		toggleOpened
 	}:
 		{
 			opened: boolean;
+			toggleOpened: () => Promise<void>;
 		}
 ) {
 	return (
@@ -18,7 +20,7 @@ function LinkOpenedStatus(
 					<span className="whitespace-nowrap text-gray-500">
 						Opened
 					</span>
-					<span className="ml-3">
+					<span className="ml-3 relative z-50" onClick={toggleOpened}>
 						<CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
 					</span>
 				</>
@@ -27,7 +29,7 @@ function LinkOpenedStatus(
 					<span className="whitespace-nowrap text-gray-500">
 						Not Opened
 					</span>
-					<span className="ml-3">
+					<span className="ml-3 relative z-50" onClick={toggleOpened}>
 						<XCircleIcon className="h-5 w-5 flex-shrink-0 self-center text-red-500" />
 					</span>
 				</>

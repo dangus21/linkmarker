@@ -74,9 +74,11 @@ function Links() {
 					>
 						{textFilterLinksList.map((link) => {
 							const localReaction = REACTIONS[link.reaction as keyof typeof REACTIONS];
-							function openLinkFn() {
+							function openLinkFn(status?: boolean) {
 								return updateLinkInfo({
-									link: { opened: true },
+									link: {
+										opened: status
+									},
 									id: link.id,
 									updateLink,
 									supabaseClient
@@ -93,8 +95,8 @@ function Links() {
 										<a
 											target="_blank"
 											href={link.url!}
-											onClick={openLinkFn}
-											onAuxClick={openLinkFn}
+											onClick={() => openLinkFn(true)}
+											onAuxClick={() => openLinkFn(true)}
 											className="py-2 px-6 w-full hover:bg-gray-800 cursor-pointer"
 										>
 											<div className="flex flex-col sm:flex-row sm:items-center justify-between">
@@ -104,6 +106,7 @@ function Links() {
 													title={link.title}
 												/>
 												<LinkOpenedStatus
+													toggleOpened={() => openLinkFn(!link.opened)}
 													opened={link.opened}
 												/>
 											</div>
