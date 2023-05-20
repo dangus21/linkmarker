@@ -23,7 +23,7 @@ function LinkReactions(
 	const { update: updateLink } = useLinkGlobalState();
 
 	return (
-		<Popover className="relative h-1/2 sm:h-auto">
+		<Popover className="relative flex h-1/3 sm:h-full">
 			<Popover.Button className="h-full w-16 sm:w-20 hover:bg-gray-800">
 				{link.reaction &&
 					reaction ? (
@@ -48,7 +48,7 @@ function LinkReactions(
 				leaveFrom="opacity-100 translate-y-0"
 				leaveTo="opacity-0 translate-y-1"
 			>
-				<Popover.Panel className="absolute -right-[100%] sm:right-1/2 z-10 flex max-w-[18rem] -translate-x-1/2 sm:-translate-x-1/4 px-4">
+				<Popover.Panel className="absolute top-14 right-1 sm:top-16 z-50 sm:right-1/2 flex">
 					{({ close }) => (
 						<div className="w-auto flex-auto rounded bg-gray-700 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 flex flex-row">
 							{Object.entries(

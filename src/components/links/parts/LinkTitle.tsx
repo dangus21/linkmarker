@@ -1,4 +1,4 @@
-import { EyeIcon, EyeSlashIcon } from "@heroicons/react/20/solid";
+import { LockClosedIcon, LockOpenIcon } from "@heroicons/react/20/solid";
 
 function LinkTitle(
 	{
@@ -12,18 +12,21 @@ function LinkTitle(
 			shareWith: string[];
 		}
 ) {
-	const VisibilityIcon = isPublic ? EyeIcon : EyeSlashIcon;
+	const LockedIcon = isPublic ? LockOpenIcon : LockClosedIcon;
 
 	return (
 		<div className="max-w-auto sm:max-w-full">
-			<p className="text-sm font-medium text-gray-300">
+			<p className="font-medium text-gray-300 mb-2">
 				{title}
 			</p>
-			<span className="inline-flex items-center text-xs text-gray-500">
-				<VisibilityIcon className="h-3.5 flex-shrink-0 text-gray-400 mr-1" />
+			<p className="inline-flex text-gray-500 text-sm">
+				<LockedIcon
+					className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+					aria-hidden="true"
+				/>
 				{isPublic ? "Public" : "Private"}
 				{shareWith.length > 0 && "/Shared"}
-			</span>
+			</p>
 		</div>
 	);
 };

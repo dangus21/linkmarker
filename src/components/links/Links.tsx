@@ -13,6 +13,7 @@ import {
 	LinkDelete,
 	LinkOpenedStatus,
 	LinkReactions,
+	LinkSeenToggle,
 	LinkTitle
 } from "./parts";
 import { LoadingSpinner } from "../loading-spinner";
@@ -106,7 +107,6 @@ function Links() {
 													title={link.title}
 												/>
 												<LinkOpenedStatus
-													toggleOpened={() => openLinkFn(!link.opened)}
 													opened={link.opened}
 												/>
 											</div>
@@ -136,12 +136,16 @@ function Links() {
 												/>
 											</div>
 										</a>
-										<div className="flex flex-col sm:flex-row justify-evenly sm:justify-between divide-y-2 sm:divide-x-2 divide-black sm:divide-y-0">
+										<div className="flex flex-col sm:flex-row divide-y-2 sm:divide-x-2 divide-black sm:divide-y-0">
 											<LinkDelete
 												canDeleteLink={canDeleteLink}
 												linkId={link.id}
 												userId={user!.id}
 												supabaseClient={supabaseClient}
+											/>
+											<LinkSeenToggle
+												opened={link.opened}
+												toggleSeenStatus={() => openLinkFn(!link.opened)}
 											/>
 											<LinkReactions
 												link={link}
