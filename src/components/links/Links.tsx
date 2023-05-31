@@ -3,6 +3,8 @@ import {
 	UsersIcon
 } from "@heroicons/react/20/solid";
 
+import { useVirtualizer } from "@tanstack/react-virtual";
+
 import { Database } from "@/lib/types";
 import { TABS, useLinkGlobalState } from "@/state";
 import { updateLinkInfo, useGetLinks } from "@/hooks";
@@ -18,6 +20,7 @@ import {
 } from "./parts";
 import { LoadingSpinner } from "../loading-spinner";
 import { REACTIONS } from "@/utils";
+import { useRef } from "react";
 
 function Links() {
 	const supabaseClient = useSupabaseClient<Database>();
@@ -59,6 +62,15 @@ function Links() {
 				);
 		});
 
+	const parentRef = useRef<HTMLDivElement>(null);
+
+	const rowVirtualizer = useVirtualizer({
+		getScrollElement: () => parentRef.current,
+		estimateSize: () => 80,
+		count: textFilterLinksList.length,
+		overscan: 5
+	});
+
 	if (loading) {
 		return (
 			<LoadingSpinner />
@@ -66,105 +78,99 @@ function Links() {
 	}
 
 	return (
-		<div className="w-full flex justify-center mx-auto max-w-[81rem]">
-			{textFilterLinksList.length > 0 ? (
-				<div className="sm:mx-10 sm:max-w-7xlsm:shadow w-full mb-6">
-					<ul
-						role="list"
-						className="sm:rounded-md divide-y-2 divide-black border-2 border-black"
-					>
-						{textFilterLinksList.map((link) => {
-							const localReaction = REACTIONS[link.reaction as keyof typeof REACTIONS];
-							function openLinkFn(status?: boolean) {
-								return updateLinkInfo({
-									link: {
-										opened: status
-									},
-									id: link.id,
-									updateLink,
-									supabaseClient
-								});
-							};
+		<div className="w-full flex justify-center mx-auto max-w-[81rem]" ref={parentRef}>
+			<div className="sm:mx-10 sm:max-w-7xlsm:shadow w-full mb-6">
+				<ul
+					role="list"
+					className="sm:rounded-md divide-y-2 divide-black border-2 border-black"
+				>
+					{
+						textFilterLinksList.length > 0 ?
+							rowVirtualizer.getVirtualItems().map((virtualRow) => {
+								const currentLink = textFilterLinksList[virtualRow.index];
+								const localReaction = REACTIONS[currentLink.reaction as keyof typeof REACTIONS];
+								function openLinkFn(status?: boolean) {
+									return updateLinkInfo({
+										link: {
+											opened: status
+										},
+										id: currentLink.id,
+										updateLink,
+										supabaseClient
+									});
+								};
 
-							const canDeleteLink = user?.id === link.by || (
-								user?.id !== link.id && link.is_deletable
-							);
+								const canDeleteLink = user?.id === currentLink.by || (
+									user?.id !== currentLink.id && currentLink.is_deletable
+								);
 
-							return (
-								<li key={link.id}>
-									<div className="flex justify-between divide-x-2 divide-black">
-										<a
-											target="_blank"
-											href={link.url!}
-											onClick={() => openLinkFn(true)}
-											onAuxClick={() => openLinkFn(true)}
-											className="py-2 px-6 w-full hover:bg-gray-800 cursor-pointer"
-										>
-											<div className="flex flex-col sm:flex-row sm:items-center justify-between">
-												<LinkTitle
-													isPublic={link.is_public}
-													shareWith={link.share_with}
-													title={link.title}
-												/>
-												<LinkOpenedStatus
-													opened={link.opened}
-												/>
-											</div>
-											<div className="mt-2 flex flex-col sm:flex-row justify-between">
-												<div className="flex flex-col sm:flex-row">
-													<div className="flex mb-1.5 sm:mt-0">
-														<UsersIcon
-															className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-															aria-hidden="true"
-														/>
-														<p className="flex items-center text-sm text-gray-500 mr-8 md:mr-8 min-w-[3rem]">
-															{link.who}
-														</p>
-													</div>
-													<div className="flex mb-1.5 sm:mt-0">
-														<MapPinIcon
-															className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-															aria-hidden="true"
-														/>
-														<p className="flex items-center text-sm text-gray-500 mr-8 md:mr-8 min-w-[3rem]">
-															{link.origin}
-														</p>
-													</div>
+								return (
+
+									<li key={currentLink.id}>
+										<div className="flex justify-between divide-x-2 divide-black">
+											<a
+												target="_blank"
+												href={currentLink.url!}
+												onClick={() => openLinkFn(true)}
+												onAuxClick={() => openLinkFn(true)}
+												className="py-2 px-6 w-full hover:bg-gray-800 cursor-pointer"
+											>
+												<div className="flex flex-col sm:flex-row sm:items-center justify-between">
+													<LinkTitle
+														isPublic={currentLink.is_public}
+														shareWith={currentLink.share_with}
+														title={currentLink.title} />
+													<LinkOpenedStatus
+														opened={currentLink.opened} />
 												</div>
-												<LinkDate
-													postedDate={link.posted_date}
-												/>
+												<div className="mt-2 flex flex-col sm:flex-row justify-between">
+													<div className="flex flex-col sm:flex-row">
+														<div className="flex mb-1.5 sm:mt-0">
+															<UsersIcon
+																className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+																aria-hidden="true" />
+															<p className="flex items-center text-sm text-gray-500 mr-8 md:mr-8 min-w-[3rem]">
+																{currentLink.who}
+															</p>
+														</div>
+														<div className="flex mb-1.5 sm:mt-0">
+															<MapPinIcon
+																className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+																aria-hidden="true" />
+															<p className="flex items-center text-sm text-gray-500 mr-8 md:mr-8 min-w-[3rem]">
+																{currentLink.origin}
+															</p>
+														</div>
+													</div>
+													<LinkDate
+														postedDate={currentLink.posted_date} />
+												</div>
+											</a>
+											<div className="flex flex-col sm:flex-row divide-y-2 sm:divide-x-2 divide-black sm:divide-y-0">
+												<LinkDelete
+													canDeleteLink={canDeleteLink}
+													linkId={currentLink.id}
+													userId={user!.id}
+													supabaseClient={supabaseClient} />
+												<LinkSeenToggle
+													opened={currentLink.opened}
+													toggleSeenStatus={() => openLinkFn(!currentLink.opened)} />
+												<LinkReactions
+													link={currentLink}
+													reaction={localReaction}
+													supabaseClient={supabaseClient} />
 											</div>
-										</a>
-										<div className="flex flex-col sm:flex-row divide-y-2 sm:divide-x-2 divide-black sm:divide-y-0">
-											<LinkDelete
-												canDeleteLink={canDeleteLink}
-												linkId={link.id}
-												userId={user!.id}
-												supabaseClient={supabaseClient}
-											/>
-											<LinkSeenToggle
-												opened={link.opened}
-												toggleSeenStatus={() => openLinkFn(!link.opened)}
-											/>
-											<LinkReactions
-												link={link}
-												reaction={localReaction}
-												supabaseClient={supabaseClient}
-											/>
 										</div>
-									</div>
-								</li>
-							);
-						})}
-					</ul>
-				</div>
-
-			) : (
-				<h2 className="p-10 text-gray-100 text-center">
-					Nothing to see here, yet.
-				</h2>
-			)}
+									</li>
+								);
+							}) : (
+								<h2 className="p-10 text-gray-100 text-center">
+									Nothing to see here, yet.
+								</h2>
+							)
+					}
+				</ul>
+			</div>
 		</div>
 	);
 }

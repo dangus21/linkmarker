@@ -12,7 +12,7 @@ function LinkOpenedStatus(
 		}
 ) {
 	return (
-		<p className="flex items-center -mb-1">
+		<div className="flex items-center -mb-1">
 			{opened ? (
 				<div className="flex flex-row sm:flex-row-reverse">
 					<span className="mr-1 sm:ml-2 sm:-mr-1 relative grid place-content-center">
@@ -32,7 +32,7 @@ function LinkOpenedStatus(
 					</p>
 				</div>
 			)}
-		</p>
+		</div>
 	);
 };
 
