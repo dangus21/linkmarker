@@ -16,7 +16,7 @@ function LinkOpenedStatus(
 			{opened ? (
 				<div className="flex flex-row sm:flex-row-reverse">
 					<span className="mr-1 sm:ml-2 sm:-mr-1 relative grid place-content-center">
-						<CheckCircleIcon className="h-5 w-5 text-gray-400 sm:text-green-500" />
+						<CheckCircleIcon className="h-5 w-5 text-green-500" />
 					</span>
 					<p className="whitespace-nowrap text-gray-500 text-sm">
 						Opened
@@ -25,7 +25,7 @@ function LinkOpenedStatus(
 			) : (
 				<div className="flex flex-row sm:flex-row-reverse">
 					<span className="mr-1 sm:ml-1 relative grid place-content-center">
-						<XCircleIcon className="h-5 w-5 text-gray-500 sm:text-red-500" />
+						<XCircleIcon className="h-5 w-5 text-red-500" />
 					</span>
 					<p className="whitespace-nowrap text-gray-500 text-sm">
 						Not Opened
