@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import { useState } from "react";
 
 import { Analytics } from "@vercel/analytics/react";
@@ -8,7 +9,7 @@ import type { AppProps } from "next/app";
 
 import { Database } from "@/lib/types";
 import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
-import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";;
 
 export default function App({
 	Component,
@@ -37,6 +38,7 @@ export default function App({
 				}}
 			>
 				<Component {...pageProps} />
+				<Toaster />
 				<Analytics />
 			</SessionContextProvider>
 		</>

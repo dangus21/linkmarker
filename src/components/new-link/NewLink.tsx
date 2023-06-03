@@ -76,7 +76,8 @@ function NewLink({ users }: { users: User[] }) {
 										createLink({
 											supabaseClient,
 											userState: globalUserState,
-											link: globalLinkState.new
+											link: globalLinkState.new,
+											router
 										})
 								}
 								type="submit"

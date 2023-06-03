@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+import { CSSProperties, useEffect } from "react";
+
+import toast from "react-hot-toast";
 
 import { Database } from "@/lib/types";
 import {
@@ -8,7 +10,19 @@ import {
 	UserState,
 	useLinkGlobalState
 } from "@/state";
+import { NextRouter } from "next/router";
 import { SupabaseClient, User, useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+
+const toast_config = {
+	style: {
+		borderRadius: "10px",
+		background: "#0d1421",
+		color: "#fff",
+		boxShadow: "0 3px 15px black"
+	} as CSSProperties,
+	position: "bottom-center",
+	duration: 3000
+} as const;
 
 async function deleteLink({
 	supabaseClient,
@@ -35,9 +49,11 @@ async function deleteLink({
 
 		if (data) {
 			setLinks(data);
+			toast.success("Deleted link", toast_config);
 		}
 
 		if (deleteError) {
+			toast.success("Failed to delete link", toast_config);
 			console.warn({ error: deleteError });
 		}
 		if (error) {
@@ -51,11 +67,13 @@ async function deleteLink({
 async function createLink({
 	supabaseClient,
 	userState,
-	link
+	link,
+	router
 }: {
 	supabaseClient: SupabaseClient<Database>;
 	userState: UserState;
 	link: LinkState["new"];
+	router: NextRouter;
 }) {
 	const url = link.origin?.startsWith("http") ? link.origin : `http://${link.origin}`;
 	const newLink = {
@@ -82,8 +100,17 @@ async function createLink({
 
 		if (error) {
 			console.warn({ error });
+			toast.error("Failed creating link", toast_config);
 		} else {
-			window.location.replace("/");
+			// Notification.requestPermission().then(permission => {
+			// 	if (permission === "granted") {
+			// 		const notification = new Notification(link.title!, {
+			// 			body: "New link created"
+			// 		});
+			// 	}
+			// });
+			toast.success("Created new link", toast_config);
+			router.push("/");
 		}
 	} catch (error) {
 		console.warn({ error });
@@ -125,8 +152,10 @@ async function updateLinkInfo({
 
 		if (error) {
 			console.warn({ error });
-
+			toast.error("Failed deleting link", toast_config);
 			throw error;
+		} else {
+			toast.success("Updated new link", toast_config);
 		}
 	} catch (error) {
 		console.warn({ error });
