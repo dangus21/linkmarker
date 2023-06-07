@@ -4,10 +4,15 @@ import { User, useLinkGlobalState, useUserGlobalState } from "@/state";
 import { twMerge } from "tailwind-merge";
 
 function NewLinkShareCombo({ users }: { users: User[] }) {
+	console.log("LOG ~ file: NewLinkShareCombo.tsx:7 ~ users:", users);
 	const globalLinkState = useLinkGlobalState();
 	const globalUserState = useUserGlobalState();
 
-	const publicUsers = users.filter(user => user.id !== globalUserState.id);
+	const productionUsers = process.env.NODE_ENV === "production" ?
+		users.filter(user => user.id !== "6550a93e-69c4-45ae-870e-c45f47586ceb") :
+		users;
+
+	const publicUsers = productionUsers.filter(user => user.id !== globalUserState.id);
 
 	return (
 		<div className="relative">
