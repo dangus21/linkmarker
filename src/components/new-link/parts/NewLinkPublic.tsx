@@ -27,11 +27,11 @@ function NewLinkPublic() {
 								...(checked && { is_shareable: false })
 							});
 						}} className={twMerge(
-							isLinkPublic ? "bg-indigo-800" : "bg-gray-700",
+							isLinkPublic ? "bg-slate-700" : "bg-slate-400",
 							"relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer",
 							"rounded-full border-2 border-transparent transition-colors",
 							"duration-200 ease-in-out focus:outline-none focus:ring-2",
-							"focus:ring-indigo-600 focus:ring-offset-2"
+							"focus:ring-slate-600 focus:ring-offset-2"
 						)}
 					>
 						<span
@@ -39,7 +39,7 @@ function NewLinkPublic() {
 							className={twMerge(
 								isLinkPublic ? "translate-x-5" : "translate-x-0",
 								"pointer-events-none inline-block h-5 w-5 transform",
-								"rounded-full bg-indigo-100 shadow ring-0",
+								"rounded-full bg-slate-100 shadow ring-0",
 								"transition duration-200 ease-in-out"
 							)}
 						/>
@@ -64,11 +64,11 @@ function NewLinkPublic() {
 								});
 							}}
 							className={twMerge(
-								isLinkShareable ? "bg-indigo-800" : "bg-gray-700",
+								isLinkShareable ? "bg-slate-700" : "bg-slate-400",
 								"relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer",
 								"rounded-full border-2 border-transparent transition-colors",
 								"duration-200 ease-in-out focus:outline-none focus:ring-2",
-								"focus:ring-indigo-600 focus:ring-offset-2"
+								"focus:ring-slate-600 focus:ring-offset-2"
 							)}
 						>
 							<span
@@ -76,7 +76,7 @@ function NewLinkPublic() {
 								className={twMerge(
 									isLinkShareable ? "translate-x-5" : "translate-x-0",
 									"pointer-events-none inline-block h-5 w-5 transform",
-									"rounded-full bg-indigo-100 shadow ring-0 transition",
+									"rounded-full bg-slate-100 shadow ring-0 transition",
 									"duration-200 ease-in-out"
 								)}
 							/>

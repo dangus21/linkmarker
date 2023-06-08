@@ -17,6 +17,7 @@ function SupaAuth({ children }: { children: React.ReactNode }) {
 	const supabaseClient = useSupabaseClient<Database>();
 	const session = useSession();
 	const user = useUser();
+
 	useGetProfileInfo({ user, session });
 	const globalUserState = useUserGlobalState();
 

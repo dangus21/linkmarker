@@ -24,11 +24,11 @@ function ProfilePublicSwitch() {
 					onChange={(checked) => globalUserState.setis_public(checked)}
 					className={
 						twMerge(
-							globalUserState.is_public ? "bg-indigo-600" : "bg-gray-200",
+							globalUserState.is_public ? "bg-slate-700" : "bg-slate-400",
 							"relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer",
 							"rounded-full border-2 border-transparent transition-colors",
 							"duration-200 ease-in-out focus:outline-none focus:ring-2",
-							"focus:ring-indigo-600 focus:ring-offset-2"
+							"focus:ring-slate-600 focus:ring-offset-2"
 						)
 					}
 				>

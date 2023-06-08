@@ -26,7 +26,9 @@ function NewLinkShareCombo({ users }: { users: User[] }) {
 				}}
 				multiple
 			>
-				<Combobox.Label className="block text-sm font-medium leading-6 text-gray-300">To whom?</Combobox.Label>
+				<Combobox.Label className="block text-sm font-medium leading-6 text-gray-300">
+					To whom?
+				</Combobox.Label>
 				<div className="relative mt-2">
 					<Combobox.Input
 						className={
@@ -63,7 +65,7 @@ function NewLinkShareCombo({ users }: { users: User[] }) {
 									value={user}
 									className={({ active }) =>
 										twMerge(
-											active ? "bg-gray-800" : "text-gray-900",
+											active ? "bg-gray-850" : "text-gray-900",
 											"relative cursor-default select-none py-2 pl-3 pr-9 text-white",
 										)
 									}
@@ -84,7 +86,7 @@ function NewLinkShareCombo({ users }: { users: User[] }) {
 											{selected && (
 												<span
 													className={twMerge(
-														active ? "text-white" : "text-indigo-600",
+														active ? "text-white" : "text-gray-600",
 														"absolute inset-y-0 right-0 flex items-center pr-4",
 													)}
 												>

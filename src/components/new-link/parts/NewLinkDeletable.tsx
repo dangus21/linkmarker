@@ -21,11 +21,11 @@ function NewLinkDeletable() {
 							is_deletable: checked
 						});
 					}} className={twMerge(
-						isLinkDeletable ? "bg-indigo-800" : "bg-gray-700",
+						isLinkDeletable ? "bg-slate-700" : "bg-slate-400",
 						"relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer",
 						"rounded-full border-2 border-transparent transition-colors",
 						"duration-200 ease-in-out focus:outline-none focus:ring-2",
-						"focus:ring-indigo-600 focus:ring-offset-2"
+						"focus:ring-slate-600 focus:ring-offset-2"
 					)}
 				>
 					<span
@@ -33,7 +33,7 @@ function NewLinkDeletable() {
 						className={twMerge(
 							isLinkDeletable ? "translate-x-5" : "translate-x-0",
 							"pointer-events-none inline-block h-5 w-5 transform",
-							"rounded-full bg-indigo-100 shadow ring-0 transition",
+							"rounded-full bg-slate-100 shadow ring-0 transition",
 							"duration-200 ease-in-out"
 						)}
 					/>
