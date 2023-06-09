@@ -65,7 +65,7 @@ function NewLinkShareCombo({ users }: { users: User[] }) {
 									value={user}
 									className={({ active }) =>
 										twMerge(
-											active ? "bg-gray-850" : "text-gray-900",
+											active ? "bg-gray-950" : "text-gray-900",
 											"relative cursor-default select-none py-2 pl-3 pr-9 text-white",
 										)
 									}

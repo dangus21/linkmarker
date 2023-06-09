@@ -3,8 +3,6 @@ import {
 	UsersIcon
 } from "@heroicons/react/20/solid";
 
-import { useVirtualizer } from "@tanstack/react-virtual";
-
 import { Database } from "@/lib/types";
 import { TABS, useLinkGlobalState } from "@/state";
 import { updateLinkInfo, useGetLinks } from "@/hooks";
@@ -20,6 +18,7 @@ import {
 } from "./parts";
 import { LoadingSpinner } from "../loading-spinner";
 import { REACTIONS } from "@/utils";
+import { twMerge } from "tailwind-merge";
 import { useRef } from "react";
 
 function Links() {
@@ -64,13 +63,6 @@ function Links() {
 
 	const parentRef = useRef<HTMLDivElement>(null);
 
-	const rowVirtualizer = useVirtualizer({
-		getScrollElement: () => parentRef.current,
-		estimateSize: () => 80,
-		count: textFilterLinksList.length,
-		overscan: 5
-	});
-
 	if (loading) {
 		return (
 			<LoadingSpinner />
@@ -78,50 +70,59 @@ function Links() {
 	}
 
 	return (
-		<div className="w-full flex justify-center mx-auto max-w-[81rem]" ref={parentRef}>
-			<div className="sm:mx-10 sm:max-w-7xlsm:shadow w-full mb-6">
+		<div
+			ref={parentRef}
+			className="w-full max-w-[81rem] flex justify-center mx-auto"
+		>
+			<div className="sm:mx-10 sm:max-w-7xlsm:shadow w-full mb-4">
 				<ul
+
 					role="list"
-					className="sm:rounded-md divide-y-2 divide-black border-2 border-black"
+					className={
+						twMerge(
+							"sm:rounded-md divide-y-2 divide-black border-2 border-black",
+							"max-h-[calc(100vh-8rem)] overflow-auto",
+							"scrollbar scrollbar-thumb-[#1a2230] scrollbar-track-gray-1000",
+							"scrollbar-thumb-rounded-md scrollbar-thin hover:scrollbar-thumb-[#171e2b]"
+						)}
 				>
 					{
 						textFilterLinksList.length > 0 ?
-							rowVirtualizer.getVirtualItems().map((virtualRow) => {
-								const currentLink = textFilterLinksList[virtualRow.index];
-								const localReaction = REACTIONS[currentLink.reaction as keyof typeof REACTIONS];
+							textFilterLinksList.map((virtualRow) => {
+								const localReaction = REACTIONS[virtualRow.reaction as keyof typeof REACTIONS];
 								function openLinkFn(status?: boolean) {
 									return updateLinkInfo({
 										link: {
 											opened: status
 										},
-										id: currentLink.id,
+										id: virtualRow.id,
 										updateLink,
 										supabaseClient
 									});
 								};
 
-								const canDeleteLink = user?.id === currentLink.by || (
-									user?.id !== currentLink.id && currentLink.is_deletable
+								const canDeleteLink = user?.id === virtualRow.by || (
+									user?.id !== virtualRow.id && virtualRow.is_deletable
 								);
 
 								return (
 
-									<li key={currentLink.id}>
+									<li key={virtualRow.id}>
 										<div className="flex justify-between divide-x-2 divide-black">
 											<a
 												target="_blank"
-												href={currentLink.url!}
+												href={virtualRow.url!}
 												onClick={() => openLinkFn(true)}
 												onAuxClick={() => openLinkFn(true)}
 												className="py-2 px-6 w-full hover:bg-gray-800 cursor-pointer"
 											>
 												<div className="flex flex-col sm:flex-row sm:items-center justify-between">
 													<LinkTitle
-														isPublic={currentLink.is_public}
-														shareWith={currentLink.share_with}
-														title={currentLink.title} />
+														isPublic={virtualRow.is_public}
+														shareWith={virtualRow.share_with}
+														title={virtualRow.title} />
 													<LinkOpenedStatus
-														opened={currentLink.opened} />
+														opened={virtualRow.opened} />
 												</div>
 												<div className="mt-2 flex flex-col sm:flex-row justify-between">
 													<div className="flex flex-col sm:flex-row">
@@ -130,7 +131,7 @@ function Links() {
 																className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
 																aria-hidden="true" />
 															<p className="flex items-center text-sm text-gray-500 mr-8 md:mr-8 min-w-[3rem]">
-																{currentLink.who}
+																{virtualRow.who}
 															</p>
 														</div>
 														<div className="flex mb-1.5 sm:mt-0">
@@ -138,25 +139,25 @@ function Links() {
 																className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
 																aria-hidden="true" />
 															<p className="flex items-center text-sm text-gray-500 mr-8 md:mr-8 min-w-[3rem]">
-																{currentLink.origin}
+																{virtualRow.origin}
 															</p>
 														</div>
 													</div>
 													<LinkDate
-														postedDate={currentLink.posted_date} />
+														postedDate={virtualRow.posted_date} />
 												</div>
 											</a>
 											<div className="flex flex-col sm:flex-row divide-y-2 sm:divide-x-2 divide-black sm:divide-y-0">
 												<LinkDelete
 													canDeleteLink={canDeleteLink}
-													linkId={currentLink.id}
+													linkId={virtualRow.id}
 													userId={user!.id}
 													supabaseClient={supabaseClient} />
 												<LinkSeenToggle
-													opened={currentLink.opened}
-													toggleSeenStatus={() => openLinkFn(!currentLink.opened)} />
+													opened={virtualRow.opened}
+													toggleSeenStatus={() => openLinkFn(!virtualRow.opened)} />
 												<LinkReactions
-													link={currentLink}
+													link={virtualRow}
 													reaction={localReaction}
 													supabaseClient={supabaseClient} />
 											</div>
