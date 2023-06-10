@@ -103,6 +103,6 @@ function NewLinkShareCombo({ users }: { users: User[] }) {
 			</Combobox>
 		</div>
 	);
-};
+}
 
 export { NewLinkShareCombo };

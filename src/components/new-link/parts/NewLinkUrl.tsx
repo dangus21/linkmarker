@@ -22,6 +22,6 @@ function NewLinkUrl() {
 			/>
 		</div>
 	);
-};
+}
 
 export { NewLinkUrl };

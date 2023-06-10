@@ -29,6 +29,6 @@ function LinkTitle(
 			</p>
 		</div>
 	);
-};
+}
 
 export { LinkTitle };

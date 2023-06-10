@@ -62,6 +62,6 @@ function ProfileImage() {
 			</label>
 		</div>
 	);
-};
+}
 
 export { ProfileImage };

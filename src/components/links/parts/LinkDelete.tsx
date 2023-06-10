@@ -58,6 +58,6 @@ function LinkDelete(
 			</span>
 		</div>
 	);
-};
+}
 
 export { LinkDelete };

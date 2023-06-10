@@ -8,6 +8,6 @@ function LoadingSpinner() {
 			</div>
 		</div>
 	);
-};
+}
 
 export { LoadingSpinner };

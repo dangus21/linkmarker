@@ -26,6 +26,6 @@ function ProfileUsername() {
 		</div>
 
 	);
-};
+}
 
 export { ProfileUsername };

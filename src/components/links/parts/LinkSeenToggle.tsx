@@ -18,6 +18,6 @@ function LinkSeenToggle(
 			<VisibilityIcon className="h-[1.67rem] w-[1.67rem] sm:h-8 s:w-8 text-gray-600" />
 		</div>
 	);
-};
+}
 
 export { LinkSeenToggle };

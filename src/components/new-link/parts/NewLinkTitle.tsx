@@ -22,6 +22,6 @@ function NewLinkTitle() {
 			/>
 		</div>
 	);
-};
+}
 
 export { NewLinkTitle };

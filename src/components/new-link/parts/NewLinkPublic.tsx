@@ -86,6 +86,6 @@ function NewLinkPublic() {
 			}
 		</>
 	);
-};
+}
 
 export { NewLinkPublic };

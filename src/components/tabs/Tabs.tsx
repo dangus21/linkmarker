@@ -40,6 +40,6 @@ function Tabs() {
 			</nav>
 		</div>
 	);
-};
+}
 
 export { Tabs };

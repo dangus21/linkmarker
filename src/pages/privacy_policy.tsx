@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
 					<span style={{ fontSize: 26 }}>
 						<span data-custom-class="title">
 							<span className="block-component" />
-							<span className="question">PRIVACY POLICY</ span>
+							<span className="question">PRIVACY POLICY</span>
 							<span className="statement-end-if-in-editor" />
 						</span>
 					</span>
@@ -20,7 +20,8 @@ export default function PrivacyPolicy() {
 					<strong>
 						<span style={{ fontSize: 15 }}>
 							<span data-custom-class="subtitle">
-								Last updated <span className="question">April 12, 2023</ span>
+								Last updated{" "}
+								<span className="question">April 12, 2023</span>
 							</span>
 						</span>
 					</strong>
@@ -43,20 +44,27 @@ export default function PrivacyPolicy() {
 							<span className="question">
 								LinkMarker
 								<span className="block-component" />
-							</ span>{" "}
-							(<span className="block-component" />"
+							</span>{" "}
+							(<span className="block-component" />
+							&quot;
 							<span className="block-component" />
 							<strong>Company</strong>
 							<span className="statement-end-if-in-editor" />
-							," "<strong>we</strong>," "<strong>us</strong>," or "
-							<strong>our</strong>"<span className="statement-end-if-in-editor" />
+							,&quot; &quot;<strong>we</strong>,&quot; &quot;
+							<strong>us</strong>,&quot; or &quot;
+							<strong>our</strong>&quot;
+							<span className="statement-end-if-in-editor" />
 						</span>
 						<span data-custom-class="body_text">
-							), describes how and why we might collect, store, use, and/or share (
-							<span className="block-component" />"<strong>process</strong>"
-							<span className="statement-end-if-in-editor" />) your information when
-							you use our services (<span className="block-component" />"
-							<strong>Services</strong>"
+							), describes how and why we might collect, store,
+							use, and/or share (
+							<span className="block-component" />
+							&quot;<strong>process</strong>&quot;
+							<span className="statement-end-if-in-editor" />)
+							your information when you use our services (
+							<span className="block-component" />
+							&quot;
+							<strong>Services</strong>&quot;
 							<span className="statement-end-if-in-editor" />
 							), such as when you:
 						</span>
@@ -77,20 +85,27 @@ export default function PrivacyPolicy() {
 			<ul>
 				<li style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
 							<span data-custom-class="body_text">
 								Visit our website
 								<span className="block-component" /> at{" "}
-								<span className="question">linkmarker.app</ span>
+								<span className="question">linkmarker.app</span>
 								<span style={{ fontSize: 15 }}>
 									<span style={{ color: "rgb(89, 89, 89)" }}>
 										<span data-custom-class="body_text">
 											<span style={{ fontSize: 15 }}>
-												<span style={{ color: "rgb(89, 89, 89)" }}>
+												<span
+													style={{
+														color: "rgb(89, 89, 89)"
+													}}
+												>
 													<span className="statement-end-if-in-editor">
-														, or any website of ours that links to this privacy
-														notice
-													</ span>
+														, or any website of ours
+														that links to this
+														privacy notice
+													</span>
 												</span>
 											</span>
 										</span>
@@ -116,7 +131,7 @@ export default function PrivacyPolicy() {
 							</span>
 						</span>
 					</span>
-				</ span>
+				</span>
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15 }}>
 						<span style={{ color: "rgb(127, 127, 127)" }}>
@@ -132,16 +147,29 @@ export default function PrivacyPolicy() {
 				</div>
 				<ul>
 					<li style={{ lineHeight: "1.5" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-							<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
+							<span
+								style={{
+									fontSize: 15,
+									color: "rgb(89, 89, 89)"
+								}}
+							>
 								<span data-custom-class="body_text">
-									Engage with us in other related ways, including any sales,
-									marketing, or events
+									Engage with us in other related ways,
+									including any sales, marketing, or events
 									<span style={{ fontSize: 15 }}>
-										<span style={{ color: "rgb(89, 89, 89)" }}>
+										<span
+											style={{ color: "rgb(89, 89, 89)" }}
+										>
 											<span data-custom-class="body_text">
 												<span style={{ fontSize: 15 }}>
-													<span style={{ color: "rgb(89, 89, 89)" }}>
+													<span
+														style={{
+															color: "rgb(89, 89, 89)"
+														}}
+													>
 														<span className="statement-end-if-in-editor" />
 													</span>
 												</span>
@@ -157,11 +185,17 @@ export default function PrivacyPolicy() {
 					<span style={{ fontSize: 15 }}>
 						<span style={{ color: "rgb(127, 127, 127)" }}>
 							<span data-custom-class="body_text">
-								<strong>Questions or concerns?&nbsp;</strong>Reading this privacy
-								notice will help you understand your privacy rights and choices. If
-								you do not agree with our policies and practices, please do not use
-								our Services. If you still have any questions or concerns, please
-								contact us at <span className="question">angusmiguel21@gmail.com</ span>.
+								<strong>Questions or concerns?&nbsp;</strong>
+								Reading this privacy notice will help you
+								understand your privacy rights and choices. If
+								you do not agree with our policies and
+								practices, please do not use our Services. If
+								you still have any questions or concerns, please
+								contact us at{" "}
+								<span className="question">
+									angusmiguel21@gmail.com
+								</span>
+								.
 							</span>
 						</span>
 					</span>
@@ -175,7 +209,9 @@ export default function PrivacyPolicy() {
 				<div style={{ lineHeight: "1.5" }}>
 					<strong>
 						<span style={{ fontSize: 15 }}>
-							<span data-custom-class="heading_1">SUMMARY OF KEY POINTS</span>
+							<span data-custom-class="heading_1">
+								SUMMARY OF KEY POINTS
+							</span>
 						</span>
 					</strong>
 				</div>
@@ -187,9 +223,11 @@ export default function PrivacyPolicy() {
 						<span data-custom-class="body_text">
 							<strong>
 								<em>
-									This summary provides key points from our privacy notice, but you
-									can find out more details about any of these topics by clicking
-									the link following each key point or by using our&nbsp;
+									This summary provides key points from our
+									privacy notice, but you can find out more
+									details about any of these topics by
+									clicking the link following each key point
+									or by using our&nbsp;
 								</em>
 							</strong>
 						</span>
@@ -206,7 +244,10 @@ export default function PrivacyPolicy() {
 					<span style={{ fontSize: 15 }}>
 						<span data-custom-class="body_text">
 							<strong>
-								<em>&nbsp;below to find the section you are looking for.</em>
+								<em>
+									&nbsp;below to find the section you are
+									looking for.
+								</em>
 							</strong>
 						</span>
 					</span>
@@ -217,14 +258,17 @@ export default function PrivacyPolicy() {
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15 }}>
 						<span data-custom-class="body_text">
-							<strong>What personal information do we process?</strong> When you
-							visit, use, or navigate our Services, we may process personal
-							information depending on how you interact with{" "}
+							<strong>
+								What personal information do we process?
+							</strong>{" "}
+							When you visit, use, or navigate our Services, we
+							may process personal information depending on how
+							you interact with{" "}
 							<span className="block-component" />
-							<span className="question">LinkMarker</ span>
-							<span className="statement-end-if-in-editor" /> and the Services, the
-							choices you make, and the products and features you use. Learn more
-							about&nbsp;
+							<span className="question">LinkMarker</span>
+							<span className="statement-end-if-in-editor" /> and
+							the Services, the choices you make, and the products
+							and features you use. Learn more about&nbsp;
 						</span>
 					</span>
 					<a data-custom-class="link" href="#personalinfo">
@@ -242,7 +286,10 @@ export default function PrivacyPolicy() {
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15 }}>
 						<span data-custom-class="body_text">
-							<strong>Do we process any sensitive personal information?</strong>{" "}
+							<strong>
+								Do we process any sensitive personal
+								information?
+							</strong>{" "}
 							<span className="block-component" />
 							We do not process sensitive personal information.
 							<span className="else-block" />
@@ -255,9 +302,13 @@ export default function PrivacyPolicy() {
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15 }}>
 						<span data-custom-class="body_text">
-							<strong>Do we receive any information from third parties?</strong>{" "}
+							<strong>
+								Do we receive any information from third
+								parties?
+							</strong>{" "}
 							<span className="block-component" />
-							We do not receive any information from third parties.
+							We do not receive any information from third
+							parties.
 							<span className="else-block" />
 						</span>
 					</span>
@@ -268,12 +319,14 @@ export default function PrivacyPolicy() {
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15 }}>
 						<span data-custom-class="body_text">
-							<strong>How do we process your information?</strong> We process your
-							information to provide, improve, and administer our Services,
-							communicate with you, for security and fraud prevention, and to comply
-							with law. We may also process your information for other purposes with
-							your consent. We process your information only when we have a valid
-							legal reason to do so. Learn more about&nbsp;
+							<strong>How do we process your information?</strong>{" "}
+							We process your information to provide, improve, and
+							administer our Services, communicate with you, for
+							security and fraud prevention, and to comply with
+							law. We may also process your information for other
+							purposes with your consent. We process your
+							information only when we have a valid legal reason
+							to do so. Learn more about&nbsp;
 						</span>
 					</span>
 					<a data-custom-class="link" href="#infouse">
@@ -296,15 +349,16 @@ export default function PrivacyPolicy() {
 								<span className="block-component" />
 								parties do we share personal information?
 							</strong>{" "}
-							We may share information in specific situations and with specific{" "}
-							<span className="block-component" />
+							We may share information in specific situations and
+							with specific <span className="block-component" />
 							third parties. Learn more about&nbsp;
 						</span>
 					</span>
 					<a data-custom-class="link" href="#whoshare">
 						<span style={{ fontSize: 15 }}>
 							<span data-custom-class="body_text">
-								when and with whom we share your personal information
+								when and with whom we share your personal
+								information
 							</span>
 						</span>
 					</a>
@@ -320,19 +374,24 @@ export default function PrivacyPolicy() {
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15 }}>
 						<span data-custom-class="body_text">
-							<strong>How do we keep your information safe?</strong> We have{" "}
-							<span className="block-component" />
+							<strong>
+								How do we keep your information safe?
+							</strong>{" "}
+							We have <span className="block-component" />
 							organizational
-							<span className="statement-end-if-in-editor" /> and technical processes
-							and procedures in place to protect your personal information. However,
-							no electronic transmission over the internet or information storage
-							technology can be guaranteed to be 100% secure, so we cannot promise
-							or guarantee that hackers, cybercriminals, or other{" "}
+							<span className="statement-end-if-in-editor" /> and
+							technical processes and procedures in place to
+							protect your personal information. However, no
+							electronic transmission over the internet or
+							information storage technology can be guaranteed to
+							be 100% secure, so we cannot promise or guarantee
+							that hackers, cybercriminals, or other{" "}
 							<span className="block-component" />
 							unauthorized
-							<span className="statement-end-if-in-editor" /> third parties will not
-							be able to defeat our security and improperly collect, access, steal,
-							or modify your information. Learn more about&nbsp;
+							<span className="statement-end-if-in-editor" />{" "}
+							third parties will not be able to defeat our
+							security and improperly collect, access, steal, or
+							modify your information. Learn more about&nbsp;
 						</span>
 					</span>
 					<a data-custom-class="link" href="#infosafe">
@@ -355,15 +414,18 @@ export default function PrivacyPolicy() {
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15 }}>
 						<span data-custom-class="body_text">
-							<strong>What are your rights?</strong> Depending on where you are
-							located geographically, the applicable privacy law may mean you have
-							certain rights regarding your personal information. Learn more
+							<strong>What are your rights?</strong> Depending on
+							where you are located geographically, the applicable
+							privacy law may mean you have certain rights
+							regarding your personal information. Learn more
 							about&nbsp;
 						</span>
 					</span>
 					<a data-custom-class="link" href="#privacyrights">
 						<span style={{ fontSize: 15 }}>
-							<span data-custom-class="body_text">your privacy rights</span>
+							<span data-custom-class="body_text">
+								your privacy rights
+							</span>
 						</span>
 					</a>
 					<span data-custom-class="body_text">.</span>
@@ -374,9 +436,11 @@ export default function PrivacyPolicy() {
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15 }}>
 						<span data-custom-class="body_text">
-							<strong>How do you exercise your rights?</strong> The easiest way to
-							exercise your rights is by{" "}
-							<span className="block-component">submitting a&nbsp;</ span>
+							<strong>How do you exercise your rights?</strong>{" "}
+							The easiest way to exercise your rights is by{" "}
+							<span className="block-component">
+								submitting a&nbsp;
+							</span>
 						</span>
 					</span>
 					<a
@@ -386,13 +450,16 @@ export default function PrivacyPolicy() {
 						target="_blank"
 					>
 						<span style={{ fontSize: 15 }}>
-							<span data-custom-class="body_text">data subject access request</span>
+							<span data-custom-class="body_text">
+								data subject access request
+							</span>
 						</span>
 					</a>
 					<span style={{ fontSize: 15 }}>
 						<span data-custom-class="body_text">
-							<span className="block-component" />, or by contacting us. We will
-							consider and act upon any request in accordance with applicable data
+							<span className="block-component" />, or by
+							contacting us. We will consider and act upon any
+							request in accordance with applicable data
 							protection laws.
 						</span>
 					</span>
@@ -403,10 +470,11 @@ export default function PrivacyPolicy() {
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15 }}>
 						<span data-custom-class="body_text">
-							Want to learn more about what <span className="block-component" />
-							<span className="question">LinkMarker</ span>
-							<span className="statement-end-if-in-editor" /> does with any
-							information we collect?&nbsp;
+							Want to learn more about what{" "}
+							<span className="block-component" />
+							<span className="question">LinkMarker</span>
+							<span className="statement-end-if-in-editor" /> does
+							with any information we collect?&nbsp;
 						</span>
 					</span>
 					<a data-custom-class="link" href="#toc">
@@ -431,7 +499,9 @@ export default function PrivacyPolicy() {
 						<span style={{ color: "rgb(127, 127, 127)" }}>
 							<span style={{ color: "rgb(0, 0, 0)" }}>
 								<strong>
-									<span data-custom-class="heading_1">TABLE OF CONTENTS</span>
+									<span data-custom-class="heading_1">
+										TABLE OF CONTENTS
+									</span>
 								</strong>
 							</span>
 						</span>
@@ -466,8 +536,8 @@ export default function PrivacyPolicy() {
 								3.{" "}
 								<span style={{ fontSize: 15 }}>
 									<span style={{ color: "rgb(89, 89, 89)" }}>
-										WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR PERSONAL
-										INFORMATION?
+										WHAT LEGAL BASES DO WE RELY ON TO
+										PROCESS YOUR PERSONAL INFORMATION?
 									</span>
 								</span>
 								<span className="statement-end-if-in-editor" />
@@ -479,7 +549,8 @@ export default function PrivacyPolicy() {
 					<span style={{ fontSize: 15 }}>
 						<span style={{ color: "rgb(89, 89, 89)" }}>
 							<a data-custom-class="link" href="#whoshare">
-								4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?
+								4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL
+								INFORMATION?
 							</a>
 						</span>
 						<span data-custom-class="body_text">
@@ -494,8 +565,14 @@ export default function PrivacyPolicy() {
 								</span>
 								<span data-custom-class="body_text">
 									<span style={{ color: "rgb(89, 89, 89)" }}>
-										<span style={{ color: "rgb(89, 89, 89)" }}>
-											<span style={{ color: "rgb(89, 89, 89)" }}>
+										<span
+											style={{ color: "rgb(89, 89, 89)" }}
+										>
+											<span
+												style={{
+													color: "rgb(89, 89, 89)"
+												}}
+											>
 												<span className="block-component" />
 											</span>
 										</span>
@@ -520,8 +597,14 @@ export default function PrivacyPolicy() {
 							<span style={{ color: "rgb(89, 89, 89)" }}>
 								<span data-custom-class="body_text">
 									<span style={{ color: "rgb(89, 89, 89)" }}>
-										<span style={{ color: "rgb(89, 89, 89)" }}>
-											<span style={{ color: "rgb(89, 89, 89)" }}>
+										<span
+											style={{ color: "rgb(89, 89, 89)" }}
+										>
+											<span
+												style={{
+													color: "rgb(89, 89, 89)"
+												}}
+											>
 												<span className="statement-end-if-in-editor" />
 											</span>
 										</span>
@@ -543,7 +626,9 @@ export default function PrivacyPolicy() {
 							<span style={{ color: "rgb(89, 89, 89)" }}>
 								<span data-custom-class="body_text">
 									<span style={{ color: "rgb(89, 89, 89)" }}>
-										<span style={{ color: "rgb(89, 89, 89)" }}>
+										<span
+											style={{ color: "rgb(89, 89, 89)" }}
+										>
 											<span className="block-component" />
 										</span>
 									</span>
@@ -593,7 +678,8 @@ export default function PrivacyPolicy() {
 					<span style={{ fontSize: 15 }}>
 						<a data-custom-class="link" href="#caresidents">
 							<span style={{ color: "rgb(89, 89, 89)" }}>
-								10. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?
+								10. DO CALIFORNIA RESIDENTS HAVE SPECIFIC
+								PRIVACY RIGHTS?
 							</span>
 						</a>
 					</span>
@@ -601,7 +687,7 @@ export default function PrivacyPolicy() {
 						<span style={{ fontSize: 15 }}>
 							<span data-custom-class="body_text" />
 						</span>
-					</ span>
+					</span>
 				</div>
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15 }}>
@@ -614,7 +700,9 @@ export default function PrivacyPolicy() {
 				</div>
 				<div style={{ lineHeight: "1.5" }}>
 					<a data-custom-class="link" href="#contact">
-						<span style={{ color: "rgb(89, 89, 89)", fontSize: 15 }}>
+						<span
+							style={{ color: "rgb(89, 89, 89)", fontSize: 15 }}
+						>
 							12. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
 						</span>
 					</a>
@@ -622,8 +710,8 @@ export default function PrivacyPolicy() {
 				<div style={{ lineHeight: "1.5" }}>
 					<a data-custom-class="link" href="#request">
 						<span style={{ color: "rgb(89, 89, 89)" }}>
-							13. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM
-							YOU?
+							13. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA
+							WE COLLECT FROM YOU?
 						</span>
 					</a>
 				</div>
@@ -635,13 +723,29 @@ export default function PrivacyPolicy() {
 				</div>
 				<div id="infocollect" style={{ lineHeight: "1.5" }}>
 					<span style={{ color: "rgb(127, 127, 127)" }}>
-						<span style={{ color: "rgb(89, 89, 89)", fontSize: 15 }}>
-							<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-								<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-									<span id="control" style={{ color: "rgb(0, 0, 0)" }}>
+						<span
+							style={{ color: "rgb(89, 89, 89)", fontSize: 15 }}
+						>
+							<span
+								style={{
+									fontSize: 15,
+									color: "rgb(89, 89, 89)"
+								}}
+							>
+								<span
+									style={{
+										fontSize: 15,
+										color: "rgb(89, 89, 89)"
+									}}
+								>
+									<span
+										id="control"
+										style={{ color: "rgb(0, 0, 0)" }}
+									>
 										<strong>
 											<span data-custom-class="heading_1">
-												1. WHAT INFORMATION DO WE COLLECT?
+												1. WHAT INFORMATION DO WE
+												COLLECT?
 											</span>
 										</strong>
 									</span>
@@ -654,9 +758,14 @@ export default function PrivacyPolicy() {
 					<br />
 				</div>
 				<div id="personalinfo" style={{ lineHeight: "1.5" }}>
-					<span data-custom-class="heading_2" style={{ color: "rgb(0, 0, 0)" }}>
+					<span
+						data-custom-class="heading_2"
+						style={{ color: "rgb(0, 0, 0)" }}
+					>
 						<span style={{ fontSize: 15 }}>
-							<strong>Personal information you disclose to us</strong>
+							<strong>
+								Personal information you disclose to us
+							</strong>
 						</span>
 					</span>
 				</div>
@@ -666,10 +775,25 @@ export default function PrivacyPolicy() {
 					</div>
 					<div style={{ lineHeight: "1.5" }}>
 						<span style={{ color: "rgb(127, 127, 127)" }}>
-							<span style={{ color: "rgb(89, 89, 89)", fontSize: 15 }}>
+							<span
+								style={{
+									color: "rgb(89, 89, 89)",
+									fontSize: 15
+								}}
+							>
 								<span data-custom-class="body_text">
-									<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-										<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+									<span
+										style={{
+											fontSize: 15,
+											color: "rgb(89, 89, 89)"
+										}}
+									>
+										<span
+											style={{
+												fontSize: 15,
+												color: "rgb(89, 89, 89)"
+											}}
+										>
 											<span data-custom-class="body_text">
 												<strong>
 													<em>In Short:</em>
@@ -679,14 +803,26 @@ export default function PrivacyPolicy() {
 									</span>
 								</span>
 								<span data-custom-class="body_text">
-									<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-										<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+									<span
+										style={{
+											fontSize: 15,
+											color: "rgb(89, 89, 89)"
+										}}
+									>
+										<span
+											style={{
+												fontSize: 15,
+												color: "rgb(89, 89, 89)"
+											}}
+										>
 											<span data-custom-class="body_text">
 												<strong>
 													<em>&nbsp;</em>
 												</strong>
 												<em>
-													We collect personal information that you provide to us.
+													We collect personal
+													information that you provide
+													to us.
 												</em>
 											</span>
 										</span>
@@ -701,10 +837,12 @@ export default function PrivacyPolicy() {
 				</div>
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
 							<span data-custom-class="body_text">
-								We collect personal information that you voluntarily provide to us
-								when you{" "}
+								We collect personal information that you
+								voluntarily provide to us when you{" "}
 								<span style={{ fontSize: 15 }}>
 									<span className="block-component" />
 								</span>
@@ -717,8 +855,9 @@ export default function PrivacyPolicy() {
 									</span>
 								</span>
 								<span data-custom-class="body_text">
-									express an interest in obtaining information about us or our
-									products and Services, when you participate in activities on the
+									express an interest in obtaining information
+									about us or our products and Services, when
+									you participate in activities on the
 									Services, or otherwise when you contact us.
 								</span>
 							</span>
@@ -730,7 +869,9 @@ export default function PrivacyPolicy() {
 				</div>
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
 							<span data-custom-class="body_text">
 								<span style={{ fontSize: 15 }}>
 									<span className="block-component" />
@@ -758,13 +899,15 @@ export default function PrivacyPolicy() {
 						</span>
 					</span>
 					<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
 							<span data-custom-class="body_text">
 								<span style={{ fontSize: 15 }}>
 									<span data-custom-class="body_text">
 										<span className="block-component">
 											<span className="block-component" />
-										</ span>
+										</span>
 									</span>
 								</span>
 							</span>
@@ -773,28 +916,43 @@ export default function PrivacyPolicy() {
 				</div>
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
 							<span data-custom-class="body_text">
-								<strong>Social Media Login Data.&nbsp;</strong>We may provide you
-								with the option to register with us using your existing social media
-								account details, like your Facebook, Twitter, or other social media
-								account. If you choose to register in this way, we will collect the
-								information described in the section called{" "}
-								<span className="block-component" />"
+								<strong>Social Media Login Data.&nbsp;</strong>
+								We may provide you with the option to register
+								with us using your existing social media account
+								details, like your Facebook, Twitter, or other
+								social media account. If you choose to register
+								in this way, we will collect the information
+								described in the section called{" "}
+								<span className="block-component" />
+								&quot;
 								<span className="statement-end-if-in-editor" />
 								<span style={{ fontSize: 15 }}>
 									<span data-custom-class="body_text">
 										<span style={{ fontSize: 15 }}>
-											<span style={{ color: "rgb(89, 89, 89)" }}>
-												<a data-custom-class="link" href="#sociallogins">
-													HOW DO WE HANDLE YOUR SOCIAL LOGINS?
+											<span
+												style={{
+													color: "rgb(89, 89, 89)"
+												}}
+											>
+												<a
+													data-custom-class="link"
+													href="#sociallogins"
+												>
+													HOW DO WE HANDLE YOUR SOCIAL
+													LOGINS?
 												</a>
 											</span>
 										</span>
 									</span>
 								</span>
-								<span className="block-component" />"
-								<span className="statement-end-if-in-editor" /> below.
+								<span className="block-component" />
+								&quot;
+								<span className="statement-end-if-in-editor" />{" "}
+								below.
 							</span>
 						</span>
 					</span>
@@ -804,12 +962,14 @@ export default function PrivacyPolicy() {
 				</div>
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
 							<span data-custom-class="body_text">
 								<span style={{ fontSize: 15 }}>
 									<span className="statement-end-if-in-editor">
 										<span className="statement-end-if-in-editor" />
-									</ span>
+									</span>
 								</span>
 							</span>
 						</span>
@@ -818,11 +978,14 @@ export default function PrivacyPolicy() {
 				</div>
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
 							<span data-custom-class="body_text">
-								All personal information that you provide to us must be true,
-								complete, and accurate, and you must notify us of any changes to
-								such personal information.
+								All personal information that you provide to us
+								must be true, complete, and accurate, and you
+								must notify us of any changes to such personal
+								information.
 							</span>
 						</span>
 					</span>
@@ -832,18 +995,30 @@ export default function PrivacyPolicy() {
 				</div>
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
 							<span data-custom-class="body_text">
 								<span className="block-component" />
 							</span>
 							<span data-custom-class="body_text">
-								<span style={{ color: "rgb(89, 89, 89)", fontSize: 15 }}>
+								<span
+									style={{
+										color: "rgb(89, 89, 89)",
+										fontSize: 15
+									}}
+								>
 									<span data-custom-class="body_text">
-										<span style={{ color: "rgb(89, 89, 89)", fontSize: 15 }}>
+										<span
+											style={{
+												color: "rgb(89, 89, 89)",
+												fontSize: 15
+											}}
+										>
 											<span data-custom-class="body_text">
 												<span className="statement-end-if-in-editor">
 													<span className="block-component" />
-												</ span>
+												</span>
 											</span>
 										</span>
 									</span>
@@ -859,13 +1034,29 @@ export default function PrivacyPolicy() {
 				</div>
 				<div id="infouse" style={{ lineHeight: "1.5" }}>
 					<span style={{ color: "rgb(127, 127, 127)" }}>
-						<span style={{ color: "rgb(89, 89, 89)", fontSize: 15 }}>
-							<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-								<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-									<span id="control" style={{ color: "rgb(0, 0, 0)" }}>
+						<span
+							style={{ color: "rgb(89, 89, 89)", fontSize: 15 }}
+						>
+							<span
+								style={{
+									fontSize: 15,
+									color: "rgb(89, 89, 89)"
+								}}
+							>
+								<span
+									style={{
+										fontSize: 15,
+										color: "rgb(89, 89, 89)"
+									}}
+								>
+									<span
+										id="control"
+										style={{ color: "rgb(0, 0, 0)" }}
+									>
 										<strong>
 											<span data-custom-class="heading_1">
-												2. HOW DO WE PROCESS YOUR INFORMATION?
+												2. HOW DO WE PROCESS YOUR
+												INFORMATION?
 											</span>
 										</strong>
 									</span>
@@ -880,20 +1071,40 @@ export default function PrivacyPolicy() {
 					</div>
 					<div style={{ lineHeight: "1.5" }}>
 						<span style={{ color: "rgb(127, 127, 127)" }}>
-							<span style={{ color: "rgb(89, 89, 89)", fontSize: 15 }}>
+							<span
+								style={{
+									color: "rgb(89, 89, 89)",
+									fontSize: 15
+								}}
+							>
 								<span data-custom-class="body_text">
-									<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-										<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+									<span
+										style={{
+											fontSize: 15,
+											color: "rgb(89, 89, 89)"
+										}}
+									>
+										<span
+											style={{
+												fontSize: 15,
+												color: "rgb(89, 89, 89)"
+											}}
+										>
 											<span data-custom-class="body_text">
 												<strong>
 													<em>In Short:&nbsp;</em>
 												</strong>
 												<em>
-													We process your information to provide, improve, and
-													administer our Services, communicate with you, for
-													security and fraud prevention, and to comply with law. We
-													may also process your information for other purposes with
-													your consent.
+													We process your information
+													to provide, improve, and
+													administer our Services,
+													communicate with you, for
+													security and fraud
+													prevention, and to comply
+													with law. We may also
+													process your information for
+													other purposes with your
+													consent.
 												</em>
 											</span>
 										</span>
@@ -908,11 +1119,14 @@ export default function PrivacyPolicy() {
 				</div>
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
 							<span data-custom-class="body_text">
 								<strong>
-									We process your personal information for a variety of reasons,
-									depending on how you interact with our Services, including:
+									We process your personal information for a
+									variety of reasons, depending on how you
+									interact with our Services, including:
 								</strong>
 								<span className="block-component" />
 							</span>
@@ -921,23 +1135,54 @@ export default function PrivacyPolicy() {
 				</div>
 				<ul>
 					<li style={{ lineHeight: "1.5" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-							<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
+							<span
+								style={{
+									fontSize: 15,
+									color: "rgb(89, 89, 89)"
+								}}
+							>
 								<span data-custom-class="body_text">
 									<strong>
-										To facilitate account creation and authentication and otherwise
-										manage user accounts.&nbsp;
+										To facilitate account creation and
+										authentication and otherwise manage user
+										accounts.&nbsp;
 									</strong>
-									We may process your information so you can create and log in to
-									your account, as well as keep your account in working order.
-									<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-										<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+									We may process your information so you can
+									create and log in to your account, as well
+									as keep your account in working order.
+									<span
+										style={{
+											fontSize: 15,
+											color: "rgb(89, 89, 89)"
+										}}
+									>
+										<span
+											style={{
+												fontSize: 15,
+												color: "rgb(89, 89, 89)"
+											}}
+										>
 											<span data-custom-class="body_text">
 												<span style={{ fontSize: 15 }}>
-													<span style={{ color: "rgb(89, 89, 89)" }}>
+													<span
+														style={{
+															color: "rgb(89, 89, 89)"
+														}}
+													>
 														<span data-custom-class="body_text">
-															<span style={{ fontSize: 15 }}>
-																<span style={{ color: "rgb(89, 89, 89)" }}>
+															<span
+																style={{
+																	fontSize: 15
+																}}
+															>
+																<span
+																	style={{
+																		color: "rgb(89, 89, 89)"
+																	}}
+																>
 																	<span data-custom-class="body_text">
 																		<span className="statement-end-if-in-editor" />
 																	</span>
@@ -956,31 +1201,60 @@ export default function PrivacyPolicy() {
 				</ul>
 				<div style={{ lineHeight: "1.5" }}>
 					<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
 							<span data-custom-class="body_text">
 								<span className="block-component" />
 							</span>
 						</span>
 					</span>
 					<div style={{ lineHeight: "1.5" }}>
-						<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-							<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+						<span
+							style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
+						>
+							<span
+								style={{
+									fontSize: 15,
+									color: "rgb(89, 89, 89)"
+								}}
+							>
 								<span data-custom-class="body_text">
 									<span className="block-component" />
 								</span>
 							</span>
 						</span>
 						<div style={{ lineHeight: "1.5" }}>
-							<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-								<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+							<span
+								style={{
+									fontSize: 15,
+									color: "rgb(89, 89, 89)"
+								}}
+							>
+								<span
+									style={{
+										fontSize: 15,
+										color: "rgb(89, 89, 89)"
+									}}
+								>
 									<span data-custom-class="body_text">
 										<span className="block-component" />
 									</span>
 								</span>
 							</span>
 							<div style={{ lineHeight: "1.5" }}>
-								<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
-									<span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
+								<span
+									style={{
+										fontSize: 15,
+										color: "rgb(89, 89, 89)"
+									}}
+								>
+									<span
+										style={{
+											fontSize: 15,
+											color: "rgb(89, 89, 89)"
+										}}
+									>
 										<span data-custom-class="body_text">
 											<span className="block-component" />
 										</span>
@@ -989,262 +1263,523 @@ export default function PrivacyPolicy() {
 								<div style={{ lineHeight: "1.5" }}>
 									<span className="block-component">
 										<span style={{ fontSize: 15 }} />
-									</ span>
+									</span>
 									<div style={{ lineHeight: "1.5" }}>
 										<span className="block-component">
 											<span style={{ fontSize: 15 }} />
-										</ span>
+										</span>
 										<div style={{ lineHeight: "1.5" }}>
 											<span className="block-component">
-												<span style={{ fontSize: 15 }} />
-											</ span>
+												<span
+													style={{ fontSize: 15 }}
+												/>
+											</span>
 											<div style={{ lineHeight: "1.5" }}>
 												<span className="block-component">
-													<span style={{ fontSize: 15 }}>
+													<span
+														style={{ fontSize: 15 }}
+													>
 														<span data-custom-class="body_text" />
 													</span>
-												</ span>
-												<p style={{ fontSize: 15, lineHeight: "1.5" }}>
+												</span>
+												<p
+													style={{
+														fontSize: 15,
+														lineHeight: "1.5"
+													}}
+												>
 													<span className="block-component">
-														<span style={{ fontSize: 15 }} />
-													</ span>
+														<span
+															style={{
+																fontSize: 15
+															}}
+														/>
+													</span>
 												</p>
-												<p style={{ fontSize: 15, lineHeight: "1.5" }}>
+												<p
+													style={{
+														fontSize: 15,
+														lineHeight: "1.5"
+													}}
+												>
 													<span className="block-component">
-														<span style={{ fontSize: 15 }} />
-													</ span>
+														<span
+															style={{
+																fontSize: 15
+															}}
+														/>
+													</span>
 												</p>
-												<p style={{ fontSize: 15, lineHeight: "1.5" }}>
+												<p
+													style={{
+														fontSize: 15,
+														lineHeight: "1.5"
+													}}
+												>
 													<span className="block-component" />
 												</p>
-												<p style={{ fontSize: 15, lineHeight: "1.5" }}>
+												<p
+													style={{
+														fontSize: 15,
+														lineHeight: "1.5"
+													}}
+												>
 													<span className="block-component" />
 												</p>
-												<div style={{ lineHeight: "1.5" }}>
+												<div
+													style={{
+														lineHeight: "1.5"
+													}}
+												>
 													<span className="block-component">
-														<span style={{ fontSize: 15 }} />
-													</ span>
-													<div style={{ lineHeight: "1.5" }}>
+														<span
+															style={{
+																fontSize: 15
+															}}
+														/>
+													</span>
+													<div
+														style={{
+															lineHeight: "1.5"
+														}}
+													>
 														<span className="block-component">
-															<span style={{ fontSize: 15 }} />
-														</ span>
-														<div style={{ lineHeight: "1.5" }}>
+															<span
+																style={{
+																	fontSize: 15
+																}}
+															/>
+														</span>
+														<div
+															style={{
+																lineHeight:
+																	"1.5"
+															}}
+														>
 															<span className="block-component">
-																<span style={{ fontSize: 15 }} />
-															</ span>
-															<div style={{ lineHeight: "1.5" }}>
-																<span style={{ fontSize: 15 }}>
+																<span
+																	style={{
+																		fontSize: 15
+																	}}
+																/>
+															</span>
+															<div
+																style={{
+																	lineHeight:
+																		"1.5"
+																}}
+															>
+																<span
+																	style={{
+																		fontSize: 15
+																	}}
+																>
 																	<span className="block-component">
 																		<span data-custom-class="body_text" />
-																	</ span>
+																	</span>
 																</span>
-																<div style={{ lineHeight: "1.5" }}>
+																<div
+																	style={{
+																		lineHeight:
+																			"1.5"
+																	}}
+																>
 																	<span className="block-component">
-																		<span style={{ fontSize: 15 }}>
+																		<span
+																			style={{
+																				fontSize: 15
+																			}}
+																		>
 																			<span data-custom-class="body_text" />
 																		</span>
-																	</ span>
-																	<div style={{ lineHeight: "1.5" }}>
+																	</span>
+																	<div
+																		style={{
+																			lineHeight:
+																				"1.5"
+																		}}
+																	>
 																		<span className="block-component">
-																			<span style={{ fontSize: 15 }}>
+																			<span
+																				style={{
+																					fontSize: 15
+																				}}
+																			>
 																				<span data-custom-class="body_text" />
 																			</span>
-																		</ span>
-																		<div style={{ lineHeight: "1.5" }}>
+																		</span>
+																		<div
+																			style={{
+																				lineHeight:
+																					"1.5"
+																			}}
+																		>
 																			<span className="block-component">
-																				<span style={{ fontSize: 15 }}>
+																				<span
+																					style={{
+																						fontSize: 15
+																					}}
+																				>
 																					<span data-custom-class="body_text" />
 																				</span>
-																			</ span>
-																			<div style={{ lineHeight: "1.5" }}>
+																			</span>
+																			<div
+																				style={{
+																					lineHeight:
+																						"1.5"
+																				}}
+																			>
 																				<span className="block-component">
-																					<span style={{ fontSize: 15 }}>
+																					<span
+																						style={{
+																							fontSize: 15
+																						}}
+																					>
 																						<span data-custom-class="body_text" />
 																					</span>
-																				</ span>
-																				<div style={{ lineHeight: "1.5" }}>
+																				</span>
+																				<div
+																					style={{
+																						lineHeight:
+																							"1.5"
+																					}}
+																				>
 																					<span className="block-component">
-																						<span style={{ fontSize: 15 }}>
+																						<span
+																							style={{
+																								fontSize: 15
+																							}}
+																						>
 																							<span data-custom-class="body_text" />
 																						</span>
-																					</ span>
-																					<div style={{ lineHeight: "1.5" }}>
+																					</span>
+																					<div
+																						style={{
+																							lineHeight:
+																								"1.5"
+																						}}
+																					>
 																						<span className="block-component">
-																							<span style={{ fontSize: 15 }}>
+																							<span
+																								style={{
+																									fontSize: 15
+																								}}
+																							>
 																								<span data-custom-class="body_text" />
 																							</span>
-																						</ span>
-																						<div style={{ lineHeight: "1.5" }}>
+																						</span>
+																						<div
+																							style={{
+																								lineHeight:
+																									"1.5"
+																							}}
+																						>
 																							<span className="block-component">
-																								<span style={{ fontSize: 15 }}>
+																								<span
+																									style={{
+																										fontSize: 15
+																									}}
+																								>
 																									<span data-custom-class="body_text" />
 																								</span>
-																							</ span>
-																							<div style={{ lineHeight: "1.5" }}>
+																							</span>
+																							<div
+																								style={{
+																									lineHeight:
+																										"1.5"
+																								}}
+																							>
 																								<span className="block-component">
-																									<span style={{ fontSize: 15 }}>
+																									<span
+																										style={{
+																											fontSize: 15
+																										}}
+																									>
 																										<span data-custom-class="body_text" />
 																									</span>
-																								</ span>
-																								<div style={{ lineHeight: "1.5" }}>
+																								</span>
+																								<div
+																									style={{
+																										lineHeight:
+																											"1.5"
+																									}}
+																								>
 																									<span className="block-component">
-																										<span style={{ fontSize: 15 }}>
+																										<span
+																											style={{
+																												fontSize: 15
+																											}}
+																										>
 																											<span data-custom-class="body_text" />
 																										</span>
-																									</ span>
+																									</span>
 																									<div
-																										style={{ lineHeight: "1.5" }}
+																										style={{
+																											lineHeight:
+																												"1.5"
+																										}}
 																									>
 																										<span className="block-component">
 																											<span
-																												style={{ fontSize: 15 }}
+																												style={{
+																													fontSize: 15
+																												}}
 																											>
 																												<span data-custom-class="body_text" />
 																											</span>
-																										</ span>
+																										</span>
 																										<div
-																											style={{ lineHeight: "1.5" }}
+																											style={{
+																												lineHeight:
+																													"1.5"
+																											}}
 																										>
 																											<span className="block-component">
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text" />
 																												</span>
-																											</ span>
+																											</span>
 																										</div>
 																										<ul>
 																											<li
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<strong>
-																															To save or protect an
-																															individual's vital
+																															To
+																															save
+																															or
+																															protect
+																															an
+																															individual&apos;s
+																															vital
 																															interest.
 																														</strong>{" "}
-																														We may process your
-																														information when
-																														necessary to save or
-																														protect an individual’s
-																														vital interest, such as
-																														to prevent harm.
+																														We
+																														may
+																														process
+																														your
+																														information
+																														when
+																														necessary
+																														to
+																														save
+																														or
+																														protect
+																														an
+																														individual’s
+																														vital
+																														interest,
+																														such
+																														as
+																														to
+																														prevent
+																														harm.
 																													</span>
 																												</span>
 																												<span className="statement-end-if-in-editor">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text" />
 																													</span>
-																												</ span>
+																												</span>
 																											</li>
 																										</ul>
 																										<div
-																											style={{ lineHeight: "1.5" }}
+																											style={{
+																												lineHeight:
+																													"1.5"
+																											}}
 																										>
 																											<span className="block-component">
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text" />
 																												</span>
-																											</ span>
+																											</span>
 																											<span className="block-component">
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text" />
 																												</span>
-																											</ span>
+																											</span>
 																											<span className="block-component">
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text" />
 																												</span>
-																											</ span>
+																											</span>
 																											<span className="block-component">
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text" />
 																												</span>
-																											</ span>
+																											</span>
 																										</div>
 																										<div
-																											style={{ lineHeight: "1.5" }}
+																											style={{
+																												lineHeight:
+																													"1.5"
+																											}}
 																										>
 																											<br />
 																										</div>
 																										<div
 																											id="legalbases"
-																											style={{ lineHeight: "1.5" }}
+																											style={{
+																												lineHeight:
+																													"1.5"
+																											}}
 																										>
 																											<strong>
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="heading_1">
-																														3. WHAT LEGAL BASES DO
-																														WE RELY ON TO PROCESS
-																														YOUR INFORMATION?
+																														3.
+																														WHAT
+																														LEGAL
+																														BASES
+																														DO
+																														WE
+																														RELY
+																														ON
+																														TO
+																														PROCESS
+																														YOUR
+																														INFORMATION?
 																													</span>
 																												</span>
 																											</strong>
 																										</div>
 																										<div
-																											style={{ lineHeight: "1.5" }}
+																											style={{
+																												lineHeight:
+																													"1.5"
+																											}}
 																										>
 																											<br />
 																										</div>
 																										<div
-																											style={{ lineHeight: "1.5" }}
+																											style={{
+																												lineHeight:
+																													"1.5"
+																											}}
 																										>
 																											<em>
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<strong>
-																															In Short:&nbsp;
+																															In
+																															Short:&nbsp;
 																														</strong>
-																														We only process your
-																														personal information
-																														when we believe it is
-																														necessary and we have a
-																														valid legal reason (i.e.
+																														We
+																														only
+																														process
+																														your
+																														personal
+																														information
+																														when
+																														we
+																														believe
+																														it
+																														is
+																														necessary
+																														and
+																														we
+																														have
+																														a
+																														valid
+																														legal
+																														reason
+																														(i.e.
 																														<span className="block-component" />
 																														,
 																														<span className="statement-end-if-in-editor" />{" "}
-																														legal basis) to do so
-																														under applicable law,
-																														like with your consent,
-																														to comply with laws, to
-																														provide you with
-																														services to enter into
+																														legal
+																														basis)
+																														to
+																														do
+																														so
+																														under
+																														applicable
+																														law,
+																														like
+																														with
+																														your
+																														consent,
+																														to
+																														comply
+																														with
+																														laws,
+																														to
+																														provide
+																														you
+																														with
+																														services
+																														to
+																														enter
+																														into
 																														or{" "}
 																														<span className="block-component" />
 																														fulfill
 																														<span className="statement-end-if-in-editor" />{" "}
-																														our contractual
-																														obligations, to protect
-																														your rights, or to{" "}
+																														our
+																														contractual
+																														obligations,
+																														to
+																														protect
+																														your
+																														rights,
+																														or
+																														to{" "}
 																														<span className="block-component" />
 																														fulfill
 																														<span className="statement-end-if-in-editor" />{" "}
-																														our legitimate business
+																														our
+																														legitimate
+																														business
 																														interests.
 																													</span>
 																												</span>
 																											</em>
 																											<span
-																												style={{ fontSize: 15 }}
+																												style={{
+																													fontSize: 15
+																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span className="block-component" />
@@ -1255,31 +1790,51 @@ export default function PrivacyPolicy() {
 																											</span>
 																										</div>
 																										<div
-																											style={{ lineHeight: "1.5" }}
+																											style={{
+																												lineHeight:
+																													"1.5"
+																											}}
 																										>
 																											<br />
 																										</div>
 																										<div
-																											style={{ lineHeight: "1.5" }}
+																											style={{
+																												lineHeight:
+																													"1.5"
+																											}}
 																										>
 																											<em>
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<strong>
 																															<u>
-																																If you are located
-																																in the EU or UK,
-																																this section applies
-																																to you.
+																																If
+																																you
+																																are
+																																located
+																																in
+																																the
+																																EU
+																																or
+																																UK,
+																																this
+																																section
+																																applies
+																																to
+																																you.
 																															</u>
 																														</strong>
 																													</span>
 																												</span>
 																											</em>
 																											<span
-																												style={{ fontSize: 15 }}
+																												style={{
+																													fontSize: 15
+																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span className="statement-end-if-in-editor" />
@@ -1287,27 +1842,66 @@ export default function PrivacyPolicy() {
 																											</span>
 																										</div>
 																										<div
-																											style={{ lineHeight: "1.5" }}
+																											style={{
+																												lineHeight:
+																													"1.5"
+																											}}
 																										>
 																											<br />
 																										</div>
 																										<div
-																											style={{ lineHeight: "1.5" }}
+																											style={{
+																												lineHeight:
+																													"1.5"
+																											}}
 																										>
 																											<span
-																												style={{ fontSize: 15 }}
+																												style={{
+																													fontSize: 15
+																												}}
 																											>
 																												<span data-custom-class="body_text">
-																													The General Data
-																													Protection Regulation
-																													(GDPR) and UK GDPR require
-																													us to explain the valid
-																													legal bases we rely on in
-																													order to process your
-																													personal information. As
-																													such, we may rely on the
-																													following legal bases to
-																													process your personal
+																													The
+																													General
+																													Data
+																													Protection
+																													Regulation
+																													(GDPR)
+																													and
+																													UK
+																													GDPR
+																													require
+																													us
+																													to
+																													explain
+																													the
+																													valid
+																													legal
+																													bases
+																													we
+																													rely
+																													on
+																													in
+																													order
+																													to
+																													process
+																													your
+																													personal
+																													information.
+																													As
+																													such,
+																													we
+																													may
+																													rely
+																													on
+																													the
+																													following
+																													legal
+																													bases
+																													to
+																													process
+																													your
+																													personal
 																													information:
 																												</span>
 																											</span>
@@ -1315,29 +1909,55 @@ export default function PrivacyPolicy() {
 																										<ul>
 																											<li
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<strong>
 																															Consent.&nbsp;
 																														</strong>
-																														We may process your
-																														information if you have
-																														given us permission
+																														We
+																														may
+																														process
+																														your
+																														information
+																														if
+																														you
+																														have
+																														given
+																														us
+																														permission
 																														(i.e.
 																														<span className="block-component" />
 																														,
 																														<span className="statement-end-if-in-editor" />{" "}
-																														consent) to use your
-																														personal information for
-																														a specific purpose. You
-																														can withdraw your
-																														consent at any time.
-																														Learn more about&nbsp;
+																														consent)
+																														to
+																														use
+																														your
+																														personal
+																														information
+																														for
+																														a
+																														specific
+																														purpose.
+																														You
+																														can
+																														withdraw
+																														your
+																														consent
+																														at
+																														any
+																														time.
+																														Learn
+																														more
+																														about&nbsp;
 																													</span>
 																												</span>
 																												<a
@@ -1345,10 +1965,13 @@ export default function PrivacyPolicy() {
 																													href="#withdrawconsent"
 																												>
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text">
-																															withdrawing your
+																															withdrawing
+																															your
 																															consent
 																														</span>
 																													</span>
@@ -1359,39 +1982,50 @@ export default function PrivacyPolicy() {
 																											</li>
 																										</ul>
 																										<div
-																											style={{ lineHeight: "1.5" }}
+																											style={{
+																												lineHeight:
+																													"1.5"
+																											}}
 																										>
 																											<span className="block-component">
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text" />
 																												</span>
-																											</ span>
+																											</span>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text" />
 																													</span>
-																												</ span>
+																												</span>
 																												<span className="block-component">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text" />
 																													</span>
-																												</ span>
+																												</span>
 																											</div>
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1401,23 +2035,56 @@ export default function PrivacyPolicy() {
 																															}}
 																														>
 																															<strong>
-																																Legal Obligations.
+																																Legal
+																																Obligations.
 																															</strong>{" "}
-																															We may process your
-																															information where we
-																															believe it is
-																															necessary for
-																															compliance with our
-																															legal obligations,
-																															such as to cooperate
-																															with a law enforcement
-																															body or regulatory
-																															agency, exercise or
-																															defend our legal
-																															rights, or disclose
-																															your information as
-																															evidence in litigation
-																															in which we are
+																															We
+																															may
+																															process
+																															your
+																															information
+																															where
+																															we
+																															believe
+																															it
+																															is
+																															necessary
+																															for
+																															compliance
+																															with
+																															our
+																															legal
+																															obligations,
+																															such
+																															as
+																															to
+																															cooperate
+																															with
+																															a
+																															law
+																															enforcement
+																															body
+																															or
+																															regulatory
+																															agency,
+																															exercise
+																															or
+																															defend
+																															our
+																															legal
+																															rights,
+																															or
+																															disclose
+																															your
+																															information
+																															as
+																															evidence
+																															in
+																															litigation
+																															in
+																															which
+																															we
+																															are
 																															involved.
 																															<span className="statement-end-if-in-editor" />
 																															<br />
@@ -1427,21 +2094,25 @@ export default function PrivacyPolicy() {
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text" />
 																													</span>
-																												</ span>
+																												</span>
 																											</div>
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1451,19 +2122,45 @@ export default function PrivacyPolicy() {
 																															}}
 																														>
 																															<strong>
-																																Vital Interests.
+																																Vital
+																																Interests.
 																															</strong>{" "}
-																															We may process your
-																															information where we
-																															believe it is
-																															necessary to protect
-																															your vital interests
-																															or the vital interests
-																															of a third party, such
-																															as situations
-																															involving potential
-																															threats to the safety
-																															of any person.
+																															We
+																															may
+																															process
+																															your
+																															information
+																															where
+																															we
+																															believe
+																															it
+																															is
+																															necessary
+																															to
+																															protect
+																															your
+																															vital
+																															interests
+																															or
+																															the
+																															vital
+																															interests
+																															of
+																															a
+																															third
+																															party,
+																															such
+																															as
+																															situations
+																															involving
+																															potential
+																															threats
+																															to
+																															the
+																															safety
+																															of
+																															any
+																															person.
 																														</span>
 																													</span>
 																													<span className="statement-end-if-in-editor">
@@ -1474,31 +2171,38 @@ export default function PrivacyPolicy() {
 																														>
 																															<span data-custom-class="body_text" />
 																														</span>
-																													</ span>
+																													</span>
 																												</li>
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text" />
 																													</span>
-																												</ span>
+																												</span>
 																												<span className="block-component">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text" />
 																													</span>
-																												</ span>
+																												</span>
 																												<span data-custom-class="body_text">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span className="block-component" />
 																													</span>
@@ -1506,26 +2210,37 @@ export default function PrivacyPolicy() {
 																											</div>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<br />
 																											</div>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<strong>
 																															<u>
 																																<em>
-																																	If you are located
-																																	in Canada, this
-																																	section applies to
+																																	If
+																																	you
+																																	are
+																																	located
+																																	in
+																																	Canada,
+																																	this
+																																	section
+																																	applies
+																																	to
 																																	you.
 																																</em>
 																															</u>
@@ -1536,38 +2251,67 @@ export default function PrivacyPolicy() {
 																											</div>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<br />
 																											</div>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
-																														We may process your
-																														information if you have
-																														given us specific
-																														permission (i.e.
+																														We
+																														may
+																														process
+																														your
+																														information
+																														if
+																														you
+																														have
+																														given
+																														us
+																														specific
+																														permission
+																														(i.e.
 																														<span className="block-component" />
 																														,
 																														<span className="statement-end-if-in-editor" />{" "}
-																														express consent) to use
-																														your personal
-																														information for a
-																														specific purpose, or in
-																														situations where your
-																														permission can be
-																														inferred (i.e.
+																														express
+																														consent)
+																														to
+																														use
+																														your
+																														personal
+																														information
+																														for
+																														a
+																														specific
+																														purpose,
+																														or
+																														in
+																														situations
+																														where
+																														your
+																														permission
+																														can
+																														be
+																														inferred
+																														(i.e.
 																														<span className="block-component" />
 																														,
 																														<span className="statement-end-if-in-editor" />{" "}
-																														implied consent). You
+																														implied
+																														consent).
+																														You
 																														can&nbsp;
 																													</span>
 																												</span>
@@ -1581,48 +2325,74 @@ export default function PrivacyPolicy() {
 																																fontSize: 15
 																															}}
 																														>
-																															withdraw your consent
+																															withdraw
+																															your
+																															consent
 																														</span>
 																													</span>
 																												</a>
 																												<span data-custom-class="body_text">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
-																														&nbsp;at any time.
+																														&nbsp;at
+																														any
+																														time.
 																													</span>
 																												</span>
 																											</div>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<br />
 																											</div>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
-																														In some exceptional
-																														cases, we may be legally
-																														permitted under
-																														applicable law to
-																														process your information
-																														without your consent,
-																														including, for example:
+																														In
+																														some
+																														exceptional
+																														cases,
+																														we
+																														may
+																														be
+																														legally
+																														permitted
+																														under
+																														applicable
+																														law
+																														to
+																														process
+																														your
+																														information
+																														without
+																														your
+																														consent,
+																														including,
+																														for
+																														example:
 																													</span>
 																												</span>
 																											</div>
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1631,24 +2401,40 @@ export default function PrivacyPolicy() {
 																																fontSize: 15
 																															}}
 																														>
-																															If collection is
-																															clearly in the
-																															interests of an
-																															individual and consent
-																															cannot be obtained in
-																															a timely way
+																															If
+																															collection
+																															is
+																															clearly
+																															in
+																															the
+																															interests
+																															of
+																															an
+																															individual
+																															and
+																															consent
+																															cannot
+																															be
+																															obtained
+																															in
+																															a
+																															timely
+																															way
 																														</span>
 																													</span>
 																												</li>
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span className="block-component" />
 																													</span>
@@ -1657,7 +2443,8 @@ export default function PrivacyPolicy() {
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1666,8 +2453,12 @@ export default function PrivacyPolicy() {
 																																fontSize: 15
 																															}}
 																														>
-																															For investigations and
-																															fraud detection and
+																															For
+																															investigations
+																															and
+																															fraud
+																															detection
+																															and
 																															prevention
 																															<span className="statement-end-if-in-editor" />
 																														</span>
@@ -1676,21 +2467,25 @@ export default function PrivacyPolicy() {
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text" />
 																													</span>
-																												</ span>
+																												</span>
 																											</div>
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1699,9 +2494,13 @@ export default function PrivacyPolicy() {
 																																fontSize: 15
 																															}}
 																														>
-																															For business
-																															transactions provided
-																															certain conditions are
+																															For
+																															business
+																															transactions
+																															provided
+																															certain
+																															conditions
+																															are
 																															met
 																														</span>
 																													</span>
@@ -1713,26 +2512,30 @@ export default function PrivacyPolicy() {
 																														>
 																															<span data-custom-class="body_text" />
 																														</span>
-																													</ span>
+																													</span>
 																												</li>
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text" />
 																													</span>
-																												</ span>
+																												</span>
 																											</div>
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1741,12 +2544,27 @@ export default function PrivacyPolicy() {
 																																fontSize: 15
 																															}}
 																														>
-																															If it is contained in
-																															a witness statement
-																															and the collection is
-																															necessary to assess,
-																															process, or settle an
-																															insurance claim
+																															If
+																															it
+																															is
+																															contained
+																															in
+																															a
+																															witness
+																															statement
+																															and
+																															the
+																															collection
+																															is
+																															necessary
+																															to
+																															assess,
+																															process,
+																															or
+																															settle
+																															an
+																															insurance
+																															claim
 																														</span>
 																													</span>
 																													<span className="statement-end-if-in-editor">
@@ -1757,26 +2575,30 @@ export default function PrivacyPolicy() {
 																														>
 																															<span data-custom-class="body_text" />
 																														</span>
-																													</ span>
+																													</span>
 																												</li>
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text" />
 																													</span>
-																												</ span>
+																												</span>
 																											</div>
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1785,11 +2607,19 @@ export default function PrivacyPolicy() {
 																																fontSize: 15
 																															}}
 																														>
-																															For identifying
-																															injured, ill, or
-																															deceased persons and
-																															communicating with
-																															next of kin
+																															For
+																															identifying
+																															injured,
+																															ill,
+																															or
+																															deceased
+																															persons
+																															and
+																															communicating
+																															with
+																															next
+																															of
+																															kin
 																														</span>
 																													</span>
 																													<span className="statement-end-if-in-editor">
@@ -1800,17 +2630,20 @@ export default function PrivacyPolicy() {
 																														>
 																															<span data-custom-class="body_text" />
 																														</span>
-																													</ span>
+																													</span>
 																												</li>
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span className="block-component" />
 																													</span>
@@ -1819,7 +2652,8 @@ export default function PrivacyPolicy() {
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1828,11 +2662,25 @@ export default function PrivacyPolicy() {
 																																fontSize: 15
 																															}}
 																														>
-																															If we have reasonable
-																															grounds to believe an
-																															individual has been,
-																															is, or may be victim
-																															of financial abuse
+																															If
+																															we
+																															have
+																															reasonable
+																															grounds
+																															to
+																															believe
+																															an
+																															individual
+																															has
+																															been,
+																															is,
+																															or
+																															may
+																															be
+																															victim
+																															of
+																															financial
+																															abuse
 																															<span className="statement-end-if-in-editor" />
 																														</span>
 																													</span>
@@ -1840,12 +2688,15 @@ export default function PrivacyPolicy() {
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span className="block-component" />
 																													</span>
@@ -1854,7 +2705,8 @@ export default function PrivacyPolicy() {
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1863,20 +2715,52 @@ export default function PrivacyPolicy() {
 																																fontSize: 15
 																															}}
 																														>
-																															If it is reasonable to
-																															expect collection and
-																															use with consent would
-																															compromise the
-																															availability or the
-																															accuracy of the
-																															information and the
-																															collection is
-																															reasonable for
-																															purposes related to
-																															investigating a breach
-																															of an agreement or a
-																															contravention of the
-																															laws of Canada or a
+																															If
+																															it
+																															is
+																															reasonable
+																															to
+																															expect
+																															collection
+																															and
+																															use
+																															with
+																															consent
+																															would
+																															compromise
+																															the
+																															availability
+																															or
+																															the
+																															accuracy
+																															of
+																															the
+																															information
+																															and
+																															the
+																															collection
+																															is
+																															reasonable
+																															for
+																															purposes
+																															related
+																															to
+																															investigating
+																															a
+																															breach
+																															of
+																															an
+																															agreement
+																															or
+																															a
+																															contravention
+																															of
+																															the
+																															laws
+																															of
+																															Canada
+																															or
+																															a
 																															province
 																															<span className="statement-end-if-in-editor" />
 																														</span>
@@ -1885,12 +2769,15 @@ export default function PrivacyPolicy() {
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span className="block-component" />
 																													</span>
@@ -1899,7 +2786,8 @@ export default function PrivacyPolicy() {
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1908,13 +2796,29 @@ export default function PrivacyPolicy() {
 																																fontSize: 15
 																															}}
 																														>
-																															If disclosure is
-																															required to comply
-																															with a subpoena,
-																															warrant, court order,
-																															or rules of the court
-																															relating to the
-																															production of records
+																															If
+																															disclosure
+																															is
+																															required
+																															to
+																															comply
+																															with
+																															a
+																															subpoena,
+																															warrant,
+																															court
+																															order,
+																															or
+																															rules
+																															of
+																															the
+																															court
+																															relating
+																															to
+																															the
+																															production
+																															of
+																															records
 																															<span className="statement-end-if-in-editor" />
 																														</span>
 																													</span>
@@ -1922,36 +2826,62 @@ export default function PrivacyPolicy() {
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text" />
 																													</span>
-																												</ span>
+																												</span>
 																											</div>
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text">
-																															If it was produced by
-																															an individual in the
-																															course of their
-																															employment, business,
-																															or profession and the
-																															collection is
-																															consistent with the
-																															purposes for which the
-																															information was
+																															If
+																															it
+																															was
+																															produced
+																															by
+																															an
+																															individual
+																															in
+																															the
+																															course
+																															of
+																															their
+																															employment,
+																															business,
+																															or
+																															profession
+																															and
+																															the
+																															collection
+																															is
+																															consistent
+																															with
+																															the
+																															purposes
+																															for
+																															which
+																															the
+																															information
+																															was
 																															produced
 																															<span className="statement-end-if-in-editor" />
 																														</span>
@@ -1960,11 +2890,14 @@ export default function PrivacyPolicy() {
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span className="block-component" />
@@ -1974,17 +2907,26 @@ export default function PrivacyPolicy() {
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text">
-																															If the collection is
-																															solely for
+																															If
+																															the
+																															collection
+																															is
+																															solely
+																															for
 																															journalistic,
-																															artistic, or literary
+																															artistic,
+																															or
+																															literary
 																															purposes
 																															<span className="statement-end-if-in-editor" />
 																														</span>
@@ -1993,11 +2935,14 @@ export default function PrivacyPolicy() {
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span className="block-component" />
@@ -2007,47 +2952,64 @@ export default function PrivacyPolicy() {
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text">
-																															If the information is
-																															publicly available and
-																															is specified by the
+																															If
+																															the
+																															information
+																															is
+																															publicly
+																															available
+																															and
+																															is
+																															specified
+																															by
+																															the
 																															regulations
 																														</span>
 																														<span className="statement-end-if-in-editor">
 																															<span data-custom-class="body_text" />
-																														</ span>
+																														</span>
 																													</span>
 																												</li>
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span className="statement-end-if-in-editor">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text" />
 																													</span>
-																												</ span>
+																												</span>
 																												<span className="statement-end-if-in-editor">
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text" />
 																													</span>
-																												</ span>
+																												</span>
 																											</div>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<br />
@@ -2055,48 +3017,50 @@ export default function PrivacyPolicy() {
 																											<div
 																												id="whoshare"
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span
 																													style={{
-																														color:
-																															"rgb(127, 127, 127)"
+																														color: "rgb(127, 127, 127)"
 																													}}
 																												>
 																													<span
 																														style={{
-																															color:
-																																"rgb(89, 89, 89)",
+																															color: "rgb(89, 89, 89)",
 																															fontSize: 15
 																														}}
 																													>
 																														<span
 																															style={{
 																																fontSize: 15,
-																																color:
-																																	"rgb(89, 89, 89)"
+																																color: "rgb(89, 89, 89)"
 																															}}
 																														>
 																															<span
 																																style={{
 																																	fontSize: 15,
-																																	color:
-																																		"rgb(89, 89, 89)"
+																																	color: "rgb(89, 89, 89)"
 																																}}
 																															>
 																																<span
 																																	id="control"
 																																	style={{
-																																		color:
-																																			"rgb(0, 0, 0)"
+																																		color: "rgb(0, 0, 0)"
 																																	}}
 																																>
 																																	<strong>
 																																		<span data-custom-class="heading_1">
-																																			4. WHEN AND
-																																			WITH WHOM DO
-																																			WE SHARE YOUR
+																																			4.
+																																			WHEN
+																																			AND
+																																			WITH
+																																			WHOM
+																																			DO
+																																			WE
+																																			SHARE
+																																			YOUR
 																																			PERSONAL
 																																			INFORMATION?
 																																		</span>
@@ -2109,14 +3073,16 @@ export default function PrivacyPolicy() {
 																											</div>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<br />
 																											</div>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span
@@ -2128,23 +3094,35 @@ export default function PrivacyPolicy() {
 																													<span
 																														style={{
 																															fontSize: 15,
-																															color:
-																																"rgb(89, 89, 89)"
+																															color: "rgb(89, 89, 89)"
 																														}}
 																													>
 																														<span data-custom-class="body_text">
 																															<strong>
-																																<em>In Short:</em>
+																																<em>
+																																	In
+																																	Short:
+																																</em>
 																															</strong>
 																															<em>
-																																&nbsp;We may share
-																																information in
-																																specific situations
-																																described in this
-																																section and/or with
-																																the following{" "}
+																																&nbsp;We
+																																may
+																																share
+																																information
+																																in
+																																specific
+																																situations
+																																described
+																																in
+																																this
+																																section
+																																and/or
+																																with
+																																the
+																																following{" "}
 																																<span className="block-component" />
-																																third parties.
+																																third
+																																parties.
 																															</em>
 																														</span>
 																													</span>
@@ -2152,7 +3130,8 @@ export default function PrivacyPolicy() {
 																											</div>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span
@@ -2164,8 +3143,7 @@ export default function PrivacyPolicy() {
 																													<span
 																														style={{
 																															fontSize: 15,
-																															color:
-																																"rgb(89, 89, 89)"
+																															color: "rgb(89, 89, 89)"
 																														}}
 																													>
 																														<span data-custom-class="body_text">
@@ -2176,25 +3154,36 @@ export default function PrivacyPolicy() {
 																											</div>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<br />
 																											</div>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														We{" "}
 																														<span className="block-component" />
-																														may need to share your
-																														personal information in
-																														the following
+																														may
+																														need
+																														to
+																														share
+																														your
+																														personal
+																														information
+																														in
+																														the
+																														following
 																														situations:
 																													</span>
 																												</span>
@@ -2202,27 +3191,53 @@ export default function PrivacyPolicy() {
 																											<ul>
 																												<li
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span data-custom-class="body_text">
 																															<strong>
-																																Business Transfers.
+																																Business
+																																Transfers.
 																															</strong>{" "}
-																															We may share or
-																															transfer your
-																															information in
-																															connection with, or
-																															during negotiations
-																															of, any merger, sale
-																															of company assets,
-																															financing, or
-																															acquisition of all or
-																															a portion of our
-																															business to another
+																															We
+																															may
+																															share
+																															or
+																															transfer
+																															your
+																															information
+																															in
+																															connection
+																															with,
+																															or
+																															during
+																															negotiations
+																															of,
+																															any
+																															merger,
+																															sale
+																															of
+																															company
+																															assets,
+																															financing,
+																															or
+																															acquisition
+																															of
+																															all
+																															or
+																															a
+																															portion
+																															of
+																															our
+																															business
+																															to
+																															another
 																															company.
 																														</span>
 																													</span>
@@ -2230,11 +3245,14 @@ export default function PrivacyPolicy() {
 																											</ul>
 																											<div
 																												style={{
-																													lineHeight: "1.5"
+																													lineHeight:
+																														"1.5"
 																												}}
 																											>
 																												<span
-																													style={{ fontSize: 15 }}
+																													style={{
+																														fontSize: 15
+																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span className="block-component" />
@@ -2242,19 +3260,23 @@ export default function PrivacyPolicy() {
 																												</span>
 																												<div
 																													style={{
-																														lineHeight: "1.5"
+																														lineHeight:
+																															"1.5"
 																													}}
 																												>
 																													<span
-																														style={{ fontSize: 15 }}
+																														style={{
+																															fontSize: 15
+																														}}
 																													>
 																														<span className="block-component">
 																															<span data-custom-class="body_text" />
-																														</ span>
+																														</span>
 																													</span>
 																													<div
 																														style={{
-																															lineHeight: "1.5"
+																															lineHeight:
+																																"1.5"
 																														}}
 																													>
 																														<span className="block-component">
@@ -2265,12 +3287,13 @@ export default function PrivacyPolicy() {
 																															>
 																																<span data-custom-class="body_text" />
 																															</span>
-																														</ span>
+																														</span>
 																													</div>
 																													<ul>
 																														<li
 																															style={{
-																																lineHeight: "1.5"
+																																lineHeight:
+																																	"1.5"
 																															}}
 																														>
 																															<span data-custom-class="body_text">
@@ -2283,13 +3306,22 @@ export default function PrivacyPolicy() {
 																																		Business
 																																		Partners.
 																																	</strong>{" "}
-																																	We may share your
-																																	information with
-																																	our business
-																																	partners to offer
-																																	you certain
+																																	We
+																																	may
+																																	share
+																																	your
+																																	information
+																																	with
+																																	our
+																																	business
+																																	partners
+																																	to
+																																	offer
+																																	you
+																																	certain
 																																	products,
-																																	services, or
+																																	services,
+																																	or
 																																	promotions.
 																																</span>
 																															</span>
@@ -2301,12 +3333,13 @@ export default function PrivacyPolicy() {
 																																>
 																																	<span data-custom-class="body_text" />
 																																</span>
-																															</ span>
+																															</span>
 																														</li>
 																													</ul>
 																													<div
 																														style={{
-																															lineHeight: "1.5"
+																															lineHeight:
+																																"1.5"
 																														}}
 																													>
 																														<span className="block-component">
@@ -2317,10 +3350,11 @@ export default function PrivacyPolicy() {
 																															>
 																																<span data-custom-class="body_text" />
 																															</span>
-																														</ span>
+																														</span>
 																														<div
 																															style={{
-																																lineHeight: "1.5"
+																																lineHeight:
+																																	"1.5"
 																															}}
 																														>
 																															<span className="block-component">
@@ -2331,10 +3365,11 @@ export default function PrivacyPolicy() {
 																																>
 																																	<span data-custom-class="body_text" />
 																																</span>
-																															</ span>
+																															</span>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span className="block-component">
@@ -2345,11 +3380,10 @@ export default function PrivacyPolicy() {
 																																	>
 																																		<span data-custom-class="body_text" />
 																																	</span>
-																																</ span>
+																																</span>
 																																<span
 																																	style={{
-																																		color:
-																																			"rgb(89, 89, 89)",
+																																		color: "rgb(89, 89, 89)",
 																																		fontSize: 15
 																																	}}
 																																>
@@ -2360,8 +3394,7 @@ export default function PrivacyPolicy() {
 																																	>
 																																		<span
 																																			style={{
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span
@@ -2371,13 +3404,12 @@ export default function PrivacyPolicy() {
 																																			>
 																																				<span
 																																					style={{
-																																						color:
-																																							"rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)"
 																																					}}
 																																				>
 																																					<span className="block-component">
 																																						<span data-custom-class="heading_1" />
-																																					</ span>
+																																					</span>
 																																				</span>
 																																			</span>
 																																		</span>
@@ -2386,22 +3418,19 @@ export default function PrivacyPolicy() {
 																																<span data-custom-class="body_text">
 																																	<span
 																																		style={{
-																																			color:
-																																				"rgb(89, 89, 89)",
+																																			color: "rgb(89, 89, 89)",
 																																			fontSize: 15
 																																		}}
 																																	>
 																																		<span
 																																			style={{
-																																				color:
-																																					"rgb(89, 89, 89)",
+																																				color: "rgb(89, 89, 89)",
 																																				fontSize: 15
 																																			}}
 																																		>
 																																			<span
 																																				style={{
-																																					color:
-																																						"rgb(89, 89, 89)",
+																																					color: "rgb(89, 89, 89)",
 																																					fontSize: 15
 																																				}}
 																																			>
@@ -2412,8 +3441,7 @@ export default function PrivacyPolicy() {
 																																				>
 																																					<span
 																																						style={{
-																																							color:
-																																								"rgb(89, 89, 89)"
+																																							color: "rgb(89, 89, 89)"
 																																						}}
 																																					>
 																																						<span
@@ -2423,8 +3451,7 @@ export default function PrivacyPolicy() {
 																																						>
 																																							<span
 																																								style={{
-																																									color:
-																																										"rgb(89, 89, 89)"
+																																									color: "rgb(89, 89, 89)"
 																																								}}
 																																							>
 																																								<span data-custom-class="body_text">
@@ -2441,7 +3468,8 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
@@ -2449,47 +3477,45 @@ export default function PrivacyPolicy() {
 																															<div
 																																id="sociallogins"
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color:
-																																			"rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
-																																			color:
-																																				"rgb(89, 89, 89)",
+																																			color: "rgb(89, 89, 89)",
 																																			fontSize: 15
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color:
-																																							"rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)"
 																																					}}
 																																				>
 																																					<strong>
 																																						<span data-custom-class="heading_1">
-																																							5. HOW
-																																							DO WE
+																																							5.
+																																							HOW
+																																							DO
+																																							WE
 																																							HANDLE
 																																							YOUR
 																																							SOCIAL
@@ -2504,28 +3530,28 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -2536,19 +3562,31 @@ export default function PrivacyPolicy() {
 																																				</em>
 																																			</strong>
 																																			<em>
-																																				If you
-																																				choose to
-																																				register or
-																																				log in to
-																																				our Services
-																																				using a
-																																				social media
-																																				account, we
-																																				may have
-																																				access to
+																																				If
+																																				you
+																																				choose
+																																				to
+																																				register
+																																				or
+																																				log
+																																				in
+																																				to
+																																				our
+																																				Services
+																																				using
+																																				a
+																																				social
+																																				media
+																																				account,
+																																				we
+																																				may
+																																				have
+																																				access
+																																				to
 																																				certain
 																																				information
-																																				about you.
+																																				about
+																																				you.
 																																			</em>
 																																		</span>
 																																	</span>
@@ -2556,73 +3594,115 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			Our Services
-																																			offer you the
-																																			ability to
-																																			register and
-																																			log in using
+																																			Our
+																																			Services
+																																			offer
+																																			you
+																																			the
+																																			ability
+																																			to
+																																			register
+																																			and
+																																			log
+																																			in
+																																			using
 																																			your
 																																			third-party
-																																			social media
+																																			social
+																																			media
 																																			account
-																																			details (like
-																																			your Facebook
-																																			or Twitter
-																																			logins). Where
-																																			you choose to
-																																			do this, we
-																																			will receive
+																																			details
+																																			(like
+																																			your
+																																			Facebook
+																																			or
+																																			Twitter
+																																			logins).
+																																			Where
+																																			you
+																																			choose
+																																			to
+																																			do
+																																			this,
+																																			we
+																																			will
+																																			receive
 																																			certain
 																																			profile
 																																			information
-																																			about you from
-																																			your social
+																																			about
+																																			you
+																																			from
+																																			your
+																																			social
 																																			media
-																																			provider. The
+																																			provider.
+																																			The
 																																			profile
-																																			information we
-																																			receive may
-																																			vary depending
-																																			on the social
-																																			media provider
-																																			concerned, but
-																																			will often
-																																			include your
-																																			name, email
-																																			address,
-																																			friends list,
-																																			and profile
-																																			picture, as
-																																			well as other
 																																			information
-																																			you choose to
-																																			make public on
-																																			such a social
+																																			we
+																																			receive
+																																			may
+																																			vary
+																																			depending
+																																			on
+																																			the
+																																			social
+																																			media
+																																			provider
+																																			concerned,
+																																			but
+																																			will
+																																			often
+																																			include
+																																			your
+																																			name,
+																																			email
+																																			address,
+																																			friends
+																																			list,
+																																			and
+																																			profile
+																																			picture,
+																																			as
+																																			well
+																																			as
+																																			other
+																																			information
+																																			you
+																																			choose
+																																			to
+																																			make
+																																			public
+																																			on
+																																			such
+																																			a
+																																			social
 																																			media
 																																			platform.{" "}
 																																			<span
@@ -2632,8 +3712,7 @@ export default function PrivacyPolicy() {
 																																			>
 																																				<span
 																																					style={{
-																																						color:
-																																							"rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)"
 																																					}}
 																																				>
 																																					<span data-custom-class="body_text">
@@ -2647,99 +3726,138 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			We will use
+																																			We
+																																			will
+																																			use
 																																			the
-																																			information we
-																																			receive only
-																																			for the
-																																			purposes that
-																																			are described
-																																			in this
-																																			privacy notice
-																																			or that are
-																																			otherwise made
-																																			clear to you
-																																			on the
+																																			information
+																																			we
+																																			receive
+																																			only
+																																			for
+																																			the
+																																			purposes
+																																			that
+																																			are
+																																			described
+																																			in
+																																			this
+																																			privacy
+																																			notice
+																																			or
+																																			that
+																																			are
+																																			otherwise
+																																			made
+																																			clear
+																																			to
+																																			you
+																																			on
+																																			the
 																																			relevant
 																																			Services.
-																																			Please note
-																																			that we do not
-																																			control, and
-																																			are not
+																																			Please
+																																			note
+																																			that
+																																			we
+																																			do
+																																			not
+																																			control,
+																																			and
+																																			are
+																																			not
 																																			responsible
-																																			for, other
-																																			uses of your
+																																			for,
+																																			other
+																																			uses
+																																			of
+																																			your
 																																			personal
-																																			information by
+																																			information
+																																			by
 																																			your
 																																			third-party
-																																			social media
-																																			provider. We
-																																			recommend that
-																																			you review
-																																			their privacy
-																																			notice to
-																																			understand how
-																																			they collect,
-																																			use, and share
-																																			your personal
-																																			information,
-																																			and how you
-																																			can set your
+																																			social
+																																			media
+																																			provider.
+																																			We
+																																			recommend
+																																			that
+																																			you
+																																			review
+																																			their
 																																			privacy
-																																			preferences on
-																																			their sites
-																																			and apps.
+																																			notice
+																																			to
+																																			understand
+																																			how
+																																			they
+																																			collect,
+																																			use,
+																																			and
+																																			share
+																																			your
+																																			personal
+																																			information,
+																																			and
+																																			how
+																																			you
+																																			can
+																																			set
+																																			your
+																																			privacy
+																																			preferences
+																																			on
+																																			their
+																																			sites
+																																			and
+																																			apps.
 																																			<span
 																																				style={{
-																																					color:
-																																						"rgb(89, 89, 89)",
+																																					color: "rgb(89, 89, 89)",
 																																					fontSize: 15
 																																				}}
 																																			>
 																																				<span
 																																					style={{
-																																						color:
-																																							"rgb(89, 89, 89)",
+																																						color: "rgb(89, 89, 89)",
 																																						fontSize: 15
 																																					}}
 																																				>
 																																					<span
 																																						style={{
-																																							color:
-																																								"rgb(89, 89, 89)",
+																																							color: "rgb(89, 89, 89)",
 																																							fontSize: 15
 																																						}}
 																																					>
 																																						<span
 																																							style={{
-																																								color:
-																																									"rgb(89, 89, 89)",
+																																								color: "rgb(89, 89, 89)",
 																																								fontSize: 15
 																																							}}
 																																						>
@@ -2750,8 +3868,7 @@ export default function PrivacyPolicy() {
 																																							>
 																																								<span
 																																									style={{
-																																										color:
-																																											"rgb(89, 89, 89)"
+																																										color: "rgb(89, 89, 89)"
 																																									}}
 																																								>
 																																									<span
@@ -2761,8 +3878,7 @@ export default function PrivacyPolicy() {
 																																									>
 																																										<span
 																																											style={{
-																																												color:
-																																													"rgb(89, 89, 89)"
+																																												color: "rgb(89, 89, 89)"
 																																											}}
 																																										>
 																																											<span data-custom-class="body_text">
@@ -2772,7 +3888,7 @@ export default function PrivacyPolicy() {
 																																												<span data-custom-class="body_text">
 																																													<span className="block-component" />
 																																												</span>
-																																											</ span>
+																																											</span>
 																																										</span>
 																																									</span>
 																																								</span>
@@ -2787,7 +3903,8 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
@@ -2795,48 +3912,46 @@ export default function PrivacyPolicy() {
 																															<div
 																																id="inforetain"
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color:
-																																			"rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
-																																			color:
-																																				"rgb(89, 89, 89)",
+																																			color: "rgb(89, 89, 89)",
 																																			fontSize: 15
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color:
-																																							"rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)"
 																																					}}
 																																				>
 																																					<strong>
 																																						<span data-custom-class="heading_1">
-																																							6. HOW
+																																							6.
+																																							HOW
 																																							LONG
-																																							DO WE
+																																							DO
+																																							WE
 																																							KEEP
 																																							YOUR
 																																							INFORMATION?
@@ -2850,28 +3965,28 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -2882,21 +3997,30 @@ export default function PrivacyPolicy() {
 																																				</em>
 																																			</strong>
 																																			<em>
-																																				We keep your
+																																				We
+																																				keep
+																																				your
 																																				information
-																																				for as long
-																																				as necessary
+																																				for
+																																				as
+																																				long
+																																				as
+																																				necessary
 																																				to{" "}
 																																				<span className="block-component" />
 																																				fulfill
 																																				<span className="statement-end-if-in-editor" />{" "}
-																																				the purposes
-																																				outlined in
-																																				this privacy
+																																				the
+																																				purposes
+																																				outlined
+																																				in
+																																				this
+																																				privacy
 																																				notice
 																																				unless
 																																				otherwise
-																																				required by
+																																				required
+																																				by
 																																				law.
 																																			</em>
 																																		</span>
@@ -2905,60 +4029,88 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			We will only
-																																			keep your
+																																			We
+																																			will
+																																			only
+																																			keep
+																																			your
 																																			personal
 																																			information
-																																			for as long as
-																																			it is
-																																			necessary for
-																																			the purposes
-																																			set out in
-																																			this privacy
-																																			notice, unless
-																																			a longer
+																																			for
+																																			as
+																																			long
+																																			as
+																																			it
+																																			is
+																																			necessary
+																																			for
+																																			the
+																																			purposes
+																																			set
+																																			out
+																																			in
+																																			this
+																																			privacy
+																																			notice,
+																																			unless
+																																			a
+																																			longer
 																																			retention
-																																			period is
-																																			required or
-																																			permitted by
-																																			law (such as
+																																			period
+																																			is
+																																			required
+																																			or
+																																			permitted
+																																			by
+																																			law
+																																			(such
+																																			as
 																																			tax,
-																																			accounting, or
-																																			other legal
+																																			accounting,
+																																			or
+																																			other
+																																			legal
 																																			requirements).
 																																			<span className="block-component" />{" "}
-																																			No purpose in
-																																			this notice
-																																			will require
-																																			us keeping
-																																			your personal
+																																			No
+																																			purpose
+																																			in
+																																			this
+																																			notice
+																																			will
+																																			require
+																																			us
+																																			keeping
+																																			your
+																																			personal
 																																			information
-																																			for longer
+																																			for
+																																			longer
 																																			than{" "}
 																																			<span
 																																				style={{
@@ -2967,8 +4119,7 @@ export default function PrivacyPolicy() {
 																																			>
 																																				<span
 																																					style={{
-																																						color:
-																																							"rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)"
 																																					}}
 																																				>
 																																					<span data-custom-class="body_text">
@@ -2977,10 +4128,17 @@ export default function PrivacyPolicy() {
 																																				</span>
 																																			</span>
 																																			<span className="block-component" />
-																																			the period of
-																																			time in which
-																																			users have an
-																																			account with
+																																			the
+																																			period
+																																			of
+																																			time
+																																			in
+																																			which
+																																			users
+																																			have
+																																			an
+																																			account
+																																			with
 																																			us
 																																			<span className="block-component" />
 																																			<span
@@ -2990,8 +4148,7 @@ export default function PrivacyPolicy() {
 																																			>
 																																				<span
 																																					style={{
-																																						color:
-																																							"rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)"
 																																					}}
 																																				>
 																																					<span data-custom-class="body_text">
@@ -2999,6 +4156,7 @@ export default function PrivacyPolicy() {
 																																					</span>
 																																				</span>
 																																			</span>
+
 																																			.
 																																		</span>
 																																	</span>
@@ -3006,69 +4164,94 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			When we have
-																																			no ongoing
+																																			When
+																																			we
+																																			have
+																																			no
+																																			ongoing
 																																			legitimate
-																																			business need
-																																			to process
-																																			your personal
+																																			business
+																																			need
+																																			to
+																																			process
+																																			your
+																																			personal
 																																			information,
-																																			we will either
-																																			delete or{" "}
+																																			we
+																																			will
+																																			either
+																																			delete
+																																			or{" "}
 																																			<span className="block-component" />
 																																			anonymize
 																																			<span className="statement-end-if-in-editor" />{" "}
 																																			such
 																																			information,
-																																			or, if this is
-																																			not possible
-																																			(for example,
-																																			because your
+																																			or,
+																																			if
+																																			this
+																																			is
+																																			not
+																																			possible
+																																			(for
+																																			example,
+																																			because
+																																			your
 																																			personal
 																																			information
-																																			has been
-																																			stored in
+																																			has
+																																			been
+																																			stored
+																																			in
 																																			backup
 																																			archives),
-																																			then we will
-																																			securely store
-																																			your personal
+																																			then
+																																			we
+																																			will
+																																			securely
+																																			store
+																																			your
+																																			personal
 																																			information
-																																			and isolate it
-																																			from any
+																																			and
+																																			isolate
+																																			it
+																																			from
+																																			any
 																																			further
 																																			processing
-																																			until deletion
-																																			is possible.
+																																			until
+																																			deletion
+																																			is
+																																			possible.
 																																			<span
 																																				style={{
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span className="block-component" />
@@ -3079,7 +4262,8 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
@@ -3087,47 +4271,45 @@ export default function PrivacyPolicy() {
 																															<div
 																																id="infosafe"
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color:
-																																			"rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
-																																			color:
-																																				"rgb(89, 89, 89)",
+																																			color: "rgb(89, 89, 89)",
 																																			fontSize: 15
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color:
-																																							"rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)"
 																																					}}
 																																				>
 																																					<strong>
 																																						<span data-custom-class="heading_1">
-																																							7. HOW
-																																							DO WE
+																																							7.
+																																							HOW
+																																							DO
+																																							WE
 																																							KEEP
 																																							YOUR
 																																							INFORMATION
@@ -3142,28 +4324,28 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -3174,12 +4356,17 @@ export default function PrivacyPolicy() {
 																																				</em>
 																																			</strong>
 																																			<em>
-																																				We aim to
-																																				protect your
+																																				We
+																																				aim
+																																				to
+																																				protect
+																																				your
 																																				personal
 																																				information
-																																				through a
-																																				system of{" "}
+																																				through
+																																				a
+																																				system
+																																				of{" "}
 																																				<span className="block-component" />
 																																				organizational
 																																				<span className="statement-end-if-in-editor" />{" "}
@@ -3194,110 +4381,160 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			We have
+																																			We
+																																			have
 																																			implemented
 																																			appropriate
-																																			and reasonable
-																																			technical and{" "}
+																																			and
+																																			reasonable
+																																			technical
+																																			and{" "}
 																																			<span className="block-component" />
 																																			organizational
 																																			<span className="statement-end-if-in-editor" />{" "}
 																																			security
 																																			measures
-																																			designed to
-																																			protect the
-																																			security of
-																																			any personal
-																																			information we
+																																			designed
+																																			to
+																																			protect
+																																			the
+																																			security
+																																			of
+																																			any
+																																			personal
+																																			information
+																																			we
 																																			process.
 																																			However,
-																																			despite our
-																																			safeguards and
-																																			efforts to
-																																			secure your
+																																			despite
+																																			our
+																																			safeguards
+																																			and
+																																			efforts
+																																			to
+																																			secure
+																																			your
 																																			information,
-																																			no electronic
+																																			no
+																																			electronic
 																																			transmission
-																																			over the
-																																			Internet or
+																																			over
+																																			the
+																																			Internet
+																																			or
 																																			information
 																																			storage
-																																			technology can
-																																			be guaranteed
-																																			to be 100%
-																																			secure, so we
-																																			cannot promise
-																																			or guarantee
-																																			that hackers,
+																																			technology
+																																			can
+																																			be
+																																			guaranteed
+																																			to
+																																			be
+																																			100%
+																																			secure,
+																																			so
+																																			we
+																																			cannot
+																																			promise
+																																			or
+																																			guarantee
+																																			that
+																																			hackers,
 																																			cybercriminals,
-																																			or other{" "}
+																																			or
+																																			other{" "}
 																																			<span className="block-component" />
 																																			unauthorized
 																																			<span className="statement-end-if-in-editor" />{" "}
-																																			third parties
-																																			will not be
-																																			able to defeat
-																																			our security
-																																			and improperly
+																																			third
+																																			parties
+																																			will
+																																			not
+																																			be
+																																			able
+																																			to
+																																			defeat
+																																			our
+																																			security
+																																			and
+																																			improperly
 																																			collect,
-																																			access, steal,
-																																			or modify your
+																																			access,
+																																			steal,
+																																			or
+																																			modify
+																																			your
 																																			information.
-																																			Although we
-																																			will do our
-																																			best to
-																																			protect your
+																																			Although
+																																			we
+																																			will
+																																			do
+																																			our
+																																			best
+																																			to
+																																			protect
+																																			your
 																																			personal
 																																			information,
 																																			transmission
-																																			of personal
-																																			information to
-																																			and from our
-																																			Services is at
-																																			your own risk.
-																																			You should
-																																			only access
-																																			the Services
-																																			within a
+																																			of
+																																			personal
+																																			information
+																																			to
+																																			and
+																																			from
+																																			our
+																																			Services
+																																			is
+																																			at
+																																			your
+																																			own
+																																			risk.
+																																			You
+																																			should
+																																			only
+																																			access
+																																			the
+																																			Services
+																																			within
+																																			a
 																																			secure
 																																			environment.
 																																			<span
 																																				style={{
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span className="statement-end-if-in-editor" />
 																																			</span>
 																																			<span
 																																				style={{
-																																					color:
-																																						"rgb(89, 89, 89)",
+																																					color: "rgb(89, 89, 89)",
 																																					fontSize: 15
 																																				}}
 																																			>
@@ -3311,7 +4548,8 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
@@ -3319,41 +4557,37 @@ export default function PrivacyPolicy() {
 																															<div
 																																id="privacyrights"
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color:
-																																			"rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
-																																			color:
-																																				"rgb(89, 89, 89)",
+																																			color: "rgb(89, 89, 89)",
 																																			fontSize: 15
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color:
-																																							"rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)"
 																																					}}
 																																				>
 																																					<strong>
@@ -3374,42 +4608,42 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
 																																			<strong>
 																																				<em>
-																																					In Short:
+																																					In
+																																					Short:
 																																				</em>
 																																			</strong>
 																																			<em>
 																																				&nbsp;
 																																				<span
 																																					style={{
-																																						color:
-																																							"rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)"
 																																					}}
 																																				>
 																																					<span
@@ -3424,31 +4658,43 @@ export default function PrivacyPolicy() {
 																																						</span>
 																																					</span>
 																																				</span>
-																																				In some
+																																				In
+																																				some
 																																				regions,
-																																				such as{" "}
+																																				such
+																																				as{" "}
 																																				<span className="block-component" />
-																																				the European
+																																				the
+																																				European
 																																				Economic
-																																				Area (EEA),
+																																				Area
+																																				(EEA),
 																																				United
 																																				Kingdom
-																																				(UK), and
+																																				(UK),
+																																				and
 																																				Canada
 																																				<span className="block-component" />
-																																				, you have
-																																				rights that
-																																				allow you
+
+																																				,
+																																				you
+																																				have
+																																				rights
+																																				that
+																																				allow
+																																				you
 																																				greater
-																																				access to
-																																				and control
-																																				over your
+																																				access
+																																				to
+																																				and
+																																				control
+																																				over
+																																				your
 																																				personal
 																																				information.
 																																				<span
 																																					style={{
-																																						color:
-																																							"rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)"
 																																					}}
 																																				>
 																																					<span
@@ -3464,17 +4710,21 @@ export default function PrivacyPolicy() {
 																																					</span>
 																																					&nbsp;
 																																				</span>
-																																				You may
+																																				You
+																																				may
 																																				review,
-																																				change, or
+																																				change,
+																																				or
 																																				terminate
-																																				your account
-																																				at any time.
+																																				your
+																																				account
+																																				at
+																																				any
+																																				time.
 																																			</em>
 																																			<span
 																																				style={{
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span
@@ -3491,84 +4741,129 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			In some
-																																			regions (like{" "}
+																																			In
+																																			some
+																																			regions
+																																			(like{" "}
 																																			<span className="block-component" />
-																																			the EEA, UK,
-																																			and Canada
+																																			the
+																																			EEA,
+																																			UK,
+																																			and
+																																			Canada
 																																			<span className="block-component" />
-																																			), you have
-																																			certain rights
+																																			),
+																																			you
+																																			have
+																																			certain
+																																			rights
 																																			under
 																																			applicable
 																																			data
 																																			protection
-																																			laws. These
-																																			may include
-																																			the right (i)
-																																			to request
-																																			access and
-																																			obtain a copy
-																																			of your
+																																			laws.
+																																			These
+																																			may
+																																			include
+																																			the
+																																			right
+																																			(i)
+																																			to
+																																			request
+																																			access
+																																			and
+																																			obtain
+																																			a
+																																			copy
+																																			of
+																																			your
 																																			personal
 																																			information,
-																																			(ii) to
+																																			(ii)
+																																			to
 																																			request
 																																			rectification
-																																			or erasure;
-																																			(iii) to
-																																			restrict the
-																																			processing of
-																																			your personal
+																																			or
+																																			erasure;
+																																			(iii)
+																																			to
+																																			restrict
+																																			the
+																																			processing
+																																			of
+																																			your
+																																			personal
 																																			information;
-																																			and (iv) if
-																																			applicable, to
+																																			and
+																																			(iv)
+																																			if
+																																			applicable,
+																																			to
 																																			data
 																																			portability.
-																																			In certain
+																																			In
+																																			certain
 																																			circumstances,
-																																			you may also
-																																			have the right
-																																			to object to
-																																			the processing
-																																			of your
+																																			you
+																																			may
+																																			also
+																																			have
+																																			the
+																																			right
+																																			to
+																																			object
+																																			to
+																																			the
+																																			processing
+																																			of
+																																			your
 																																			personal
 																																			information.
-																																			You can make
-																																			such a request
-																																			by contacting
-																																			us by using
-																																			the contact
+																																			You
+																																			can
+																																			make
+																																			such
+																																			a
+																																			request
+																																			by
+																																			contacting
+																																			us
+																																			by
+																																			using
+																																			the
+																																			contact
 																																			details
-																																			provided in
-																																			the section{" "}
+																																			provided
+																																			in
+																																			the
+																																			section{" "}
 																																			<span className="block-component" />
-																																			"
+																																			&quot;
 																																			<span className="statement-end-if-in-editor" />
 																																		</span>
 																																	</span>
@@ -3580,21 +4875,23 @@ export default function PrivacyPolicy() {
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span data-custom-class="body_text">
-																																				HOW CAN YOU
-																																				CONTACT US
-																																				ABOUT THIS
+																																				HOW
+																																				CAN
+																																				YOU
+																																				CONTACT
+																																				US
+																																				ABOUT
+																																				THIS
 																																				NOTICE?
 																																			</span>
 																																		</span>
@@ -3603,20 +4900,18 @@ export default function PrivacyPolicy() {
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
 																																			<span className="block-component" />
-																																			"
+																																			&quot;
 																																			<span className="statement-end-if-in-editor" />{" "}
 																																			below.
 																																		</span>
@@ -3625,35 +4920,40 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			We will
-																																			consider and
-																																			act upon any
-																																			request in
+																																			We
+																																			will
+																																			consider
+																																			and
+																																			act
+																																			upon
+																																			any
+																																			request
+																																			in
 																																			accordance
 																																			with
 																																			applicable
@@ -3669,15 +4969,13 @@ export default function PrivacyPolicy() {
 																																			>
 																																				<span
 																																					style={{
-																																						color:
-																																							"rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)"
 																																					}}
 																																				>
 																																					<span data-custom-class="body_text">
 																																						<span
 																																							style={{
-																																								color:
-																																									"rgb(89, 89, 89)"
+																																								color: "rgb(89, 89, 89)"
 																																							}}
 																																						>
 																																							<span
@@ -3697,14 +4995,14 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	&nbsp;
@@ -3712,35 +5010,50 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			If you are
-																																			located in the
-																																			EEA or UK and
-																																			you believe we
-																																			are unlawfully
+																																			If
+																																			you
+																																			are
+																																			located
+																																			in
+																																			the
+																																			EEA
+																																			or
+																																			UK
+																																			and
+																																			you
+																																			believe
+																																			we
+																																			are
+																																			unlawfully
 																																			processing
-																																			your personal
+																																			your
+																																			personal
 																																			information,
-																																			you also have
-																																			the right to
-																																			complain to
+																																			you
+																																			also
+																																			have
+																																			the
+																																			right
+																																			to
+																																			complain
+																																			to
 																																			your{" "}
 																																			<span
 																																				style={{
@@ -3749,15 +5062,13 @@ export default function PrivacyPolicy() {
 																																			>
 																																				<span
 																																					style={{
-																																						color:
-																																							"rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)"
 																																					}}
 																																				>
 																																					<span data-custom-class="body_text">
 																																						<span
 																																							style={{
-																																								color:
-																																									"rgb(48, 48, 241)"
+																																								color: "rgb(48, 48, 241)"
 																																							}}
 																																						>
 																																							<span data-custom-class="body_text">
@@ -3797,19 +5108,18 @@ export default function PrivacyPolicy() {
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span data-custom-class="body_text">
-																																					UK data
+																																					UK
+																																					data
 																																					protection
 																																					authority
 																																				</span>
@@ -3820,15 +5130,13 @@ export default function PrivacyPolicy() {
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -3839,36 +5147,41 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			If you are
-																																			located in
+																																			If
+																																			you
+																																			are
+																																			located
+																																			in
 																																			Switzerland,
-																																			you may
-																																			contact the{" "}
+																																			you
+																																			may
+																																			contact
+																																			the{" "}
 																																			<span
 																																				style={{
 																																					fontSize: 15
@@ -3876,15 +5189,13 @@ export default function PrivacyPolicy() {
 																																			>
 																																				<span
 																																					style={{
-																																						color:
-																																							"rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)"
 																																					}}
 																																				>
 																																					<span data-custom-class="body_text">
 																																						<span
 																																							style={{
-																																								color:
-																																									"rgb(48, 48, 241)"
+																																								color: "rgb(48, 48, 241)"
 																																							}}
 																																						>
 																																							<span data-custom-class="body_text">
@@ -3912,6 +5223,7 @@ export default function PrivacyPolicy() {
 																																					</span>
 																																				</span>
 																																			</span>
+
 																																			.
 																																		</span>
 																																	</span>
@@ -3919,7 +5231,8 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
@@ -3927,21 +5240,20 @@ export default function PrivacyPolicy() {
 																															<div
 																																id="withdrawconsent"
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -3952,37 +5264,65 @@ export default function PrivacyPolicy() {
 																																					consent:
 																																				</u>
 																																			</strong>{" "}
-																																			If we are
-																																			relying on
-																																			your consent
-																																			to process
-																																			your personal
+																																			If
+																																			we
+																																			are
+																																			relying
+																																			on
+																																			your
+																																			consent
+																																			to
+																																			process
+																																			your
+																																			personal
 																																			information,
 																																			<span className="block-component" />{" "}
-																																			which may be
-																																			express and/or
+																																			which
+																																			may
+																																			be
+																																			express
+																																			and/or
 																																			implied
 																																			consent
-																																			depending on
-																																			the applicable
+																																			depending
+																																			on
+																																			the
+																																			applicable
 																																			law,
 																																			<span className="statement-end-if-in-editor" />{" "}
-																																			you have the
-																																			right to
-																																			withdraw your
-																																			consent at any
-																																			time. You can
-																																			withdraw your
-																																			consent at any
-																																			time by
-																																			contacting us
-																																			by using the
+																																			you
+																																			have
+																																			the
+																																			right
+																																			to
+																																			withdraw
+																																			your
+																																			consent
+																																			at
+																																			any
+																																			time.
+																																			You
+																																			can
+																																			withdraw
+																																			your
+																																			consent
+																																			at
+																																			any
+																																			time
+																																			by
+																																			contacting
+																																			us
+																																			by
+																																			using
+																																			the
 																																			contact
 																																			details
-																																			provided in
-																																			the section{" "}
+																																			provided
+																																			in
+																																			the
+																																			section{" "}
 																																			<span className="block-component" />
-																																			"
+																																			&quot;
 																																			<span className="statement-end-if-in-editor" />
 																																		</span>
 																																	</span>
@@ -3994,21 +5334,23 @@ export default function PrivacyPolicy() {
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span data-custom-class="body_text">
-																																				HOW CAN YOU
-																																				CONTACT US
-																																				ABOUT THIS
+																																				HOW
+																																				CAN
+																																				YOU
+																																				CONTACT
+																																				US
+																																				ABOUT
+																																				THIS
 																																				NOTICE?
 																																			</span>
 																																		</span>
@@ -4017,23 +5359,22 @@ export default function PrivacyPolicy() {
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
 																																			<span className="block-component" />
-																																			"
+																																			&quot;
 																																			<span className="statement-end-if-in-editor" />{" "}
 																																			below
 																																			<span className="block-component" />
+
 																																			.
 																																		</span>
 																																	</span>
@@ -4041,14 +5382,16 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
@@ -4057,28 +5400,48 @@ export default function PrivacyPolicy() {
 																																	}}
 																																>
 																																	<span data-custom-class="body_text">
-																																		However, please
-																																		note that this
-																																		will not affect
-																																		the lawfulness
-																																		of the
+																																		However,
+																																		please
+																																		note
+																																		that
+																																		this
+																																		will
+																																		not
+																																		affect
+																																		the
+																																		lawfulness
+																																		of
+																																		the
 																																		processing
-																																		before its
-																																		withdrawal nor,
+																																		before
+																																		its
+																																		withdrawal
+																																		nor,
 																																		<span className="block-component" />{" "}
-																																		when applicable
-																																		law allows,
+																																		when
+																																		applicable
+																																		law
+																																		allows,
 																																		<span className="statement-end-if-in-editor" />{" "}
-																																		will it affect
-																																		the processing
-																																		of your personal
+																																		will
+																																		it
+																																		affect
+																																		the
+																																		processing
+																																		of
+																																		your
+																																		personal
 																																		information
-																																		conducted in
-																																		reliance on
+																																		conducted
+																																		in
+																																		reliance
+																																		on
 																																		lawful
 																																		processing
-																																		grounds other
-																																		than consent.
+																																		grounds
+																																		other
+																																		than
+																																		consent.
 																																		<span className="block-component" />
 																																	</span>
 																																</span>
@@ -4090,18 +5453,20 @@ export default function PrivacyPolicy() {
 																																	>
 																																		<span data-custom-class="body_text" />
 																																	</span>
-																																</ span>
+																																</span>
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
@@ -4119,14 +5484,16 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span data-custom-class="body_text">
@@ -4135,14 +5502,28 @@ export default function PrivacyPolicy() {
 																																			fontSize: 15
 																																		}}
 																																	>
-																																		If you would at
-																																		any time like to
-																																		review or change
-																																		the information
-																																		in your account
-																																		or terminate
-																																		your account,
-																																		you can:
+																																		If
+																																		you
+																																		would
+																																		at
+																																		any
+																																		time
+																																		like
+																																		to
+																																		review
+																																		or
+																																		change
+																																		the
+																																		information
+																																		in
+																																		your
+																																		account
+																																		or
+																																		terminate
+																																		your
+																																		account,
+																																		you
+																																		can:
 																																		<span className="forloop-component" />
 																																	</span>
 																																</span>
@@ -4161,19 +5542,22 @@ export default function PrivacyPolicy() {
 																																			}}
 																																		>
 																																			<span className="question">
-																																				Contact us
-																																				using the
+																																				Contact
+																																				us
+																																				using
+																																				the
 																																				contact
 																																				information
 																																				provided.
-																																			</ span>
+																																			</span>
 																																		</span>
 																																	</span>
 																																</li>
 																															</ul>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span data-custom-class="body_text">
@@ -4188,7 +5572,8 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
@@ -4197,29 +5582,52 @@ export default function PrivacyPolicy() {
 																																	}}
 																																>
 																																	<span data-custom-class="body_text">
-																																		Upon your
-																																		request to
-																																		terminate your
-																																		account, we will
-																																		deactivate or
-																																		delete your
-																																		account and
-																																		information from
-																																		our active
+																																		Upon
+																																		your
+																																		request
+																																		to
+																																		terminate
+																																		your
+																																		account,
+																																		we
+																																		will
+																																		deactivate
+																																		or
+																																		delete
+																																		your
+																																		account
+																																		and
+																																		information
+																																		from
+																																		our
+																																		active
 																																		databases.
-																																		However, we may
-																																		retain some
-																																		information in
-																																		our files to
-																																		prevent fraud,
+																																		However,
+																																		we
+																																		may
+																																		retain
+																																		some
+																																		information
+																																		in
+																																		our
+																																		files
+																																		to
+																																		prevent
+																																		fraud,
 																																		troubleshoot
-																																		problems, assist
-																																		with any
+																																		problems,
+																																		assist
+																																		with
+																																		any
 																																		investigations,
-																																		enforce our
-																																		legal terms
-																																		and/or comply
-																																		with applicable
+																																		enforce
+																																		our
+																																		legal
+																																		terms
+																																		and/or
+																																		comply
+																																		with
+																																		applicable
 																																		legal
 																																		requirements.
 																																	</span>
@@ -4232,19 +5640,17 @@ export default function PrivacyPolicy() {
 																																	>
 																																		<span data-custom-class="body_text" />
 																																	</span>
-																																</ span>
+																																</span>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -4255,8 +5661,7 @@ export default function PrivacyPolicy() {
 																																			>
 																																				<span
 																																					style={{
-																																						color:
-																																							"rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)"
 																																					}}
 																																				>
 																																					<span
@@ -4266,8 +5671,7 @@ export default function PrivacyPolicy() {
 																																					>
 																																						<span
 																																							style={{
-																																								color:
-																																									"rgb(89, 89, 89)"
+																																								color: "rgb(89, 89, 89)"
 																																							}}
 																																						>
 																																							<span data-custom-class="body_text">
@@ -4278,8 +5682,7 @@ export default function PrivacyPolicy() {
 																																								>
 																																									<span
 																																										style={{
-																																											color:
-																																												"rgb(89, 89, 89)"
+																																											color: "rgb(89, 89, 89)"
 																																										}}
 																																									>
 																																										<span className="block-component" />
@@ -4301,18 +5704,20 @@ export default function PrivacyPolicy() {
 																																	>
 																																		<span data-custom-class="body_text" />
 																																	</span>
-																																</ span>
+																																</span>
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span data-custom-class="body_text">
@@ -4321,10 +5726,25 @@ export default function PrivacyPolicy() {
 																																			fontSize: 15
 																																		}}
 																																	>
-																																		If you have questions or comments about your privacy rights, you may email us at{" "}
+																																		If
+																																		you
+																																		have
+																																		questions
+																																		or
+																																		comments
+																																		about
+																																		your
+																																		privacy
+																																		rights,
+																																		you
+																																		may
+																																		email
+																																		us
+																																		at{" "}
 																																		<span className="question">
 																																			angusmiguel21@gmail.com
-																																		</ span>
+																																		</span>
+
 																																		.
 																																	</span>
 																																</span>
@@ -4336,11 +5756,12 @@ export default function PrivacyPolicy() {
 																																	>
 																																		<span data-custom-class="body_text" />
 																																	</span>
-																																</ span>
+																																</span>
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
@@ -4348,41 +5769,37 @@ export default function PrivacyPolicy() {
 																															<div
 																																id="DNT"
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color:
-																																			"rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
-																																			color:
-																																				"rgb(89, 89, 89)",
+																																			color: "rgb(89, 89, 89)",
 																																			fontSize: 15
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color:
-																																							"rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)"
 																																					}}
 																																				>
 																																					<strong>
@@ -4402,96 +5819,150 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			Most web
-																																			browsers and
-																																			some mobile
+																																			Most
+																																			web
+																																			browsers
+																																			and
+																																			some
+																																			mobile
 																																			operating
-																																			systems and
+																																			systems
+																																			and
 																																			mobile
 																																			applications
-																																			include a
-																																			Do-Not-Track (
+																																			include
+																																			a
+																																			Do-Not-Track
+																																			(
 																																			<span className="block-component" />
-																																			"DNT"
+																																			&quot;DNT&quot;
 																																			<span className="statement-end-if-in-editor" />
-																																			) feature or
-																																			setting you
-																																			can activate
-																																			to signal your
+
+																																			)
+																																			feature
+																																			or
+																																			setting
+																																			you
+																																			can
+																																			activate
+																																			to
+																																			signal
+																																			your
 																																			privacy
-																																			preference not
-																																			to have data
-																																			about your
+																																			preference
+																																			not
+																																			to
+																																			have
+																																			data
+																																			about
+																																			your
 																																			online
 																																			browsing
 																																			activities
-																																			monitored and
-																																			collected. At
-																																			this stage no
+																																			monitored
+																																			and
+																																			collected.
+																																			At
+																																			this
+																																			stage
+																																			no
 																																			uniform
 																																			technology
-																																			standard for{" "}
+																																			standard
+																																			for{" "}
 																																			<span className="block-component" />
 																																			recognizing
 																																			<span className="statement-end-if-in-editor" />{" "}
 																																			and
 																																			implementing
-																																			DNT signals
-																																			has been{" "}
+																																			DNT
+																																			signals
+																																			has
+																																			been{" "}
 																																			<span className="block-component" />
 																																			finalized
 																																			<span className="statement-end-if-in-editor" />
-																																			. As such, we
-																																			do not
+
+																																			.
+																																			As
+																																			such,
+																																			we
+																																			do
+																																			not
 																																			currently
-																																			respond to DNT
+																																			respond
+																																			to
+																																			DNT
 																																			browser
-																																			signals or any
+																																			signals
+																																			or
+																																			any
 																																			other
-																																			mechanism that
+																																			mechanism
+																																			that
 																																			automatically
 																																			communicates
-																																			your choice
-																																			not to be
+																																			your
+																																			choice
+																																			not
+																																			to
+																																			be
 																																			tracked
-																																			online. If a
-																																			standard for
+																																			online.
+																																			If
+																																			a
+																																			standard
+																																			for
 																																			online
-																																			tracking is
-																																			adopted that
-																																			we must follow
-																																			in the future,
-																																			we will inform
-																																			you about that
-																																			practice in a
+																																			tracking
+																																			is
+																																			adopted
+																																			that
+																																			we
+																																			must
+																																			follow
+																																			in
+																																			the
+																																			future,
+																																			we
+																																			will
+																																			inform
+																																			you
+																																			about
+																																			that
+																																			practice
+																																			in
+																																			a
 																																			revised
-																																			version of
-																																			this privacy
+																																			version
+																																			of
+																																			this
+																																			privacy
 																																			notice.
 																																		</span>
 																																	</span>
@@ -4499,7 +5970,8 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
@@ -4507,46 +5979,43 @@ export default function PrivacyPolicy() {
 																															<div
 																																id="caresidents"
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color:
-																																			"rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
-																																			color:
-																																				"rgb(89, 89, 89)",
+																																			color: "rgb(89, 89, 89)",
 																																			fontSize: 15
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color:
-																																							"rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)"
 																																					}}
 																																				>
 																																					<strong>
 																																						<span data-custom-class="heading_1">
-																																							10. DO
+																																							10.
+																																							DO
 																																							CALIFORNIA
 																																							RESIDENTS
 																																							HAVE
@@ -4563,28 +6032,28 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -4595,16 +6064,22 @@ export default function PrivacyPolicy() {
 																																				</em>
 																																			</strong>
 																																			<em>
-																																				Yes, if you
-																																				are a
-																																				resident of
+																																				Yes,
+																																				if
+																																				you
+																																				are
+																																				a
+																																				resident
+																																				of
 																																				California,
-																																				you are
+																																				you
+																																				are
 																																				granted
 																																				specific
 																																				rights
 																																				regarding
-																																				access to
+																																				access
+																																				to
 																																				your
 																																				personal
 																																				information.
@@ -4615,82 +6090,128 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
 																																			California
-																																			Civil Code
+																																			Civil
+																																			Code
 																																			Section
-																																			1798.83, also
-																																			known as the{" "}
+																																			1798.83,
+																																			also
+																																			known
+																																			as
+																																			the{" "}
 																																			<span className="block-component" />
-																																			"Shine The
-																																			Light"
+																																			&quot;Shine
+																																			The
+																																			Light&quot;
 																																			<span className="statement-end-if-in-editor" />{" "}
-																																			law, permits
-																																			our users who
-																																			are California
-																																			residents to
-																																			request and
-																																			obtain from
-																																			us, once a
-																																			year and free
-																																			of charge,
+																																			law,
+																																			permits
+																																			our
+																																			users
+																																			who
+																																			are
+																																			California
+																																			residents
+																																			to
+																																			request
+																																			and
+																																			obtain
+																																			from
+																																			us,
+																																			once
+																																			a
+																																			year
+																																			and
+																																			free
+																																			of
+																																			charge,
 																																			information
 																																			about
-																																			categories of
+																																			categories
+																																			of
 																																			personal
 																																			information
-																																			(if any) we
-																																			disclosed to
-																																			third parties
-																																			for direct
+																																			(if
+																																			any)
+																																			we
+																																			disclosed
+																																			to
+																																			third
+																																			parties
+																																			for
+																																			direct
 																																			marketing
-																																			purposes and
-																																			the names and
-																																			addresses of
-																																			all third
-																																			parties with
-																																			which we
+																																			purposes
+																																			and
+																																			the
+																																			names
+																																			and
+																																			addresses
+																																			of
+																																			all
+																																			third
+																																			parties
+																																			with
+																																			which
+																																			we
 																																			shared
 																																			personal
-																																			information in
+																																			information
+																																			in
 																																			the
 																																			immediately
 																																			preceding
-																																			calendar year.
-																																			If you are a
+																																			calendar
+																																			year.
+																																			If
+																																			you
+																																			are
+																																			a
 																																			California
-																																			resident and
-																																			would like to
-																																			make such a
+																																			resident
+																																			and
+																																			would
+																																			like
+																																			to
+																																			make
+																																			such
+																																			a
 																																			request,
-																																			please submit
-																																			your request
-																																			in writing to
-																																			us using the
+																																			please
+																																			submit
+																																			your
+																																			request
+																																			in
+																																			writing
+																																			to
+																																			us
+																																			using
+																																			the
 																																			contact
 																																			information
 																																			provided
@@ -4701,78 +6222,130 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			If you are
-																																			under 18 years
-																																			of age, reside
-																																			in California,
-																																			and have a
+																																			If
+																																			you
+																																			are
+																																			under
+																																			18
+																																			years
+																																			of
+																																			age,
+																																			reside
+																																			in
+																																			California,
+																																			and
+																																			have
+																																			a
 																																			registered
-																																			account with
-																																			Services, you
-																																			have the right
-																																			to request
-																																			removal of
-																																			unwanted data
-																																			that you
-																																			publicly post
-																																			on the
-																																			Services. To
+																																			account
+																																			with
+																																			Services,
+																																			you
+																																			have
+																																			the
+																																			right
+																																			to
 																																			request
-																																			removal of
-																																			such data,
-																																			please contact
-																																			us using the
+																																			removal
+																																			of
+																																			unwanted
+																																			data
+																																			that
+																																			you
+																																			publicly
+																																			post
+																																			on
+																																			the
+																																			Services.
+																																			To
+																																			request
+																																			removal
+																																			of
+																																			such
+																																			data,
+																																			please
+																																			contact
+																																			us
+																																			using
+																																			the
 																																			contact
 																																			information
-																																			provided below
-																																			and include
-																																			the email
+																																			provided
+																																			below
+																																			and
+																																			include
+																																			the
+																																			email
 																																			address
 																																			associated
-																																			with your
-																																			account and a
-																																			statement that
-																																			you reside in
-																																			California. We
-																																			will make sure
-																																			the data is
-																																			not publicly
-																																			displayed on
-																																			the Services,
-																																			but please be
-																																			aware that the
-																																			data may not
-																																			be completely
+																																			with
+																																			your
+																																			account
+																																			and
+																																			a
+																																			statement
+																																			that
+																																			you
+																																			reside
+																																			in
+																																			California.
+																																			We
+																																			will
+																																			make
+																																			sure
+																																			the
+																																			data
+																																			is
+																																			not
+																																			publicly
+																																			displayed
+																																			on
+																																			the
+																																			Services,
+																																			but
+																																			please
+																																			be
+																																			aware
+																																			that
+																																			the
+																																			data
+																																			may
+																																			not
+																																			be
+																																			completely
 																																			or
 																																			comprehensively
-																																			removed from
-																																			all our
-																																			systems (e.g.
+																																			removed
+																																			from
+																																			all
+																																			our
+																																			systems
+																																			(e.g.
 																																			<span className="block-component" />
 																																			,
 																																			<span className="statement-end-if-in-editor" />{" "}
@@ -4780,8 +6353,7 @@ export default function PrivacyPolicy() {
 																																			etc.).
 																																			<span
 																																				style={{
-																																					color:
-																																						"rgb(89, 89, 89)",
+																																					color: "rgb(89, 89, 89)",
 																																					fontSize: 15
 																																				}}
 																																			>
@@ -4798,11 +6370,12 @@ export default function PrivacyPolicy() {
 																																			fontSize: 15
 																																		}}
 																																	/>
-																																</ span>
+																																</span>
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
@@ -4810,46 +6383,43 @@ export default function PrivacyPolicy() {
 																															<div
 																																id="policyupdates"
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color:
-																																			"rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
-																																			color:
-																																				"rgb(89, 89, 89)",
+																																			color: "rgb(89, 89, 89)",
 																																			fontSize: 15
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color:
-																																							"rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)"
 																																					}}
 																																				>
 																																					<strong>
 																																						<span data-custom-class="heading_1">
-																																							11. DO
+																																							11.
+																																							DO
 																																							WE
 																																							MAKE
 																																							UPDATES
@@ -4866,28 +6436,28 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -4896,10 +6466,15 @@ export default function PrivacyPolicy() {
 																																					In
 																																					Short:&nbsp;
 																																				</strong>
-																																				Yes, we will
-																																				update this
-																																				notice as
-																																				necessary to
+																																				Yes,
+																																				we
+																																				will
+																																				update
+																																				this
+																																				notice
+																																				as
+																																				necessary
+																																				to
 																																				stay
 																																				compliant
 																																				with
@@ -4912,69 +6487,112 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			We may update
-																																			this privacy
-																																			notice from
-																																			time to time.
-																																			The updated
-																																			version will
-																																			be indicated
-																																			by an updated{" "}
-																																			<span className="block-component" />
-																																			"Revised"
-																																			<span className="statement-end-if-in-editor" />{" "}
-																																			date and the
-																																			updated
-																																			version will
-																																			be effective
-																																			as soon as it
-																																			is accessible.
-																																			If we make
-																																			material
-																																			changes to
-																																			this privacy
-																																			notice, we may
-																																			notify you
-																																			either by
-																																			prominently
-																																			posting a
-																																			notice of such
-																																			changes or by
-																																			directly
-																																			sending you a
-																																			notification.
-																																			We encourage
-																																			you to review
-																																			this privacy
+																																			We
+																																			may
+																																			update
+																																			this
+																																			privacy
 																																			notice
-																																			frequently to
-																																			be informed of
-																																			how we are
+																																			from
+																																			time
+																																			to
+																																			time.
+																																			The
+																																			updated
+																																			version
+																																			will
+																																			be
+																																			indicated
+																																			by
+																																			an
+																																			updated{" "}
+																																			<span className="block-component" />
+																																			&quot;Revised&quot;
+																																			<span className="statement-end-if-in-editor" />{" "}
+																																			date
+																																			and
+																																			the
+																																			updated
+																																			version
+																																			will
+																																			be
+																																			effective
+																																			as
+																																			soon
+																																			as
+																																			it
+																																			is
+																																			accessible.
+																																			If
+																																			we
+																																			make
+																																			material
+																																			changes
+																																			to
+																																			this
+																																			privacy
+																																			notice,
+																																			we
+																																			may
+																																			notify
+																																			you
+																																			either
+																																			by
+																																			prominently
+																																			posting
+																																			a
+																																			notice
+																																			of
+																																			such
+																																			changes
+																																			or
+																																			by
+																																			directly
+																																			sending
+																																			you
+																																			a
+																																			notification.
+																																			We
+																																			encourage
+																																			you
+																																			to
+																																			review
+																																			this
+																																			privacy
+																																			notice
+																																			frequently
+																																			to
+																																			be
+																																			informed
+																																			of
+																																			how
+																																			we
+																																			are
 																																			protecting
 																																			your
 																																			information.
@@ -4984,7 +6602,8 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
@@ -4992,41 +6611,37 @@ export default function PrivacyPolicy() {
 																															<div
 																																id="contact"
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color:
-																																			"rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
-																																			color:
-																																				"rgb(89, 89, 89)",
+																																			color: "rgb(89, 89, 89)",
 																																			fontSize: 15
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color:
-																																							"rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)"
 																																					}}
 																																				>
 																																					<strong>
@@ -5050,50 +6665,56 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
-																																			If you have
-																																			questions or
-																																			comments about
-																																			this notice,
-																																			you may{" "}
+																																			If
+																																			you
+																																			have
+																																			questions
+																																			or
+																																			comments
+																																			about
+																																			this
+																																			notice,
+																																			you
+																																			may{" "}
 																																			<span
 																																				style={{
-																																					color:
-																																						"rgb(89, 89, 89)",
+																																					color: "rgb(89, 89, 89)",
 																																					fontSize: 15
 																																				}}
 																																			>
 																																				<span data-custom-class="body_text">
 																																					<span className="block-component" />
-																																					email us
+																																					email
+																																					us
 																																					at{" "}
 																																					<span className="question">
 																																						angusmiguel21@gmail.com
-																																					</ span>
+																																					</span>
 																																					<span className="statement-end-if-in-editor" />
 																																				</span>
 																																			</span>
@@ -5103,14 +6724,16 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
@@ -5118,41 +6741,37 @@ export default function PrivacyPolicy() {
 																															<div
 																																id="request"
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color:
-																																			"rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
-																																			color:
-																																				"rgb(89, 89, 89)",
+																																			color: "rgb(89, 89, 89)",
 																																			fontSize: 15
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color:
-																																					"rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)"
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color:
-																																						"rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)"
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color:
-																																							"rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)"
 																																					}}
 																																				>
 																																					<strong>
@@ -5181,42 +6800,84 @@ export default function PrivacyPolicy() {
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<br />
 																															</div>
 																															<div
 																																style={{
-																																	lineHeight: "1.5"
+																																	lineHeight:
+																																		"1.5"
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color:
-																																			"rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color:
-																																				"rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)"
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
 																																			<span className="block-component" />
-																																			Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it.{" "}
+																																			Based
+																																			on
+																																			the
+																																			applicable
+																																			laws
+																																			of
+																																			your
+																																			country,
+																																			you
+																																			may
+																																			have
+																																			the
+																																			right
+																																			to
+																																			request
+																																			access
+																																			to
+																																			the
+																																			personal
+																																			information
+																																			we
+																																			collect
+																																			from
+																																			you,
+																																			change
+																																			that
+																																			information,
+																																			or
+																																			delete
+																																			it.{" "}
 																																			<span className="else-block" />
-																																			To request to review, update, or delete your personal information, please{" "}
+																																			To
+																																			request
+																																			to
+																																			review,
+																																			update,
+																																			or
+																																			delete
+																																			your
+																																			personal
+																																			information,
+																																			please{" "}
 																																			<span className="block-component" />
-																																			fill out and submit a&nbsp;
+																																			fill
+																																			out
+																																			and
+																																			submit
+																																			a&nbsp;
 																																		</span>
 																																		<span
 																																			style={{
-																																				color:
-																																					"rgb(48, 48, 241)"
+																																				color: "rgb(48, 48, 241)"
 																																			}}
 																																		>
 																																			<span data-custom-class="body_text">
@@ -5241,7 +6902,7 @@ export default function PrivacyPolicy() {
 																																		</span>
 																																		<span className="block-component">
 																																			<span data-custom-class="body_text" />
-																																		</ span>
+																																		</span>
 																																	</span>
 																																</span>
 																																<span data-custom-class="body_text">
@@ -5277,6 +6938,5 @@ export default function PrivacyPolicy() {
 				</div>
 			</div>
 		</div>
-
 	);
 }

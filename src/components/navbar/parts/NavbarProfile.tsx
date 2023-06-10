@@ -88,6 +88,6 @@ function NavbarProfile() {
 			</Transition>
 		</Popover>
 	);
-};
+}
 
 export { NavbarProfile };

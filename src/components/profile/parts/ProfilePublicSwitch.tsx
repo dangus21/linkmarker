@@ -46,6 +46,6 @@ function ProfilePublicSwitch() {
 			</Switch.Group>
 		</div>
 	);
-};
+}
 
 export { ProfilePublicSwitch };

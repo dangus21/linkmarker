@@ -30,6 +30,6 @@ function Input(
 			{...inputProps}
 		/>
 	);
-};
+}
 
 export { Input };

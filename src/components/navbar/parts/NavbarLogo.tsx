@@ -15,6 +15,6 @@ function NavbarLogo() {
 			</div>
 		</div>
 	);
-};
+}
 
 export { NavbarLogo };

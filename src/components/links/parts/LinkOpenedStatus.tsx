@@ -34,6 +34,6 @@ function LinkOpenedStatus(
 			)}
 		</div>
 	);
-};
+}
 
 export { LinkOpenedStatus };

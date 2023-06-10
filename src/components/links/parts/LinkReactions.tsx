@@ -96,6 +96,6 @@ function LinkReactions(
 			</Transition>
 		</Popover>
 	);
-};
+}
 
 export { LinkReactions };

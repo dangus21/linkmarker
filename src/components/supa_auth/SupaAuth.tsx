@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import {
@@ -13,7 +15,7 @@ import { useGetProfileInfo } from "@/hooks";
 import { useUserGlobalState } from "@/state";
 import Head from "next/head";
 
-function SupaAuth({ children }: { children: React.ReactNode }) {
+function SupaAuth({ children }: { children: ReactNode }) {
 	const supabaseClient = useSupabaseClient<Database>();
 	const session = useSession();
 	const user = useUser();
@@ -22,20 +24,19 @@ function SupaAuth({ children }: { children: React.ReactNode }) {
 	const globalUserState = useUserGlobalState();
 
 	return (
-		<div className="bg-gray-900 min-h-screen">
+		<div className="min-h-screen bg-gray-900">
 			<Head>
 				<title>Linkmarker</title>
 			</Head>
 			<>
 				{!session || !user ? (
 					<div
-						className={
-							twMerge(
-								"text-white h-screen w-screen flex",
-								"justify-center items-center bg-neutral-800",
-								"[&>div]:w-[30rem] [&>div]:bg-neutral-900",
-								"[&>div]:px-6 [&>div]:py-4 [&>div]:rounded-lg"
-							)}
+						className={twMerge(
+							"flex h-screen w-screen text-white",
+							"items-center justify-center bg-neutral-800",
+							"[&>div]:w-[30rem] [&>div]:bg-neutral-900",
+							"[&>div]:rounded-lg [&>div]:px-6 [&>div]:py-4"
+						)}
 					>
 						<Auth
 							theme="dark"
@@ -44,15 +45,13 @@ function SupaAuth({ children }: { children: React.ReactNode }) {
 							providers={["google", "facebook"]}
 						/>
 					</div>
-				) :
-					globalUserState.hasAvatar && !globalUserState.avatar.img ?
-						(
-							<div className="pt-[7rem]">
-								<LoadingSpinner />
-							</div>
-						) :
-						children
-				}
+				) : globalUserState.hasAvatar && !globalUserState.avatar.img ? (
+					<div className="pt-[7rem]">
+						<LoadingSpinner />
+					</div>
+				) : (
+					children
+				)}
 			</>
 		</div>
 	);

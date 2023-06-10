@@ -32,6 +32,6 @@ function LinkDate(
 			</p>
 		</div>
 	);
-};
+}
 
 export { LinkDate };

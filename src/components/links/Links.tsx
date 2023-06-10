@@ -114,6 +114,7 @@ function Links() {
 											onClick={() => openLinkFn(true)}
 											onAuxClick={() => openLinkFn(true)}
 											className="w-full cursor-pointer py-2 px-6 hover:bg-gray-800"
+											rel="noreferrer"
 										>
 											<div className="flex flex-col justify-between sm:flex-row sm:items-center">
 												<LinkTitle

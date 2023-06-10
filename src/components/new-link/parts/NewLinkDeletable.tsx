@@ -41,6 +41,6 @@ function NewLinkDeletable() {
 			</Switch.Group>
 		</div>
 	);
-};
+}
 
 export { NewLinkDeletable };

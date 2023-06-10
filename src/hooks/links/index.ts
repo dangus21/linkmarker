@@ -1,6 +1,6 @@
 import { CSSProperties, useEffect } from "react";
 
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 import { Database } from "@/lib/types";
 import {
@@ -11,7 +11,12 @@ import {
 	useLinkGlobalState
 } from "@/state";
 import { NextRouter } from "next/router";
-import { SupabaseClient, User, useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import {
+	SupabaseClient,
+	User,
+	useSupabaseClient,
+	useUser
+} from "@supabase/auth-helpers-react";
 
 const toast_config = {
 	style: {
@@ -44,7 +49,9 @@ async function deleteLink({
 		const { data, error } = await supabaseClient
 			.from("links")
 			.select()
-			.or(`share_with.cs.{${currentUser}},or(is_public.eq.true),or(by.eq.${currentUser})`)
+			.or(
+				`share_with.cs.{${currentUser}},or(is_public.eq.true),or(by.eq.${currentUser})`
+			)
 			.order("posted_date", { ascending: false });
 
 		if (data) {
@@ -75,7 +82,9 @@ async function createLink({
 	link: LinkState["new"];
 	router: NextRouter;
 }) {
-	const url = link.origin?.startsWith("http") ? link.origin : `http://${link.origin}`;
+	const url = link.origin?.startsWith("http")
+		? link.origin
+		: `http://${link.origin}`;
 	const newLink = {
 		reaction: null,
 		title: link.title,
@@ -83,7 +92,9 @@ async function createLink({
 		url,
 		by: userState.id,
 		is_public: link.is_public || false,
-		share_with: (link.share_with || []).map((user) => (user as unknown as StateUser)?.id),
+		share_with: (link.share_with || []).map(
+			(user) => (user as unknown as StateUser)?.id
+		),
 		origin: "",
 		is_deletable: link.is_deletable
 	} satisfies LinkState["new"];
@@ -174,7 +185,11 @@ async function useGetLinks() {
 			const { data, error } = await supabaseClient
 				.from("links")
 				.select()
-				.or(`share_with.cs.{${currentUser!.id}},or(is_public.eq.true),or(by.eq.${currentUser!.id})`)
+				.or(
+					`share_with.cs.{${
+						currentUser!.id
+					}},or(is_public.eq.true),or(by.eq.${currentUser!.id})`
+				)
 				.order("posted_date", { ascending: false });
 
 			if (error) {
@@ -187,15 +202,9 @@ async function useGetLinks() {
 				setLoading(false);
 				setLinks(data);
 			}
-
 		}
 		getLinks();
 	}, [currentUser, setLinks, setLoading, supabaseClient]);
 }
 
-export {
-	createLink,
-	deleteLink,
-	updateLinkInfo,
-	useGetLinks
-};
+export { createLink, deleteLink, updateLinkInfo, useGetLinks };
