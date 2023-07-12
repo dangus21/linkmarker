@@ -48,6 +48,18 @@ export type User = {
 	username: Database["public"]["Tables"]["profiles"]["Row"]["username"];
 };
 
+export type WindowSize = {
+	width: number;
+	height: number;
+	setSizes: (key: "width" | "height", value: number) => void;
+};
+
+const useWindowSize = create<WindowSize>()((set) => ({
+	width: 0,
+	height: 0,
+	setSizes: (key, value) => set(() => ({ [key]: value }))
+}));
+
 export type LinkState = {
 	values: TLink[] | [];
 	new: TLinkNew;
@@ -139,4 +151,9 @@ if (process.env.NODE_ENV === "development") {
 	mountStoreDevtool("links", useLinkGlobalState);
 }
 
-export { useUserGlobalState, useLinkGlobalState, NAVBAR_OPTIONS };
+export {
+	useUserGlobalState,
+	useLinkGlobalState,
+	useWindowSize,
+	NAVBAR_OPTIONS
+};

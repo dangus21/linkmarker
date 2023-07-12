@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const ONE_MB_SIZE = 1048576;
 
 const REACTIONS = {
@@ -24,4 +26,31 @@ function classNames(...classes: string[]) {
 
 const dateFormatter = new Intl.DateTimeFormat("pt-PT");
 
-export { ONE_MB_SIZE, REACTIONS, isLink, classNames, dateFormatter };
+function useViewport() {
+	const [width, setWidth] = useState(window.innerWidth);
+	// Add a second state variable "height" and default it to the current window height
+	const [height, setHeight] = useState(window.innerHeight);
+
+	useEffect(() => {
+		const handleWindowResize = () => {
+			setWidth(window.innerWidth);
+			// Set the height in state as well as the width
+			setHeight(window.innerHeight);
+		};
+
+		window.addEventListener("resize", handleWindowResize);
+		return () => window.removeEventListener("resize", handleWindowResize);
+	}, []);
+
+	// Return both the height and width
+	return { width, height };
+}
+
+export {
+	ONE_MB_SIZE,
+	REACTIONS,
+	isLink,
+	classNames,
+	dateFormatter,
+	useViewport
+};

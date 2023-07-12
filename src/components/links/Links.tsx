@@ -14,11 +14,14 @@ import {
 	LinkTitle
 } from "./parts";
 import { LoadingSpinner } from "../loading-spinner";
-import { REACTIONS } from "@/utils";
+import { NewLinkButton } from "../newLinkButton/NewLinkButton";
+import { REACTIONS, useViewport } from "@/utils";
 import { twMerge } from "tailwind-merge";
 import { useRef } from "react";
 
 function Links() {
+	const { width } = useViewport();
+
 	const supabaseClient = useSupabaseClient<Database>();
 	const user = useUser();
 	useGetLinks();
@@ -73,7 +76,8 @@ function Links() {
 			ref={parentRef}
 			className="mx-auto flex w-full max-w-[81rem] justify-center"
 		>
-			<div className="sm:max-w-7xlsm:shadow mb-4 w-full sm:mx-10">
+			<div className="mb-2 w-full sm:mx-10 sm:max-w-7xl sm:shadow">
+				{width <= 630 && <NewLinkButton isMobile />}
 				<ul
 					role="list"
 					className={twMerge(
