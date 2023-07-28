@@ -1,7 +1,12 @@
 import { useEffect } from "react";
 
 import { Database } from "@/lib/types";
-import { Session, SupabaseClient, User, useSupabaseClient } from "@supabase/auth-helpers-react";
+import {
+	Session,
+	SupabaseClient,
+	User,
+	useSupabaseClient
+} from "@supabase/auth-helpers-react";
 import { UserState, useUserGlobalState } from "@/state";
 
 async function updateProfileInfo({
@@ -104,7 +109,6 @@ async function useGetProfileInfo({
 
 						throw error;
 					}
-
 				} catch (error) {
 					console.warn("Failed loading user data");
 				}

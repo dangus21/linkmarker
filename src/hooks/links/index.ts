@@ -203,8 +203,10 @@ async function useGetLinks() {
 				setLinks(data);
 			}
 		}
+		console.log("got");
+
 		getLinks();
-	}, [currentUser, setLinks, setLoading, supabaseClient]);
+	}, []);
 }
 
 export { createLink, deleteLink, updateLinkInfo, useGetLinks };
