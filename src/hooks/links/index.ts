@@ -203,8 +203,6 @@ async function useGetLinks() {
 				setLinks(data);
 			}
 		}
-		console.log("got");
-
 		getLinks();
 	}, []);
 }

@@ -11,6 +11,19 @@ function Profile() {
 	const globalUserState = useUserGlobalState();
 	const { push } = useRouter();
 
+	async function deleteAccount() {
+		try {
+			await supabaseClient.functions.invoke('user-self-deletion')
+			alert('Account deleted successfully!')
+		} catch (error) {
+			alert('Error deleting the account!')
+			console.log(error)
+		} finally {
+			await supabaseClient.auth.signOut()
+			push('/')
+		}
+	}
+
 	return (
 		<div className="flex min-h-full flex-col justify-center sm:px-6 lg:px-8">
 			<div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -36,6 +49,12 @@ function Profile() {
 							type="submit"
 						>
 							Submit
+						</Button>
+						<Button
+							className="bg-red-900 border-red-800 hover:bg-red-700"
+							onClick={deleteAccount}
+						>
+							Delete Account
 						</Button>
 					</div>
 				</div>
