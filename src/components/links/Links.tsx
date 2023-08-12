@@ -114,90 +114,88 @@ function Links() {
 									virtualRow.is_deletable);
 
 							return (
-								<li key={virtualRow.id}>
-									<div className="flex justify-between divide-x-2 divide-black">
-										<a
-											target="_blank"
-											href={virtualRow.url!}
-											onClick={() => openOrArchiveLinkFn(true, "opened")}
-											onAuxClick={() => openOrArchiveLinkFn(true, "opened")}
-											className="w-full cursor-pointer py-2 px-6 hover:bg-gray-800"
-											rel="noreferrer"
-										>
-											<div className="flex flex-col justify-between sm:flex-row sm:items-center">
-												<LinkTitle
-													isPublic={
-														virtualRow.is_public
-													}
-													shareWith={
-														virtualRow.share_with
-													}
-													title={virtualRow.title}
-												/>
-												<LinkOpenedStatus
-													opened={virtualRow.opened}
-												/>
-											</div>
-											<div className="mt-2 flex flex-col justify-between sm:flex-row">
-												<div className="flex flex-col sm:flex-row">
-													<div className="mb-1.5 flex sm:mt-0">
-														<UsersIcon
-															className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-															aria-hidden="true"
-														/>
-														<p className="mr-8 flex min-w-[3rem] items-center text-sm text-gray-500 md:mr-8">
-															{virtualRow.who}
-														</p>
-													</div>
-													<div className="mb-1.5 flex sm:mt-0">
-														<MapPinIcon
-															className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-															aria-hidden="true"
-														/>
-														<p className="mr-8 flex min-w-[3rem] items-center text-sm text-gray-500 md:mr-8">
-															{virtualRow.origin}
-														</p>
-													</div>
-												</div>
-												<LinkDate
-													postedDate={
-														virtualRow.posted_date
-													}
-												/>
-											</div>
-										</a>
-										<div className="flex flex-col divide-y-2 divide-black sm:flex-row sm:divide-x-2 sm:divide-y-0">
-											{
-												ownershipFilter !== TABS.ARCHIVED &&
-												<LinkArchive
-													toggleArchivedStatus={() =>
-														openOrArchiveLinkFn(
-															true,
-															"archived"
-														)
-													}
-												/>}
-											<LinkSeenToggle
-												opened={virtualRow.opened}
-												toggleSeenStatus={() =>
-													openOrArchiveLinkFn(
-														!virtualRow.opened,
-														"opened"
-													)
+								<li key={virtualRow.id} className="flex justify-between divide-x-2 divide-black">
+									<a
+										target="_blank"
+										href={virtualRow.url!}
+										onClick={() => openOrArchiveLinkFn(true, "opened")}
+										onAuxClick={() => openOrArchiveLinkFn(true, "opened")}
+										className="w-full cursor-pointer py-2 px-6 hover:bg-gray-800"
+										rel="noreferrer"
+									>
+										<div className="flex flex-col justify-between sm:flex-row sm:items-center">
+											<LinkTitle
+												isPublic={
+													virtualRow.is_public
 												}
+												shareWith={
+													virtualRow.share_with
+												}
+												title={virtualRow.title}
 											/>
-											<LinkReactions
-												link={virtualRow}
-												reaction={localReaction}
-												supabaseClient={supabaseClient}
-											/>
-											<LinkDelete
-												canDeleteLink={canDeleteLink}
-												link={virtualRow.id}
-												user={user!.id}
-												supabaseClient={supabaseClient}
+											<LinkOpenedStatus
+												opened={virtualRow.opened}
 											/>
 										</div>
+										<div className="mt-2 flex flex-col justify-between sm:flex-row">
+											<div className="flex flex-col sm:flex-row">
+												<div className="mb-1.5 flex sm:mt-0">
+													<UsersIcon
+														className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+														aria-hidden="true"
+													/>
+													<p className="mr-8 flex min-w-[3rem] items-center text-sm text-gray-500 md:mr-8">
+														{virtualRow.who}
+													</p>
+												</div>
+												<div className="mb-1.5 flex sm:mt-0">
+													<MapPinIcon
+														className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+														aria-hidden="true"
+													/>
+													<p className="mr-8 flex min-w-[3rem] items-center text-sm text-gray-500 md:mr-8">
+														{virtualRow.origin}
+													</p>
+												</div>
+											</div>
+											<LinkDate
+												postedDate={
+													virtualRow.posted_date
+												}
+											/>
+										</div>
+									</a>
+									<div className="flex flex-col divide-y-2 divide-black sm:flex-row sm:divide-x-2 sm:divide-y-0">
+										{
+											ownershipFilter !== TABS.ARCHIVED &&
+											<LinkArchive
+												toggleArchivedStatus={() =>
+													openOrArchiveLinkFn(
+														true,
+														"archived"
+													)
+												}
+											/>}
+										<LinkSeenToggle
+											opened={virtualRow.opened}
+											toggleSeenStatus={() =>
+												openOrArchiveLinkFn(
+													!virtualRow.opened,
+													"opened"
+												)
+											}
+										/>
+										<LinkReactions
+											link={virtualRow}
+											reaction={localReaction}
+											supabaseClient={supabaseClient}
+										/>
+										<LinkDelete
+											canDeleteLink={canDeleteLink}
+											link={virtualRow.id}
+											user={user!.id}
+											supabaseClient={supabaseClient}
+										/>
 									</div>
 								</li>
 							);

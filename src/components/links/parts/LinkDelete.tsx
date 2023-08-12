@@ -9,6 +9,7 @@ import { twMerge } from "tailwind-merge";
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const no_op = () => { };
 
+// million-ignore
 function LinkDelete(
 	{
 		canDeleteLink,
@@ -39,7 +40,7 @@ function LinkDelete(
 			className={
 				twMerge(
 					"relative sm:h-full w-16 sm:w-20 flex h-1/3 justify-center items-center",
-					canDeleteLink ? "cursor-pointer hover:bg-red-900/20" : ""
+					canDeleteLink && "cursor-pointer hover:bg-red-900/20"
 				)
 			}
 		>
