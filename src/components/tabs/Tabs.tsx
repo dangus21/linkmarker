@@ -11,7 +11,8 @@ function Tabs() {
 		{ id: TABS.ALL, name: "All" },
 		{ id: TABS.MINE, name: "Mine" },
 		{ id: TABS.SHARED, name: "Shared" },
-		{ id: TABS.PRIVATE, name: "Private" }
+		{ id: TABS.PRIVATE, name: "Private" },
+		{ id: TABS.ARCHIVED, name: "Archived" }
 	];
 
 	return (

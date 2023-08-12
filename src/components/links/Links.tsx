@@ -6,6 +6,7 @@ import { updateLinkInfo, useGetLinks } from "@/hooks";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
 import {
+	LinkArchive,
 	LinkDate,
 	LinkDelete,
 	LinkOpenedStatus,
@@ -36,34 +37,37 @@ function Links() {
 
 	const ownershipLinksList =
 		ownershipFilter === TABS.ALL
-			? currentLinks
+			? currentLinks.filter(link => !link.archived)
 			: currentLinks.filter((link) => {
-					if (ownershipFilter === TABS.MINE) {
-						return (
-							link.by === user?.id && link.share_with.length === 0
-						);
-					} else if (ownershipFilter === TABS.SHARED) {
-						return link.share_with.length > 0;
-					} else if (ownershipFilter === TABS.PRIVATE) {
-						return !link.is_public;
-					}
+				if (ownershipFilter === TABS.MINE) {
+					return (
+						link.by === user?.id && link.share_with.length === 0 && !link.archived
+					);
+				} else if (ownershipFilter === TABS.SHARED) {
+					return link.share_with.length > 0 && !link.archived;
+				} else if (ownershipFilter === TABS.PRIVATE) {
+					return !link.is_public && !link.archived;
+				} else if (ownershipFilter === TABS.ARCHIVED) {
+					return link.archived;
+				} else {
 					return true;
-			  });
+				}
+			});
 
 	const textFilterLinksList =
 		textFilter.length === 0
 			? ownershipLinksList
 			: ownershipLinksList.filter((link) => {
-					return link.title
-						.toLowerCase()
-						.normalize("NFD")
-						.replace(/\p{Diacritic}/gu, "")
-						.includes(
-							textFilter
-								.normalize("NFD")
-								.replace(/\p{Diacritic}/gu, "")
-						);
-			  });
+				return link.title
+					.toLowerCase()
+					.normalize("NFD")
+					.replace(/\p{Diacritic}/gu, "")
+					.includes(
+						textFilter
+							.normalize("NFD")
+							.replace(/\p{Diacritic}/gu, "")
+					);
+			});
 
 	const parentRef = useRef<HTMLDivElement>(null);
 
@@ -91,12 +95,12 @@ function Links() {
 						textFilterLinksList.map((virtualRow) => {
 							const localReaction =
 								REACTIONS[
-									virtualRow.reaction as keyof typeof REACTIONS
+								virtualRow.reaction as keyof typeof REACTIONS
 								];
-							function openLinkFn(status?: boolean) {
+							function openOrArchiveLinkFn(status: boolean, op: "opened" | "archived") {
 								return updateLinkInfo({
 									link: {
-										opened: status
+										[op]: status
 									},
 									id: virtualRow.id,
 									updateLink,
@@ -115,8 +119,8 @@ function Links() {
 										<a
 											target="_blank"
 											href={virtualRow.url!}
-											onClick={() => openLinkFn(true)}
-											onAuxClick={() => openLinkFn(true)}
+											onClick={() => openOrArchiveLinkFn(true, "opened")}
+											onAuxClick={() => openOrArchiveLinkFn(true, "opened")}
 											className="w-full cursor-pointer py-2 px-6 hover:bg-gray-800"
 											rel="noreferrer"
 										>
@@ -163,23 +167,34 @@ function Links() {
 											</div>
 										</a>
 										<div className="flex flex-col divide-y-2 divide-black sm:flex-row sm:divide-x-2 sm:divide-y-0">
-											<LinkDelete
-												canDeleteLink={canDeleteLink}
-												linkId={virtualRow.id}
-												userId={user!.id}
-												supabaseClient={supabaseClient}
-											/>
+											{
+												ownershipFilter !== TABS.ARCHIVED &&
+												<LinkArchive
+													toggleArchivedStatus={() =>
+														openOrArchiveLinkFn(
+															true,
+															"archived"
+														)
+													}
+												/>}
 											<LinkSeenToggle
 												opened={virtualRow.opened}
 												toggleSeenStatus={() =>
-													openLinkFn(
-														!virtualRow.opened
+													openOrArchiveLinkFn(
+														!virtualRow.opened,
+														"opened"
 													)
 												}
 											/>
 											<LinkReactions
 												link={virtualRow}
 												reaction={localReaction}
+												supabaseClient={supabaseClient}
+											/>
+											<LinkDelete
+												canDeleteLink={canDeleteLink}
+												link={virtualRow.id}
+												user={user!.id}
 												supabaseClient={supabaseClient}
 											/>
 										</div>

@@ -12,14 +12,14 @@ const no_op = () => { };
 function LinkDelete(
 	{
 		canDeleteLink,
-		linkId,
-		userId,
+		link,
+		user,
 		supabaseClient
 	}:
 		{
 			canDeleteLink: boolean;
-			linkId: string;
-			userId: string;
+			link: string;
+			user: string;
 			supabaseClient: SupabaseClient<Database>;
 		}
 ) {
@@ -29,10 +29,10 @@ function LinkDelete(
 		<div
 			onClick={() => canDeleteLink ?
 				deleteLink({
-					id: linkId,
+					id: link,
 					supabaseClient,
 					setLinks,
-					currentUser: userId
+					currentUser: user
 				}) :
 				no_op
 			}
@@ -50,7 +50,7 @@ function LinkDelete(
 							"h-8 w-8 sm:h-10 s:w-10",
 							canDeleteLink ?
 								"text-red-500" :
-								"text-gray-400"
+								"text-gray-500"
 						)
 					}
 					aria-hidden="true"

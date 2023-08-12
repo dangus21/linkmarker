@@ -4,4 +4,4 @@ export { LinkDate } from "./LinkDate";
 export { LinkTitle } from "./LinkTitle";
 export { LinkOpenedStatus } from "./LinkOpenedStatus";
 export { LinkSeenToggle } from "./LinkSeenToggle";
-
+export { LinkArchive } from "./LinkArchive";

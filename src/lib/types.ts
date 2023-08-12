@@ -3,7 +3,7 @@ export type Json =
   | number
   | boolean
   | null
-  | { [key: string]: Json }
+  | { [key: string]: Json | undefined }
   | Json[]
 
 export interface Database {
@@ -11,6 +11,7 @@ export interface Database {
     Tables: {
       links: {
         Row: {
+          archived: boolean
           by: string
           id: string
           is_deletable: boolean
@@ -26,6 +27,7 @@ export interface Database {
           who: string
         }
         Insert: {
+          archived?: boolean
           by?: string
           id?: string
           is_deletable?: boolean
@@ -41,6 +43,7 @@ export interface Database {
           who?: string
         }
         Update: {
+          archived?: boolean
           by?: string
           id?: string
           is_deletable?: boolean
@@ -55,6 +58,7 @@ export interface Database {
           url?: string
           who?: string
         }
+        Relationships: []
       }
       profiles: {
         Row: {
@@ -78,6 +82,14 @@ export interface Database {
           updated_at?: string | null
           username?: string | null
         }
+        Relationships: [
+          {
+            foreignKeyName: "profiles_id_fkey"
+            columns: ["id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
       }
     }
     Views: {

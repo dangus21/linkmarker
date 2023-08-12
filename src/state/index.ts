@@ -40,7 +40,8 @@ export enum TABS {
 	ALL,
 	MINE,
 	SHARED,
-	PRIVATE
+	PRIVATE,
+	ARCHIVED
 }
 
 export type User = {
