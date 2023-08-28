@@ -169,6 +169,7 @@ function Links() {
 										{
 											ownershipFilter !== TABS.ARCHIVED &&
 											<LinkArchive
+												isArchivable={virtualRow.is_archivable}
 												toggleArchivedStatus={() =>
 													openOrArchiveLinkFn(
 														true,

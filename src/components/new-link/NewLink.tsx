@@ -8,7 +8,7 @@ import { isLink } from "@/utils";
 import { useRouter } from "next/router";
 
 import { Button } from "../button";
-import { NewLinkDeletable, NewLinkPublic, NewLinkShareCombo, NewLinkTitle, NewLinkUrl } from "./parts";
+import { NewLinkArchivable, NewLinkDeletable, NewLinkPublic, NewLinkShareCombo, NewLinkTitle, NewLinkUrl } from "./parts";
 
 function NewLink({ users }: { users: User[] }) {
 	const supabaseClient = useSupabaseClient<Database>();
@@ -63,6 +63,7 @@ function NewLink({ users }: { users: User[] }) {
 							<NewLinkTitle />
 							<NewLinkUrl />
 							<NewLinkDeletable />
+							<NewLinkArchivable />
 							<NewLinkPublic />
 							{
 								isLinkShareable && (

@@ -14,6 +14,7 @@ export interface Database {
           archived: boolean
           by: string
           id: string
+          is_archivable: boolean
           is_deletable: boolean
           is_public: boolean
           is_shareable: boolean
@@ -30,6 +31,7 @@ export interface Database {
           archived?: boolean
           by?: string
           id?: string
+          is_archivable?: boolean
           is_deletable?: boolean
           is_public?: boolean
           is_shareable?: boolean
@@ -46,6 +48,7 @@ export interface Database {
           archived?: boolean
           by?: string
           id?: string
+          is_archivable?: boolean
           is_deletable?: boolean
           is_public?: boolean
           is_shareable?: boolean
