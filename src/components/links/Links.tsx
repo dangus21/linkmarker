@@ -113,6 +113,8 @@ function Links() {
 								(user?.id !== virtualRow.id &&
 									virtualRow.is_deletable);
 
+							const userIsOwner = user?.id === virtualRow.by
+
 							return (
 								<li key={virtualRow.id} className="flex justify-between divide-x-2 divide-black">
 									<a
@@ -169,7 +171,7 @@ function Links() {
 										{
 											ownershipFilter !== TABS.ARCHIVED &&
 											<LinkArchive
-												isArchivable={virtualRow.is_archivable}
+												isArchivable={userIsOwner}
 												toggleArchivedStatus={() =>
 													openOrArchiveLinkFn(
 														true,

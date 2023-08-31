@@ -17,8 +17,8 @@ function LinkArchive(
 			onClick={isArchivable ? toggleArchivedStatus : () => null}
 			className={
 				twMerge(
-					"relative flex h-1/3 justify-center items-center sm:h-full w-16 sm:w-20 hover:bg-gray-800",
-					isArchivable && "cursor-pointer"
+					"relative flex h-1/3 justify-center items-center sm:h-full w-16 sm:w-20",
+					isArchivable && "cursor-pointer hover:bg-gray-800"
 				)
 			}>
 			<ArchiveBoxArrowDownIcon className={
