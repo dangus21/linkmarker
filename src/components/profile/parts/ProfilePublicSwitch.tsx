@@ -2,11 +2,12 @@ import { Switch } from "@headlessui/react";
 import { twMerge } from "tailwind-merge";
 import { useUserGlobalState } from "@/state";
 
+// million-ignore
 function ProfilePublicSwitch() {
 	const globalUserState = useUserGlobalState();
 
 	return (
-		<div className="relative">
+		<div className="relative mt-5">
 			<label
 				htmlFor="name"
 				className="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-300"
@@ -21,7 +22,7 @@ function ProfilePublicSwitch() {
 				</span>
 				<Switch
 					checked={globalUserState.is_public || false}
-					onChange={(checked) => globalUserState.setis_public(checked)}
+					onChange={globalUserState.setis_public}
 					className={
 						twMerge(
 							globalUserState.is_public ? "bg-slate-700" : "bg-slate-400",

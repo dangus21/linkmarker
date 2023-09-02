@@ -9,7 +9,6 @@ import { useRouter } from "next/router";
 
 import { Button } from "../button";
 import {
-	/* NewLinkArchivable, */
 	NewLinkDeletable,
 	NewLinkPublic,
 	NewLinkShareCombo,
@@ -70,7 +69,6 @@ function NewLink({ users }: { users: User[] }) {
 							<NewLinkTitle />
 							<NewLinkUrl />
 							<NewLinkDeletable />
-							{/* <NewLinkArchivable /> */}
 							<NewLinkPublic />
 							{
 								isLinkShareable && (

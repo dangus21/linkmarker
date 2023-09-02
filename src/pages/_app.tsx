@@ -9,7 +9,7 @@ import type { AppProps } from "next/app";
 
 import { Database } from "@/lib/types";
 import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
-import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 
 export default function App({
 	Component,
@@ -17,7 +17,7 @@ export default function App({
 }: AppProps<{
 	initialSession: Session;
 }>) {
-	const [supabase] = useState(() => createBrowserSupabaseClient<Database>());
+	const [supabase] = useState(() => createPagesBrowserClient<Database>());
 
 	return (
 		<>
