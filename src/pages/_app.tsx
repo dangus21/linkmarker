@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 
+import NextNProgress from 'nextjs-progressbar';
+
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 
@@ -11,6 +13,7 @@ import { Database } from "@/lib/types";
 import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 
+//million-ignore
 export default function App({
 	Component,
 	pageProps
@@ -34,6 +37,7 @@ export default function App({
 				supabaseClient={supabase}
 				initialSession={pageProps.initialSession}
 			>
+				<NextNProgress />
 				<Component {...pageProps} />
 				<Toaster />
 				<Analytics />
