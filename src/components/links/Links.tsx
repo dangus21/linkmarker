@@ -12,7 +12,7 @@ import {
 	LinkOpenedStatus,
 	LinkReactions,
 	LinkSeenToggle,
-	LinkTitle
+	LinkTitle,
 } from "./parts";
 import { LoadingSpinner } from "../loading-spinner";
 import { NewLinkButton } from "../newLinkButton/NewLinkButton";
@@ -32,42 +32,44 @@ function Links() {
 		update: updateLink,
 		ownershipFilter,
 		textFilter,
-		loading
+		loading,
 	} = useLinkGlobalState();
 
 	const ownershipLinksList =
 		ownershipFilter === TABS.ALL
-			? currentLinks.filter(link => !link.archived)
+			? currentLinks.filter((link) => !link.archived)
 			: currentLinks.filter((link) => {
-				if (ownershipFilter === TABS.MINE) {
-					return (
-						link.by === user?.id && link.share_with.length === 0 && !link.archived
-					);
-				} else if (ownershipFilter === TABS.SHARED) {
-					return link.share_with.length > 0 && !link.archived;
-				} else if (ownershipFilter === TABS.PRIVATE) {
-					return !link.is_public && !link.archived;
-				} else if (ownershipFilter === TABS.ARCHIVED) {
-					return link.archived;
-				} else {
-					return true;
-				}
-			});
+					if (ownershipFilter === TABS.MINE) {
+						return (
+							link.by === user?.id &&
+							link.share_with.length === 0 &&
+							!link.archived
+						);
+					} else if (ownershipFilter === TABS.SHARED) {
+						return link.share_with.length > 0 && !link.archived;
+					} else if (ownershipFilter === TABS.PRIVATE) {
+						return !link.is_public && !link.archived;
+					} else if (ownershipFilter === TABS.ARCHIVED) {
+						return link.archived;
+					} else {
+						return true;
+					}
+			  });
 
 	const textFilterLinksList =
 		textFilter.length === 0
 			? ownershipLinksList
 			: ownershipLinksList.filter((link) => {
-				return link.title
-					.toLowerCase()
-					.normalize("NFD")
-					.replace(/\p{Diacritic}/gu, "")
-					.includes(
-						textFilter
-							.normalize("NFD")
-							.replace(/\p{Diacritic}/gu, "")
-					);
-			});
+					return link.title
+						.toLowerCase()
+						.normalize("NFD")
+						.replace(/\p{Diacritic}/gu, "")
+						.includes(
+							textFilter
+								.normalize("NFD")
+								.replace(/\p{Diacritic}/gu, ""),
+						);
+			  });
 
 	const parentRef = useRef<HTMLDivElement>(null);
 
@@ -88,23 +90,26 @@ function Links() {
 						"divide-y-2 divide-black border-2 border-black sm:rounded-md",
 						"max-h-[calc(100vh-8rem)] overflow-auto",
 						"scrollbar scrollbar-track-gray-1000 scrollbar-thumb-[#1a2230]",
-						"scrollbar-thin scrollbar-thumb-rounded-md hover:scrollbar-thumb-[#171e2b]"
+						"scrollbar-thin scrollbar-thumb-rounded-md hover:scrollbar-thumb-[#171e2b]",
 					)}
 				>
 					{textFilterLinksList.length > 0 ? (
 						textFilterLinksList.map((virtualRow) => {
 							const localReaction =
 								REACTIONS[
-								virtualRow.reaction as keyof typeof REACTIONS
+									virtualRow.reaction as keyof typeof REACTIONS
 								];
-							function openOrArchiveLinkFn(status: boolean, op: "opened" | "archived") {
+							function openOrArchiveLinkFn(
+								status: boolean,
+								op: "opened" | "archived",
+							) {
 								return updateLinkInfo({
 									link: {
-										[op]: status
+										[op]: status,
 									},
 									id: virtualRow.id,
 									updateLink,
-									supabaseClient
+									supabaseClient,
 								});
 							}
 
@@ -113,23 +118,28 @@ function Links() {
 								(user?.id !== virtualRow.id &&
 									virtualRow.is_deletable);
 
-							const userIsOwner = user?.id === virtualRow.by
+							const userIsOwner = user?.id === virtualRow.by;
 
 							return (
-								<li key={virtualRow.id} className="flex justify-between divide-x-2 divide-black">
+								<li
+									key={virtualRow.id}
+									className="flex justify-between divide-x-2 divide-black"
+								>
 									<a
 										target="_blank"
 										href={virtualRow.url!}
-										onClick={() => openOrArchiveLinkFn(true, "opened")}
-										onAuxClick={() => openOrArchiveLinkFn(true, "opened")}
-										className="w-full cursor-pointer py-2 px-6 hover:bg-gray-800"
+										onClick={() =>
+											openOrArchiveLinkFn(true, "opened")
+										}
+										onAuxClick={() =>
+											openOrArchiveLinkFn(true, "opened")
+										}
+										className="w-full cursor-pointer px-6 py-2 hover:bg-gray-800"
 										rel="noreferrer"
 									>
 										<div className="flex flex-col justify-between sm:flex-row sm:items-center">
 											<LinkTitle
-												isPublic={
-													virtualRow.is_public
-												}
+												isPublic={virtualRow.is_public}
 												shareWith={
 													virtualRow.share_with
 												}
@@ -168,23 +178,23 @@ function Links() {
 										</div>
 									</a>
 									<div className="flex flex-col divide-y-2 divide-black sm:flex-row sm:divide-x-2 sm:divide-y-0">
-										{
-											ownershipFilter !== TABS.ARCHIVED &&
+										{ownershipFilter !== TABS.ARCHIVED && (
 											<LinkArchive
 												isArchivable={userIsOwner}
 												toggleArchivedStatus={() =>
 													openOrArchiveLinkFn(
 														true,
-														"archived"
+														"archived",
 													)
 												}
-											/>}
+											/>
+										)}
 										<LinkSeenToggle
 											opened={virtualRow.opened}
 											toggleSeenStatus={() =>
 												openOrArchiveLinkFn(
 													!virtualRow.opened,
-													"opened"
+													"opened",
 												)
 											}
 										/>

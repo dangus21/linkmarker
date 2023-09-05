@@ -15,7 +15,7 @@ function NewLinkButton({ isMobile }: { isMobile?: boolean }) {
 				"relative mx-5 inline-flex items-center gap-x-1.5",
 				isMobile
 					? "fixed -right-1 bottom-2 z-[99] h-16 w-16 rounded-full border-2 bg-gray-600"
-					: "w-auto"
+					: "w-auto",
 			)}
 		>
 			<PlusIcon

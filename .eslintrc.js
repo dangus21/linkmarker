@@ -5,18 +5,18 @@
 module.exports = {
 	env: {
 		browser: true,
-		es2021: true
+		es2021: true,
 	},
 	extends: [
 		"eslint:recommended",
 		"next/core-web-vitals",
 		"plugin:import/errors",
 		"plugin:import/warnings",
-		"prettier"
+		"prettier",
 	],
 	parser: "@typescript-eslint/parser",
 	parserOptions: {
-		project: "tsconfig.json"
+		project: "tsconfig.json",
 	},
 	plugins: [
 		"react",
@@ -25,7 +25,7 @@ module.exports = {
 		"babel",
 		"sort-imports-es6-autofix",
 		"import",
-		"@typescript-eslint"
+		"@typescript-eslint",
 	],
 	rules: {
 		// "no-mixed-spaces-and-tabs": ["error", "smart-tabs"]
@@ -39,8 +39,8 @@ module.exports = {
 			"error",
 			{
 				props: "never",
-				children: "never"
-			}
+				children: "never",
+			},
 		],
 		"no-use-before-define": "error",
 		"prefer-const": "error",
@@ -50,21 +50,21 @@ module.exports = {
 			{
 				ignoreCase: false,
 				ignoreMemberSort: false,
-				memberSyntaxSortOrder: ["none", "all", "multiple", "single"]
-			}
+				memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+			},
 		],
 		"no-unused-vars": [
 			2,
 			{
-				ignoreRestSiblings: true
-			}
+				ignoreRestSiblings: true,
+			},
 		],
 		"no-dupe-class-members": ["error"],
 		"import/no-extraneous-dependencies": [
 			"error",
 			{
-				devDependencies: true
-			}
+				devDependencies: true,
+			},
 		],
 		"prefer-template": ["error"],
 
@@ -74,8 +74,8 @@ module.exports = {
 		"@typescript-eslint/array-type": [
 			"error",
 			{
-				default: "array"
-			}
+				default: "array",
+			},
 		],
 		"@typescript-eslint/consistent-type-assertions": "error",
 		"@typescript-eslint/dot-notation": "error",
@@ -98,8 +98,8 @@ module.exports = {
 			{
 				path: "always",
 				types: "prefer-import",
-				lib: "always"
-			}
+				lib: "always",
+			},
 		],
 		"@typescript-eslint/unified-signatures": "error",
 		"@typescript-eslint/naming-convention": [
@@ -109,17 +109,17 @@ module.exports = {
 				format: ["PascalCase"],
 				custom: {
 					regex: "^I[A-Z]",
-					match: false
-				}
-			}
-		]
+					match: false,
+				},
+			},
+		],
 	},
 	settings: {
 		react: {
-			version: "detect"
+			version: "detect",
 		},
 		"import/resolver": {
-			typescript: {} // this loads <rootdir>/tsconfig.json to eslint
-		}
-	}
+			typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
+		},
+	},
 };

@@ -5,7 +5,7 @@ import { ThemeSupa } from "@supabase/auth-ui-shared";
 import {
 	useSession,
 	useSupabaseClient,
-	useUser
+	useUser,
 } from "@supabase/auth-helpers-react";
 
 import { Database } from "@/lib/types";
@@ -35,7 +35,7 @@ function SupaAuth({ children }: { children: ReactNode }) {
 							"flex h-screen w-screen text-white",
 							"items-center justify-center bg-neutral-800",
 							"[&>div]:w-[30rem] [&>div]:bg-neutral-900",
-							"[&>div]:rounded-lg [&>div]:px-6 [&>div]:py-4"
+							"[&>div]:rounded-lg [&>div]:px-6 [&>div]:py-4",
 						)}
 					>
 						<Auth

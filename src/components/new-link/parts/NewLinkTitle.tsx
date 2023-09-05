@@ -16,9 +16,11 @@ function NewLinkTitle() {
 				id="title"
 				placeHolder="How the link will display"
 				value={globalLinkState.new.title || ""}
-				onChange={(event) => globalLinkState.create({
-					title: event.currentTarget.value
-				})}
+				onChange={(event) =>
+					globalLinkState.create({
+						title: event.currentTarget.value,
+					})
+				}
 			/>
 		</div>
 	);

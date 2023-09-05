@@ -6,12 +6,10 @@ module.exports = {
 			colors: {
 				gray: {
 					950: "#0d121c",
-					1000: "#090c12"
-				}
-			}
-		}
+					1000: "#090c12",
+				},
+			},
+		},
 	},
-	plugins: [
-		require("tailwind-scrollbar")({ nocompatible: true })
-	]
+	plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };

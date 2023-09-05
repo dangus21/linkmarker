@@ -31,7 +31,8 @@
 		"**/*.tsx",
 		"**/*.js",
 		".next/types/**/*.ts",
-		"next.config.mjs"
+		"next.config.mjs",
+		".prettierrc.js"
 	],
 	"exclude": ["supabase", "node_modules"]
 }

@@ -1,4 +1,3 @@
-
 import { Database } from "@/lib/types";
 import { Navbar, NewLink } from "@/components";
 import { SupaAuth } from "@/components/supa_auth";
@@ -12,10 +11,11 @@ function NewPage() {
 
 	useEffect(() => {
 		async function getUsers() {
-			const { data, error } = await supabaseClient.from("profiles").select("username, id");
+			const { data, error } = await supabaseClient
+				.from("profiles")
+				.select("username, id");
 			if (error) {
 				console.error({ usersError: error });
-
 			} else {
 				setUsers(data);
 			}

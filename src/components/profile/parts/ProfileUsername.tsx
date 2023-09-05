@@ -24,7 +24,6 @@ function ProfileUsername() {
 				/>
 			</div>
 		</div>
-
 	);
 }
 

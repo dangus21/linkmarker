@@ -98,7 +98,7 @@ export default function PrivacyPolicy() {
 											<span style={{ fontSize: 15 }}>
 												<span
 													style={{
-														color: "rgb(89, 89, 89)"
+														color: "rgb(89, 89, 89)",
 													}}
 												>
 													<span className="statement-end-if-in-editor">
@@ -153,7 +153,7 @@ export default function PrivacyPolicy() {
 							<span
 								style={{
 									fontSize: 15,
-									color: "rgb(89, 89, 89)"
+									color: "rgb(89, 89, 89)",
 								}}
 							>
 								<span data-custom-class="body_text">
@@ -167,7 +167,7 @@ export default function PrivacyPolicy() {
 												<span style={{ fontSize: 15 }}>
 													<span
 														style={{
-															color: "rgb(89, 89, 89)"
+															color: "rgb(89, 89, 89)",
 														}}
 													>
 														<span className="statement-end-if-in-editor" />
@@ -570,7 +570,7 @@ export default function PrivacyPolicy() {
 										>
 											<span
 												style={{
-													color: "rgb(89, 89, 89)"
+													color: "rgb(89, 89, 89)",
 												}}
 											>
 												<span className="block-component" />
@@ -602,7 +602,7 @@ export default function PrivacyPolicy() {
 										>
 											<span
 												style={{
-													color: "rgb(89, 89, 89)"
+													color: "rgb(89, 89, 89)",
 												}}
 											>
 												<span className="statement-end-if-in-editor" />
@@ -729,13 +729,13 @@ export default function PrivacyPolicy() {
 							<span
 								style={{
 									fontSize: 15,
-									color: "rgb(89, 89, 89)"
+									color: "rgb(89, 89, 89)",
 								}}
 							>
 								<span
 									style={{
 										fontSize: 15,
-										color: "rgb(89, 89, 89)"
+										color: "rgb(89, 89, 89)",
 									}}
 								>
 									<span
@@ -778,20 +778,20 @@ export default function PrivacyPolicy() {
 							<span
 								style={{
 									color: "rgb(89, 89, 89)",
-									fontSize: 15
+									fontSize: 15,
 								}}
 							>
 								<span data-custom-class="body_text">
 									<span
 										style={{
 											fontSize: 15,
-											color: "rgb(89, 89, 89)"
+											color: "rgb(89, 89, 89)",
 										}}
 									>
 										<span
 											style={{
 												fontSize: 15,
-												color: "rgb(89, 89, 89)"
+												color: "rgb(89, 89, 89)",
 											}}
 										>
 											<span data-custom-class="body_text">
@@ -806,13 +806,13 @@ export default function PrivacyPolicy() {
 									<span
 										style={{
 											fontSize: 15,
-											color: "rgb(89, 89, 89)"
+											color: "rgb(89, 89, 89)",
 										}}
 									>
 										<span
 											style={{
 												fontSize: 15,
-												color: "rgb(89, 89, 89)"
+												color: "rgb(89, 89, 89)",
 											}}
 										>
 											<span data-custom-class="body_text">
@@ -935,7 +935,7 @@ export default function PrivacyPolicy() {
 										<span style={{ fontSize: 15 }}>
 											<span
 												style={{
-													color: "rgb(89, 89, 89)"
+													color: "rgb(89, 89, 89)",
 												}}
 											>
 												<a
@@ -1005,14 +1005,14 @@ export default function PrivacyPolicy() {
 								<span
 									style={{
 										color: "rgb(89, 89, 89)",
-										fontSize: 15
+										fontSize: 15,
 									}}
 								>
 									<span data-custom-class="body_text">
 										<span
 											style={{
 												color: "rgb(89, 89, 89)",
-												fontSize: 15
+												fontSize: 15,
 											}}
 										>
 											<span data-custom-class="body_text">
@@ -1040,13 +1040,13 @@ export default function PrivacyPolicy() {
 							<span
 								style={{
 									fontSize: 15,
-									color: "rgb(89, 89, 89)"
+									color: "rgb(89, 89, 89)",
 								}}
 							>
 								<span
 									style={{
 										fontSize: 15,
-										color: "rgb(89, 89, 89)"
+										color: "rgb(89, 89, 89)",
 									}}
 								>
 									<span
@@ -1074,20 +1074,20 @@ export default function PrivacyPolicy() {
 							<span
 								style={{
 									color: "rgb(89, 89, 89)",
-									fontSize: 15
+									fontSize: 15,
 								}}
 							>
 								<span data-custom-class="body_text">
 									<span
 										style={{
 											fontSize: 15,
-											color: "rgb(89, 89, 89)"
+											color: "rgb(89, 89, 89)",
 										}}
 									>
 										<span
 											style={{
 												fontSize: 15,
-												color: "rgb(89, 89, 89)"
+												color: "rgb(89, 89, 89)",
 											}}
 										>
 											<span data-custom-class="body_text">
@@ -1141,7 +1141,7 @@ export default function PrivacyPolicy() {
 							<span
 								style={{
 									fontSize: 15,
-									color: "rgb(89, 89, 89)"
+									color: "rgb(89, 89, 89)",
 								}}
 							>
 								<span data-custom-class="body_text">
@@ -1156,31 +1156,31 @@ export default function PrivacyPolicy() {
 									<span
 										style={{
 											fontSize: 15,
-											color: "rgb(89, 89, 89)"
+											color: "rgb(89, 89, 89)",
 										}}
 									>
 										<span
 											style={{
 												fontSize: 15,
-												color: "rgb(89, 89, 89)"
+												color: "rgb(89, 89, 89)",
 											}}
 										>
 											<span data-custom-class="body_text">
 												<span style={{ fontSize: 15 }}>
 													<span
 														style={{
-															color: "rgb(89, 89, 89)"
+															color: "rgb(89, 89, 89)",
 														}}
 													>
 														<span data-custom-class="body_text">
 															<span
 																style={{
-																	fontSize: 15
+																	fontSize: 15,
 																}}
 															>
 																<span
 																	style={{
-																		color: "rgb(89, 89, 89)"
+																		color: "rgb(89, 89, 89)",
 																	}}
 																>
 																	<span data-custom-class="body_text">
@@ -1216,7 +1216,7 @@ export default function PrivacyPolicy() {
 							<span
 								style={{
 									fontSize: 15,
-									color: "rgb(89, 89, 89)"
+									color: "rgb(89, 89, 89)",
 								}}
 							>
 								<span data-custom-class="body_text">
@@ -1228,13 +1228,13 @@ export default function PrivacyPolicy() {
 							<span
 								style={{
 									fontSize: 15,
-									color: "rgb(89, 89, 89)"
+									color: "rgb(89, 89, 89)",
 								}}
 							>
 								<span
 									style={{
 										fontSize: 15,
-										color: "rgb(89, 89, 89)"
+										color: "rgb(89, 89, 89)",
 									}}
 								>
 									<span data-custom-class="body_text">
@@ -1246,13 +1246,13 @@ export default function PrivacyPolicy() {
 								<span
 									style={{
 										fontSize: 15,
-										color: "rgb(89, 89, 89)"
+										color: "rgb(89, 89, 89)",
 									}}
 								>
 									<span
 										style={{
 											fontSize: 15,
-											color: "rgb(89, 89, 89)"
+											color: "rgb(89, 89, 89)",
 										}}
 									>
 										<span data-custom-class="body_text">
@@ -1285,13 +1285,13 @@ export default function PrivacyPolicy() {
 												<p
 													style={{
 														fontSize: 15,
-														lineHeight: "1.5"
+														lineHeight: "1.5",
 													}}
 												>
 													<span className="block-component">
 														<span
 															style={{
-																fontSize: 15
+																fontSize: 15,
 															}}
 														/>
 													</span>
@@ -1299,13 +1299,13 @@ export default function PrivacyPolicy() {
 												<p
 													style={{
 														fontSize: 15,
-														lineHeight: "1.5"
+														lineHeight: "1.5",
 													}}
 												>
 													<span className="block-component">
 														<span
 															style={{
-																fontSize: 15
+																fontSize: 15,
 															}}
 														/>
 													</span>
@@ -1313,7 +1313,7 @@ export default function PrivacyPolicy() {
 												<p
 													style={{
 														fontSize: 15,
-														lineHeight: "1.5"
+														lineHeight: "1.5",
 													}}
 												>
 													<span className="block-component" />
@@ -1321,57 +1321,57 @@ export default function PrivacyPolicy() {
 												<p
 													style={{
 														fontSize: 15,
-														lineHeight: "1.5"
+														lineHeight: "1.5",
 													}}
 												>
 													<span className="block-component" />
 												</p>
 												<div
 													style={{
-														lineHeight: "1.5"
+														lineHeight: "1.5",
 													}}
 												>
 													<span className="block-component">
 														<span
 															style={{
-																fontSize: 15
+																fontSize: 15,
 															}}
 														/>
 													</span>
 													<div
 														style={{
-															lineHeight: "1.5"
+															lineHeight: "1.5",
 														}}
 													>
 														<span className="block-component">
 															<span
 																style={{
-																	fontSize: 15
+																	fontSize: 15,
 																}}
 															/>
 														</span>
 														<div
 															style={{
 																lineHeight:
-																	"1.5"
+																	"1.5",
 															}}
 														>
 															<span className="block-component">
 																<span
 																	style={{
-																		fontSize: 15
+																		fontSize: 15,
 																	}}
 																/>
 															</span>
 															<div
 																style={{
 																	lineHeight:
-																		"1.5"
+																		"1.5",
 																}}
 															>
 																<span
 																	style={{
-																		fontSize: 15
+																		fontSize: 15,
 																	}}
 																>
 																	<span className="block-component">
@@ -1381,13 +1381,13 @@ export default function PrivacyPolicy() {
 																<div
 																	style={{
 																		lineHeight:
-																			"1.5"
+																			"1.5",
 																	}}
 																>
 																	<span className="block-component">
 																		<span
 																			style={{
-																				fontSize: 15
+																				fontSize: 15,
 																			}}
 																		>
 																			<span data-custom-class="body_text" />
@@ -1396,13 +1396,13 @@ export default function PrivacyPolicy() {
 																	<div
 																		style={{
 																			lineHeight:
-																				"1.5"
+																				"1.5",
 																		}}
 																	>
 																		<span className="block-component">
 																			<span
 																				style={{
-																					fontSize: 15
+																					fontSize: 15,
 																				}}
 																			>
 																				<span data-custom-class="body_text" />
@@ -1411,13 +1411,13 @@ export default function PrivacyPolicy() {
 																		<div
 																			style={{
 																				lineHeight:
-																					"1.5"
+																					"1.5",
 																			}}
 																		>
 																			<span className="block-component">
 																				<span
 																					style={{
-																						fontSize: 15
+																						fontSize: 15,
 																					}}
 																				>
 																					<span data-custom-class="body_text" />
@@ -1426,13 +1426,13 @@ export default function PrivacyPolicy() {
 																			<div
 																				style={{
 																					lineHeight:
-																						"1.5"
+																						"1.5",
 																				}}
 																			>
 																				<span className="block-component">
 																					<span
 																						style={{
-																							fontSize: 15
+																							fontSize: 15,
 																						}}
 																					>
 																						<span data-custom-class="body_text" />
@@ -1441,13 +1441,13 @@ export default function PrivacyPolicy() {
 																				<div
 																					style={{
 																						lineHeight:
-																							"1.5"
+																							"1.5",
 																					}}
 																				>
 																					<span className="block-component">
 																						<span
 																							style={{
-																								fontSize: 15
+																								fontSize: 15,
 																							}}
 																						>
 																							<span data-custom-class="body_text" />
@@ -1456,13 +1456,13 @@ export default function PrivacyPolicy() {
 																					<div
 																						style={{
 																							lineHeight:
-																								"1.5"
+																								"1.5",
 																						}}
 																					>
 																						<span className="block-component">
 																							<span
 																								style={{
-																									fontSize: 15
+																									fontSize: 15,
 																								}}
 																							>
 																								<span data-custom-class="body_text" />
@@ -1471,13 +1471,13 @@ export default function PrivacyPolicy() {
 																						<div
 																							style={{
 																								lineHeight:
-																									"1.5"
+																									"1.5",
 																							}}
 																						>
 																							<span className="block-component">
 																								<span
 																									style={{
-																										fontSize: 15
+																										fontSize: 15,
 																									}}
 																								>
 																									<span data-custom-class="body_text" />
@@ -1486,13 +1486,13 @@ export default function PrivacyPolicy() {
 																							<div
 																								style={{
 																									lineHeight:
-																										"1.5"
+																										"1.5",
 																								}}
 																							>
 																								<span className="block-component">
 																									<span
 																										style={{
-																											fontSize: 15
+																											fontSize: 15,
 																										}}
 																									>
 																										<span data-custom-class="body_text" />
@@ -1501,13 +1501,13 @@ export default function PrivacyPolicy() {
 																								<div
 																									style={{
 																										lineHeight:
-																											"1.5"
+																											"1.5",
 																									}}
 																								>
 																									<span className="block-component">
 																										<span
 																											style={{
-																												fontSize: 15
+																												fontSize: 15,
 																											}}
 																										>
 																											<span data-custom-class="body_text" />
@@ -1516,13 +1516,13 @@ export default function PrivacyPolicy() {
 																									<div
 																										style={{
 																											lineHeight:
-																												"1.5"
+																												"1.5",
 																										}}
 																									>
 																										<span className="block-component">
 																											<span
 																												style={{
-																													fontSize: 15
+																													fontSize: 15,
 																												}}
 																											>
 																												<span data-custom-class="body_text" />
@@ -1531,13 +1531,13 @@ export default function PrivacyPolicy() {
 																										<div
 																											style={{
 																												lineHeight:
-																													"1.5"
+																													"1.5",
 																											}}
 																										>
 																											<span className="block-component">
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text" />
@@ -1548,13 +1548,13 @@ export default function PrivacyPolicy() {
 																											<li
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<strong>
@@ -1592,7 +1592,7 @@ export default function PrivacyPolicy() {
 																												<span className="statement-end-if-in-editor">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text" />
@@ -1603,13 +1603,13 @@ export default function PrivacyPolicy() {
 																										<div
 																											style={{
 																												lineHeight:
-																													"1.5"
+																													"1.5",
 																											}}
 																										>
 																											<span className="block-component">
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text" />
@@ -1618,7 +1618,7 @@ export default function PrivacyPolicy() {
 																											<span className="block-component">
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text" />
@@ -1627,7 +1627,7 @@ export default function PrivacyPolicy() {
 																											<span className="block-component">
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text" />
@@ -1636,7 +1636,7 @@ export default function PrivacyPolicy() {
 																											<span className="block-component">
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text" />
@@ -1646,7 +1646,7 @@ export default function PrivacyPolicy() {
 																										<div
 																											style={{
 																												lineHeight:
-																													"1.5"
+																													"1.5",
 																											}}
 																										>
 																											<br />
@@ -1655,13 +1655,13 @@ export default function PrivacyPolicy() {
 																											id="legalbases"
 																											style={{
 																												lineHeight:
-																													"1.5"
+																													"1.5",
 																											}}
 																										>
 																											<strong>
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="heading_1">
@@ -1684,7 +1684,7 @@ export default function PrivacyPolicy() {
 																										<div
 																											style={{
 																												lineHeight:
-																													"1.5"
+																													"1.5",
 																											}}
 																										>
 																											<br />
@@ -1692,13 +1692,13 @@ export default function PrivacyPolicy() {
 																										<div
 																											style={{
 																												lineHeight:
-																													"1.5"
+																													"1.5",
 																											}}
 																										>
 																											<em>
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1778,7 +1778,7 @@ export default function PrivacyPolicy() {
 																											</em>
 																											<span
 																												style={{
-																													fontSize: 15
+																													fontSize: 15,
 																												}}
 																											>
 																												<span data-custom-class="body_text">
@@ -1792,7 +1792,7 @@ export default function PrivacyPolicy() {
 																										<div
 																											style={{
 																												lineHeight:
-																													"1.5"
+																													"1.5",
 																											}}
 																										>
 																											<br />
@@ -1800,13 +1800,13 @@ export default function PrivacyPolicy() {
 																										<div
 																											style={{
 																												lineHeight:
-																													"1.5"
+																													"1.5",
 																											}}
 																										>
 																											<em>
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1833,7 +1833,7 @@ export default function PrivacyPolicy() {
 																											</em>
 																											<span
 																												style={{
-																													fontSize: 15
+																													fontSize: 15,
 																												}}
 																											>
 																												<span data-custom-class="body_text">
@@ -1844,7 +1844,7 @@ export default function PrivacyPolicy() {
 																										<div
 																											style={{
 																												lineHeight:
-																													"1.5"
+																													"1.5",
 																											}}
 																										>
 																											<br />
@@ -1852,12 +1852,12 @@ export default function PrivacyPolicy() {
 																										<div
 																											style={{
 																												lineHeight:
-																													"1.5"
+																													"1.5",
 																											}}
 																										>
 																											<span
 																												style={{
-																													fontSize: 15
+																													fontSize: 15,
 																												}}
 																											>
 																												<span data-custom-class="body_text">
@@ -1910,12 +1910,12 @@ export default function PrivacyPolicy() {
 																											<li
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -1966,7 +1966,7 @@ export default function PrivacyPolicy() {
 																												>
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text">
@@ -1984,13 +1984,13 @@ export default function PrivacyPolicy() {
 																										<div
 																											style={{
 																												lineHeight:
-																													"1.5"
+																													"1.5",
 																											}}
 																										>
 																											<span className="block-component">
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text" />
@@ -1999,13 +1999,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text" />
@@ -2014,7 +2014,7 @@ export default function PrivacyPolicy() {
 																												<span className="block-component">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text" />
@@ -2025,13 +2025,13 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															<strong>
@@ -2095,13 +2095,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text" />
@@ -2112,13 +2112,13 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															<strong>
@@ -2166,7 +2166,7 @@ export default function PrivacyPolicy() {
 																													<span className="statement-end-if-in-editor">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															<span data-custom-class="body_text" />
@@ -2177,13 +2177,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text" />
@@ -2192,7 +2192,7 @@ export default function PrivacyPolicy() {
 																												<span className="block-component">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text" />
@@ -2201,7 +2201,7 @@ export default function PrivacyPolicy() {
 																												<span data-custom-class="body_text">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span className="block-component" />
@@ -2211,7 +2211,7 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<br />
@@ -2219,13 +2219,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<strong>
@@ -2252,7 +2252,7 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<br />
@@ -2260,13 +2260,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														We
@@ -2322,7 +2322,7 @@ export default function PrivacyPolicy() {
 																													<span data-custom-class="body_text">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															withdraw
@@ -2334,7 +2334,7 @@ export default function PrivacyPolicy() {
 																												<span data-custom-class="body_text">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														&nbsp;at
@@ -2346,7 +2346,7 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<br />
@@ -2354,13 +2354,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														In
@@ -2392,13 +2392,13 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															If
@@ -2427,13 +2427,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span className="block-component" />
@@ -2444,13 +2444,13 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															For
@@ -2468,13 +2468,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text" />
@@ -2485,13 +2485,13 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															For
@@ -2507,7 +2507,7 @@ export default function PrivacyPolicy() {
 																													<span className="statement-end-if-in-editor">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															<span data-custom-class="body_text" />
@@ -2518,13 +2518,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text" />
@@ -2535,13 +2535,13 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															If
@@ -2570,7 +2570,7 @@ export default function PrivacyPolicy() {
 																													<span className="statement-end-if-in-editor">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															<span data-custom-class="body_text" />
@@ -2581,13 +2581,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text" />
@@ -2598,13 +2598,13 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															For
@@ -2625,7 +2625,7 @@ export default function PrivacyPolicy() {
 																													<span className="statement-end-if-in-editor">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															<span data-custom-class="body_text" />
@@ -2636,13 +2636,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span className="block-component" />
@@ -2653,13 +2653,13 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															If
@@ -2689,13 +2689,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span className="block-component" />
@@ -2706,13 +2706,13 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															If
@@ -2770,13 +2770,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span data-custom-class="body_text">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span className="block-component" />
@@ -2787,13 +2787,13 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span data-custom-class="body_text">
 																														<span
 																															style={{
-																																fontSize: 15
+																																fontSize: 15,
 																															}}
 																														>
 																															If
@@ -2827,13 +2827,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span className="block-component">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text" />
@@ -2844,12 +2844,12 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text">
@@ -2891,12 +2891,12 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -2908,12 +2908,12 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text">
@@ -2936,12 +2936,12 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -2953,12 +2953,12 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text">
@@ -2984,13 +2984,13 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span className="statement-end-if-in-editor">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text" />
@@ -2999,7 +2999,7 @@ export default function PrivacyPolicy() {
 																												<span className="statement-end-if-in-editor">
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text" />
@@ -3009,7 +3009,7 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<br />
@@ -3018,36 +3018,36 @@ export default function PrivacyPolicy() {
 																												id="whoshare"
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span
 																													style={{
-																														color: "rgb(127, 127, 127)"
+																														color: "rgb(127, 127, 127)",
 																													}}
 																												>
 																													<span
 																														style={{
 																															color: "rgb(89, 89, 89)",
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span
 																															style={{
 																																fontSize: 15,
-																																color: "rgb(89, 89, 89)"
+																																color: "rgb(89, 89, 89)",
 																															}}
 																														>
 																															<span
 																																style={{
 																																	fontSize: 15,
-																																	color: "rgb(89, 89, 89)"
+																																	color: "rgb(89, 89, 89)",
 																																}}
 																															>
 																																<span
 																																	id="control"
 																																	style={{
-																																		color: "rgb(0, 0, 0)"
+																																		color: "rgb(0, 0, 0)",
 																																	}}
 																																>
 																																	<strong>
@@ -3074,7 +3074,7 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<br />
@@ -3082,19 +3082,19 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span
 																													style={{
 																														fontSize: 15,
-																														color: "rgb(89, 89, 89)"
+																														color: "rgb(89, 89, 89)",
 																													}}
 																												>
 																													<span
 																														style={{
 																															fontSize: 15,
-																															color: "rgb(89, 89, 89)"
+																															color: "rgb(89, 89, 89)",
 																														}}
 																													>
 																														<span data-custom-class="body_text">
@@ -3131,19 +3131,19 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span
 																													style={{
 																														fontSize: 15,
-																														color: "rgb(89, 89, 89)"
+																														color: "rgb(89, 89, 89)",
 																													}}
 																												>
 																													<span
 																														style={{
 																															fontSize: 15,
-																															color: "rgb(89, 89, 89)"
+																															color: "rgb(89, 89, 89)",
 																														}}
 																													>
 																														<span data-custom-class="body_text">
@@ -3155,7 +3155,7 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<br />
@@ -3163,12 +3163,12 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -3192,12 +3192,12 @@ export default function PrivacyPolicy() {
 																												<li
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span data-custom-class="body_text">
@@ -3246,12 +3246,12 @@ export default function PrivacyPolicy() {
 																											<div
 																												style={{
 																													lineHeight:
-																														"1.5"
+																														"1.5",
 																												}}
 																											>
 																												<span
 																													style={{
-																														fontSize: 15
+																														fontSize: 15,
 																													}}
 																												>
 																													<span data-custom-class="body_text">
@@ -3261,12 +3261,12 @@ export default function PrivacyPolicy() {
 																												<div
 																													style={{
 																														lineHeight:
-																															"1.5"
+																															"1.5",
 																													}}
 																												>
 																													<span
 																														style={{
-																															fontSize: 15
+																															fontSize: 15,
 																														}}
 																													>
 																														<span className="block-component">
@@ -3276,13 +3276,13 @@ export default function PrivacyPolicy() {
 																													<div
 																														style={{
 																															lineHeight:
-																																"1.5"
+																																"1.5",
 																														}}
 																													>
 																														<span className="block-component">
 																															<span
 																																style={{
-																																	fontSize: 15
+																																	fontSize: 15,
 																																}}
 																															>
 																																<span data-custom-class="body_text" />
@@ -3293,13 +3293,13 @@ export default function PrivacyPolicy() {
 																														<li
 																															style={{
 																																lineHeight:
-																																	"1.5"
+																																	"1.5",
 																															}}
 																														>
 																															<span data-custom-class="body_text">
 																																<span
 																																	style={{
-																																		fontSize: 15
+																																		fontSize: 15,
 																																	}}
 																																>
 																																	<strong>
@@ -3328,7 +3328,7 @@ export default function PrivacyPolicy() {
 																															<span className="statement-end-if-in-editor">
 																																<span
 																																	style={{
-																																		fontSize: 15
+																																		fontSize: 15,
 																																	}}
 																																>
 																																	<span data-custom-class="body_text" />
@@ -3339,13 +3339,13 @@ export default function PrivacyPolicy() {
 																													<div
 																														style={{
 																															lineHeight:
-																																"1.5"
+																																"1.5",
 																														}}
 																													>
 																														<span className="block-component">
 																															<span
 																																style={{
-																																	fontSize: 15
+																																	fontSize: 15,
 																																}}
 																															>
 																																<span data-custom-class="body_text" />
@@ -3354,13 +3354,13 @@ export default function PrivacyPolicy() {
 																														<div
 																															style={{
 																																lineHeight:
-																																	"1.5"
+																																	"1.5",
 																															}}
 																														>
 																															<span className="block-component">
 																																<span
 																																	style={{
-																																		fontSize: 15
+																																		fontSize: 15,
 																																	}}
 																																>
 																																	<span data-custom-class="body_text" />
@@ -3369,13 +3369,13 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span className="block-component">
 																																	<span
 																																		style={{
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text" />
@@ -3384,27 +3384,27 @@ export default function PrivacyPolicy() {
 																																<span
 																																	style={{
 																																		color: "rgb(89, 89, 89)",
-																																		fontSize: 15
+																																		fontSize: 15,
 																																	}}
 																																>
 																																	<span
 																																		style={{
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span
 																																			style={{
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span
 																																				style={{
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span
 																																					style={{
-																																						color: "rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)",
 																																					}}
 																																				>
 																																					<span className="block-component">
@@ -3419,39 +3419,39 @@ export default function PrivacyPolicy() {
 																																	<span
 																																		style={{
 																																			color: "rgb(89, 89, 89)",
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				color: "rgb(89, 89, 89)",
-																																				fontSize: 15
+																																				fontSize: 15,
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					color: "rgb(89, 89, 89)",
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span
 																																					style={{
-																																						fontSize: 15
+																																						fontSize: 15,
 																																					}}
 																																				>
 																																					<span
 																																						style={{
-																																							color: "rgb(89, 89, 89)"
+																																							color: "rgb(89, 89, 89)",
 																																						}}
 																																					>
 																																						<span
 																																							style={{
-																																								fontSize: 15
+																																								fontSize: 15,
 																																							}}
 																																						>
 																																							<span
 																																								style={{
-																																									color: "rgb(89, 89, 89)"
+																																									color: "rgb(89, 89, 89)",
 																																								}}
 																																							>
 																																								<span data-custom-class="body_text">
@@ -3469,7 +3469,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -3478,36 +3478,36 @@ export default function PrivacyPolicy() {
 																																id="sociallogins"
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color: "rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			color: "rgb(89, 89, 89)",
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color: "rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)",
 																																					}}
 																																				>
 																																					<strong>
@@ -3531,7 +3531,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -3539,19 +3539,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -3595,7 +3595,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -3603,19 +3603,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -3707,12 +3707,12 @@ export default function PrivacyPolicy() {
 																																			platform.{" "}
 																																			<span
 																																				style={{
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span
 																																					style={{
-																																						color: "rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)",
 																																					}}
 																																				>
 																																					<span data-custom-class="body_text">
@@ -3727,7 +3727,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -3735,19 +3735,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -3840,45 +3840,45 @@ export default function PrivacyPolicy() {
 																																			<span
 																																				style={{
 																																					color: "rgb(89, 89, 89)",
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span
 																																					style={{
 																																						color: "rgb(89, 89, 89)",
-																																						fontSize: 15
+																																						fontSize: 15,
 																																					}}
 																																				>
 																																					<span
 																																						style={{
 																																							color: "rgb(89, 89, 89)",
-																																							fontSize: 15
+																																							fontSize: 15,
 																																						}}
 																																					>
 																																						<span
 																																							style={{
 																																								color: "rgb(89, 89, 89)",
-																																								fontSize: 15
+																																								fontSize: 15,
 																																							}}
 																																						>
 																																							<span
 																																								style={{
-																																									fontSize: 15
+																																									fontSize: 15,
 																																								}}
 																																							>
 																																								<span
 																																									style={{
-																																										color: "rgb(89, 89, 89)"
+																																										color: "rgb(89, 89, 89)",
 																																									}}
 																																								>
 																																									<span
 																																										style={{
-																																											fontSize: 15
+																																											fontSize: 15,
 																																										}}
 																																									>
 																																										<span
 																																											style={{
-																																												color: "rgb(89, 89, 89)"
+																																												color: "rgb(89, 89, 89)",
 																																											}}
 																																										>
 																																											<span data-custom-class="body_text">
@@ -3904,7 +3904,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -3913,36 +3913,36 @@ export default function PrivacyPolicy() {
 																																id="inforetain"
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color: "rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			color: "rgb(89, 89, 89)",
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color: "rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)",
 																																					}}
 																																				>
 																																					<strong>
@@ -3966,7 +3966,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -3974,19 +3974,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -4030,7 +4030,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -4038,19 +4038,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -4114,12 +4114,12 @@ export default function PrivacyPolicy() {
 																																			than{" "}
 																																			<span
 																																				style={{
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span
 																																					style={{
-																																						color: "rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)",
 																																					}}
 																																				>
 																																					<span data-custom-class="body_text">
@@ -4143,12 +4143,12 @@ export default function PrivacyPolicy() {
 																																			<span className="block-component" />
 																																			<span
 																																				style={{
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span
 																																					style={{
-																																						color: "rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)",
 																																					}}
 																																				>
 																																					<span data-custom-class="body_text">
@@ -4165,7 +4165,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -4173,19 +4173,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -4251,7 +4251,7 @@ export default function PrivacyPolicy() {
 																																			possible.
 																																			<span
 																																				style={{
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span className="block-component" />
@@ -4263,7 +4263,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -4272,36 +4272,36 @@ export default function PrivacyPolicy() {
 																																id="infosafe"
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color: "rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			color: "rgb(89, 89, 89)",
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color: "rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)",
 																																					}}
 																																				>
 																																					<strong>
@@ -4325,7 +4325,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -4333,19 +4333,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -4382,7 +4382,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -4390,19 +4390,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -4527,7 +4527,7 @@ export default function PrivacyPolicy() {
 																																			environment.
 																																			<span
 																																				style={{
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span className="statement-end-if-in-editor" />
@@ -4535,7 +4535,7 @@ export default function PrivacyPolicy() {
 																																			<span
 																																				style={{
 																																					color: "rgb(89, 89, 89)",
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span data-custom-class="body_text">
@@ -4549,7 +4549,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -4558,36 +4558,36 @@ export default function PrivacyPolicy() {
 																																id="privacyrights"
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color: "rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			color: "rgb(89, 89, 89)",
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color: "rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)",
 																																					}}
 																																				>
 																																					<strong>
@@ -4609,7 +4609,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -4617,19 +4617,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -4643,12 +4643,12 @@ export default function PrivacyPolicy() {
 																																				&nbsp;
 																																				<span
 																																					style={{
-																																						color: "rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)",
 																																					}}
 																																				>
 																																					<span
 																																						style={{
-																																							fontSize: 15
+																																							fontSize: 15,
 																																						}}
 																																					>
 																																						<span data-custom-class="body_text">
@@ -4694,12 +4694,12 @@ export default function PrivacyPolicy() {
 																																				information.
 																																				<span
 																																					style={{
-																																						color: "rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)",
 																																					}}
 																																				>
 																																					<span
 																																						style={{
-																																							fontSize: 15
+																																							fontSize: 15,
 																																						}}
 																																					>
 																																						<span data-custom-class="body_text">
@@ -4724,12 +4724,12 @@ export default function PrivacyPolicy() {
 																																			</em>
 																																			<span
 																																				style={{
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span
 																																					style={{
-																																						fontSize: 15
+																																						fontSize: 15,
 																																					}}
 																																				>
 																																					<span className="block-component" />
@@ -4742,7 +4742,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -4750,19 +4750,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -4875,13 +4875,13 @@ export default function PrivacyPolicy() {
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span data-custom-class="body_text">
@@ -4900,13 +4900,13 @@ export default function PrivacyPolicy() {
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -4921,7 +4921,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -4929,19 +4929,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -4964,23 +4964,23 @@ export default function PrivacyPolicy() {
 																																		<span data-custom-class="body_text">
 																																			<span
 																																				style={{
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span
 																																					style={{
-																																						color: "rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)",
 																																					}}
 																																				>
 																																					<span data-custom-class="body_text">
 																																						<span
 																																							style={{
-																																								color: "rgb(89, 89, 89)"
+																																								color: "rgb(89, 89, 89)",
 																																							}}
 																																						>
 																																							<span
 																																								style={{
-																																									fontSize: 15
+																																									fontSize: 15,
 																																								}}
 																																							>
 																																								<span className="statement-end-if-in-editor" />
@@ -4996,13 +4996,13 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	&nbsp;
@@ -5011,19 +5011,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -5057,18 +5057,18 @@ export default function PrivacyPolicy() {
 																																			your{" "}
 																																			<span
 																																				style={{
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span
 																																					style={{
-																																						color: "rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)",
 																																					}}
 																																				>
 																																					<span data-custom-class="body_text">
 																																						<span
 																																							style={{
-																																								color: "rgb(48, 48, 241)"
+																																								color: "rgb(48, 48, 241)",
 																																							}}
 																																						>
 																																							<span data-custom-class="body_text">
@@ -5080,7 +5080,7 @@ export default function PrivacyPolicy() {
 																																								>
 																																									<span
 																																										style={{
-																																											fontSize: 15
+																																											fontSize: 15,
 																																										}}
 																																									>
 																																										Member
@@ -5108,13 +5108,13 @@ export default function PrivacyPolicy() {
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span data-custom-class="body_text">
@@ -5130,13 +5130,13 @@ export default function PrivacyPolicy() {
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -5148,7 +5148,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -5156,19 +5156,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -5184,24 +5184,24 @@ export default function PrivacyPolicy() {
 																																			the{" "}
 																																			<span
 																																				style={{
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span
 																																					style={{
-																																						color: "rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)",
 																																					}}
 																																				>
 																																					<span data-custom-class="body_text">
 																																						<span
 																																							style={{
-																																								color: "rgb(48, 48, 241)"
+																																								color: "rgb(48, 48, 241)",
 																																							}}
 																																						>
 																																							<span data-custom-class="body_text">
 																																								<span
 																																									style={{
-																																										fontSize: 15
+																																										fontSize: 15,
 																																									}}
 																																								>
 																																									<a
@@ -5232,7 +5232,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -5241,19 +5241,19 @@ export default function PrivacyPolicy() {
 																																id="withdrawconsent"
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -5334,13 +5334,13 @@ export default function PrivacyPolicy() {
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span data-custom-class="body_text">
@@ -5359,13 +5359,13 @@ export default function PrivacyPolicy() {
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -5383,7 +5383,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -5391,12 +5391,12 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		fontSize: 15
+																																		fontSize: 15,
 																																	}}
 																																>
 																																	<span data-custom-class="body_text">
@@ -5448,7 +5448,7 @@ export default function PrivacyPolicy() {
 																																<span className="block-component">
 																																	<span
 																																		style={{
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text" />
@@ -5458,7 +5458,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -5466,12 +5466,12 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		fontSize: 15
+																																		fontSize: 15,
 																																	}}
 																																>
 																																	<span data-custom-class="heading_2">
@@ -5485,7 +5485,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -5493,13 +5493,13 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span data-custom-class="body_text">
 																																	<span
 																																		style={{
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		If
@@ -5532,13 +5532,13 @@ export default function PrivacyPolicy() {
 																																<li
 																																	style={{
 																																		lineHeight:
-																																			"1.5"
+																																			"1.5",
 																																	}}
 																																>
 																																	<span data-custom-class="body_text">
 																																		<span
 																																			style={{
-																																				fontSize: 15
+																																				fontSize: 15,
 																																			}}
 																																		>
 																																			<span className="question">
@@ -5557,13 +5557,13 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span data-custom-class="body_text">
 																																	<span
 																																		style={{
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span className="forloop-component" />
@@ -5573,12 +5573,12 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		fontSize: 15
+																																		fontSize: 15,
 																																	}}
 																																>
 																																	<span data-custom-class="body_text">
@@ -5635,7 +5635,7 @@ export default function PrivacyPolicy() {
 																																<span className="statement-end-if-in-editor">
 																																	<span
 																																		style={{
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text" />
@@ -5644,45 +5644,45 @@ export default function PrivacyPolicy() {
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
 																																			<span
 																																				style={{
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span
 																																					style={{
-																																						color: "rgb(89, 89, 89)"
+																																						color: "rgb(89, 89, 89)",
 																																					}}
 																																				>
 																																					<span
 																																						style={{
-																																							fontSize: 15
+																																							fontSize: 15,
 																																						}}
 																																					>
 																																						<span
 																																							style={{
-																																								color: "rgb(89, 89, 89)"
+																																								color: "rgb(89, 89, 89)",
 																																							}}
 																																						>
 																																							<span data-custom-class="body_text">
 																																								<span
 																																									style={{
-																																										fontSize: 15
+																																										fontSize: 15,
 																																									}}
 																																								>
 																																									<span
 																																										style={{
-																																											color: "rgb(89, 89, 89)"
+																																											color: "rgb(89, 89, 89)",
 																																										}}
 																																									>
 																																										<span className="block-component" />
@@ -5699,7 +5699,7 @@ export default function PrivacyPolicy() {
 																																<span className="block-component">
 																																	<span
 																																		style={{
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text" />
@@ -5709,7 +5709,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -5717,13 +5717,13 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span data-custom-class="body_text">
 																																	<span
 																																		style={{
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		If
@@ -5751,7 +5751,7 @@ export default function PrivacyPolicy() {
 																																<span className="statement-end-if-in-editor">
 																																	<span
 																																		style={{
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text" />
@@ -5761,7 +5761,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -5770,36 +5770,36 @@ export default function PrivacyPolicy() {
 																																id="DNT"
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color: "rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			color: "rgb(89, 89, 89)",
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color: "rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)",
 																																					}}
 																																				>
 																																					<strong>
@@ -5820,7 +5820,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -5828,19 +5828,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -5971,7 +5971,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -5980,36 +5980,36 @@ export default function PrivacyPolicy() {
 																																id="caresidents"
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color: "rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			color: "rgb(89, 89, 89)",
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color: "rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)",
 																																					}}
 																																				>
 																																					<strong>
@@ -6033,7 +6033,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -6041,19 +6041,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -6091,7 +6091,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -6099,19 +6099,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -6223,7 +6223,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -6231,19 +6231,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -6354,7 +6354,7 @@ export default function PrivacyPolicy() {
 																																			<span
 																																				style={{
 																																					color: "rgb(89, 89, 89)",
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span data-custom-class="body_text">
@@ -6367,7 +6367,7 @@ export default function PrivacyPolicy() {
 																																<span className="block-component">
 																																	<span
 																																		style={{
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	/>
 																																</span>
@@ -6375,7 +6375,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -6384,36 +6384,36 @@ export default function PrivacyPolicy() {
 																																id="policyupdates"
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color: "rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			color: "rgb(89, 89, 89)",
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color: "rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)",
 																																					}}
 																																				>
 																																					<strong>
@@ -6437,7 +6437,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -6445,19 +6445,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -6488,7 +6488,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -6496,19 +6496,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -6603,7 +6603,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -6612,36 +6612,36 @@ export default function PrivacyPolicy() {
 																																id="contact"
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color: "rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			color: "rgb(89, 89, 89)",
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color: "rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)",
 																																					}}
 																																				>
 																																					<strong>
@@ -6666,7 +6666,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -6674,19 +6674,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -6704,7 +6704,7 @@ export default function PrivacyPolicy() {
 																																			<span
 																																				style={{
 																																					color: "rgb(89, 89, 89)",
-																																					fontSize: 15
+																																					fontSize: 15,
 																																				}}
 																																			>
 																																				<span data-custom-class="body_text">
@@ -6725,7 +6725,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -6733,7 +6733,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -6742,36 +6742,36 @@ export default function PrivacyPolicy() {
 																																id="request"
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
-																																		color: "rgb(127, 127, 127)"
+																																		color: "rgb(127, 127, 127)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			color: "rgb(89, 89, 89)",
-																																			fontSize: 15
+																																			fontSize: 15,
 																																		}}
 																																	>
 																																		<span
 																																			style={{
 																																				fontSize: 15,
-																																				color: "rgb(89, 89, 89)"
+																																				color: "rgb(89, 89, 89)",
 																																			}}
 																																		>
 																																			<span
 																																				style={{
 																																					fontSize: 15,
-																																					color: "rgb(89, 89, 89)"
+																																					color: "rgb(89, 89, 89)",
 																																				}}
 																																			>
 																																				<span
 																																					id="control"
 																																					style={{
-																																						color: "rgb(0, 0, 0)"
+																																						color: "rgb(0, 0, 0)",
 																																					}}
 																																				>
 																																					<strong>
@@ -6801,7 +6801,7 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<br />
@@ -6809,19 +6809,19 @@ export default function PrivacyPolicy() {
 																															<div
 																																style={{
 																																	lineHeight:
-																																		"1.5"
+																																		"1.5",
 																																}}
 																															>
 																																<span
 																																	style={{
 																																		fontSize: 15,
-																																		color: "rgb(89, 89, 89)"
+																																		color: "rgb(89, 89, 89)",
 																																	}}
 																																>
 																																	<span
 																																		style={{
 																																			fontSize: 15,
-																																			color: "rgb(89, 89, 89)"
+																																			color: "rgb(89, 89, 89)",
 																																		}}
 																																	>
 																																		<span data-custom-class="body_text">
@@ -6877,13 +6877,13 @@ export default function PrivacyPolicy() {
 																																		</span>
 																																		<span
 																																			style={{
-																																				color: "rgb(48, 48, 241)"
+																																				color: "rgb(48, 48, 241)",
 																																			}}
 																																		>
 																																			<span data-custom-class="body_text">
 																																				<span
 																																					style={{
-																																						fontSize: 15
+																																						fontSize: 15,
 																																					}}
 																																				>
 																																					<a

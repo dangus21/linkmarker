@@ -1,33 +1,23 @@
-import {
-	CheckCircleIcon,
-	XCircleIcon
-} from "@heroicons/react/20/solid";
+import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/20/solid";
 
-function LinkOpenedStatus(
-	{
-		opened
-	}:
-		{
-			opened: boolean;
-		}
-) {
+function LinkOpenedStatus({ opened }: { opened: boolean }) {
 	return (
-		<div className="flex items-center -mb-1">
+		<div className="-mb-1 flex items-center">
 			{opened ? (
 				<div className="flex flex-row sm:flex-row-reverse">
-					<span className="mr-1 sm:ml-2 sm:-mr-1 relative grid place-content-center">
+					<span className="relative mr-1 grid place-content-center sm:-mr-1 sm:ml-2">
 						<CheckCircleIcon className="h-5 w-5 text-green-500" />
 					</span>
-					<p className="whitespace-nowrap text-gray-500 text-sm">
+					<p className="whitespace-nowrap text-sm text-gray-500">
 						Opened
 					</p>
 				</div>
 			) : (
 				<div className="flex flex-row sm:flex-row-reverse">
-					<span className="mr-1 sm:ml-1 relative grid place-content-center">
+					<span className="relative mr-1 grid place-content-center sm:ml-1">
 						<XCircleIcon className="h-5 w-5 text-red-500" />
 					</span>
-					<p className="whitespace-nowrap text-gray-500 text-sm">
+					<p className="whitespace-nowrap text-sm text-gray-500">
 						Not Opened
 					</p>
 				</div>

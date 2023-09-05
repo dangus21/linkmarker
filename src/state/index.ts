@@ -5,7 +5,7 @@ import { mountStoreDevtool } from "simple-zustand-devtools";
 const NAVBAR_OPTIONS = {
 	LINKS: "links",
 	NEW_LINK: "new_link",
-	PROFILE: "profile"
+	PROFILE: "profile",
 } as const;
 
 type TAvatar = {
@@ -41,7 +41,7 @@ export enum TABS {
 	MINE,
 	SHARED,
 	PRIVATE,
-	ARCHIVED
+	ARCHIVED,
 }
 
 export type User = {
@@ -58,7 +58,7 @@ export type WindowSize = {
 const useWindowSize = create<WindowSize>()((set) => ({
 	width: 0,
 	height: 0,
-	setSizes: (key, value) => set(() => ({ [key]: value }))
+	setSizes: (key, value) => set(() => ({ [key]: value })),
 }));
 
 export type LinkState = {
@@ -83,7 +83,7 @@ const useUserGlobalState = create<UserState>()((set) => ({
 	avatar: {
 		img: "",
 		file: null,
-		fileName: ""
+		fileName: "",
 	},
 	hasAvatar: null,
 	modified: false,
@@ -97,18 +97,18 @@ const useUserGlobalState = create<UserState>()((set) => ({
 			avatar: {
 				img: img || "",
 				file: file || null,
-				fileName: fileName || ""
-			}
+				fileName: fileName || "",
+			},
 		})),
 	setModified: (isModified) =>
 		set((state) => ({
 			...state,
-			modified: isModified
+			modified: isModified,
 		})),
 	setHasAvatar: (flag) =>
 		set(() => ({
-			hasAvatar: flag
-		}))
+			hasAvatar: flag,
+		})),
 }));
 
 const useLinkGlobalState = create<LinkState>()((set) => ({
@@ -117,7 +117,7 @@ const useLinkGlobalState = create<LinkState>()((set) => ({
 	new: {
 		by: "",
 		title: "",
-		share_with: []
+		share_with: [],
 	},
 	ownershipFilter: TABS.ALL,
 	textFilter: "",
@@ -129,22 +129,22 @@ const useLinkGlobalState = create<LinkState>()((set) => ({
 		set((state) => ({
 			new: {
 				...state.new,
-				...link
-			}
+				...link,
+			},
 		})),
 	update: (link) =>
 		set((state) => {
 			const currentLinks = structuredClone(state.values);
 			const updateLinkIdx = currentLinks.findIndex(
-				(el) => el.id === link.id
+				(el) => el.id === link.id,
 			);
 			currentLinks[updateLinkIdx] = {
 				...currentLinks[updateLinkIdx],
-				...link
+				...link,
 			};
 
 			return { ...state, values: currentLinks };
-		})
+		}),
 }));
 
 if (process.env.NODE_ENV === "development") {
@@ -156,5 +156,5 @@ export {
 	useUserGlobalState,
 	useLinkGlobalState,
 	useWindowSize,
-	NAVBAR_OPTIONS
+	NAVBAR_OPTIONS,
 };

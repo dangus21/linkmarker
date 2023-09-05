@@ -8,14 +8,14 @@ import {
 	User as StateUser,
 	TLinkUpdate,
 	UserState,
-	useLinkGlobalState
+	useLinkGlobalState,
 } from "@/state";
 import { NextRouter } from "next/router";
 import {
 	SupabaseClient,
 	User,
 	useSupabaseClient,
-	useUser
+	useUser,
 } from "@supabase/auth-helpers-react";
 
 const toast_config = {
@@ -23,17 +23,17 @@ const toast_config = {
 		borderRadius: "10px",
 		background: "#0d1421",
 		color: "#fff",
-		boxShadow: "0 3px 15px black"
+		boxShadow: "0 3px 15px black",
 	} as CSSProperties,
 	position: "bottom-center",
-	duration: 3000
+	duration: 3000,
 } as const;
 
 async function deleteLink({
 	supabaseClient,
 	id,
 	setLinks,
-	currentUser
+	currentUser,
 }: {
 	supabaseClient: SupabaseClient<Database>;
 	id: string;
@@ -50,7 +50,7 @@ async function deleteLink({
 			.from("links")
 			.select()
 			.or(
-				`share_with.cs.{${currentUser}},or(is_public.eq.true),or(by.eq.${currentUser})`
+				`share_with.cs.{${currentUser}},or(is_public.eq.true),or(by.eq.${currentUser})`,
 			)
 			.order("posted_date", { ascending: false });
 
@@ -75,7 +75,7 @@ async function createLink({
 	supabaseClient,
 	userState,
 	link,
-	router
+	router,
 }: {
 	supabaseClient: SupabaseClient<Database>;
 	userState: UserState;
@@ -93,15 +93,15 @@ async function createLink({
 		by: userState.id,
 		is_public: link.is_public || false,
 		share_with: (link.share_with || []).map(
-			(user) => (user as unknown as StateUser)?.id
+			(user) => (user as unknown as StateUser)?.id,
 		),
 		origin: "",
-		is_deletable: link.is_deletable
+		is_deletable: link.is_deletable,
 	} satisfies LinkState["new"];
 
 	const newLinkObj = new URL(url);
 	const match = newLinkObj.host.match(
-		/^.*?\b(?:https?:\/\/)?(?:www\.)?([a-z0-9][a-z0-9-]*?[a-z0-9])\.[a-z]{2,}(?:$|\/)/i
+		/^.*?\b(?:https?:\/\/)?(?:www\.)?([a-z0-9][a-z0-9-]*?[a-z0-9])\.[a-z]{2,}(?:$|\/)/i,
 	);
 
 	newLink.origin = match?.[1] ?? "unknown origin";
@@ -132,7 +132,7 @@ async function updateLinkInfo({
 	link,
 	id,
 	updateLink,
-	supabaseClient
+	supabaseClient,
 }: {
 	link: TLinkUpdate;
 	id: string;
@@ -166,7 +166,7 @@ async function updateLinkInfo({
 			toast.error("Failed deleting link", toast_config);
 			throw error;
 		} else {
-			toast.success("Updated new link", toast_config);
+			toast.success("Updated link", toast_config);
 		}
 	} catch (error) {
 		console.warn({ error });
@@ -188,7 +188,7 @@ async function useGetLinks() {
 				.or(
 					`share_with.cs.{${
 						currentUser!.id
-					}},or(is_public.eq.true),or(by.eq.${currentUser!.id})`
+					}},or(is_public.eq.true),or(by.eq.${currentUser!.id})`,
 				)
 				.order("posted_date", { ascending: false });
 

@@ -5,13 +5,13 @@ import {
 	Session,
 	SupabaseClient,
 	User,
-	useSupabaseClient
+	useSupabaseClient,
 } from "@supabase/auth-helpers-react";
 import { UserState, useUserGlobalState } from "@/state";
 
 async function updateProfileInfo({
 	userState,
-	supabaseClient
+	supabaseClient,
 }: {
 	userState: UserState;
 	supabaseClient: SupabaseClient<Database>;
@@ -20,7 +20,7 @@ async function updateProfileInfo({
 		const updates = {
 			isAccountPublic: userState.is_public,
 			username: userState.userName,
-			updated_at: new Date() as unknown as string
+			updated_at: new Date() as unknown as string,
 		};
 
 		const { error } = await supabaseClient
@@ -33,7 +33,7 @@ async function updateProfileInfo({
 				.from("avatars")
 				.upload(`${userState.id}/avatar.jpg`, userState.avatar.file, {
 					cacheControl: "3600",
-					upsert: true
+					upsert: true,
 				});
 			if (avatarError) {
 				console.warn({ avatarError });
@@ -50,7 +50,7 @@ async function updateProfileInfo({
 
 async function useGetProfileInfo({
 	user,
-	session
+	session,
 }: {
 	user: User | null;
 	session: Session | null;
@@ -94,7 +94,7 @@ async function useGetProfileInfo({
 					}
 					if (avatarsData) {
 						globalUserState.setAvatar({
-							img: URL.createObjectURL(avatarsData)
+							img: URL.createObjectURL(avatarsData),
 						});
 					}
 

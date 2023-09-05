@@ -6,6 +6,20 @@ import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUserGlobalState } from "@/state";
 
+import { CSSProperties } from "react";
+import { toast } from "react-hot-toast";
+
+const toast_config = {
+	style: {
+		borderRadius: "10px",
+		background: "#0d1421",
+		color: "#fff",
+		boxShadow: "0 3px 15px black",
+	} as CSSProperties,
+	position: "bottom-center",
+	duration: 3000,
+} as const;
+
 function Profile() {
 	const supabaseClient = useSupabaseClient<Database>();
 	const globalUserState = useUserGlobalState();
@@ -13,14 +27,13 @@ function Profile() {
 
 	async function deleteAccount() {
 		try {
-			await supabaseClient.functions.invoke('user-self-deletion')
-			alert('Account deleted successfully!')
+			await supabaseClient.functions.invoke("user-self-deletion");
+			toast.success("Account deleted successfully!", toast_config);
 		} catch (error) {
-			alert('Error deleting the account!')
-			console.log(error)
+			toast.error("Error deleting the account!", toast_config);
 		} finally {
-			await supabaseClient.auth.signOut()
-			push('/')
+			await supabaseClient.auth.signOut();
+			push("/");
 		}
 	}
 
@@ -33,7 +46,7 @@ function Profile() {
 			</div>
 
 			<div className="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
-				<div className="bg-gray-800 py-4 px-4 shadow sm:rounded-lg sm:px-10">
+				<div className="bg-gray-800 px-4 py-4 shadow sm:rounded-lg sm:px-10">
 					<ProfileImage />
 					<div className="space-y-6 pb-6">
 						<ProfileUsername />
@@ -42,7 +55,7 @@ function Profile() {
 							onClick={() => {
 								updateProfileInfo({
 									userState: globalUserState,
-									supabaseClient
+									supabaseClient,
 								});
 								push("/");
 							}}
@@ -51,7 +64,7 @@ function Profile() {
 							Submit
 						</Button>
 						<Button
-							className="bg-red-900 border-red-800 hover:bg-red-700"
+							className="border-red-800 bg-red-900 hover:bg-red-700"
 							onClick={deleteAccount}
 						>
 							Delete Account

@@ -17,34 +17,29 @@ function NavbarProfile() {
 	const userNavigation = [
 		{
 			name: "Profile",
-			action: () => push("/profile")
+			action: () => push("/profile"),
 		},
 		{
 			name: "Sign out",
-			action: () => supabaseClient.auth.signOut()
-		}
+			action: () => supabaseClient.auth.signOut(),
+		},
 	];
 	return (
 		<Popover className="relative pt-2">
-			<Popover.Button
-				className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
-			>
+			<Popover.Button className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
 				<div
-					className={
-						twMerge(
-							"flex rounded-full bg-gray-800 text-sm focus:outline-none",
-							"focus:ring-2 focus:ring-gray-700 focus:ring-offset-2",
-							"focus:ring-offset-gray-800"
-						)
-					}
+					className={twMerge(
+						"flex rounded-full bg-gray-800 text-sm focus:outline-none",
+						"focus:ring-2 focus:ring-gray-700 focus:ring-offset-2",
+						"focus:ring-offset-gray-800",
+					)}
 				>
-					<div className="h-10 w-10 rounded-full overflow-hidden hover:opacity-90">
+					<div className="h-10 w-10 overflow-hidden rounded-full hover:opacity-90">
 						<Image
-							className="h-10 aspect-square"
+							className="aspect-square h-10"
 							quality={50}
 							src={
-								globalUserState.avatar
-									.img ||
+								globalUserState.avatar.img ||
 								"/avatar_placeholder.png"
 							}
 							alt="Profile Picture"
@@ -63,19 +58,18 @@ function NavbarProfile() {
 				leaveFrom="opacity-100 translate-y-0"
 				leaveTo="opacity-0 translate-y-1"
 			>
-				<Popover.Panel className="absolute right-0 sm:-right-8 z-10 flex max-w-[15rem] px-4">
+				<Popover.Panel className="absolute right-0 z-10 flex max-w-[15rem] px-4 sm:-right-8">
 					<div
-						className={
-							twMerge(
-								"w-screen max-w-sm flex-auto rounded bg-gray-900 outline outline-1 outline-back",
-								"py-2 text-sm leading-6 shadow-xl ring-1 ring-gray-900/5"
-							)
-						}>
+						className={twMerge(
+							"outline-back w-screen max-w-sm flex-auto rounded bg-gray-900 outline outline-1",
+							"py-2 text-sm leading-6 shadow-xl ring-1 ring-gray-900/5",
+						)}
+					>
 						{userNavigation.map((item) => (
 							<div
 								key={item.name}
 								onClick={item.action}
-								className="cursor-pointer text-center relative py-2 hover:bg-gray-800/90"
+								className="relative cursor-pointer py-2 text-center hover:bg-gray-800/90"
 							>
 								<a className="font-semibold text-gray-100">
 									{item.name}

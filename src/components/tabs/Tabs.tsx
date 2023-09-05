@@ -12,12 +12,12 @@ function Tabs() {
 		{ id: TABS.MINE, name: "Mine" },
 		{ id: TABS.SHARED, name: "Shared" },
 		{ id: TABS.PRIVATE, name: "Private" },
-		{ id: TABS.ARCHIVED, name: "Archived" }
+		{ id: TABS.ARCHIVED, name: "Archived" },
 	];
 
 	return (
-		<div className="h-12 w-full sticky top-[63px] bg-gray-900 z-10 flex items-center place-content-center">
-			<nav className="flex space-x-4 justify-center" aria-label="Tabs">
+		<div className="sticky top-[63px] z-10 flex h-12 w-full place-content-center items-center bg-gray-900">
+			<nav className="flex justify-center space-x-4" aria-label="Tabs">
 				{tabs.map((tab, index: TABS) => (
 					<div
 						onClick={() => {
@@ -28,12 +28,14 @@ function Tabs() {
 						}}
 						key={tab.name}
 						className={classNames(
-							tab.id === currentTab ?
-								"bg-gray-700  hover:bg-gray-600" :
-								"hover:bg-gray-700",
-							"text-gray-100 rounded-md px-3 py-2 text-sm font-medium cursor-pointer select-none"
+							tab.id === currentTab
+								? "bg-gray-700  hover:bg-gray-600"
+								: "hover:bg-gray-700",
+							"cursor-pointer select-none rounded-md px-3 py-2 text-sm font-medium text-gray-100",
 						)}
-						aria-current={tab.id === currentTab ? "page" : undefined}
+						aria-current={
+							tab.id === currentTab ? "page" : undefined
+						}
 					>
 						{tab.name}
 					</div>

@@ -1,11 +1,3 @@
-export {
-	createLink,
-	deleteLink,
-	updateLinkInfo,
-	useGetLinks
-} from "./links";
+export { createLink, deleteLink, updateLinkInfo, useGetLinks } from "./links";
 
-export {
-	updateProfileInfo,
-	useGetProfileInfo
-} from "./profile";
+export { updateProfileInfo, useGetProfileInfo } from "./profile";

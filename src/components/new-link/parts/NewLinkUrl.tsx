@@ -16,9 +16,11 @@ function NewLinkUrl() {
 				id="url"
 				placeHolder="https://www.tiktok.com/@tiktok"
 				value={globalLinkState.new.origin || ""}
-				onChange={(event) => globalLinkState.create({
-					origin: event.currentTarget.value
-				})}
+				onChange={(event) =>
+					globalLinkState.create({
+						origin: event.currentTarget.value,
+					})
+				}
 			/>
 		</div>
 	);

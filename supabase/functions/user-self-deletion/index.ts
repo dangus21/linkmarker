@@ -10,8 +10,8 @@ serve(async (req: Request) => {
 			headers: {
 				"Access-Control-Allow-Origin": "*",
 				"Access-Control-Allow-Headers":
-					"authorization, x-client-info, apikey, content-type"
-			}
+					"authorization, x-client-info, apikey, content-type",
+			},
 		});
 	}
 	try {
@@ -26,14 +26,14 @@ serve(async (req: Request) => {
 			{
 				global: {
 					headers: {
-						Authorization: req.headers.get("Authorization")!
-					}
-				}
-			}
+						Authorization: req.headers.get("Authorization")!,
+					},
+				},
+			},
 		);
 		// Now we can get the session or user object
 		const {
-			data: { user }
+			data: { user },
 		} = await supabaseClient.auth.getUser();
 		// And we can run queries in the context of our authenticated user
 		const { data: profiles, error: user_error } = await supabaseClient
@@ -44,7 +44,7 @@ serve(async (req: Request) => {
 		// Create the admin client to delete files & user with the Admin API.
 		const supabaseAdmin = createClient(
 			Deno.env.get("SUPABASE_URL") ?? "",
-			Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
+			Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
 		);
 		const { data: invalidate_user, invalidation_error } =
 			await supabaseAdmin.auth.admin.updateUserById(
@@ -53,8 +53,8 @@ serve(async (req: Request) => {
 					email: user_id.concat("@deleted-users.example.com"),
 					phone: "",
 					user_metadata: { deleted: true },
-					app_metadata: { deleted: true }
-				}
+					app_metadata: { deleted: true },
+				},
 			);
 		if (invalidation_error) throw invalidation_error;
 		const { data: invalidate_profile, invalid_profile_error } =
@@ -64,12 +64,16 @@ serve(async (req: Request) => {
 					full_name: "",
 					username: "",
 					avatar_url: "",
-					website: ""
+					website: "",
 				})
 				.eq("id", user_id);
 		if (invalid_profile_error) throw invalid_profile_error;
 		console.log(
-			`profile_invalidated:${JSON.stringify(invalidate_profile, null, 2)}`
+			`profile_invalidated:${JSON.stringify(
+				invalidate_profile,
+				null,
+				2,
+			)}`,
 		);
 		return new Response(
 			`User invalidated: ${JSON.stringify(invalidate_user, null, 2)}`,
@@ -78,10 +82,10 @@ serve(async (req: Request) => {
 					"Access-Control-Allow-Origin": "*",
 					"Access-Control-Allow-Headers":
 						"authorization, x-client-info, apikey, content-type",
-					"Content-Type": "application/json"
+					"Content-Type": "application/json",
 				},
-				status: 200
-			}
+				status: 200,
+			},
 		);
 	} catch (error) {
 		return new Response(JSON.stringify({ error: error }), {
@@ -89,9 +93,9 @@ serve(async (req: Request) => {
 				"Access-Control-Allow-Origin": "*",
 				"Access-Control-Allow-Headers":
 					"authorization, x-client-info, apikey, content-type",
-				"Content-Type": "application/json"
+				"Content-Type": "application/json",
 			},
-			status: 400
+			status: 400,
 		});
 	}
 });
