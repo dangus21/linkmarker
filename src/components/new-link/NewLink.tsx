@@ -84,14 +84,15 @@ function NewLink({ users }: { users: User[] }) {
 
 						<div className="mt-12">
 							<Button
-								onClick={() =>
+								onClick={() => {
 									createLink({
 										supabaseClient,
 										userState: globalUserState,
 										link: globalLinkState.new,
 										router,
-									})
-								}
+									});
+									globalLinkState.resetNewLink();
+								}}
 								type="submit"
 								className={
 									isSubmitButtonDisabled

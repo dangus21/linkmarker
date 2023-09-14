@@ -55,12 +55,6 @@ export type WindowSize = {
 	setSizes: (key: "width" | "height", value: number) => void;
 };
 
-const useWindowSize = create<WindowSize>()((set) => ({
-	width: 0,
-	height: 0,
-	setSizes: (key, value) => set(() => ({ [key]: value })),
-}));
-
 export type LinkState = {
 	values: TLink[] | [];
 	new: TLinkNew;
@@ -73,6 +67,7 @@ export type LinkState = {
 	set: (links: TLink[]) => void;
 	update: (link: TLinkUpdate) => void;
 	create: (link: Partial<TLinkNew>) => void;
+	resetNewLink: () => void;
 };
 
 const useUserGlobalState = create<UserState>()((set) => ({
@@ -125,6 +120,14 @@ const useLinkGlobalState = create<LinkState>()((set) => ({
 	setOwnershipFilter: (filter) => set({ ownershipFilter: filter }),
 	setLoading: (isLoading) => set({ loading: isLoading }),
 	set: (links) => set(() => ({ values: links })),
+	resetNewLink: () =>
+		set(() => ({
+			new: {
+				by: "",
+				title: "",
+				share_with: [],
+			},
+		})),
 	create: (link) =>
 		set((state) => ({
 			new: {
@@ -152,9 +155,4 @@ if (process.env.NODE_ENV === "development") {
 	mountStoreDevtool("links", useLinkGlobalState);
 }
 
-export {
-	useUserGlobalState,
-	useLinkGlobalState,
-	useWindowSize,
-	NAVBAR_OPTIONS,
-};
+export { useUserGlobalState, useLinkGlobalState, NAVBAR_OPTIONS };
