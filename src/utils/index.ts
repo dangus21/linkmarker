@@ -46,6 +46,20 @@ function useViewport() {
 	return { width, height };
 }
 
+function extractTopLevelDomain(url: URL) {
+	// Regular expression to match the top-level domain
+	const topLevelDomainRegex = /(?:https?:\/\/)?(?:www\.)?([^.]+\.[a-z]+)/i;
+
+	// Use the regex to extract the top-level domain
+	const match = url.href.match(topLevelDomainRegex);
+
+	if (match) {
+		return match[1].split(".")[0]; // Extract the top-level domain
+	} else {
+		return null; // Return null if no top-level domain is found
+	}
+}
+
 export {
 	ONE_MB_SIZE,
 	REACTIONS,
@@ -53,4 +67,5 @@ export {
 	classNames,
 	dateFormatter,
 	useViewport,
+	extractTopLevelDomain,
 };

@@ -177,7 +177,10 @@ function Links() {
 											/>
 										</div>
 									</a>
-									<div className="flex flex-col divide-y-2 divide-black sm:flex-row sm:divide-x-2 sm:divide-y-0">
+									<div
+										data-id="link_actions"
+										className="flex flex-col divide-y-2 divide-black sm:flex-row sm:divide-x-2 sm:divide-y-0"
+									>
 										{ownershipFilter !== TABS.ARCHIVED && (
 											<LinkArchive
 												isArchivable={userIsOwner}

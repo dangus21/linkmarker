@@ -17,6 +17,7 @@ import {
 	useSupabaseClient,
 	useUser,
 } from "@supabase/auth-helpers-react";
+import { extractTopLevelDomain } from "@/utils";
 
 const toast_config = {
 	style: {
@@ -100,11 +101,8 @@ async function createLink({
 	} satisfies LinkState["new"];
 
 	const newLinkObj = new URL(url);
-	const match = newLinkObj.host.match(
-		/^.*?\b(?:https?:\/\/)?(?:www\.)?([a-z0-9][a-z0-9-]*?[a-z0-9])\.[a-z]{2,}(?:$|\/)/i,
-	);
 
-	newLink.origin = match?.[1] ?? "unknown origin";
+	newLink.origin = extractTopLevelDomain(newLinkObj) ?? "unknown origin";
 
 	try {
 		const { error } = await supabaseClient.from("links").insert(newLink);
@@ -113,13 +111,6 @@ async function createLink({
 			console.warn({ error });
 			toast.error("Failed creating link", toast_config);
 		} else {
-			// Notification.requestPermission().then(permission => {
-			// 	if (permission === "granted") {
-			// 		const notification = new Notification(link.title!, {
-			// 			body: "New link created"
-			// 		});
-			// 	}
-			// });
 			toast.success("Created new link", toast_config);
 			router.push("/");
 		}
