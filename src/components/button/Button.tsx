@@ -5,7 +5,6 @@ function Button({
 	children,
 	type,
 	className,
-	isDisabled,
 	isMobile,
 	...buttonProps
 }: DetailedHTMLProps<
