@@ -15,6 +15,7 @@ import {
 	NewLinkTitle,
 	NewLinkUrl,
 } from "./parts";
+import { useUnmount } from "react-use";
 
 function NewLink({ users }: { users: User[] }) {
 	const supabaseClient = useSupabaseClient<Database>();
@@ -43,6 +44,7 @@ function NewLink({ users }: { users: User[] }) {
 						: router.query.url) as string) || "",
 			});
 		}
+
 		if (
 			isFromShareUI &&
 			!("title" in globalLinkState.new) &&
@@ -55,6 +57,8 @@ function NewLink({ users }: { users: User[] }) {
 			});
 		}
 	}, [isFromShareUI, router.query, globalLinkState]);
+
+	useUnmount(() => globalLinkState.resetNewLink());
 
 	const isSubmitButtonDisabled =
 		!globalLinkState.new.title ||

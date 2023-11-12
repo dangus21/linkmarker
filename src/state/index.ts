@@ -125,6 +125,8 @@ const useLinkGlobalState = create<LinkState>()((set) => ({
 			new: {
 				by: "",
 				title: "",
+				url: "",
+				origin: "",
 				share_with: [],
 			},
 		})),
