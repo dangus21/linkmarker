@@ -1,24 +1,37 @@
 module.exports = {
 	env: {
 		browser: true,
-		es2021: true,
+		node: true,
+		es2021: true
 	},
-	extends: [
-		"next/core-web-vitals",
-		"plugin:import/errors",
-		"plugin:import/warnings",
-		"esconfigs/eslint",
+	extends: ["eslint:recommended"],
+	parser: "@typescript-eslint/parser",
+	plugins: [
+		"unused-imports",
+		"sort-imports-es6-autofix",
+		"import",
+		"@typescript-eslint"
 	],
-	parserOptions: {
-		project: "tsconfig.json",
+	rules: {
+		"@typescript-eslint/no-unused-vars": [2, { ignoreRestSiblings: true }],
+		"@typescript-eslint/naming-convention": [
+			"warn",
+			{
+				selector: "interface",
+				format: ["PascalCase"],
+				custom: {
+					regex: "^I[A-Z]",
+					match: false
+				}
+			}
+		]
 	},
-	plugins: ["react", "react-hooks", "babel"],
 	settings: {
 		react: {
-			version: "detect",
+			version: "detect"
 		},
 		"import/resolver": {
-			typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
-		},
-	},
+			typescript: {} // this loads <rootdir>/tsconfig.json to eslint
+		}
+	}
 };

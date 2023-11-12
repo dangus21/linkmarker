@@ -13,9 +13,8 @@ import {
 	NewLinkPublic,
 	NewLinkShareCombo,
 	NewLinkTitle,
-	NewLinkUrl,
+	NewLinkUrl
 } from "./parts";
-import { useUnmount } from "react-use";
 
 function NewLink({ users }: { users: User[] }) {
 	const supabaseClient = useSupabaseClient<Database>();
@@ -26,7 +25,7 @@ function NewLink({ users }: { users: User[] }) {
 
 	const router = useRouter();
 	const isFromShareUI = Object.keys(router.query).some((queryEl) =>
-		["text", "url", "title"].includes(queryEl),
+		["text", "url", "title"].includes(queryEl)
 	);
 
 	useEffect(() => {
@@ -41,7 +40,7 @@ function NewLink({ users }: { users: User[] }) {
 				origin:
 					((isTextQueryLink
 						? router.query.text
-						: router.query.url) as string) || "",
+						: router.query.url) as string) || ""
 			});
 		}
 
@@ -53,12 +52,10 @@ function NewLink({ users }: { users: User[] }) {
 			const isTextQueryLink = isLink(router.query.title as string);
 
 			globalLinkState.create({
-				title: !isTextQueryLink ? (router.query.title as string) : "",
+				title: !isTextQueryLink ? (router.query.title as string) : ""
 			});
 		}
 	}, [isFromShareUI, router.query, globalLinkState]);
-
-	useUnmount(() => globalLinkState.resetNewLink());
 
 	const isSubmitButtonDisabled =
 		!globalLinkState.new.title ||
@@ -93,7 +90,7 @@ function NewLink({ users }: { users: User[] }) {
 										supabaseClient,
 										userState: globalUserState,
 										link: globalLinkState.new,
-										router,
+										router
 									});
 									globalLinkState.resetNewLink();
 								}}
