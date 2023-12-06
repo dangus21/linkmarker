@@ -1,9 +1,9 @@
-import { MapPinIcon, UsersIcon } from "@heroicons/react/20/solid";
+import {MapPinIcon, UsersIcon} from "@heroicons/react/20/solid";
 
-import { Database } from "@/lib/types";
-import { TABS, useLinkGlobalState } from "@/state";
-import { updateLinkInfo, useGetLinks } from "@/hooks";
-import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import {Database} from "@/lib/types";
+import {TABS, useLinkGlobalState} from "@/state";
+import {updateLinkInfo, useGetLinks} from "@/hooks";
+import {useSupabaseClient, useUser} from "@supabase/auth-helpers-react";
 
 import {
 	LinkArchive,
@@ -12,16 +12,16 @@ import {
 	LinkOpenedStatus,
 	LinkReactions,
 	LinkSeenToggle,
-	LinkTitle,
+	LinkTitle
 } from "./parts";
-import { LoadingSpinner } from "../loading-spinner";
-import { NewLinkButton } from "../newLinkButton/NewLinkButton";
-import { REACTIONS, useViewport } from "@/utils";
-import { twMerge } from "tailwind-merge";
-import { useRef } from "react";
+import {LoadingSpinner} from "../loading-spinner";
+import {NewLinkButton} from "../newLinkButton/NewLinkButton";
+import {REACTIONS, useViewport} from "@/utils";
+import {twMerge} from "tailwind-merge";
+import {useRef} from "react";
 
 function Links() {
-	const { width } = useViewport();
+	const {width} = useViewport();
 
 	const supabaseClient = useSupabaseClient<Database>();
 	const user = useUser();
@@ -32,7 +32,7 @@ function Links() {
 		update: updateLink,
 		ownershipFilter,
 		textFilter,
-		loading,
+		loading
 	} = useLinkGlobalState();
 
 	const ownershipLinksList =
@@ -67,7 +67,7 @@ function Links() {
 						.includes(
 							textFilter
 								.normalize("NFD")
-								.replace(/\p{Diacritic}/gu, ""),
+								.replace(/\p{Diacritic}/gu, "")
 						);
 			  });
 
@@ -90,7 +90,7 @@ function Links() {
 						"divide-y-2 divide-black border-2 border-black sm:rounded-md",
 						"max-h-[calc(100vh-8rem)] overflow-auto",
 						"scrollbar scrollbar-track-gray-1000 scrollbar-thumb-[#1a2230]",
-						"scrollbar-thin scrollbar-thumb-rounded-md hover:scrollbar-thumb-[#171e2b]",
+						"scrollbar-thin scrollbar-thumb-rounded-md hover:scrollbar-thumb-[#171e2b]"
 					)}
 				>
 					{textFilterLinksList.length > 0 ? (
@@ -101,15 +101,15 @@ function Links() {
 								];
 							function openOrArchiveLinkFn(
 								status: boolean,
-								op: "opened" | "archived",
+								op: "opened" | "archived"
 							) {
 								return updateLinkInfo({
 									link: {
-										[op]: status,
+										[op]: status
 									},
 									id: virtualRow.id,
 									updateLink,
-									supabaseClient,
+									supabaseClient
 								});
 							}
 
@@ -187,7 +187,7 @@ function Links() {
 												toggleArchivedStatus={() =>
 													openOrArchiveLinkFn(
 														true,
-														"archived",
+														"archived"
 													)
 												}
 											/>
@@ -197,7 +197,7 @@ function Links() {
 											toggleSeenStatus={() =>
 												openOrArchiveLinkFn(
 													!virtualRow.opened,
-													"opened",
+													"opened"
 												)
 											}
 										/>
@@ -227,4 +227,4 @@ function Links() {
 	);
 }
 
-export { Links };
+export {Links};

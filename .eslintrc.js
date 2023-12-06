@@ -4,7 +4,10 @@ module.exports = {
 		node: true,
 		es2021: true
 	},
-	extends: ["eslint:recommended"],
+	extends: [
+		"plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
+		"plugin:@typescript-eslint/recommended" // Uses the recommended rules from @typescript-eslint/eslint-plugin
+	],
 	parser: "@typescript-eslint/parser",
 	plugins: [
 		"unused-imports",
@@ -13,6 +16,7 @@ module.exports = {
 		"@typescript-eslint"
 	],
 	rules: {
+		"react/react-in-jsx-scope": 0,
 		"@typescript-eslint/no-unused-vars": [2, { ignoreRestSiblings: true }],
 		"@typescript-eslint/naming-convention": [
 			"warn",
