@@ -55,9 +55,8 @@ function extractTopLevelDomain(url: URL) {
 
 	if (match) {
 		return match[1].split(".")[0]; // Extract the top-level domain
-	} else {
-		return null; // Return null if no top-level domain is found
 	}
+	return null; // Return null if no top-level domain is found
 }
 
 export {

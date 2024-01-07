@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 
 import { Database } from "@/lib/types";
+import { UserState, useUserGlobalState } from "@/state";
 import {
 	Session,
 	SupabaseClient,
 	User,
 	useSupabaseClient,
 } from "@supabase/auth-helpers-react";
-import { UserState, useUserGlobalState } from "@/state";
 
 async function updateProfileInfo({
 	userState,
@@ -59,6 +59,7 @@ async function useGetProfileInfo({
 
 	const globalUserState = useUserGlobalState();
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		if (user) {
 			globalUserState.setEmail(user.email || "");
@@ -68,9 +69,9 @@ async function useGetProfileInfo({
 			globalUserState.setEmail("");
 			globalUserState.setId("");
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [user]);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		async function getUserAndProfile() {
 			if (user?.id) {
@@ -88,7 +89,7 @@ async function useGetProfileInfo({
 							.from("avatars")
 							.download(`${user?.id}/avatar.jpg`);
 
-					if (data && data.username) {
+					if (data?.username) {
 						globalUserState.setUserName(data.username);
 						globalUserState.setis_public(data.isAccountPublic);
 					}
@@ -117,7 +118,6 @@ async function useGetProfileInfo({
 		if (!!user && !!session && !globalUserState.userName) {
 			getUserAndProfile();
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [user]);
 }
 

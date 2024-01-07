@@ -1,6 +1,6 @@
+import { useLinkGlobalState } from "@/state";
 import { Switch } from "@headlessui/react";
 import { twMerge } from "tailwind-merge";
-import { useLinkGlobalState } from "@/state";
 
 function NewLinkDeletable() {
 	const globalLinkState = useLinkGlobalState();

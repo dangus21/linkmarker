@@ -1,7 +1,7 @@
-import { Database } from "@/lib/types";
-import { SupabaseClient } from "@supabase/supabase-js";
 import { deleteLink } from "@/hooks";
+import { Database } from "@/lib/types";
 import { useLinkGlobalState } from "@/state";
+import { SupabaseClient } from "@supabase/supabase-js";
 
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { twMerge } from "tailwind-merge";
@@ -22,7 +22,7 @@ function LinkDelete({
 
 	return (
 		<div
-			onClick={() =>
+			onMouseDown={() =>
 				canDeleteLink
 					? deleteLink({
 							id: link,

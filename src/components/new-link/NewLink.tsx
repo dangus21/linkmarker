@@ -1,8 +1,8 @@
+import { createLink } from "@/hooks";
 import { Database } from "@/lib/types";
 import { User, useLinkGlobalState, useUserGlobalState } from "@/state";
-import { createLink } from "@/hooks";
-import { useEffect } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useEffect } from "react";
 
 import { isLink } from "@/utils";
 import { useRouter } from "next/router";
@@ -13,7 +13,7 @@ import {
 	NewLinkPublic,
 	NewLinkShareCombo,
 	NewLinkTitle,
-	NewLinkUrl
+	NewLinkUrl,
 } from "./parts";
 
 function NewLink({ users }: { users: User[] }) {
@@ -25,7 +25,7 @@ function NewLink({ users }: { users: User[] }) {
 
 	const router = useRouter();
 	const isFromShareUI = Object.keys(router.query).some((queryEl) =>
-		["text", "url", "title"].includes(queryEl)
+		["text", "url", "title"].includes(queryEl),
 	);
 
 	useEffect(() => {
@@ -40,7 +40,7 @@ function NewLink({ users }: { users: User[] }) {
 				origin:
 					((isTextQueryLink
 						? router.query.text
-						: router.query.url) as string) || ""
+						: router.query.url) as string) || "",
 			});
 		}
 
@@ -52,7 +52,7 @@ function NewLink({ users }: { users: User[] }) {
 			const isTextQueryLink = isLink(router.query.title as string);
 
 			globalLinkState.create({
-				title: !isTextQueryLink ? (router.query.title as string) : ""
+				title: !isTextQueryLink ? (router.query.title as string) : "",
 			});
 		}
 	}, [isFromShareUI, router.query, globalLinkState]);
@@ -85,12 +85,12 @@ function NewLink({ users }: { users: User[] }) {
 
 						<div className="mt-12">
 							<Button
-								onClick={() => {
+								onMouseDown={() => {
 									createLink({
 										supabaseClient,
 										userState: globalUserState,
 										link: globalLinkState.new,
-										router
+										router,
 									});
 									globalLinkState.resetNewLink();
 								}}

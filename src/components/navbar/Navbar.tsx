@@ -2,10 +2,10 @@
 
 import { Disclosure } from "@headlessui/react";
 
-import { Filter } from "../filter";
-import { NavbarLogo, NavbarProfile } from "./parts";
-import { NewLinkButton } from "../newLinkButton/NewLinkButton";
 import { useViewport } from "@/utils";
+import { Filter } from "../filter";
+import { NewLinkButton } from "../newLinkButton/NewLinkButton";
+import { NavbarLogo, NavbarProfile } from "./parts";
 
 function Navbar() {
 	const { width } = useViewport();

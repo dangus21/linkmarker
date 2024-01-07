@@ -1,14 +1,15 @@
 import { Switch } from "@headlessui/react";
 
-import { twMerge } from "tailwind-merge";
-import { useEffect } from "react";
 import { useLinkGlobalState } from "@/state";
+import { useEffect } from "react";
+import { twMerge } from "tailwind-merge";
 
 function NewLinkArchivable() {
 	const globalLinkState = useLinkGlobalState();
 
 	const isLinkArchivable = globalLinkState.new.is_archivable;
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: onMount
 	useEffect(() => {
 		globalLinkState.create({
 			is_archivable: true,

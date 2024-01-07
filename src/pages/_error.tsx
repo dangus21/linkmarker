@@ -1,3 +1,4 @@
+// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 function Error({ statusCode }: { statusCode: number }) {
 	return (
 		<p>

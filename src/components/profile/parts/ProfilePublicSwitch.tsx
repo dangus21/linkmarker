@@ -1,6 +1,6 @@
+import { useUserGlobalState } from "@/state";
 import { Switch } from "@headlessui/react";
 import { twMerge } from "tailwind-merge";
-import { useUserGlobalState } from "@/state";
 
 // million-ignore
 function ProfilePublicSwitch() {
@@ -11,7 +11,7 @@ function ProfilePublicSwitch() {
 			<label
 				htmlFor="name"
 				className="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-300"
-			></label>
+			/>
 			<Switch.Group
 				as="div"
 				className="flex items-center justify-between"
