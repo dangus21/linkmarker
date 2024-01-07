@@ -1,10 +1,10 @@
-import { Button } from "../button";
-import { Database } from "@/lib/types";
-import { ProfileImage, ProfilePublicSwitch, ProfileUsername } from "./parts";
 import { updateProfileInfo } from "@/hooks";
-import { useRouter } from "next/router";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { Database } from "@/lib/types";
 import { useUserGlobalState } from "@/state";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useRouter } from "next/router";
+import { Button } from "../button";
+import { ProfileImage, ProfilePublicSwitch, ProfileUsername } from "./parts";
 
 import { CSSProperties } from "react";
 import { toast } from "react-hot-toast";
@@ -52,7 +52,7 @@ function Profile() {
 						<ProfileUsername />
 						<ProfilePublicSwitch />
 						<Button
-							onClick={() => {
+							onMouseDown={() => {
 								updateProfileInfo({
 									userState: globalUserState,
 									supabaseClient,
@@ -65,7 +65,7 @@ function Profile() {
 						</Button>
 						<Button
 							className="border-red-800 bg-red-900 hover:bg-red-700"
-							onClick={deleteAccount}
+							onMouseDown={deleteAccount}
 						>
 							Delete Account
 						</Button>

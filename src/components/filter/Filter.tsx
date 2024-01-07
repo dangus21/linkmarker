@@ -1,6 +1,6 @@
-import { Input } from "../input";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { useLinkGlobalState } from "@/state";
+import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
+import { Input } from "../input";
 
 function Filter() {
 	const { setTextFilter } = useLinkGlobalState();

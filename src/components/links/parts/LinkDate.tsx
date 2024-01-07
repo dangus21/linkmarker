@@ -1,5 +1,5 @@
-import { CalendarIcon } from "@heroicons/react/20/solid";
 import { dateFormatter } from "@/utils";
+import { CalendarIcon } from "@heroicons/react/20/solid";
 
 function LinkDate({ postedDate }: { postedDate: string }) {
 	return (

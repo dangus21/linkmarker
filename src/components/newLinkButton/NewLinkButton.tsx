@@ -1,14 +1,14 @@
-import { Button } from "../button";
 import { PlusIcon } from "@heroicons/react/20/solid";
-import { twMerge } from "tailwind-merge";
 import { useRouter } from "next/router";
+import { twMerge } from "tailwind-merge";
+import { Button } from "../button";
 
 function NewLinkButton({ isMobile }: { isMobile?: boolean }) {
 	const { push } = useRouter();
 
 	return (
 		<Button
-			onClick={() => push("/new")}
+			onMouseDown={() => push("/new")}
 			isMobile={isMobile}
 			type="button"
 			className={twMerge(

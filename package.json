@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint --fix",
-		"pretty": "prettier --write .",
+		"format": "cls && pnpm dlx @biomejs/biome format src --write && pnpm dlx @biomejs/biome lint src --apply",
 		"types": "supabase gen types typescript --project-id \"tqurqlgcaemtcetwrqoz\" --schema public > src/lib/types.ts",
 		"tauri": "tauri"
 	},

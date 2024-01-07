@@ -1,19 +1,19 @@
 import { ReactNode } from "react";
 
-import { Auth } from "@supabase/auth-ui-react";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
 import {
 	useSession,
 	useSupabaseClient,
 	useUser,
 } from "@supabase/auth-helpers-react";
+import { Auth } from "@supabase/auth-ui-react";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
 
-import { Database } from "@/lib/types";
-import { LoadingSpinner } from "../loading-spinner";
-import { twMerge } from "tailwind-merge";
 import { useGetProfileInfo } from "@/hooks";
+import { Database } from "@/lib/types";
 import { useUserGlobalState } from "@/state";
 import Head from "next/head";
+import { twMerge } from "tailwind-merge";
+import { LoadingSpinner } from "../loading-spinner";
 
 function SupaAuth({ children }: { children: ReactNode }) {
 	const supabaseClient = useSupabaseClient<Database>();

@@ -1,12 +1,12 @@
-import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 
-import { Database } from "@/lib/types";
-import { FaceSmileIcon } from "@heroicons/react/20/solid";
-import { REACTIONS, classNames } from "@/utils";
-import { SupabaseClient } from "@supabase/auth-helpers-react";
-import { TLink, useLinkGlobalState } from "@/state";
 import { updateLinkInfo } from "@/hooks";
+import { Database } from "@/lib/types";
+import { TLink, useLinkGlobalState } from "@/state";
+import { REACTIONS, classNames } from "@/utils";
+import { FaceSmileIcon } from "@heroicons/react/20/solid";
+import { SupabaseClient } from "@supabase/auth-helpers-react";
 
 function LinkReactions({
 	link,
@@ -47,7 +47,7 @@ function LinkReactions({
 						<div className="flex w-auto flex-auto flex-row rounded bg-gray-700 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
 							{Object.entries(REACTIONS).map(([key, icon]) => (
 								<div
-									onClick={() => {
+									onMouseDown={() => {
 										updateLinkInfo({
 											link: {
 												reaction: key,

@@ -1,9 +1,9 @@
-import { Database } from "@/lib/types";
 import { Navbar, NewLink } from "@/components";
 import { SupaAuth } from "@/components/supa_auth";
+import { Database } from "@/lib/types";
 import { User } from "@/state";
-import { useEffect, useState } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useEffect, useState } from "react";
 
 function NewPage() {
 	const [users, setUsers] = useState<User[]>([]);

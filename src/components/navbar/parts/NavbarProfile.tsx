@@ -1,13 +1,13 @@
 import { Fragment } from "react";
 
 import { Database } from "@/lib/types";
-import { useRouter } from "next/router";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUserGlobalState } from "@/state";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useRouter } from "next/router";
 
 import { Popover, Transition } from "@headlessui/react";
-import { twMerge } from "tailwind-merge";
 import Image from "next/image";
+import { twMerge } from "tailwind-merge";
 
 function NavbarProfile() {
 	const supabaseClient = useSupabaseClient<Database>();
@@ -68,13 +68,13 @@ function NavbarProfile() {
 						{userNavigation.map((item) => (
 							<div
 								key={item.name}
-								onClick={item.action}
+								onMouseDown={item.action}
 								className="relative cursor-pointer py-2 text-center hover:bg-gray-800/90"
 							>
-								<a className="font-semibold text-gray-100">
+								<div className="font-semibold text-gray-100">
 									{item.name}
 									<span className="absolute inset-0" />
-								</a>
+								</div>
 							</div>
 						))}
 					</div>

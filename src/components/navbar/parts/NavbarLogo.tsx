@@ -4,7 +4,7 @@ function NavbarLogo() {
 	const { push } = useRouter();
 
 	return (
-		<div className="mr-4 flex" onClick={() => push("/")}>
+		<div className="mr-4 flex" onMouseDown={() => push("/")}>
 			<div className="flex items-center">
 				<p className="hidden cursor-pointer text-lg font-bold italic text-white sm:block">
 					LinkMarker

@@ -4156,7 +4156,6 @@ export default function PrivacyPolicy() {
 																																					</span>
 																																				</span>
 																																			</span>
-
 																																			.
 																																		</span>
 																																	</span>
@@ -4675,7 +4674,6 @@ export default function PrivacyPolicy() {
 																																				and
 																																				Canada
 																																				<span className="block-component" />
-
 																																				,
 																																				you
 																																				have
@@ -5223,7 +5221,6 @@ export default function PrivacyPolicy() {
 																																					</span>
 																																				</span>
 																																			</span>
-
 																																			.
 																																		</span>
 																																	</span>
@@ -5374,7 +5371,6 @@ export default function PrivacyPolicy() {
 																																			<span className="statement-end-if-in-editor" />{" "}
 																																			below
 																																			<span className="block-component" />
-
 																																			.
 																																		</span>
 																																	</span>
@@ -5744,7 +5740,6 @@ export default function PrivacyPolicy() {
 																																		<span className="question">
 																																			angusmiguel21@gmail.com
 																																		</span>
-
 																																		.
 																																	</span>
 																																</span>
@@ -5862,7 +5857,6 @@ export default function PrivacyPolicy() {
 																																			<span className="block-component" />
 																																			&quot;DNT&quot;
 																																			<span className="statement-end-if-in-editor" />
-
 																																			)
 																																			feature
 																																			or
@@ -5907,7 +5901,6 @@ export default function PrivacyPolicy() {
 																																			<span className="block-component" />
 																																			finalized
 																																			<span className="statement-end-if-in-editor" />
-
 																																			.
 																																			As
 																																			such,

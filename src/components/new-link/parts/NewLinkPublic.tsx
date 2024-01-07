@@ -1,7 +1,7 @@
 import { Switch } from "@headlessui/react";
 
-import { twMerge } from "tailwind-merge";
 import { useLinkGlobalState } from "@/state";
+import { twMerge } from "tailwind-merge";
 
 function NewLinkPublic() {
 	const globalLinkState = useLinkGlobalState();

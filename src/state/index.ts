@@ -1,6 +1,6 @@
 import { Database } from "@/lib/types";
-import { create } from "zustand";
 import { mountStoreDevtool } from "simple-zustand-devtools";
+import { create } from "zustand";
 
 const NAVBAR_OPTIONS = {
 	LINKS: "links",
@@ -37,11 +37,11 @@ export type UserState = {
 };
 
 export enum TABS {
-	ALL,
-	MINE,
-	SHARED,
-	PRIVATE,
-	ARCHIVED,
+	ALL = 0,
+	MINE = 1,
+	SHARED = 2,
+	PRIVATE = 3,
+	ARCHIVED = 4,
 }
 
 export type User = {

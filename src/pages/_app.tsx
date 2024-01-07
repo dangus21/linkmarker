@@ -1,17 +1,17 @@
-import { Toaster } from "react-hot-toast";
 import { useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 
 import NextNProgress from "nextjs-progressbar";
 
-import "../styles/globals.css";
 import type { AppProps } from "next/app";
+import "../styles/globals.css";
 
 import { Database } from "@/lib/types";
-import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
+import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
 
 //million-ignore
 export default function App({

@@ -1,7 +1,7 @@
-import { ChangeEvent } from "react";
-import { ONE_MB_SIZE } from "@/utils";
 import { useUserGlobalState } from "@/state";
+import { ONE_MB_SIZE } from "@/utils";
 import Image from "next/image";
+import { ChangeEvent } from "react";
 
 function ProfileImage() {
 	const globalUserState = useUserGlobalState();
@@ -46,6 +46,7 @@ function ProfileImage() {
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 20 20"
 						>
+							<title>Profile pic</title>
 							<path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
 						</svg>
 						<span className="mt-2 text-base leading-normal text-gray-300">

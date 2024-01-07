@@ -20,7 +20,7 @@ function Tabs() {
 			<nav className="flex justify-center space-x-4" aria-label="Tabs">
 				{tabs.map((tab, index: TABS) => (
 					<div
-						onClick={() => {
+						onMouseDown={() => {
 							if (ownershipFilter !== index) {
 								setOwnershipFilter(index);
 								setCurrentTab(index);
