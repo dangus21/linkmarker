@@ -58,11 +58,11 @@ function NavbarProfile() {
 				leaveFrom="opacity-100 translate-y-0"
 				leaveTo="opacity-0 translate-y-1"
 			>
-				<Popover.Panel className="absolute right-0 z-10 flex max-w-[15rem] px-4 sm:-right-8">
+				<Popover.Panel className="absolute right-0 z-10 flex max-w-[15rem] px-4 sm:-right-8 ">
 					<div
 						className={twMerge(
-							"outline-back w-screen max-w-sm flex-auto rounded bg-gray-900 outline outline-1",
-							"py-2 text-sm leading-6 shadow-xl ring-1 ring-gray-900/5",
+							"w-screen max-w-sm flex-auto rounded bg-gray-900 shadow-[0px_10px_18px_21px_#00000024,0px_3px_8px_0px_#00000024,0px_3px_8px_0px_#00000024,0px_3px_8px_0px_#00000024,0px_3px_8px_0px_#00000024,0px_3px_8px_0px_#00000024,0px_3px_8px_0px_#00000024,0px_3px_8px_0px_#00000024,0px_3px_8px_0px_#00000024]",
+							"py-2 text-sm outline-back outline outline-1 divide-y divide-black",
 						)}
 					>
 						{userNavigation.map((item) => (

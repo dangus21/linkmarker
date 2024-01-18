@@ -11,7 +11,7 @@ function Navbar() {
 	const { width } = useViewport();
 	return (
 		<Disclosure as="nav" className="sticky top-0 z-20 bg-gray-800">
-			<div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-8">
+			<div className="max-w-7xl px-4 sm:px-8 lg:px-8">
 				<div className="flex h-16 justify-between">
 					<div className="flex flex-row">
 						<NavbarLogo />
