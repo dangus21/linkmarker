@@ -6,9 +6,9 @@ function Filter() {
 	const { setTextFilter } = useLinkGlobalState();
 
 	return (
-		<div className="flex h-16 w-full -mr-2 place-content-center items-center">
+		<div className="flex w-full -mr-2 place-content-center items-center">
 			<nav
-				className="relative mx-auto flex flex-col justify-center sm:w-96"
+				className="relative mx-auto flex flex-col justify-center sm:w-96 md:w-2/3"
 				aria-label="Text filter"
 			>
 				<div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">

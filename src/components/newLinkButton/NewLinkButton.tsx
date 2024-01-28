@@ -12,7 +12,7 @@ function NewLinkButton({ isMobile }: { isMobile?: boolean }) {
 			isMobile={isMobile}
 			type="button"
 			className={twMerge(
-				"relative mx-5 inline-flex items-center gap-x-1.5",
+				"relative mx-5 inline-flex items-center gap-x-1.5 whitespace-nowrap",
 				isMobile
 					? "fixed -right-1 bottom-2 z-[99] h-16 w-16 rounded-full border-2 bg-gray-600"
 					: "w-auto",

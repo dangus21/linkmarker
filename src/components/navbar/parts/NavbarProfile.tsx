@@ -25,7 +25,7 @@ function NavbarProfile() {
 		},
 	];
 	return (
-		<Popover className="relative pt-2">
+		<Popover className="relative pt-2 ml-4">
 			<Popover.Button className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
 				<div
 					className={twMerge(
