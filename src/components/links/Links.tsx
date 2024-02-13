@@ -133,9 +133,9 @@ function Links() {
 										onMouseDown={() =>
 											openOrArchiveLinkFn(true, "opened")
 										}
-										onAuxClick={() =>
-											openOrArchiveLinkFn(true, "opened")
-										}
+										// onAuxClick={() =>
+										// 	openOrArchiveLinkFn(true, "opened")
+										// }
 										className="w-full cursor-pointer px-6 py-2 hover:bg-gray-800"
 										rel="noreferrer"
 									>
