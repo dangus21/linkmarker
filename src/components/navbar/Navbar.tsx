@@ -2,9 +2,8 @@
 
 import { Disclosure } from "@headlessui/react";
 
+import { Filter, NewLinkButton } from "@/components";
 import { useViewport } from "@/utils";
-import { Filter } from "../filter";
-import { NewLinkButton } from "../newLinkButton/NewLinkButton";
 import { NavbarLogo, NavbarProfile } from "./parts";
 
 function Navbar() {

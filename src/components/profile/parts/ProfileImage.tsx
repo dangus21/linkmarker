@@ -1,7 +1,7 @@
 import { useUserGlobalState } from "@/state";
 import { ONE_MB_SIZE } from "@/utils";
 import Image from "next/image";
-import { ChangeEvent } from "react";
+import type { ChangeEvent } from "react";
 
 function ProfileImage() {
 	const globalUserState = useUserGlobalState();

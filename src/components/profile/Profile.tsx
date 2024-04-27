@@ -1,12 +1,12 @@
+import { Button } from "@/components";
 import { updateProfileInfo } from "@/hooks";
-import { Database } from "@/lib/types";
+import type { Database } from "@/lib/types";
 import { useUserGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
-import { Button } from "../button";
 import { ProfileImage, ProfilePublicSwitch, ProfileUsername } from "./parts";
 
-import { CSSProperties } from "react";
+import type { CSSProperties } from "react";
 import { toast } from "react-hot-toast";
 
 const toast_config = {

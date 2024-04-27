@@ -2,11 +2,11 @@ import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
 import { updateLinkInfo } from "@/hooks";
-import { Database } from "@/lib/types";
-import { TLink, useLinkGlobalState } from "@/state";
+import type { Database } from "@/lib/types";
+import { type TLink, useLinkGlobalState } from "@/state";
 import { REACTIONS, classNames } from "@/utils";
 import { FaceSmileIcon } from "@heroicons/react/20/solid";
-import { SupabaseClient } from "@supabase/auth-helpers-react";
+import type { SupabaseClient } from "@supabase/auth-helpers-react";
 
 function LinkReactions({
 	link,

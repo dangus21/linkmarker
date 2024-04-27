@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-import { Database } from "@/lib/types";
+import type { Database } from "@/lib/types";
 import { useUserGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";

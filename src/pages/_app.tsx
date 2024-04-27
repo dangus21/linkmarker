@@ -9,9 +9,9 @@ import NextNProgress from "nextjs-progressbar";
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
 
-import { Database } from "@/lib/types";
+import type { Database } from "@/lib/types";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
-import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
+import { type Session, SessionContextProvider } from "@supabase/auth-helpers-react";
 
 //million-ignore
 export default function App({

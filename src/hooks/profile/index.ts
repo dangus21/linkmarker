@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 
-import { Database } from "@/lib/types";
-import { UserState, useUserGlobalState } from "@/state";
+import type { Database } from "@/lib/types";
+import { type UserState, useUserGlobalState } from "@/state";
 import {
-	Session,
-	SupabaseClient,
-	User,
+	type Session,
+	type SupabaseClient,
+	type User,
 	useSupabaseClient,
 } from "@supabase/auth-helpers-react";
 

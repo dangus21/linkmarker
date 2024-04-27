@@ -2,3 +2,8 @@ export { Links } from "./links";
 export { Navbar } from "./navbar";
 export { Profile } from "./profile";
 export { NewLink } from "./new-link";
+export { LoadingSpinner } from "./loading-spinner";
+export { Button } from "./button";
+export { Filter } from "./filter";
+export { Input } from "./input";
+export { NewLinkButton } from "./newLinkButton";

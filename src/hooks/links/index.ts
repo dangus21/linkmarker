@@ -1,23 +1,23 @@
-import { CSSProperties, useEffect } from "react";
+import { type CSSProperties, useEffect } from "react";
 
 import { toast } from "react-hot-toast";
 
-import { Database } from "@/lib/types";
+import type { Database } from "@/lib/types";
 import {
-	LinkState,
-	TLinkUpdate,
-	User as StateUser,
-	UserState,
+	type LinkState,
+	type TLinkUpdate,
+	type User as StateUser,
+	type UserState,
 	useLinkGlobalState,
 } from "@/state";
 import { extractTopLevelDomain } from "@/utils";
 import {
-	SupabaseClient,
-	User,
+	type SupabaseClient,
+	type User,
 	useSupabaseClient,
 	useUser,
 } from "@supabase/auth-helpers-react";
-import { NextRouter } from "next/router";
+import type { NextRouter } from "next/router";
 
 const toast_config = {
 	style: {

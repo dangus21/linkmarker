@@ -1,4 +1,4 @@
-import { Database } from "@/lib/types";
+import type { Database } from "@/lib/types";
 import { mountStoreDevtool } from "simple-zustand-devtools";
 import { create } from "zustand";
 

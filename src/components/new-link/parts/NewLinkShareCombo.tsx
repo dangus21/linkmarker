@@ -1,4 +1,4 @@
-import { User, useLinkGlobalState, useUserGlobalState } from "@/state";
+import { type User, useLinkGlobalState, useUserGlobalState } from "@/state";
 import { Combobox } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { twMerge } from "tailwind-merge";

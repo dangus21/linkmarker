@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import {
 	useSession,
@@ -8,12 +8,12 @@ import {
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 
+import { LoadingSpinner } from "@/components";
 import { useGetProfileInfo } from "@/hooks";
-import { Database } from "@/lib/types";
+import type { Database } from "@/lib/types";
 import { useUserGlobalState } from "@/state";
 import Head from "next/head";
 import { twMerge } from "tailwind-merge";
-import { LoadingSpinner } from "../loading-spinner";
 
 function SupaAuth({ children }: { children: ReactNode }) {
 	const supabaseClient = useSupabaseClient<Database>();
@@ -43,6 +43,9 @@ function SupaAuth({ children }: { children: ReactNode }) {
 							supabaseClient={supabaseClient}
 							appearance={{ theme: ThemeSupa }}
 							providers={["google", "facebook"]}
+							dark
+							magicLink
+							socialLayout="vertical"
 						/>
 					</div>
 				) : globalUserState.hasAvatar && !globalUserState.avatar.img ? (

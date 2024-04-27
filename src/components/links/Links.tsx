@@ -1,15 +1,13 @@
 import { MapPinIcon, UsersIcon } from "@heroicons/react/20/solid";
 
 import { updateLinkInfo, useGetLinks } from "@/hooks";
-import { Database } from "@/lib/types";
+import type { Database } from "@/lib/types";
 import { TABS, useLinkGlobalState } from "@/state";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
 import { REACTIONS, useViewport } from "@/utils";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
-import { LoadingSpinner } from "../loading-spinner";
-import { NewLinkButton } from "../newLinkButton/NewLinkButton";
 import {
 	LinkArchive,
 	LinkDate,
@@ -19,6 +17,8 @@ import {
 	LinkSeenToggle,
 	LinkTitle,
 } from "./parts";
+
+import { LoadingSpinner, NewLinkButton } from "@/components";
 
 function Links() {
 	const { width } = useViewport();
@@ -56,7 +56,7 @@ function Links() {
 						return link.archived;
 					}
 					return true;
-			  });
+				});
 
 	const textFilterLinksList =
 		textFilter.length === 0
@@ -71,7 +71,7 @@ function Links() {
 								.normalize("NFD")
 								.replace(/\p{Diacritic}/gu, ""),
 						);
-			  });
+				});
 
 	const parentRef = useRef<HTMLDivElement>(null);
 

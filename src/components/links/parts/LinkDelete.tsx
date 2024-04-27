@@ -1,7 +1,7 @@
 import { deleteLink } from "@/hooks";
-import { Database } from "@/lib/types";
+import type { Database } from "@/lib/types";
 import { useLinkGlobalState } from "@/state";
-import { SupabaseClient } from "@supabase/supabase-js";
+import type { SupabaseClient } from "@supabase/supabase-js";
 
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { twMerge } from "tailwind-merge";

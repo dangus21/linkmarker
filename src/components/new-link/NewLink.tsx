@@ -1,13 +1,13 @@
 import { createLink } from "@/hooks";
-import { Database } from "@/lib/types";
-import { User, useLinkGlobalState, useUserGlobalState } from "@/state";
+import type { Database } from "@/lib/types";
+import { type User, useLinkGlobalState, useUserGlobalState } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useEffect } from "react";
 
 import { isLink } from "@/utils";
 import { useRouter } from "next/router";
 
-import { Button } from "../button";
+import { Button } from "@/components";
 import {
 	NewLinkDeletable,
 	NewLinkPublic,

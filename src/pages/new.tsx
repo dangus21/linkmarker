@@ -1,7 +1,7 @@
 import { Navbar, NewLink } from "@/components";
 import { SupaAuth } from "@/components/supa_auth";
-import { Database } from "@/lib/types";
-import { User } from "@/state";
+import type { Database } from "@/lib/types";
+import type { User } from "@/state";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useEffect, useState } from "react";
 
