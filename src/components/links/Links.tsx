@@ -203,11 +203,11 @@ function Links() {
 												)
 											}
 										/>
-										<LinkReactions
+										{/* <LinkReactions
 											link={virtualRow}
 											reaction={localReaction}
 											supabaseClient={supabaseClient}
-										/>
+										/> */}
 										<LinkDelete
 											canDeleteLink={canDeleteLink}
 											link={virtualRow.id}
