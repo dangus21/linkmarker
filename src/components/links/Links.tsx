@@ -19,10 +19,11 @@ import {
 } from "./parts";
 
 import { LoadingSpinner, NewLinkButton } from "@/components";
+import { useToggle } from "@/utils/useToggle";
 
 function Links() {
 	const { width } = useViewport();
-
+	const toggle = useToggle();
 	const supabaseClient = useSupabaseClient<Database>();
 	const user = useUser();
 	useGetLinks();
@@ -133,9 +134,6 @@ function Links() {
 										onMouseDown={() =>
 											openOrArchiveLinkFn(true, "opened")
 										}
-										// onAuxClick={() =>
-										// 	openOrArchiveLinkFn(true, "opened")
-										// }
 										className="w-full cursor-pointer px-6 py-2 hover:bg-gray-800"
 										rel="noreferrer"
 									>
@@ -183,7 +181,8 @@ function Links() {
 										data-id="link_actions"
 										className="flex flex-col divide-y-2 divide-black sm:flex-row sm:divide-x-2 sm:divide-y-0"
 									>
-										{ownershipFilter !== TABS.ARCHIVED && (
+										{toggle(
+											"ARCHIVE",
 											<LinkArchive
 												isArchivable={userIsOwner}
 												toggleArchivedStatus={() =>
@@ -192,28 +191,38 @@ function Links() {
 														"archived",
 													)
 												}
-											/>
+											/>,
+											[ownershipFilter !== TABS.ARCHIVED],
 										)}
-										<LinkSeenToggle
-											opened={virtualRow.opened}
-											toggleSeenStatus={() =>
-												openOrArchiveLinkFn(
-													!virtualRow.opened,
-													"opened",
-												)
-											}
-										/>
-										{/* <LinkReactions
-											link={virtualRow}
-											reaction={localReaction}
-											supabaseClient={supabaseClient}
-										/> */}
-										<LinkDelete
-											canDeleteLink={canDeleteLink}
-											link={virtualRow.id}
-											user={user!.id}
-											supabaseClient={supabaseClient}
-										/>
+										{toggle(
+											"SEEN",
+											<LinkSeenToggle
+												opened={virtualRow.opened}
+												toggleSeenStatus={() =>
+													openOrArchiveLinkFn(
+														!virtualRow.opened,
+														"opened",
+													)
+												}
+											/>,
+										)}
+										{toggle(
+											"REACTIONS",
+											<LinkReactions
+												link={virtualRow}
+												reaction={localReaction}
+												supabaseClient={supabaseClient}
+											/>,
+										)}
+										{toggle(
+											"DELETE",
+											<LinkDelete
+												canDeleteLink={canDeleteLink}
+												link={virtualRow.id}
+												user={user!.id}
+												supabaseClient={supabaseClient}
+											/>,
+										)}
 									</div>
 								</li>
 							);
