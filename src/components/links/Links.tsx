@@ -12,6 +12,7 @@ import {
 	LinkArchive,
 	LinkDate,
 	LinkDelete,
+	LinkEdit,
 	LinkOpenedStatus,
 	LinkReactions,
 	LinkSeenToggle,
@@ -137,38 +138,32 @@ function Links() {
 										className="w-full cursor-pointer px-6 py-2 hover:bg-gray-800"
 										rel="noreferrer"
 									>
-										<div className="flex flex-col justify-between sm:flex-row sm:items-center">
-											<LinkTitle
-												isPublic={virtualRow.is_public}
-												shareWith={
-													virtualRow.share_with
-												}
-												title={virtualRow.title}
-											/>
+										<LinkTitle
+											isPublic={virtualRow.is_public}
+											shareWith={virtualRow.share_with}
+											title={virtualRow.title}
+										/>
+										<div className="flex flex-col justify-between sm:flex-row sm:items-center [&>div]:max-w-[25%] [&>div]:w-[25%] [&>div]:w-min-[25%] [&>div]:mt-1 mb-2">
 											<LinkOpenedStatus
 												opened={virtualRow.opened}
 											/>
-										</div>
-										<div className="mt-2 flex flex-col justify-between sm:flex-row">
-											<div className="flex flex-col sm:flex-row">
-												<div className="mb-1.5 flex sm:mt-0">
-													<UsersIcon
-														className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-														aria-hidden="true"
-													/>
-													<p className="mr-8 flex min-w-[3rem] items-center text-sm text-gray-500 md:mr-8">
-														{virtualRow.who}
-													</p>
-												</div>
-												<div className="mb-1.5 flex sm:mt-0">
-													<MapPinIcon
-														className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
-														aria-hidden="true"
-													/>
-													<p className="mr-8 flex min-w-[3rem] items-center text-sm text-gray-500 md:mr-8">
-														{virtualRow.origin}
-													</p>
-												</div>
+											<div className="-mb-1 flex items-center">
+												<UsersIcon
+													className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+													aria-hidden="true"
+												/>
+												<p className="mr-8 text-sm text-gray-500 md:mr-8">
+													{virtualRow.who}
+												</p>
+											</div>
+											<div className="-mb-1 flex items-center">
+												<MapPinIcon
+													className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+													aria-hidden="true"
+												/>
+												<p className="mr-8 text-sm text-gray-500 truncate text-ellipsis overflow-hidden">
+													{virtualRow.origin}
+												</p>
 											</div>
 											<LinkDate
 												postedDate={
@@ -221,6 +216,12 @@ function Links() {
 												link={virtualRow.id}
 												user={user!.id}
 												supabaseClient={supabaseClient}
+											/>,
+										)}
+										{toggle(
+											"EDIT",
+											<LinkEdit
+												toggleEditMode={console.log}
 											/>,
 										)}
 									</div>

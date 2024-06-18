@@ -1,4 +1,8 @@
-import { LockClosedIcon, LockOpenIcon } from "@heroicons/react/20/solid";
+import {
+	LockClosedIcon,
+	LockOpenIcon,
+	ShareIcon,
+} from "@heroicons/react/20/solid";
 
 function LinkTitle({
 	title,
@@ -9,18 +13,20 @@ function LinkTitle({
 	isPublic: boolean;
 	shareWith: string[];
 }) {
-	const LockedIcon = isPublic ? LockOpenIcon : LockClosedIcon;
+	const LockedIcon = isPublic
+		? LockOpenIcon
+		: shareWith.length
+			? ShareIcon
+			: LockClosedIcon;
 
 	return (
-		<div className="max-w-auto sm:max-w-full">
-			<p className="mb-2 font-medium text-gray-300">{title}</p>
-			<p className="inline-flex text-sm text-gray-500">
+		<div className="max-w-full sm:max-w-full">
+			<p className="mb-2 mt-4 sm:mt-2 font-medium text-gray-300 flex">
 				<LockedIcon
-					className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
+					className="mt-1 mr-2 h-4 w-4 flex-shrink-0 text-gray-600"
 					aria-hidden="true"
 				/>
-				{isPublic ? "Public" : "Private"}
-				{shareWith.length > 0 && "/Shared"}
+				{title}
 			</p>
 		</div>
 	);

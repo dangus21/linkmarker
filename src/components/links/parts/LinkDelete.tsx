@@ -29,11 +29,11 @@ function LinkDelete({
 							supabaseClient,
 							setLinks,
 							currentUser: user,
-					  })
+						})
 					: () => null
 			}
 			className={twMerge(
-				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20",
+				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow",
 				canDeleteLink && "cursor-pointer hover:bg-red-900/20",
 			)}
 		>

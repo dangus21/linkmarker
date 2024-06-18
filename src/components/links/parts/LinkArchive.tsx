@@ -12,7 +12,7 @@ function LinkArchive({
 		<div
 			onMouseDown={isArchivable ? toggleArchivedStatus : () => null}
 			className={twMerge(
-				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20",
+				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow",
 				isArchivable && "cursor-pointer hover:bg-gray-800",
 			)}
 		>
