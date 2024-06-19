@@ -81,23 +81,27 @@ function Links() {
 		return <LoadingSpinner />;
 	}
 
+	const hasLength = textFilterLinksList.length;
+
 	return (
 		<div
 			ref={parentRef}
 			className="mx-auto flex w-full max-w-[81rem] justify-center"
 		>
-			<div className="mb-2 w-full sm:mx-10 sm:max-w-7xl sm:shadow">
+			<div className="sm:pb-2 w-full sm:mx-10 sm:max-w-7xl">
 				{width <= 630 && <NewLinkButton isMobile />}
 				<ul
 					role="list"
 					className={twMerge(
-						"divide-y-2 divide-black border-2 border-black sm:rounded-md",
-						"max-h-[calc(100vh-8rem)] overflow-auto",
+						hasLength
+							? "divide-y-2 divide-black/30 border-2 border-black/30 sm:rounded-md"
+							: "",
+						"max-h-[100vh] sm:max-h-[calc(100vh-8rem)] overflow-auto",
 						"scrollbar scrollbar-track-gray-1000 scrollbar-thumb-[#1a2230]",
 						"scrollbar-thin scrollbar-thumb-rounded-md hover:scrollbar-thumb-[#171e2b]",
 					)}
 				>
-					{textFilterLinksList.length > 0 ? (
+					{hasLength ? (
 						textFilterLinksList.map((virtualRow) => {
 							const localReaction =
 								REACTIONS[
@@ -127,7 +131,7 @@ function Links() {
 							return (
 								<li
 									key={virtualRow.id}
-									className="flex justify-between divide-x-2 divide-black"
+									className="flex justify-between divide-x-2 divide-black/30"
 								>
 									<a
 										target="_blank"
@@ -143,11 +147,11 @@ function Links() {
 											shareWith={virtualRow.share_with}
 											title={virtualRow.title}
 										/>
-										<div className="flex flex-col justify-between sm:flex-row sm:items-center [&>div]:max-w-[25%] [&>div]:w-[25%] [&>div]:w-min-[25%] [&>div]:mt-1 mb-2">
+										<div className="flex flex-col justify-between sm:flex-row sm:items-center [&>div]:max-w-[20%] [&>div]:mt-3 mb-2">
 											<LinkOpenedStatus
 												opened={virtualRow.opened}
 											/>
-											<div className="-mb-1 flex items-center">
+											<div className="-mb-1 flex items-center max-w-[40%]">
 												<UsersIcon
 													className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
 													aria-hidden="true"
@@ -156,12 +160,12 @@ function Links() {
 													{virtualRow.who}
 												</p>
 											</div>
-											<div className="-mb-1 flex items-center">
+											<div className="-mb-1 flex items-center max-w-[40%]">
 												<MapPinIcon
 													className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
 													aria-hidden="true"
 												/>
-												<p className="mr-8 text-sm text-gray-500 truncate text-ellipsis overflow-hidden">
+												<p className="mr-8 text-sm text-gray-500 text-nowrap">
 													{virtualRow.origin}
 												</p>
 											</div>
@@ -174,7 +178,7 @@ function Links() {
 									</a>
 									<div
 										data-id="link_actions"
-										className="flex flex-col divide-y-2 divide-black sm:flex-row sm:divide-x-2 sm:divide-y-0"
+										className="flex flex-col divide-y-2 divide-black/30 sm:flex-row sm:divide-x-2 sm:divide-y-0"
 									>
 										{toggle(
 											"ARCHIVE",
