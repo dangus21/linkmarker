@@ -152,9 +152,38 @@ const useLinkGlobalState = create<LinkState>()((set) => ({
 		}),
 }));
 
+type EditLinkState = {
+	linksBeingEdited: Partial<TLink>[];
+	setLinkForEdit: (linkId: string) => void;
+	setLinkEditData: (linkData: TLink) => void;
+};
+const useLinkMultiEditState = create<EditLinkState>((set) => ({
+	linksBeingEdited: [],
+	setLinkForEdit: (linkId) =>
+		set((state) => {
+			// Check if the link is already in the linksBeingEdited array
+			if (!state.linksBeingEdited.some((link) => link?.id === linkId)) {
+				return {
+					linksBeingEdited: [
+						...state.linksBeingEdited,
+						{ id: linkId },
+					],
+				};
+			}
+			return state; // No changes if link is already being edited
+		}),
+	setLinkEditData: () => null,
+}));
+
 if (process.env.NODE_ENV === "development") {
 	mountStoreDevtool("users", useUserGlobalState);
 	mountStoreDevtool("links", useLinkGlobalState);
+	mountStoreDevtool("edit", useLinkMultiEditState);
 }
 
-export { useUserGlobalState, useLinkGlobalState, NAVBAR_OPTIONS };
+export {
+	useUserGlobalState,
+	useLinkGlobalState,
+	NAVBAR_OPTIONS,
+	useLinkMultiEditState,
+};

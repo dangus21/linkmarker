@@ -2,7 +2,7 @@ import { MapPinIcon, UsersIcon } from "@heroicons/react/20/solid";
 
 import { updateLinkInfo, useGetLinks } from "@/hooks";
 import type { Database } from "@/lib/types";
-import { TABS, useLinkGlobalState } from "@/state";
+import { TABS, useLinkGlobalState, useLinkMultiEditState } from "@/state";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
 import { REACTIONS, useViewport } from "@/utils";
@@ -36,6 +36,9 @@ function Links() {
 		textFilter,
 		loading,
 	} = useLinkGlobalState();
+
+	const { linksBeingEdited, setLinkEditData, setLinkForEdit } =
+		useLinkMultiEditState();
 
 	const ownershipLinksList =
 		ownershipFilter === TABS.ALL
@@ -107,6 +110,7 @@ function Links() {
 								REACTIONS[
 									virtualRow.reaction as keyof typeof REACTIONS
 								];
+
 							function openOrArchiveLinkFn(
 								status: boolean,
 								op: "opened" | "archived",
@@ -128,6 +132,11 @@ function Links() {
 
 							const userIsOwner = user?.id === virtualRow.by;
 
+							const isLinkBeingEdited =
+								linksBeingEdited.filter(
+									(link) => link.id === virtualRow.id,
+								).length > 0;
+
 							return (
 								<li
 									key={virtualRow.id}
@@ -143,11 +152,12 @@ function Links() {
 										rel="noreferrer"
 									>
 										<LinkTitle
+											edit={isLinkBeingEdited}
 											isPublic={virtualRow.is_public}
 											shareWith={virtualRow.share_with}
 											title={virtualRow.title}
 										/>
-										<div className="flex flex-col justify-between sm:flex-row sm:items-center [&>div]:max-w-[20%] [&>div]:mt-3 mb-2">
+										<div className="grid sm:grid-cols-4 sm:items-center [&>div]:max-w-[20%] [&>div]:mt-3 mb-2">
 											<LinkOpenedStatus
 												opened={virtualRow.opened}
 											/>
@@ -225,7 +235,11 @@ function Links() {
 										{toggle(
 											"EDIT",
 											<LinkEdit
-												toggleEditMode={console.log}
+												toggleEditMode={() =>
+													setLinkForEdit(
+														virtualRow.id,
+													)
+												}
 											/>,
 										)}
 									</div>

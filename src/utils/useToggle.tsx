@@ -21,7 +21,7 @@ const TOGGLES: Toggle = {
 	SEEN: "off",
 	REACTIONS: "off",
 	DELETE: "on",
-	EDIT: "off",
+	EDIT: "on",
 };
 
 function useToggle() {

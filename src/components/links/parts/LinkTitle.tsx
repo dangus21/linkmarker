@@ -1,3 +1,4 @@
+import { Input } from "@/components";
 import {
 	LockClosedIcon,
 	LockOpenIcon,
@@ -8,10 +9,12 @@ function LinkTitle({
 	title,
 	isPublic,
 	shareWith,
+	edit,
 }: {
 	title: string;
 	isPublic: boolean;
 	shareWith: string[];
+	edit: boolean;
 }) {
 	const LockedIcon = isPublic
 		? LockOpenIcon
@@ -26,7 +29,18 @@ function LinkTitle({
 					className="mt-1 mr-2 h-4 w-4 flex-shrink-0 text-gray-600"
 					aria-hidden="true"
 				/>
-				{title}
+				{edit ? (
+					<Input
+						onChange={(event) =>
+							console.log(event.currentTarget.value)
+						}
+						id="textFilter"
+						value={title}
+						className="pl-4 -mt-1"
+					/>
+				) : (
+					title
+				)}
 			</p>
 		</div>
 	);
