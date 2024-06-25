@@ -191,7 +191,8 @@ function Links() {
 										className="flex flex-col divide-y-2 divide-black/30 sm:flex-row sm:divide-x-2 sm:divide-y-0"
 									>
 										{toggle(
-											"ARCHIVE",
+											process.env
+												.NEXT_PUBLIC_TOGGLE_ARCHIVE,
 											<LinkArchive
 												isArchivable={userIsOwner}
 												toggleArchivedStatus={() =>
@@ -204,7 +205,7 @@ function Links() {
 											[ownershipFilter !== TABS.ARCHIVED],
 										)}
 										{toggle(
-											"SEEN",
+											process.env.NEXT_PUBLIC_TOGGLE_SEEN,
 											<LinkSeenToggle
 												opened={virtualRow.opened}
 												toggleSeenStatus={() =>
@@ -216,7 +217,8 @@ function Links() {
 											/>,
 										)}
 										{toggle(
-											"REACTIONS",
+											process.env
+												.NEXT_PUBLIC_TOGGLE_REACTIONS,
 											<LinkReactions
 												link={virtualRow}
 												reaction={localReaction}
@@ -224,7 +226,8 @@ function Links() {
 											/>,
 										)}
 										{toggle(
-											"DELETE",
+											process.env
+												.NEXT_PUBLIC_TOGGLE_DELETE,
 											<LinkDelete
 												canDeleteLink={canDeleteLink}
 												link={virtualRow.id}
@@ -233,7 +236,7 @@ function Links() {
 											/>,
 										)}
 										{toggle(
-											"EDIT",
+											process.env.NEXT_PUBLIC_TOGGLE_EDIT,
 											<LinkEdit
 												toggleEditMode={() =>
 													setLinkForEdit(

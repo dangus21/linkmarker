@@ -1,36 +1,10 @@
-type Toggle = Record<
-	keyof typeof TOGGLE_OPTIONS,
-	(typeof TOGGLE_STATE)[keyof typeof TOGGLE_STATE]
->;
-
-const TOGGLE_STATE = {
-	ON: "on",
-	OFF: "off",
-} as const;
-
-const TOGGLE_OPTIONS = {
-	ARCHIVE: "ARCHIVE",
-	SEEN: "SEEN",
-	REACTIONS: "REACTIONS",
-	DELETE: "DELETE",
-	EDIT: "EDIT",
-} as const;
-
-const TOGGLES: Toggle = {
-	ARCHIVE: "on",
-	SEEN: "off",
-	REACTIONS: "off",
-	DELETE: "on",
-	EDIT: "on",
-};
-
 function useToggle() {
 	return (
-		toggle: keyof typeof TOGGLE_OPTIONS,
+		toggle: string | undefined,
 		Component: React.ReactElement,
 		additionalToggles?: [boolean],
 	) => {
-		if (TOGGLES[toggle] === "off") {
+		if (toggle === "off") {
 			return null;
 		}
 

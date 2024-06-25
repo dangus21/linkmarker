@@ -11,9 +11,6 @@ const withPWA = pwaBuilder({
 /** @type {import('next').NextConfig} */
 const nextConfig = withPWA({
 	reactStrictMode: true,
-	eslint: {
-		ignoreDuringBuilds: true,
-	},
 });
 
 // const millionConfig = {
