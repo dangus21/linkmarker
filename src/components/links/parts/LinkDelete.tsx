@@ -19,6 +19,11 @@ function LinkDelete({
 	supabaseClient: SupabaseClient<Database>;
 }) {
 	const { set: setLinks } = useLinkGlobalState();
+	if (!canDeleteLink) {
+		return (
+			<div className="relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow" />
+		);
+	}
 
 	return (
 		<div

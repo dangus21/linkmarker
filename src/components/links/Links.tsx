@@ -140,7 +140,7 @@ function Links() {
 							return (
 								<li
 									key={virtualRow.id}
-									className="flex justify-between divide-x-2 divide-black/30"
+									className="flex justify-between"
 								>
 									<a
 										target="_blank"
@@ -188,7 +188,7 @@ function Links() {
 									</a>
 									<div
 										data-id="link_actions"
-										className="flex flex-col divide-y-2 divide-black/30 sm:flex-row sm:divide-x-2 sm:divide-y-0"
+										className="flex flex-col sm:flex-row"
 									>
 										{toggle(
 											process.env

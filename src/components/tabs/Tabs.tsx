@@ -16,8 +16,8 @@ function Tabs() {
 	];
 
 	return (
-		<div className="sticky top-[63px] z-10 flex h-12 w-full place-content-center items-center bg-gray-900">
-			<nav className="flex justify-center space-x-4" aria-label="Tabs">
+		<div className="sticky top-[63px] flex h-12 w-full bg-gray-900 overflow-auto">
+			<nav className="flex m-auto" aria-label="Tabs">
 				{tabs.map((tab, index: TABS) => (
 					<div
 						onMouseDown={() => {

@@ -2,7 +2,7 @@ function useToggle() {
 	return (
 		toggle: string | undefined,
 		Component: React.ReactElement,
-		additionalToggles?: [boolean],
+		additionalToggles?: boolean[],
 	) => {
 		if (toggle === "off") {
 			return null;
