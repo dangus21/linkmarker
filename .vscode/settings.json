@@ -1,7 +1,40 @@
 {
 	"typescript.tsdk": "node_modules\\typescript\\lib",
-	"deno.enable": true,
-	"deno.unstable": true,
-	"deno.lint": true,
-	"deno.enablePaths": ["supabase"]
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.black-formatter",
+		"editor.formatOnSave": true,
+	},
+	"[css]": {
+		"editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+	},
+	"[markdown]": {
+		"editor.wordWrap": "off",
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		},
+		"editor.defaultFormatter": "yzhang.markdown-all-in-one"
+	},
 }

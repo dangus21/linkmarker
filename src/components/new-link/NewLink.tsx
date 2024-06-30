@@ -8,6 +8,7 @@ import { isLink } from "@/utils";
 import { useRouter } from "next/router";
 
 import { Button } from "@/components";
+import { useToggle } from "@/utils/useToggle";
 import {
 	NewLinkDeletable,
 	NewLinkPublic,
@@ -20,6 +21,7 @@ function NewLink({ users }: { users: User[] }) {
 	const supabaseClient = useSupabaseClient<Database>();
 	const globalUserState = useUserGlobalState();
 	const globalLinkState = useLinkGlobalState();
+	const toggle = useToggle();
 
 	const isLinkShareable = globalLinkState.new.is_shareable;
 
@@ -76,7 +78,10 @@ function NewLink({ users }: { users: User[] }) {
 						<div className="grid gap-10">
 							<NewLinkTitle />
 							<NewLinkUrl />
-							<NewLinkDeletable />
+							{toggle(
+								process.env.NEXT_PUBLIC_TOGGLE_DELETE_ON_CREATE,
+								<NewLinkDeletable />,
+							)}
 							<NewLinkPublic />
 							{isLinkShareable && (
 								<NewLinkShareCombo users={users} />
