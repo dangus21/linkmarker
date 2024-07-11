@@ -78,10 +78,11 @@ function NewLink({ users }: { users: User[] }) {
 						<div className="grid gap-10">
 							<NewLinkTitle />
 							<NewLinkUrl />
-							{toggle(
-								process.env.NEXT_PUBLIC_TOGGLE_DELETE_ON_CREATE,
-								<NewLinkDeletable />,
-							)}
+							{toggle({
+								toggle: process.env
+									.NEXT_PUBLIC_TOGGLE_DELETE_ON_CREATE,
+								component: <NewLinkDeletable />,
+							})}
 							<NewLinkPublic />
 							{isLinkShareable && (
 								<NewLinkShareCombo users={users} />

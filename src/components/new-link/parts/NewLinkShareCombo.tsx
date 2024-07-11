@@ -12,7 +12,7 @@ function NewLinkShareCombo({ users }: { users: User[] }) {
 			? users.filter(
 					(user) =>
 						user.id !== "6550a93e-69c4-45ae-870e-c45f47586ceb",
-			  )
+				)
 			: users;
 
 	const publicUsers = productionUsers.filter(

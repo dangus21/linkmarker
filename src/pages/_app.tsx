@@ -11,7 +11,10 @@ import "../styles/globals.css";
 
 import type { Database } from "@/lib/types";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
-import { type Session, SessionContextProvider } from "@supabase/auth-helpers-react";
+import {
+	type Session,
+	SessionContextProvider,
+} from "@supabase/auth-helpers-react";
 
 //million-ignore
 export default function App({

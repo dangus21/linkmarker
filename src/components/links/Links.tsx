@@ -6,7 +6,7 @@ import { TABS, useLinkGlobalState, useLinkMultiEditState } from "@/state";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
 import { REACTIONS, useViewport } from "@/utils";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import {
 	LinkArchive,
@@ -23,11 +23,12 @@ import { LoadingSpinner, NewLinkButton } from "@/components";
 import { useToggle } from "@/utils/useToggle";
 
 function Links() {
+	useGetLinks();
 	const { width } = useViewport();
+	const user = useUser();
 	const toggle = useToggle();
 	const supabaseClient = useSupabaseClient<Database>();
-	const user = useUser();
-	useGetLinks();
+	const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
 	const {
 		values: currentLinks,
@@ -37,8 +38,26 @@ function Links() {
 		loading,
 	} = useLinkGlobalState();
 
-	const { linksBeingEdited, setLinkEditData, setLinkForEdit } =
-		useLinkMultiEditState();
+	useEffect(() => {
+		async function getUsers() {
+			const { data, error } = await supabaseClient
+				.from("profiles")
+				.select("is_admin")
+				.eq("id", user?.id ?? "");
+			if (error) {
+				console.error({ usersError: error });
+			} else {
+				setIsAdmin(data[0].is_admin ?? false);
+			}
+		}
+		getUsers();
+
+		return () => {
+			setIsAdmin(false);
+		};
+	}, [supabaseClient, user?.id]);
+
+	const { linksBeingEdited, setLinkForEdit } = useLinkMultiEditState();
 
 	const ownershipLinksList =
 		ownershipFilter === TABS.ALL
@@ -190,61 +209,86 @@ function Links() {
 										data-id="link_actions"
 										className="flex flex-col sm:flex-row"
 									>
-										{toggle(
-											process.env
+										{toggle({
+											toggle: process.env
 												.NEXT_PUBLIC_TOGGLE_ARCHIVE,
-											<LinkArchive
-												isArchivable={userIsOwner}
-												toggleArchivedStatus={() =>
-													openOrArchiveLinkFn(
-														true,
-														"archived",
-													)
-												}
-											/>,
-											[ownershipFilter !== TABS.ARCHIVED],
-										)}
-										{toggle(
-											process.env.NEXT_PUBLIC_TOGGLE_SEEN,
-											<LinkSeenToggle
-												opened={virtualRow.opened}
-												toggleSeenStatus={() =>
-													openOrArchiveLinkFn(
-														!virtualRow.opened,
-														"opened",
-													)
-												}
-											/>,
-										)}
-										{toggle(
-											process.env
+											component: (
+												<LinkArchive
+													isAdmin={isAdmin}
+													isArchivable={userIsOwner}
+													toggleArchivedStatus={() =>
+														openOrArchiveLinkFn(
+															true,
+															"archived",
+														)
+													}
+												/>
+											),
+											exceptions: [isAdmin],
+											additionalToggles: [
+												ownershipFilter !==
+													TABS.ARCHIVED,
+											],
+										})}
+										{toggle({
+											toggle: process.env
+												.NEXT_PUBLIC_TOGGLE_SEEN,
+											component: (
+												<LinkSeenToggle
+													opened={virtualRow.opened}
+													toggleSeenStatus={() =>
+														openOrArchiveLinkFn(
+															!virtualRow.opened,
+															"opened",
+														)
+													}
+												/>
+											),
+										})}
+										{toggle({
+											toggle: process.env
 												.NEXT_PUBLIC_TOGGLE_REACTIONS,
-											<LinkReactions
-												link={virtualRow}
-												reaction={localReaction}
-												supabaseClient={supabaseClient}
-											/>,
-										)}
-										{toggle(
-											process.env
+											component: (
+												<LinkReactions
+													link={virtualRow}
+													reaction={localReaction}
+													supabaseClient={
+														supabaseClient
+													}
+												/>
+											),
+										})}
+										{toggle({
+											toggle: process.env
 												.NEXT_PUBLIC_TOGGLE_DELETE,
-											<LinkDelete
-												canDeleteLink={canDeleteLink}
-												link={virtualRow.id}
-												user={user!.id}
-												supabaseClient={supabaseClient}
-											/>,
-										)}
-										{toggle(
-											process.env.NEXT_PUBLIC_TOGGLE_EDIT,
-											<LinkEdit
-												toggleEditMode={() =>
-													setLinkForEdit(
-														virtualRow.id,
-													)
-												}
-											/>,
-										)}
+											component: (
+												<LinkDelete
+													isAdmin={isAdmin}
+													canDeleteLink={
+														canDeleteLink
+													}
+													link={virtualRow.id}
+													user={user!.id}
+													supabaseClient={
+														supabaseClient
+													}
+												/>
+											),
+											exceptions: [isAdmin],
+										})}
+										{toggle({
+											toggle: process.env
+												.NEXT_PUBLIC_TOGGLE_EDIT,
+											component: (
+												<LinkEdit
+													toggleEditMode={() =>
+														setLinkForEdit(
+															virtualRow.id,
+														)
+													}
+												/>
+											),
+										})}
 									</div>
 								</li>
 							);

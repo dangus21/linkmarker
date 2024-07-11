@@ -18,7 +18,7 @@ async function updateProfileInfo({
 }) {
 	try {
 		const updates = {
-			isAccountPublic: userState.is_public,
+			is_account_public: userState.is_public,
 			username: userState.userName,
 			updated_at: new Date() as unknown as string,
 		};
@@ -91,7 +91,7 @@ async function useGetProfileInfo({
 
 					if (data?.username) {
 						globalUserState.setUserName(data.username);
-						globalUserState.setis_public(data.isAccountPublic);
+						globalUserState.setis_public(data.is_account_public);
 					}
 					if (avatarsData) {
 						globalUserState.setAvatar({

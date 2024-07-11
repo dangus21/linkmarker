@@ -4,27 +4,27 @@ import { twMerge } from "tailwind-merge";
 function LinkArchive({
 	toggleArchivedStatus,
 	isArchivable,
+	isAdmin,
 }: {
 	toggleArchivedStatus: () => Promise<void>;
 	isArchivable: boolean;
+	isAdmin: boolean;
 }) {
-	if (!isArchivable) {
+	if (!isArchivable && !isAdmin) {
 		return (
 			<div className="relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow" />
 		);
 	}
 	return (
 		<div
-			onMouseDown={isArchivable ? toggleArchivedStatus : () => null}
+			onMouseDown={toggleArchivedStatus}
 			className={twMerge(
-				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow",
-				isArchivable && "cursor-pointer hover:bg-gray-800",
+				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow cursor-pointer hover:bg-gray-800",
 			)}
 		>
 			<ArchiveBoxArrowDownIcon
 				className={twMerge(
-					"s:w-8 h-[1.67rem] w-[1.67rem] sm:h-8",
-					isArchivable ? "text-gray-600" : "text-gray-400/10",
+					"s:w-8 h-[1.67rem] w-[1.67rem] sm:h-8 text-gray-600",
 				)}
 			/>
 		</div>

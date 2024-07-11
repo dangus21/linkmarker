@@ -12,14 +12,16 @@ function LinkDelete({
 	link,
 	user,
 	supabaseClient,
+	isAdmin,
 }: {
 	canDeleteLink: boolean;
 	link: string;
 	user: string;
 	supabaseClient: SupabaseClient<Database>;
+	isAdmin: boolean;
 }) {
 	const { set: setLinks } = useLinkGlobalState();
-	if (!canDeleteLink) {
+	if (!canDeleteLink && !isAdmin) {
 		return (
 			<div className="relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow" />
 		);
@@ -28,26 +30,20 @@ function LinkDelete({
 	return (
 		<div
 			onMouseDown={() =>
-				canDeleteLink
-					? deleteLink({
-							id: link,
-							supabaseClient,
-							setLinks,
-							currentUser: user,
-						})
-					: () => null
+				deleteLink({
+					id: link,
+					supabaseClient,
+					setLinks,
+					currentUser: user,
+				})
 			}
 			className={twMerge(
-				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow",
-				canDeleteLink && "cursor-pointer hover:bg-red-900/20",
+				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow cursor-pointer hover:bg-red-900/20",
 			)}
 		>
 			<span>
 				<XMarkIcon
-					className={twMerge(
-						"s:w-10 h-8 w-8 sm:h-10",
-						canDeleteLink ? "text-red-500" : "text-gray-400/10",
-					)}
+					className={twMerge("s:w-10 h-8 w-8 sm:h-10 text-red-500")}
 					aria-hidden="true"
 				/>
 			</span>
