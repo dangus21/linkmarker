@@ -59,6 +59,13 @@ function extractTopLevelDomain(url: URL) {
 	return null; // Return null if no top-level domain is found
 }
 
+function normalizeLinkTitle(param: string): string {
+	return param
+		.toLowerCase()
+		.normalize("NFD")
+		.replace(/\p{Diacritic}/gu, "");
+}
+
 export {
 	ONE_MB_SIZE,
 	REACTIONS,
@@ -67,4 +74,5 @@ export {
 	dateFormatter,
 	useViewport,
 	extractTopLevelDomain,
+	normalizeLinkTitle,
 };

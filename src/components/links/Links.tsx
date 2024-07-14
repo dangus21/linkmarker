@@ -5,7 +5,7 @@ import type { Database } from "@/lib/types";
 import { TABS, useLinkGlobalState, useLinkMultiEditState } from "@/state";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
-import { REACTIONS, useViewport } from "@/utils";
+import { REACTIONS, normalizeLinkTitle, useViewport } from "@/utils";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import {
@@ -81,21 +81,26 @@ function Links() {
 					}
 					return true;
 				});
+	console.log("LOG ~ ownershipLinksList:", ownershipLinksList);
 
-	const textFilterLinksList =
-		textFilter.length === 0
-			? ownershipLinksList
-			: ownershipLinksList.filter((link) => {
-					return link.title
+	const textFilterLinksList = !textFilter
+		? ownershipLinksList
+		: ownershipLinksList.filter((link) => {
+				console.log("LOG ~ link:", {
+					textFilter,
+					link,
+					title: link.title
 						.toLowerCase()
 						.normalize("NFD")
-						.replace(/\p{Diacritic}/gu, "")
-						.includes(
-							textFilter
-								.normalize("NFD")
-								.replace(/\p{Diacritic}/gu, ""),
-						);
+						.replace(/\p{Diacritic}/gu, ""),
+					filter: textFilter
+						.normalize("NFD")
+						.replace(/\p{Diacritic}/gu, ""),
 				});
+				return normalizeLinkTitle(link.title).includes(
+					normalizeLinkTitle(textFilter),
+				);
+			});
 
 	const parentRef = useRef<HTMLDivElement>(null);
 
@@ -115,9 +120,8 @@ function Links() {
 				<ul
 					role="list"
 					className={twMerge(
-						hasLength
-							? "divide-y-2 divide-black/30 border-2 border-black/30 sm:rounded-md"
-							: "",
+						hasLength &&
+							"divide-y-2 divide-black/30 border-2 border-black/30 sm:rounded-md",
 						"max-h-[100vh] sm:max-h-[calc(100vh-8rem)] overflow-auto",
 						"scrollbar scrollbar-track-gray-1000 scrollbar-thumb-[#1a2230]",
 						"scrollbar-thin scrollbar-thumb-rounded-md hover:scrollbar-thumb-[#171e2b]",
