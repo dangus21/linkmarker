@@ -19,7 +19,7 @@ function LinkArchive({
 		<div
 			onMouseDown={toggleArchivedStatus}
 			className={twMerge(
-				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow cursor-pointer hover:bg-gray-800",
+				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow cursor-pointer hover:bg-gray-900/50",
 			)}
 		>
 			<ArchiveBoxArrowDownIcon

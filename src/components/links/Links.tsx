@@ -163,7 +163,7 @@ function Links() {
 							return (
 								<li
 									key={virtualRow.id}
-									className="flex justify-between"
+									className="flex justify-between hover:bg-gray-800"
 								>
 									<a
 										target="_blank"
@@ -171,7 +171,7 @@ function Links() {
 										onMouseDown={() =>
 											openOrArchiveLinkFn(true, "opened")
 										}
-										className="w-full cursor-pointer px-6 py-2 hover:bg-gray-800"
+										className="w-full cursor-pointer px-6 py-2"
 										rel="noreferrer"
 									>
 										<LinkTitle
