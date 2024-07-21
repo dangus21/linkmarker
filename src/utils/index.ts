@@ -1,3 +1,5 @@
+import type { TLink } from "@/state";
+import type { AuthUser } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 
 const ONE_MB_SIZE = 1048576;
@@ -66,13 +68,35 @@ function normalizeLinkTitle(param: string): string {
 		.replace(/\p{Diacritic}/gu, "");
 }
 
+function getLinkValues(
+	user: AuthUser | null,
+	link: Partial<TLink>,
+	links: Partial<TLink>[],
+) {
+	const canDeleteLink =
+		(user?.id === link.by || (user?.id !== link.id && link.is_deletable)) ??
+		false;
+
+	const userIsOwner = user?.id === link.by;
+
+	const isLinkBeingEdited =
+		links.filter((currentLink) => currentLink.id === link.id).length > 0;
+
+	return {
+		canDeleteLink,
+		userIsOwner,
+		isLinkBeingEdited,
+	};
+}
+
 export {
 	ONE_MB_SIZE,
 	REACTIONS,
+	dateFormatter,
 	isLink,
 	classNames,
-	dateFormatter,
 	useViewport,
 	extractTopLevelDomain,
 	normalizeLinkTitle,
+	getLinkValues,
 };

@@ -8,8 +8,28 @@
 		"rules": {
 			"recommended": true,
 			"style": {
-				"noNonNullAssertion": "off"
-			}
+				"noNonNullAssertion": "off",
+				"useFragmentSyntax": "error",
+				"useTemplate": "error",
+				"noUselessElse": "error"
+			},
+			"correctness": {
+				"recommended": true,
+				"noUnusedVariables": "error",
+				"noUnusedImports": "error",
+				"useExhaustiveDependencies": "error"
+			},
+			"suspicious": {
+				"recommended": true
+			},
+			"a11y": {
+				"recommended": true
+			},
+			"complexity": {
+				"recommended": true
+			},
+			"security": {},
+			"performance": {}
 		}
 	},
 	"formatter": {
@@ -20,10 +40,7 @@
 		"lineWidth": 80,
 		"lineEnding": "lf",
 		"ignore": [
-			"node_modules",
-			"public",
-			".next",
-			".vercel"
+			"node_modules"
 		]
 	},
 	"javascript": {
@@ -32,13 +49,14 @@
 			"arrowParentheses": "always",
 			"jsxQuoteStyle": "double",
 			"semicolons": "always",
-			"trailingCommas": "all",
 			"quoteProperties": "asNeeded",
 			"bracketSpacing": true,
 			"bracketSameLine": false,
 			"indentWidth": 4,
 			"indentStyle": "tab",
-			"quoteStyle": "double"
+			"quoteStyle": "double",
+			"lineEnding": "lf",
+			"lineWidth": 80
 		}
 	}
 }

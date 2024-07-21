@@ -6,3 +6,4 @@ export { LinkOpenedStatus } from "./LinkOpenedStatus";
 export { LinkSeenToggle } from "./LinkSeenToggle";
 export { LinkArchive } from "./LinkArchive";
 export { LinkEdit } from "./LinkEdit";
+export { Link } from "./Link";
