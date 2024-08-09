@@ -1,9 +1,11 @@
-export { LinkReactions } from "./LinkReactions";
-export { LinkDelete } from "./LinkDelete";
-export { LinkDate } from "./LinkDate";
-export { LinkTitle } from "./LinkTitle";
-export { LinkOpenedStatus } from "./LinkOpenedStatus";
-export { LinkSeenToggle } from "./LinkSeenToggle";
-export { LinkArchive } from "./LinkArchive";
-export { LinkEdit } from "./LinkEdit";
+export { LinkReactions } from "./left/LinkReactions";
+export { LinkDate } from "./left/LinkDate";
+export { LinkTitle } from "./left/LinkTitle";
+export { LinkOpenedStatus } from "./left/LinkOpenedStatus";
+
+export { LinkDelete } from "./right/LinkDelete";
+export { LinkSeenToggle } from "./right/LinkSeenToggle";
+export { LinkArchive } from "./right/LinkArchive";
+export { LinkEdit } from "./right/LinkEdit";
+
 export { Link } from "./Link";

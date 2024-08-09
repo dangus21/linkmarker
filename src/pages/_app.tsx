@@ -16,7 +16,6 @@ import {
 	SessionContextProvider,
 } from "@supabase/auth-helpers-react";
 
-//million-ignore
 export default function App({
 	Component,
 	pageProps,

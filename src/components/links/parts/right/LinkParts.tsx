@@ -1,34 +1,40 @@
-import { ArchiveBoxArrowDownIcon } from "@heroicons/react/20/solid";
+import type { MouseEventHandler } from "react";
 import { twMerge } from "tailwind-merge";
 
-function LinkArchive({
-	toggleArchivedStatus,
-	isArchivable,
-	isAdmin,
+function LinkParts({
+	invalidation,
+	icon: Icon,
+	onMouseDown,
+	iconCss,
+	containerCss,
 }: {
-	toggleArchivedStatus: () => Promise<void>;
-	isArchivable: boolean;
-	isAdmin: boolean;
+	invalidation?: boolean;
+	icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+	onMouseDown: MouseEventHandler<HTMLDivElement>;
+	iconCss?: string;
+	containerCss?: string;
 }) {
-	if (!isArchivable && !isAdmin) {
+	if (invalidation) {
 		return (
 			<div className="relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow" />
 		);
 	}
 	return (
 		<div
-			onMouseDown={toggleArchivedStatus}
+			onMouseDown={onMouseDown}
 			className={twMerge(
 				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow cursor-pointer hover:bg-gray-900/50",
+				containerCss,
 			)}
 		>
-			<ArchiveBoxArrowDownIcon
+			<Icon
 				className={twMerge(
 					"s:w-8 h-[1.67rem] w-[1.67rem] sm:h-8 text-gray-600",
+					iconCss,
 				)}
 			/>
 		</div>
 	);
 }
 
-export { LinkArchive };
+export { LinkParts };

@@ -5,8 +5,8 @@ import { toast } from "react-hot-toast";
 import type { Database } from "@/lib/types";
 import {
 	type LinkState,
-	type TLinkUpdate,
 	type User as StateUser,
+	type TLinkUpdate,
 	type UserState,
 	useLinkGlobalState,
 } from "@/state";

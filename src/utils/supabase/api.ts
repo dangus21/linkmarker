@@ -1,6 +1,6 @@
 import {
-	createServerClient,
 	type CookieOptions,
+	createServerClient,
 	serialize,
 } from "@supabase/ssr";
 import type { NextApiRequest, NextApiResponse } from "next";

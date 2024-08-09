@@ -110,7 +110,7 @@ async function useGetProfileInfo({
 
 						throw error;
 					}
-				} catch (error) {
+				} catch (_error) {
 					console.warn("Failed loading user data");
 				}
 			}

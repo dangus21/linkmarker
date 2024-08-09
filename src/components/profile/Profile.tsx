@@ -29,7 +29,7 @@ function Profile() {
 		try {
 			await supabaseClient.functions.invoke("user-self-deletion");
 			toast.success("Account deleted successfully!", toast_config);
-		} catch (error) {
+		} catch (_error) {
 			toast.error("Error deleting the account!", toast_config);
 		} finally {
 			await supabaseClient.auth.signOut();

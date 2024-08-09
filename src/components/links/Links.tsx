@@ -188,77 +188,76 @@ function Links() {
 									}
 									right={
 										<>
-											{renderToggle({
-												toggle: process.env
-													.NEXT_PUBLIC_TOGGLE_ARCHIVE,
-												component: (
-													<LinkArchive
-														isAdmin={isAdmin}
-														isArchivable={
-															userIsOwner
-														}
-														toggleArchivedStatus={() =>
-															openOrArchiveLinkFn(
-																true,
-																"archived",
-															)
-														}
-													/>
-												),
-												exceptions: [isAdmin],
-												additionalToggles: [
-													ownershipFilter !==
-														TABS.ARCHIVED,
-												],
-											})}
-											{renderToggle({
-												toggle: process.env
-													.NEXT_PUBLIC_TOGGLE_SEEN,
-												component: (
-													<LinkSeenToggle
-														opened={
-															virtualRow.opened
-														}
-														toggleSeenStatus={() =>
-															openOrArchiveLinkFn(
-																!virtualRow.opened,
-																"opened",
-															)
-														}
-													/>
-												),
-											})}
-											{renderToggle({
-												toggle: process.env
-													.NEXT_PUBLIC_TOGGLE_DELETE,
-												component: (
-													<LinkDelete
-														isAdmin={isAdmin}
-														canDeleteLink={
-															canDeleteLink
-														}
-														link={virtualRow.id}
-														user={user!.id}
-														supabaseClient={
-															supabaseClient
-														}
-													/>
-												),
-												exceptions: [isAdmin],
-											})}
-											{renderToggle({
-												toggle: process.env
-													.NEXT_PUBLIC_TOGGLE_EDIT,
-												component: (
-													<LinkEdit
-														toggleEditMode={() =>
-															setLinkForEdit(
-																virtualRow.id,
-															)
-														}
-													/>
-												),
-											})}
+											{renderToggle(
+												<LinkEdit
+													isOwnLink={userIsOwner}
+													toggleEditMode={() =>
+														setLinkForEdit(
+															virtualRow.id,
+														)
+													}
+												/>,
+												{
+													toggle: process.env
+														.NEXT_PUBLIC_TOGGLE_EDIT,
+												},
+											)}
+											{renderToggle(
+												<LinkArchive
+													isAdmin={isAdmin}
+													isArchivable={userIsOwner}
+													toggleArchivedStatus={() =>
+														openOrArchiveLinkFn(
+															true,
+															"archived",
+														)
+													}
+												/>,
+												{
+													toggle: process.env
+														.NEXT_PUBLIC_TOGGLE_ARCHIVE,
+													exceptions: [isAdmin],
+													additionalToggles: [
+														ownershipFilter !==
+															TABS.ARCHIVED,
+													],
+												},
+											)}
+											{renderToggle(
+												<LinkSeenToggle
+													opened={virtualRow.opened}
+													toggleSeenStatus={() =>
+														openOrArchiveLinkFn(
+															!virtualRow.opened,
+															"opened",
+														)
+													}
+												/>,
+												{
+													toggle:
+														isAdmin ||
+														process.env
+															.NEXT_PUBLIC_TOGGLE_SEEN,
+												},
+											)}
+											{renderToggle(
+												<LinkDelete
+													isAdmin={isAdmin}
+													canDeleteLink={
+														canDeleteLink
+													}
+													link={virtualRow.id}
+													user={user!.id}
+													supabaseClient={
+														supabaseClient
+													}
+												/>,
+												{
+													toggle: process.env
+														.NEXT_PUBLIC_TOGGLE_DELETE,
+													exceptions: [isAdmin],
+												},
+											)}
 										</>
 									}
 								/>

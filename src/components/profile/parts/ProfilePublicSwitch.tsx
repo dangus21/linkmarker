@@ -2,7 +2,6 @@ import { useUserGlobalState } from "@/state";
 import { Switch } from "@headlessui/react";
 import { twMerge } from "tailwind-merge";
 
-// million-ignore
 function ProfilePublicSwitch() {
 	const globalUserState = useUserGlobalState();
 

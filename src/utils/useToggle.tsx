@@ -1,15 +1,16 @@
 function useToggle() {
-	return ({
-		toggle,
-		component,
-		exceptions,
-		additionalToggles,
-	}: {
-		toggle: string | undefined;
-		component: React.ReactElement;
-		exceptions?: boolean[];
-		additionalToggles?: boolean[];
-	}) => {
+	return (
+		component: React.ReactElement,
+		{
+			toggle,
+			exceptions,
+			additionalToggles,
+		}: {
+			toggle: string | boolean | undefined;
+			exceptions?: boolean[];
+			additionalToggles?: boolean[];
+		},
+	) => {
 		let Component: React.ReactElement;
 
 		if (exceptions && exceptions.length > 0 && exceptions.every(Boolean)) {
@@ -17,7 +18,7 @@ function useToggle() {
 			return Component;
 		}
 
-		if (toggle === "off") {
+		if (toggle === "off" || toggle === false) {
 			return null;
 		}
 

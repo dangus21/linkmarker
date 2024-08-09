@@ -4,9 +4,8 @@ import { useLinkGlobalState } from "@/state";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 import { XMarkIcon } from "@heroicons/react/20/solid";
-import { twMerge } from "tailwind-merge";
+import { LinkParts } from "./LinkParts";
 
-// million-ignore
 function LinkDelete({
 	canDeleteLink,
 	link,
@@ -21,14 +20,9 @@ function LinkDelete({
 	isAdmin: boolean;
 }) {
 	const { set: setLinks } = useLinkGlobalState();
-	if (!canDeleteLink && !isAdmin) {
-		return (
-			<div className="relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow" />
-		);
-	}
 
 	return (
-		<div
+		<LinkParts
 			onMouseDown={() =>
 				deleteLink({
 					id: link,
@@ -37,17 +31,11 @@ function LinkDelete({
 					currentUser: user,
 				})
 			}
-			className={twMerge(
-				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow cursor-pointer hover:bg-red-900/20",
-			)}
-		>
-			<span>
-				<XMarkIcon
-					className={twMerge("s:w-10 h-8 w-8 sm:h-10 text-red-500")}
-					aria-hidden="true"
-				/>
-			</span>
-		</div>
+			invalidation={!canDeleteLink && !isAdmin}
+			icon={XMarkIcon}
+			iconCss="s:w-10 h-8 w-8 sm:h-10 text-red-500"
+			containerCss="hover:bg-red-900/20"
+		/>
 	);
 }
 
