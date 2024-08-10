@@ -2,20 +2,16 @@ import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
 import { updateLinkInfo } from "@/hooks";
-import type { Database } from "@/lib/types";
 import { type TLink, useLinkGlobalState } from "@/state";
 import { REACTIONS, classNames } from "@/utils";
 import { FaceSmileIcon } from "@heroicons/react/20/solid";
-import type { SupabaseClient } from "@supabase/auth-helpers-react";
 
 function LinkReactions({
 	link,
 	reaction,
-	supabaseClient,
 }: {
 	link: TLink;
 	reaction: string;
-	supabaseClient: SupabaseClient<Database>;
 }) {
 	const { update: updateLink } = useLinkGlobalState();
 
@@ -53,7 +49,6 @@ function LinkReactions({
 												reaction: key,
 											},
 											id: link.id,
-											supabaseClient,
 											updateLink,
 										});
 										close();

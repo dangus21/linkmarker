@@ -1,20 +1,12 @@
-import { useEffect } from "react";
-
-import type { Database } from "@/lib/types";
 import { type UserState, useUserGlobalState } from "@/state";
-import {
-	type Session,
-	type SupabaseClient,
-	type User,
-	useSupabaseClient,
-} from "@supabase/auth-helpers-react";
+import type { Session, User } from "@supabase/auth-helpers-react";
+import { useEffect } from "react";
+import { supabase } from "../links";
 
 async function updateProfileInfo({
 	userState,
-	supabaseClient,
 }: {
 	userState: UserState;
-	supabaseClient: SupabaseClient<Database>;
 }) {
 	try {
 		const updates = {
@@ -23,13 +15,13 @@ async function updateProfileInfo({
 			updated_at: new Date() as unknown as string,
 		};
 
-		const { error } = await supabaseClient
+		const { error } = await supabase
 			.from("profiles")
 			.update(updates)
 			.eq("id", userState.id);
 
 		if (userState.avatar.file) {
-			const { error: avatarError } = await supabaseClient.storage
+			const { error: avatarError } = await supabase.storage
 				.from("avatars")
 				.upload(`${userState.id}/avatar.jpg`, userState.avatar.file, {
 					cacheControl: "3600",
@@ -55,8 +47,6 @@ async function useGetProfileInfo({
 	user: User | null;
 	session: Session | null;
 }) {
-	const supabaseClient = useSupabaseClient<Database>();
-
 	const globalUserState = useUserGlobalState();
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
@@ -78,14 +68,14 @@ async function useGetProfileInfo({
 				try {
 					globalUserState.setHasAvatar(true);
 
-					const { data, error, status } = await supabaseClient
+					const { data, error, status } = await supabase
 						.from("profiles")
 						.select()
 						.eq("id", user?.id)
 						.single();
 
 					const { data: avatarsData, error: avatarsError } =
-						await supabaseClient.storage
+						await supabase.storage
 							.from("avatars")
 							.download(`${user?.id}/avatar.jpg`);
 

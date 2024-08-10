@@ -1,14 +1,13 @@
 import { MapPinIcon, UsersIcon } from "@heroicons/react/20/solid";
 
-import { updateLinkInfo, useGetLinks } from "@/hooks";
-import type { Database } from "@/lib/types";
+import { updateLinkInfo } from "@/hooks";
 import {
 	TABS,
 	type TLink,
 	useLinkGlobalState,
 	useLinkMultiEditState,
 } from "@/state";
-import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import { useUser } from "@supabase/auth-helpers-react";
 
 import { getLinkValues, normalizeLinkTitle, useViewport } from "@/utils";
 import { useEffect, useState } from "react";
@@ -25,15 +24,15 @@ import {
 } from "./parts";
 
 import { LoadingSpinner, NewLinkButton } from "@/components";
+import { supabase, useGetLinks } from "@/hooks/links";
 import { useToggle } from "@/utils/useToggle";
 
 function Links() {
-	useGetLinks();
 	const { width } = useViewport();
 	const user = useUser();
-	const renderToggle = useToggle();
-	const supabaseClient = useSupabaseClient<Database>();
+	const { renderToggle } = useToggle();
 	const [isAdmin, setIsAdmin] = useState<boolean>(false);
+	useGetLinks(user);
 
 	const {
 		values: currentLinks,
@@ -45,7 +44,7 @@ function Links() {
 
 	useEffect(() => {
 		async function getUsers() {
-			const { data, error } = await supabaseClient
+			const { data, error } = await supabase
 				.from("profiles")
 				.select("is_admin")
 				.eq("id", user?.id ?? "");
@@ -60,11 +59,9 @@ function Links() {
 		return () => {
 			setIsAdmin(false);
 		};
-	}, [supabaseClient, user?.id]);
+	}, [user?.id]);
 
 	const { linksBeingEdited, setLinkForEdit } = useLinkMultiEditState();
-	currentLinks[0]?.title &&
-		console.log("LOG ~ currentLinks:", currentLinks[0].title);
 
 	const ownershipLinksList =
 		ownershipFilter === TABS.ALL
@@ -129,7 +126,6 @@ function Links() {
 									},
 									id: virtualRow.id,
 									updateLink,
-									supabaseClient,
 								});
 							}
 
@@ -140,15 +136,10 @@ function Links() {
 									},
 									id: virtualRow.id,
 									updateLink,
-									supabaseClient,
 								});
 							}
 
 							function toggleEdit(shouldCancel: boolean) {
-								console.log(
-									"LOG ~ shouldCancel:",
-									shouldCancel,
-								);
 								if (!shouldCancel && isLinkBeingEdited) {
 									updateLinkTitle(virtualRow.title);
 								}
@@ -225,8 +216,28 @@ function Links() {
 													toggleEdit={toggleEdit}
 												/>,
 												{
-													toggle: process.env
-														.NEXT_PUBLIC_TOGGLE_EDIT,
+													toggle:
+														isAdmin ||
+														(userIsOwner &&
+															process.env
+																.NEXT_PUBLIC_TOGGLE_EDIT),
+												},
+											)}
+											{renderToggle(
+												<LinkSeenToggle
+													opened={virtualRow.opened}
+													toggleSeenStatus={() =>
+														openOrArchiveLinkFn(
+															!virtualRow.opened,
+															"opened",
+														)
+													}
+												/>,
+												{
+													toggle:
+														isAdmin ||
+														process.env
+															.NEXT_PUBLIC_TOGGLE_SEEN,
 												},
 											)}
 											{renderToggle(
@@ -251,23 +262,6 @@ function Links() {
 												},
 											)}
 											{renderToggle(
-												<LinkSeenToggle
-													opened={virtualRow.opened}
-													toggleSeenStatus={() =>
-														openOrArchiveLinkFn(
-															!virtualRow.opened,
-															"opened",
-														)
-													}
-												/>,
-												{
-													toggle:
-														isAdmin ||
-														process.env
-															.NEXT_PUBLIC_TOGGLE_SEEN,
-												},
-											)}
-											{renderToggle(
 												<LinkDelete
 													isAdmin={isAdmin}
 													canDeleteLink={
@@ -275,9 +269,6 @@ function Links() {
 													}
 													link={virtualRow.id}
 													user={user!.id}
-													supabaseClient={
-														supabaseClient
-													}
 												/>,
 												{
 													toggle: process.env

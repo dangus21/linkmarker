@@ -1,17 +1,15 @@
 import { Navbar, NewLink } from "@/components";
 import { SupaAuth } from "@/components/supa_auth";
-import type { Database } from "@/lib/types";
+import { supabase } from "@/hooks/links";
 import type { User } from "@/state";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useEffect, useState } from "react";
 
 function NewPage() {
 	const [users, setUsers] = useState<User[]>([]);
-	const supabaseClient = useSupabaseClient<Database>();
 
 	useEffect(() => {
 		async function getUsers() {
-			const { data, error } = await supabaseClient
+			const { data, error } = await supabase
 				.from("profiles")
 				.select("username, id");
 			if (error) {
@@ -25,7 +23,7 @@ function NewPage() {
 		return () => {
 			setUsers([]);
 		};
-	}, [supabaseClient]);
+	}, []);
 
 	return (
 		<SupaAuth>

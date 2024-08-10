@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Toaster } from "react-hot-toast";
 
 import { Analytics } from "@vercel/analytics/react";
@@ -8,9 +7,7 @@ import NextNProgress from "nextjs-progressbar";
 
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
-
-import type { Database } from "@/lib/types";
-import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
+import { supabase } from "@/hooks/links";
 import {
 	type Session,
 	SessionContextProvider,
@@ -22,8 +19,6 @@ export default function App({
 }: AppProps<{
 	initialSession: Session;
 }>) {
-	const [supabase] = useState(() => createPagesBrowserClient<Database>());
-
 	return (
 		<>
 			<Head>

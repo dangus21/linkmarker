@@ -1,7 +1,5 @@
 import { deleteLink } from "@/hooks";
-import type { Database } from "@/lib/types";
 import { useLinkGlobalState } from "@/state";
-import type { SupabaseClient } from "@supabase/supabase-js";
 
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { LinkParts } from "./LinkParts";
@@ -10,13 +8,11 @@ function LinkDelete({
 	canDeleteLink,
 	link,
 	user,
-	supabaseClient,
 	isAdmin,
 }: {
 	canDeleteLink: boolean;
 	link: string;
 	user: string;
-	supabaseClient: SupabaseClient<Database>;
 	isAdmin: boolean;
 }) {
 	const { set: setLinks } = useLinkGlobalState();
@@ -26,7 +22,6 @@ function LinkDelete({
 			onMouseDown={() =>
 				deleteLink({
 					id: link,
-					supabaseClient,
 					setLinks,
 					currentUser: user,
 				})

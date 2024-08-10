@@ -1,11 +1,10 @@
 import { Button } from "@/components";
 import { updateProfileInfo } from "@/hooks";
-import type { Database } from "@/lib/types";
 import { useUserGlobalState } from "@/state";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 import { ProfileImage, ProfilePublicSwitch, ProfileUsername } from "./parts";
 
+import { supabase } from "@/hooks/links";
 import type { CSSProperties } from "react";
 import { toast } from "react-hot-toast";
 
@@ -21,18 +20,17 @@ const toast_config = {
 } as const;
 
 function Profile() {
-	const supabaseClient = useSupabaseClient<Database>();
 	const globalUserState = useUserGlobalState();
 	const { push } = useRouter();
 
 	async function deleteAccount() {
 		try {
-			await supabaseClient.functions.invoke("user-self-deletion");
+			await supabase.functions.invoke("user-self-deletion");
 			toast.success("Account deleted successfully!", toast_config);
 		} catch (_error) {
 			toast.error("Error deleting the account!", toast_config);
 		} finally {
-			await supabaseClient.auth.signOut();
+			await supabase.auth.signOut();
 			push("/");
 		}
 	}
@@ -55,7 +53,6 @@ function Profile() {
 							onMouseDown={() => {
 								updateProfileInfo({
 									userState: globalUserState,
-									supabaseClient,
 								});
 								push("/");
 							}}

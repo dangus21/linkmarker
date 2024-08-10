@@ -1,7 +1,5 @@
 import { createLink } from "@/hooks";
-import type { Database } from "@/lib/types";
 import { type User, useLinkGlobalState, useUserGlobalState } from "@/state";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useEffect } from "react";
 
 import { isLink } from "@/utils";
@@ -18,10 +16,9 @@ import {
 } from "./parts";
 
 function NewLink({ users }: { users: User[] }) {
-	const supabaseClient = useSupabaseClient<Database>();
 	const globalUserState = useUserGlobalState();
 	const globalLinkState = useLinkGlobalState();
-	const toggle = useToggle();
+	const { renderToggle } = useToggle();
 
 	const isLinkShareable = globalLinkState.new.is_shareable;
 
@@ -78,7 +75,7 @@ function NewLink({ users }: { users: User[] }) {
 						<div className="grid gap-10">
 							<NewLinkTitle />
 							<NewLinkUrl />
-							{toggle(<NewLinkDeletable />, {
+							{renderToggle(<NewLinkDeletable />, {
 								toggle: process.env
 									.NEXT_PUBLIC_TOGGLE_DELETE_ON_CREATE,
 							})}
@@ -92,7 +89,6 @@ function NewLink({ users }: { users: User[] }) {
 							<Button
 								onMouseDown={() => {
 									createLink({
-										supabaseClient,
 										userState: globalUserState,
 										link: globalLinkState.new,
 										router,

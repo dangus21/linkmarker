@@ -1,8 +1,5 @@
 import { type CSSProperties, useEffect } from "react";
 
-import { toast } from "react-hot-toast";
-
-import type { Database } from "@/lib/types";
 import {
 	type LinkState,
 	type User as StateUser,
@@ -11,13 +8,12 @@ import {
 	useLinkGlobalState,
 } from "@/state";
 import { extractTopLevelDomain } from "@/utils";
-import {
-	type SupabaseClient,
-	type User,
-	useSupabaseClient,
-	useUser,
-} from "@supabase/auth-helpers-react";
+import { createClient } from "@/utils/supabase/component";
+import type { User } from "@supabase/auth-helpers-react";
 import type { NextRouter } from "next/router";
+import { toast } from "react-hot-toast";
+
+export const supabase = createClient();
 
 const toast_config = {
 	style: {
@@ -30,25 +26,26 @@ const toast_config = {
 	duration: 3000,
 } as const;
 
+const link_source =
+	process.env.NODE_ENV === "development" ? "links_dev" : "links";
+
 async function deleteLink({
-	supabaseClient,
 	id,
 	setLinks,
 	currentUser,
 }: {
-	supabaseClient: SupabaseClient<Database>;
 	id: string;
 	setLinks: LinkState["set"];
 	currentUser: User["id"];
 }) {
 	try {
-		const { error: deleteError } = await supabaseClient
-			.from("links")
+		const { error: deleteError } = await supabase
+			.from(link_source)
 			.delete()
 			.eq("id", id);
 
-		const { data, error } = await supabaseClient
-			.from("links")
+		const { data, error } = await supabase
+			.from(link_source)
 			.select()
 			.or(
 				`share_with.cs.{${currentUser}},or(is_public.eq.true),or(by.eq.${currentUser})`,
@@ -73,12 +70,10 @@ async function deleteLink({
 }
 
 async function createLink({
-	supabaseClient,
 	userState,
 	link,
 	router,
 }: {
-	supabaseClient: SupabaseClient<Database>;
 	userState: UserState;
 	link: LinkState["new"];
 	router: NextRouter;
@@ -105,7 +100,7 @@ async function createLink({
 	newLink.origin = extractTopLevelDomain(newLinkObj) ?? "unknown origin";
 
 	try {
-		const { error } = await supabaseClient.from("links").insert(newLink);
+		const { error } = await supabase.from(link_source).insert(newLink);
 
 		if (error) {
 			console.warn({ error });
@@ -123,34 +118,31 @@ async function updateLinkInfo({
 	link,
 	id,
 	updateLink,
-	supabaseClient,
 }: {
 	link: TLinkUpdate;
 	id: string;
 	updateLink: (link: TLinkUpdate) => void;
-	supabaseClient: SupabaseClient<Database>;
 }) {
 	try {
-		const { error } = await supabaseClient
-			.from("links")
+		const { error } = await supabase
+			.from(link_source)
 			.update(link)
 			.eq("id", id);
 
-		supabaseClient
-			.from("links")
+		const { data: updateData, error: updateError } = await supabase
+			.from(link_source)
 			.select()
 			.eq("id", id)
-			.single()
-			.then(({ data, error }) => {
-				if (data) {
-					updateLink(data);
-				}
-				if (error) {
-					console.warn({ error });
+			.single();
 
-					throw error;
-				}
-			});
+		if (updateData) {
+			updateLink(updateData);
+		}
+		if (updateError) {
+			console.error({ updateError });
+
+			throw error;
+		}
 
 		if (error) {
 			console.warn({ error });
@@ -163,18 +155,14 @@ async function updateLinkInfo({
 	}
 }
 
-async function useGetLinks() {
-	const supabaseClient = useSupabaseClient<Database>();
-
-	const currentUser = useUser();
+async function useGetLinks(currentUser: User | null) {
 	const { set: setLinks, setLoading } = useLinkGlobalState();
-
-	// biome-ignore lint/correctness/useExhaustiveDependencies: onMount
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		async function getLinks() {
 			setLoading(true);
-			const { data, error } = await supabaseClient
-				.from("links")
+			const { data, error } = await supabase
+				.from(link_source)
 				.select()
 				.or(
 					`share_with.cs.{${
@@ -195,7 +183,7 @@ async function useGetLinks() {
 			}
 		}
 		getLinks();
-	}, []);
+	}, [currentUser]);
 }
 
 export { createLink, deleteLink, updateLinkInfo, useGetLinks };

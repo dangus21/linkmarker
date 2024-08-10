@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes } from "react";
+import { type InputHTMLAttributes, useLayoutEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 function Input({
@@ -6,15 +6,26 @@ function Input({
 	className,
 	placeHolder,
 	value,
+	focusOnMount,
 	...inputProps
 }: InputHTMLAttributes<HTMLInputElement> & {
 	id?: string;
 	className?: string;
 	placeHolder?: string;
 	value?: string;
+	focusOnMount?: boolean;
 }) {
+	const inputRef = useRef<HTMLInputElement | null>(null);
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	useLayoutEffect(() => {
+		if (focusOnMount && inputRef.current) {
+			inputRef.current?.focus();
+		}
+	}, []);
+
 	return (
 		<input
+			ref={inputRef}
 			type={id}
 			name={id}
 			id={id}

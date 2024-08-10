@@ -1,16 +1,13 @@
+import { useUserGlobalState } from "@/state";
+import { useRouter } from "next/router";
 import { Fragment } from "react";
 
-import type { Database } from "@/lib/types";
-import { useUserGlobalState } from "@/state";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import { useRouter } from "next/router";
-
+import { supabase } from "@/hooks/links";
 import { Popover, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
 function NavbarProfile() {
-	const supabaseClient = useSupabaseClient<Database>();
 	const globalUserState = useUserGlobalState();
 	const { push } = useRouter();
 
@@ -21,7 +18,7 @@ function NavbarProfile() {
 		},
 		{
 			name: "Sign out",
-			action: () => supabaseClient.auth.signOut(),
+			action: () => supabase.auth.signOut(),
 		},
 	];
 	return (

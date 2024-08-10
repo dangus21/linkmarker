@@ -24,7 +24,7 @@ function LinkTitle({
 }) {
 	const [localTitle, setLocalTitle] = useState(title);
 	const { values, update: updateLink } = useLinkGlobalState();
-
+	const currentLink = values.find((value) => value.id === id);
 	const LockedIcon = isPublic
 		? LockOpenIcon
 		: shareWith.length
@@ -40,10 +40,11 @@ function LinkTitle({
 				/>
 				{edit ? (
 					<Input
+						focusOnMount
 						onChange={(event) => {
 							setLocalTitle(event.currentTarget.value);
 							updateLink({
-								...values.find((value) => value.id === id),
+								...currentLink,
 								title: event.currentTarget.value,
 							});
 						}}
@@ -52,7 +53,11 @@ function LinkTitle({
 								toggleEdit(true);
 							}
 							if (key.code === "Enter") {
-								toggleEdit(false);
+								if (currentLink?.title === localTitle) {
+									toggleEdit(true);
+								} else {
+									toggleEdit(false);
+								}
 							}
 						}}
 						id="textFilter"
