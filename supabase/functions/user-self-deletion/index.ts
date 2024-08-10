@@ -1,5 +1,5 @@
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.14.0";
 import { serve } from "https://deno.land/std@0.182.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.14.0";
 
 console.log("Function user-invalidation up and running!");
 
@@ -32,9 +32,6 @@ serve(async (req: Request) => {
 			},
 		);
 		// Now we can get the session or user object
-		const {
-			data: { user },
-		} = await supabaseClient.auth.getUser();
 		// And we can run queries in the context of our authenticated user
 		const { data: profiles, error: user_error } = await supabaseClient
 			.from("profiles")

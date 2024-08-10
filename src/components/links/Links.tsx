@@ -63,6 +63,8 @@ function Links() {
 	}, [supabaseClient, user?.id]);
 
 	const { linksBeingEdited, setLinkForEdit } = useLinkMultiEditState();
+	currentLinks[0]?.title &&
+		console.log("LOG ~ currentLinks:", currentLinks[0].title);
 
 	const ownershipLinksList =
 		ownershipFilter === TABS.ALL
@@ -131,6 +133,28 @@ function Links() {
 								});
 							}
 
+							function updateLinkTitle(title: string) {
+								return updateLinkInfo({
+									link: {
+										title,
+									},
+									id: virtualRow.id,
+									updateLink,
+									supabaseClient,
+								});
+							}
+
+							function toggleEdit(shouldCancel: boolean) {
+								console.log(
+									"LOG ~ shouldCancel:",
+									shouldCancel,
+								);
+								if (!shouldCancel && isLinkBeingEdited) {
+									updateLinkTitle(virtualRow.title);
+								}
+								setLinkForEdit(virtualRow.id);
+							}
+
 							const {
 								canDeleteLink,
 								isLinkBeingEdited,
@@ -143,18 +167,25 @@ function Links() {
 
 							return (
 								<Link
+									id={virtualRow.id}
 									key={virtualRow.id}
 									virtualRow={virtualRow as TLink}
-									openOrArchiveLinkFn={openOrArchiveLinkFn}
+									openOrArchiveLinkFn={
+										!isLinkBeingEdited
+											? openOrArchiveLinkFn
+											: undefined
+									}
 									left={
 										<>
 											<LinkTitle
+												id={virtualRow.id}
 												edit={isLinkBeingEdited}
 												isPublic={virtualRow.is_public}
 												shareWith={
 													virtualRow.share_with
 												}
 												title={virtualRow.title}
+												toggleEdit={toggleEdit}
 											/>
 											<div className="grid sm:grid-cols-4 sm:items-center [&>div]:max-w-[20%] [&>div]:mt-3 mb-2">
 												<LinkOpenedStatus
@@ -191,11 +222,7 @@ function Links() {
 											{renderToggle(
 												<LinkEdit
 													isOwnLink={userIsOwner}
-													toggleEditMode={() =>
-														setLinkForEdit(
-															virtualRow.id,
-														)
-													}
+													toggleEdit={toggleEdit}
 												/>,
 												{
 													toggle: process.env

@@ -1,4 +1,3 @@
-import type { MouseEventHandler } from "react";
 import { twMerge } from "tailwind-merge";
 
 function LinkParts({
@@ -10,7 +9,7 @@ function LinkParts({
 }: {
 	invalidation?: boolean;
 	icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-	onMouseDown: MouseEventHandler<HTMLDivElement>;
+	onMouseDown: (shouldCancel: boolean) => void;
 	iconCss?: string;
 	containerCss?: string;
 }) {
@@ -21,7 +20,7 @@ function LinkParts({
 	}
 	return (
 		<div
-			onMouseDown={onMouseDown}
+			onMouseDown={() => onMouseDown(false)}
 			className={twMerge(
 				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow cursor-pointer hover:bg-gray-900/50",
 				containerCss,

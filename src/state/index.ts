@@ -18,24 +18,6 @@ export type TLink = Database["public"]["Tables"]["links"]["Row"];
 export type TLinkNew = Database["public"]["Tables"]["links"]["Insert"];
 export type TLinkUpdate = Database["public"]["Tables"]["links"]["Update"];
 
-export type UserState = {
-	id: string;
-	userName: string;
-	email: string;
-	password: string;
-	avatar: TAvatar;
-	hasAvatar: null | boolean;
-	modified: boolean;
-	is_public: boolean;
-	setis_public: (is_public: boolean) => void;
-	setModified: (isModified: boolean) => void;
-	setId: (id: string) => void;
-	setUserName: (id: string) => void;
-	setEmail: (id: string) => void;
-	setHasAvatar: (flag: boolean) => void;
-	setAvatar: ({ img, file, fileName }: Partial<TAvatar>) => void;
-};
-
 export enum TABS {
 	ALL = 0,
 	MINE = 1,
@@ -55,19 +37,22 @@ export type WindowSize = {
 	setSizes: (key: "width" | "height", value: number) => void;
 };
 
-export type LinkState = {
-	values: TLink[] | [];
-	new: TLinkNew;
-	loading: boolean;
-	ownershipFilter: TABS;
-	textFilter: string;
-	setTextFilter: (filter: string) => void;
-	setOwnershipFilter: (filter: TABS) => void;
-	setLoading: (load: boolean) => void;
-	set: (links: TLink[]) => void;
-	update: (link: TLinkUpdate) => void;
-	create: (link: Partial<TLinkNew>) => void;
-	resetNewLink: () => void;
+export type UserState = {
+	id: string;
+	userName: string;
+	email: string;
+	password: string;
+	avatar: TAvatar;
+	hasAvatar: null | boolean;
+	modified: boolean;
+	is_public: boolean;
+	setis_public: (is_public: boolean) => void;
+	setModified: (isModified: boolean) => void;
+	setId: (id: string) => void;
+	setUserName: (id: string) => void;
+	setEmail: (id: string) => void;
+	setHasAvatar: (flag: boolean) => void;
+	setAvatar: ({ img, file, fileName }: Partial<TAvatar>) => void;
 };
 
 const useUserGlobalState = create<UserState>()((set) => ({
@@ -96,8 +81,7 @@ const useUserGlobalState = create<UserState>()((set) => ({
 			},
 		})),
 	setModified: (isModified) =>
-		set((state) => ({
-			...state,
+		set(() => ({
 			modified: isModified,
 		})),
 	setHasAvatar: (flag) =>
@@ -105,6 +89,21 @@ const useUserGlobalState = create<UserState>()((set) => ({
 			hasAvatar: flag,
 		})),
 }));
+
+export type LinkState = {
+	values: TLink[] | [];
+	new: TLinkNew;
+	loading: boolean;
+	ownershipFilter: TABS;
+	textFilter: string;
+	setTextFilter: (filter: string) => void;
+	setOwnershipFilter: (filter: TABS) => void;
+	setLoading: (load: boolean) => void;
+	set: (links: TLink[]) => void;
+	update: (link: TLinkUpdate) => void;
+	create: (link: Partial<TLinkNew>) => void;
+	resetNewLink: () => void;
+};
 
 const useLinkGlobalState = create<LinkState>()((set) => ({
 	loading: false,
@@ -139,16 +138,16 @@ const useLinkGlobalState = create<LinkState>()((set) => ({
 		})),
 	update: (link) =>
 		set((state) => {
-			const currentLinks = structuredClone(state.values);
-			const updateLinkIdx = currentLinks.findIndex(
+			const updateLinkIdx = state.values.findIndex(
 				(el) => el.id === link.id,
 			);
-			currentLinks[updateLinkIdx] = {
-				...currentLinks[updateLinkIdx],
+
+			state.values[updateLinkIdx] = {
+				...state.values[updateLinkIdx],
 				...link,
 			};
 
-			return { ...state, values: currentLinks };
+			return { values: state.values };
 		}),
 }));
 
@@ -170,7 +169,11 @@ const useLinkMultiEditState = create<EditLinkState>((set) => ({
 					],
 				};
 			}
-			return state; // No changes if link is already being edited
+			return {
+				linksBeingEdited: state.linksBeingEdited.filter(
+					(link) => link.id !== linkId,
+				),
+			};
 		}),
 	setLinkEditData: () => null,
 }));

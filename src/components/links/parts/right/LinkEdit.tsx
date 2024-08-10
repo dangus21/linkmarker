@@ -3,14 +3,14 @@ import { LinkParts } from "./LinkParts";
 
 function LinkEdit({
 	isOwnLink,
-	toggleEditMode,
+	toggleEdit,
 }: {
 	isOwnLink: boolean;
-	toggleEditMode: () => void;
+	toggleEdit: (shouldCancel: boolean) => void;
 }) {
 	return (
 		<LinkParts
-			onMouseDown={toggleEditMode}
+			onMouseDown={() => toggleEdit(false)}
 			invalidation={!isOwnLink}
 			icon={PencilIcon}
 		/>
