@@ -1,5 +1,4 @@
 import pwaBuilder from "next-pwa";
-
 const withPWA = pwaBuilder({
 	dest: "public",
 	register: true,
@@ -11,5 +10,4 @@ const withPWA = pwaBuilder({
 const nextConfig = withPWA({
 	reactStrictMode: true,
 });
-
 export default nextConfig;

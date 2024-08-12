@@ -7,8 +7,9 @@
 		"build": "next build",
 		"start": "next start",
 		"nlint": "next lint --fix",
-		"lint": "biome lint --write --unsafe ./src",
-		"format": "cls && biome format src --write && biome lint src --write --unsafe",
+		"blint": "biome lint --write --unsafe ./src",
+		"bformat": "cls && biome format src --write && biome lint src --write --unsafe",
+		"b": "pnpm blint && pnpm bformat",
 		"types": "supabase gen types typescript --project-id \"tqurqlgcaemtcetwrqoz\" --schema public > src/lib/types.ts"
 	},
 	"dependencies": {

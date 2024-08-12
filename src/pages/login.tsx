@@ -30,6 +30,19 @@ export default function LoginPage() {
 	return (
 		<main>
 			<form>
+				<button
+					type="button"
+					id="oauth"
+					value={email}
+					onClick={() =>
+						supabase.auth.signInWithOAuth({ provider: "google" })
+					}
+				>
+					oauth
+				</button>
+				<br />
+				<br />
+				<br />
 				<label htmlFor="email">Email:</label>
 				<input
 					id="email"

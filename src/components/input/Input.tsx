@@ -1,4 +1,4 @@
-import { type InputHTMLAttributes, useLayoutEffect, useRef } from "react";
+import { type InputHTMLAttributes, useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 function Input({
@@ -16,10 +16,10 @@ function Input({
 	focusOnMount?: boolean;
 }) {
 	const inputRef = useRef<HTMLInputElement | null>(null);
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-	useLayoutEffect(() => {
+	// biome-ignore lint/correctness/useExhaustiveDependencies: mount only
+	useEffect(() => {
 		if (focusOnMount && inputRef.current) {
-			inputRef.current?.focus();
+			setTimeout(() => inputRef.current?.focus(), 0);
 		}
 	}, []);
 
