@@ -153,13 +153,15 @@ const useLinkGlobalState = create<LinkState>()((set) => ({
 
 type EditLinkState = {
 	linksBeingEdited: Partial<TLink>[];
-	setLinkForEdit: (linkId: string) => void;
-	setLinkEditData: (linkData: TLink) => void;
+	setLinkForEdit: (linkId?: string) => void;
 };
 const useLinkMultiEditState = create<EditLinkState>((set) => ({
 	linksBeingEdited: [],
 	setLinkForEdit: (linkId) =>
 		set((state) => {
+			if (!linkId) {
+				return { linksBeingEdited: [] };
+			}
 			// Check if the link is already in the linksBeingEdited array
 			if (!state.linksBeingEdited.some((link) => link?.id === linkId)) {
 				return {

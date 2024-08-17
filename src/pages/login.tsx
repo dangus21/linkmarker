@@ -1,6 +1,16 @@
 import { supabase } from "@/hooks/links";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import {
+	adjectives,
+	animals,
+	colors,
+	uniqueNamesGenerator,
+} from "unique-names-generator";
+
+const randomName = uniqueNamesGenerator({
+	dictionaries: [adjectives, colors, animals],
+});
 
 export default function LoginPage() {
 	const router = useRouter();
@@ -20,7 +30,13 @@ export default function LoginPage() {
 	}
 
 	async function signUp() {
-		const { error } = await supabase.auth.signUp({ email, password });
+		console.log("LOG ~ randomName:", randomName);
+
+		const { error } = await supabase.auth.signUp({
+			email,
+			password,
+			options: { data: { username: randomName } },
+		});
 		if (error) {
 			console.error(error);
 		}
@@ -57,9 +73,12 @@ export default function LoginPage() {
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
 				/>
+				<br />
+
 				<button type="button" onClick={logIn}>
 					Log in
 				</button>
+				<br />
 				<button type="button" onClick={signUp}>
 					Sign up
 				</button>

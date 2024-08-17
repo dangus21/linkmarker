@@ -28,10 +28,11 @@ import { supabase, useGetLinks } from "@/hooks/links";
 import { useToggle } from "@/utils/useToggle";
 
 function Links() {
-	const { width } = useViewport();
 	const user = useUser();
+	const { width } = useViewport();
 	const { renderToggle } = useToggle();
 	const [isAdmin, setIsAdmin] = useState<boolean>(false);
+
 	useGetLinks(user);
 
 	const {
@@ -41,6 +42,7 @@ function Links() {
 		textFilter,
 		loading,
 	} = useLinkGlobalState();
+	const { linksBeingEdited, setLinkForEdit } = useLinkMultiEditState();
 
 	useEffect(() => {
 		async function getUsers() {
@@ -61,7 +63,13 @@ function Links() {
 		};
 	}, [user?.id]);
 
-	const { linksBeingEdited, setLinkForEdit } = useLinkMultiEditState();
+	// TODO
+	// useEffect(() => {
+	// 	setTimeout(() => {
+	// 		const activeTextarea = document.activeElement;
+	// 		console.log("LOG ~ activeTextarea:", activeTextarea);
+	// 	}, 50);
+	// }, [linksBeingEdited]);
 
 	const ownershipLinksList =
 		ownershipFilter === TABS.ALL

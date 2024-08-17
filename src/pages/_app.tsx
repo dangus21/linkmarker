@@ -12,6 +12,7 @@ import {
 	type Session,
 	SessionContextProvider,
 } from "@supabase/auth-helpers-react";
+import "../components/supa_auth/SupaAuth.css";
 
 export default function App({
 	Component,
