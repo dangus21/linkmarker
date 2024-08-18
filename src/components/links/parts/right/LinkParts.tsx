@@ -1,27 +1,28 @@
 import { twMerge } from "tailwind-merge";
 
 function LinkParts({
+	isAdmin,
 	invalidation,
 	icon: Icon,
 	onMouseDown,
 	iconCss,
 	containerCss,
 }: {
-	invalidation?: boolean;
+	isAdmin: boolean;
+	invalidation?: boolean[];
 	icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 	onMouseDown: (shouldCancel: boolean) => void;
 	iconCss?: string;
 	containerCss?: string;
 }) {
-	if (invalidation) {
-		return (
-			<div className="relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow" />
-		);
-	}
+	const hasPermissions =
+		!isAdmin && invalidation?.every((val) => val === true);
+
 	return (
 		<div
-			onMouseDown={() => onMouseDown(false)}
+			onMouseDown={() => (hasPermissions ? null : onMouseDown(false))}
 			className={twMerge(
+				hasPermissions ? "pointer-events-none opacity-20" : "",
 				"relative flex h-1/3 w-16 items-center justify-center sm:h-full sm:w-20 flex-grow cursor-pointer hover:bg-gray-900/50",
 				containerCss,
 			)}

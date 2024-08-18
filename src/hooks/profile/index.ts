@@ -1,6 +1,7 @@
 import { type UserState, useUserGlobalState } from "@/state";
 import type { Session, User } from "@supabase/auth-helpers-react";
 import { useCallback, useEffect } from "react";
+import { useReadLocalStorage } from "usehooks-ts";
 import { supabase } from "../links";
 
 async function updateProfileInfo({ userState }: { userState: UserState }) {
@@ -34,13 +35,9 @@ async function updateProfileInfo({ userState }: { userState: UserState }) {
 	}
 }
 
-function useGetProfileInfo({
-	user,
-	session,
-}: {
-	user: User | null;
-	session: Session | null;
-}) {
+function useGetProfileInfo(): { user: boolean; session: boolean } {
+	const user = useReadLocalStorage<User | null>("user");
+	const session = useReadLocalStorage<Session | null>("session");
 	const {
 		setEmail,
 		setId,
@@ -95,6 +92,11 @@ function useGetProfileInfo({
 			getUserAndProfile();
 		}
 	}, [user, session, getUserAndProfile]);
+
+	return {
+		user: !!user,
+		session: !!session,
+	};
 }
 
 export { updateProfileInfo, useGetProfileInfo };

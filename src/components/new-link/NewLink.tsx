@@ -2,11 +2,10 @@ import { createLink } from "@/hooks";
 import { type User, useLinkGlobalState, useUserGlobalState } from "@/state";
 import { useEffect } from "react";
 
-import { isLink } from "@/utils";
+import { isLink, parseEnvToggles } from "@/utils";
 import { useRouter } from "next/router";
 
 import { Button } from "@/components";
-import { useToggle } from "@/utils/useToggle";
 import {
 	NewLinkDeletable,
 	NewLinkPublic,
@@ -18,12 +17,11 @@ import {
 function NewLink({ users }: { users: User[] }) {
 	const globalUserState = useUserGlobalState();
 	const globalLinkState = useLinkGlobalState();
-	const { renderToggle } = useToggle();
 
 	const isLinkShareable = globalLinkState.new.is_shareable;
 
-	const router = useRouter();
-	const isFromShareUI = Object.keys(router.query).some((queryEl) =>
+	const { query, push } = useRouter();
+	const isFromShareUI = Object.keys(query).some((queryEl) =>
 		["text", "url", "title"].includes(queryEl),
 	);
 
@@ -31,30 +29,29 @@ function NewLink({ users }: { users: User[] }) {
 		if (
 			isFromShareUI &&
 			!("origin" in globalLinkState.new) &&
-			(router.query.text || router.query.url)
+			(query.text || query.url)
 		) {
-			const isTextQueryLink = isLink(router.query.text as string);
+			const isTextQueryLink = isLink(query.text as string);
 
 			globalLinkState.create({
 				origin:
-					((isTextQueryLink
-						? router.query.text
-						: router.query.url) as string) || "",
+					((isTextQueryLink ? query.text : query.url) as string) ||
+					"",
 			});
 		}
 
-		if (
-			isFromShareUI &&
-			!("title" in globalLinkState.new) &&
-			router.query.title
-		) {
-			const isTextQueryLink = isLink(router.query.title as string);
+		if (isFromShareUI && !("title" in globalLinkState.new) && query.title) {
+			const isTextQueryLink = isLink(query.title as string);
 
 			globalLinkState.create({
-				title: !isTextQueryLink ? (router.query.title as string) : "",
+				title: !isTextQueryLink ? (query.title as string) : "",
 			});
 		}
-	}, [isFromShareUI, router.query, globalLinkState]);
+	}, [isFromShareUI, query, globalLinkState]);
+
+	// useEffect(() => {
+	// 	return () => globalLinkState.resetNewLink;
+	// }, []);
 
 	const isSubmitButtonDisabled =
 		!globalLinkState.new.title ||
@@ -75,10 +72,9 @@ function NewLink({ users }: { users: User[] }) {
 						<div className="grid gap-10">
 							<NewLinkTitle />
 							<NewLinkUrl />
-							{renderToggle(<NewLinkDeletable />, {
-								toggle: process.env
-									.NEXT_PUBLIC_TOGGLE_DELETE_ON_CREATE,
-							})}
+							{parseEnvToggles(
+								process.env.NEXT_PUBLIC_TOGGLE_DELETE_ON_CREATE,
+							) && <NewLinkDeletable />}
 							<NewLinkPublic />
 							{isLinkShareable && (
 								<NewLinkShareCombo users={users} />
@@ -91,7 +87,7 @@ function NewLink({ users }: { users: User[] }) {
 									createLink({
 										userState: globalUserState,
 										link: globalLinkState.new,
-										router,
+										push,
 									});
 									globalLinkState.resetNewLink();
 								}}

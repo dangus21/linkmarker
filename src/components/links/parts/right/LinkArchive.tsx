@@ -2,18 +2,19 @@ import { ArchiveBoxArrowDownIcon } from "@heroicons/react/20/solid";
 import { LinkParts } from "./LinkParts";
 
 function LinkArchive({
-	toggleArchivedStatus,
 	isAdmin,
-	isArchivable,
+	toggleArchivedStatus,
+	invalidation,
 }: {
-	toggleArchivedStatus: () => Promise<void>;
 	isAdmin: boolean;
-	isArchivable: boolean;
+	toggleArchivedStatus: () => Promise<void>;
+	invalidation: boolean[];
 }) {
 	return (
 		<LinkParts
+			isAdmin={isAdmin}
 			onMouseDown={toggleArchivedStatus}
-			invalidation={!isArchivable && !isAdmin}
+			invalidation={invalidation}
 			icon={ArchiveBoxArrowDownIcon}
 		/>
 	);

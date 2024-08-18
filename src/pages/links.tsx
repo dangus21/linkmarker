@@ -9,7 +9,7 @@ function Main() {
 	const session = useSession();
 	const user = useUser();
 	const { push } = useRouter();
-	useGetProfileInfo({ user, session });
+	useGetProfileInfo();
 	useEffect(() => {
 		if (!user || !session) push("/");
 	}, [user, session, push]);

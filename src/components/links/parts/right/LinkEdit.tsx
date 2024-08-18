@@ -2,16 +2,22 @@ import { PencilIcon } from "@heroicons/react/20/solid";
 import { LinkParts } from "./LinkParts";
 
 function LinkEdit({
-	isOwnLink,
+	isAdmin,
 	toggleEdit,
+	invalidation,
 }: {
-	isOwnLink: boolean;
-	toggleEdit: (shouldCancel: boolean) => void;
+	isAdmin: boolean;
+	invalidation?: boolean[];
+	toggleEdit: ({
+		title,
+		shouldCancel,
+	}: { title?: string; shouldCancel: boolean }) => void;
 }) {
 	return (
 		<LinkParts
-			onMouseDown={() => toggleEdit(false)}
-			invalidation={!isOwnLink}
+			isAdmin={isAdmin}
+			onMouseDown={() => toggleEdit({ shouldCancel: false })}
+			invalidation={invalidation}
 			icon={PencilIcon}
 		/>
 	);

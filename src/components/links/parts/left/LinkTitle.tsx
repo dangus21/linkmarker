@@ -20,7 +20,10 @@ function LinkTitle({
 	isPublic: boolean;
 	shareWith: string[];
 	edit: boolean;
-	toggleEdit: (shouldCancel: boolean) => void;
+	toggleEdit: ({
+		title,
+		shouldCancel,
+	}: { title?: string; shouldCancel: boolean }) => void;
 }) {
 	const [localTitle, setLocalTitle] = useState(title);
 	const { values, update: updateLink } = useLinkGlobalState();
@@ -43,20 +46,23 @@ function LinkTitle({
 						focusOnMount
 						onChange={(event) => {
 							setLocalTitle(event.currentTarget.value);
-							updateLink({
-								...currentLink,
-								title: event.currentTarget.value,
-							});
 						}}
 						onKeyDown={(key) => {
 							if (key.code === "Escape") {
-								toggleEdit(true);
+								toggleEdit({ shouldCancel: true });
 							}
 							if (key.code === "Enter") {
 								if (currentLink?.title === localTitle) {
-									toggleEdit(true);
+									toggleEdit({ shouldCancel: true });
 								} else {
-									toggleEdit(false);
+									toggleEdit({
+										shouldCancel: false,
+										title: localTitle,
+									});
+									updateLink({
+										...currentLink,
+										title: localTitle,
+									});
 								}
 							}
 						}}

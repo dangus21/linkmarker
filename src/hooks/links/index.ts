@@ -72,11 +72,11 @@ async function deleteLink({
 async function createLink({
 	userState,
 	link,
-	router,
+	push,
 }: {
 	userState: UserState;
 	link: LinkState["new"];
-	router: NextRouter;
+	push: NextRouter["push"];
 }) {
 	const url = link.origin?.startsWith("http")
 		? link.origin
@@ -107,7 +107,7 @@ async function createLink({
 			toast.error("Failed creating link", toast_config);
 		} else {
 			toast.success("Created new link", toast_config);
-			router.push("/");
+			push("/");
 		}
 	} catch (error) {
 		console.warn({ error });

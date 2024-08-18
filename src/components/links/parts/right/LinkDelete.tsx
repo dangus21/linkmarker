@@ -14,11 +14,13 @@ function LinkDelete({
 	link: string;
 	user: string;
 	isAdmin: boolean;
+	invalidation: boolean[];
 }) {
 	const { set: setLinks } = useLinkGlobalState();
 
 	return (
 		<LinkParts
+			isAdmin={isAdmin}
 			onMouseDown={() =>
 				deleteLink({
 					id: link,
@@ -26,7 +28,7 @@ function LinkDelete({
 					currentUser: user,
 				})
 			}
-			invalidation={!canDeleteLink && !isAdmin}
+			invalidation={[!canDeleteLink && !isAdmin]}
 			icon={XMarkIcon}
 			iconCss="s:w-10 h-8 w-8 sm:h-10 text-red-500"
 			containerCss="hover:bg-red-900/20"

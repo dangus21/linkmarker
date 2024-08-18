@@ -110,7 +110,6 @@ const useLinkGlobalState = create<LinkState>()((set) => ({
 	values: [],
 	new: {
 		by: "",
-		title: "",
 		share_with: [],
 	},
 	ownershipFilter: TABS.ALL,

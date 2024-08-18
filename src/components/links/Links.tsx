@@ -7,9 +7,9 @@ import {
 	useLinkGlobalState,
 	useLinkMultiEditState,
 } from "@/state";
-import { useSession, useUser } from "@supabase/auth-helpers-react";
+import type { User } from "@supabase/auth-helpers-react";
 
-import { getLinkValues, normalizeLinkTitle } from "@/utils";
+import { getLinkValues, normalizeLinkTitle, parseEnvToggles } from "@/utils";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import {
@@ -25,12 +25,11 @@ import {
 
 import { LoadingSpinner, NewLinkButton } from "@/components";
 import { supabase, useGetLinks } from "@/hooks/links";
-import { useToggle } from "@/utils/useToggle";
+import { useReadLocalStorage } from "usehooks-ts";
 
 function Links() {
-	const user = useUser();
-	const session = useSession();
-	const { renderToggle } = useToggle();
+	const user = useReadLocalStorage<User | null>("user");
+	const session = useReadLocalStorage("session");
 	const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
 	useGetLinks(user);
@@ -42,6 +41,7 @@ function Links() {
 		textFilter,
 		loading,
 	} = useLinkGlobalState();
+
 	const { linksBeingEdited, setLinkForEdit } = useLinkMultiEditState();
 
 	useEffect(() => {
@@ -127,7 +127,7 @@ function Links() {
 					)}
 				>
 					{hasLength ? (
-						textFilterLinksList.map((virtualRow) => {
+						textFilterLinksList.map((filteredLink) => {
 							function openOrArchiveLinkFn(
 								status: boolean,
 								op: "opened" | "archived",
@@ -136,7 +136,7 @@ function Links() {
 									link: {
 										[op]: status,
 									},
-									id: virtualRow.id,
+									id: filteredLink.id,
 									updateLink,
 								});
 							}
@@ -146,16 +146,23 @@ function Links() {
 									link: {
 										title,
 									},
-									id: virtualRow.id,
+									id: filteredLink.id,
 									updateLink,
 								});
 							}
 
-							function toggleEdit(shouldCancel: boolean) {
-								if (!shouldCancel && isLinkBeingEdited) {
-									updateLinkTitle(virtualRow.title);
+							function toggleEdit({
+								title,
+								shouldCancel,
+							}: { title?: string; shouldCancel: boolean }) {
+								if (
+									!shouldCancel &&
+									isLinkBeingEdited &&
+									title
+								) {
+									updateLinkTitle(title);
 								}
-								setLinkForEdit(virtualRow.id);
+								setLinkForEdit(filteredLink.id);
 							}
 
 							const {
@@ -164,15 +171,15 @@ function Links() {
 								userIsOwner,
 							} = getLinkValues(
 								user,
-								virtualRow,
+								filteredLink,
 								linksBeingEdited,
 							);
 
 							return (
 								<Link
-									id={virtualRow.id}
-									key={virtualRow.id}
-									virtualRow={virtualRow as TLink}
+									id={filteredLink.id}
+									key={filteredLink.id}
+									virtualRow={filteredLink as TLink}
 									openOrArchiveLinkFn={
 										!isLinkBeingEdited
 											? openOrArchiveLinkFn
@@ -181,20 +188,22 @@ function Links() {
 									left={
 										<>
 											<LinkTitle
-												id={virtualRow.id}
+												id={filteredLink.id}
 												edit={isLinkBeingEdited}
-												isPublic={virtualRow.is_public}
-												shareWith={
-													virtualRow.share_with
+												isPublic={
+													filteredLink.is_public
 												}
-												title={virtualRow.title}
+												shareWith={
+													filteredLink.share_with
+												}
+												title={filteredLink.title}
 												toggleEdit={toggleEdit}
 											/>
 											<div className="grid lg:grid-cols-4 lg:items-center [&>div]:max-w-[20%] [&>div]:mt-3 mb-2">
 												<div className="min-w-24">
 													<LinkOpenedStatus
 														opened={
-															virtualRow.opened
+															filteredLink.opened
 														}
 													/>
 												</div>
@@ -204,7 +213,7 @@ function Links() {
 														aria-hidden="true"
 													/>
 													<p className="mr-8 text-sm text-gray-500 md:mr-8">
-														{virtualRow.who}
+														{filteredLink.who}
 													</p>
 												</div>
 												<div className="-mb-1 flex items-center min-w-24 max-w-[40%]">
@@ -213,13 +222,13 @@ function Links() {
 														aria-hidden="true"
 													/>
 													<p className="mr-8 text-sm text-gray-500 text-nowrap">
-														{virtualRow.origin}
+														{filteredLink.origin}
 													</p>
 												</div>
 												<div className="min-w-24 -mb-1 flex items-center max-w-[40%]">
 													<LinkDate
 														postedDate={
-															virtualRow.posted_date
+															filteredLink.posted_date
 														}
 													/>
 												</div>
@@ -228,68 +237,59 @@ function Links() {
 									}
 									right={
 										<>
-											{renderToggle(
-												<LinkEdit
-													isOwnLink={userIsOwner}
-													toggleEdit={toggleEdit}
-												/>,
-												{
-													toggle:
-														isAdmin ||
-														(userIsOwner &&
-															process.env
-																.NEXT_PUBLIC_TOGGLE_EDIT),
-												},
-											)}
-											{renderToggle(
-												<LinkSeenToggle
-													opened={virtualRow.opened}
-													toggleSeenStatus={() =>
-														openOrArchiveLinkFn(
-															!virtualRow.opened,
-															"opened",
-														)
-													}
-												/>,
-												{
-													toggle:
-														isAdmin ||
+											<LinkEdit
+												isAdmin={isAdmin}
+												invalidation={[!userIsOwner]}
+												toggleEdit={toggleEdit}
+											/>
+											<LinkSeenToggle
+												isAdmin={isAdmin}
+												invalidation={[
+													!userIsOwner,
+													// ! because toggle is turned off
+													!parseEnvToggles(
 														process.env
 															.NEXT_PUBLIC_TOGGLE_SEEN,
-												},
-											)}
-											{renderToggle(
-												<LinkArchive
-													isAdmin={isAdmin}
-													isArchivable={userIsOwner}
-													toggleArchivedStatus={() =>
-														openOrArchiveLinkFn(
-															true,
-															"archived",
-														)
-													}
-												/>,
-												{
-													toggle: process.env
-														.NEXT_PUBLIC_TOGGLE_ARCHIVE,
-													exceptions: [isAdmin],
-												},
-											)}
-											{renderToggle(
-												<LinkDelete
-													isAdmin={isAdmin}
-													canDeleteLink={
-														canDeleteLink
-													}
-													link={virtualRow.id}
-													user={user!.id}
-												/>,
-												{
-													toggle: process.env
-														.NEXT_PUBLIC_TOGGLE_DELETE,
-													exceptions: [isAdmin],
-												},
-											)}
+													),
+												]}
+												opened={filteredLink.opened}
+												toggleSeenStatus={() =>
+													openOrArchiveLinkFn(
+														!filteredLink.opened,
+														"opened",
+													)
+												}
+											/>
+											<LinkArchive
+												isAdmin={isAdmin}
+												invalidation={[
+													!userIsOwner,
+													parseEnvToggles(
+														process.env
+															.NEXT_PUBLIC_TOGGLE_ARCHIVE,
+													),
+												]}
+												toggleArchivedStatus={() =>
+													openOrArchiveLinkFn(
+														true,
+														"archived",
+													)
+												}
+											/>
+											<LinkDelete
+												isAdmin={isAdmin}
+												invalidation={[
+													!userIsOwner,
+													parseEnvToggles(
+														process.env
+															.NEXT_PUBLIC_TOGGLE_DELETE,
+													),
+													canDeleteLink,
+												]}
+												canDeleteLink={canDeleteLink}
+												link={filteredLink.id}
+												user={user!.id}
+											/>
 										</>
 									}
 								/>

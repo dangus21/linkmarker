@@ -1,18 +1,33 @@
 import { supabase } from "@/hooks/links";
-import { useSession, useUser } from "@supabase/auth-helpers-react";
+import {
+	type Session,
+	type User,
+	useSession,
+	useUser,
+} from "@supabase/auth-helpers-react";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
 import { Background } from "../background";
 
 function SupaAuth() {
-	const session = useSession();
-	const user = useUser();
 	const { push } = useRouter();
 	const [loading, setLoading] = useState(true);
+	const [, setLocalUser] = useLocalStorage<User | null>("user", null);
+	const [, setLocalSession] = useLocalStorage<Session | null>(
+		"session",
+		null,
+	);
+	const session = useSession();
+	const user = useUser();
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: not all deps needed
 	useEffect(() => {
+		setLocalUser(user);
+		setLocalSession(session);
+
 		if (user || session) {
 			push("/links");
 		} else {
@@ -68,7 +83,7 @@ function SupaAuth() {
 								theme="dark"
 								providers={["google", "facebook"]}
 								socialLayout="vertical"
-								redirectTo="http://localhost:3000/links"
+								// redirectTo="http://localhost:3000/links"
 							/>
 						</div>
 					</main>
