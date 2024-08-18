@@ -185,7 +185,7 @@ async function useGetLinks(currentUser: User | null) {
 			}
 			getLinks();
 		}
-	}, [currentUser]);
+	}, []);
 }
 
 export { createLink, deleteLink, updateLinkInfo, useGetLinks };

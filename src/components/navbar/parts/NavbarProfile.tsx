@@ -23,7 +23,10 @@ function NavbarProfile() {
 		},
 		{
 			name: "Sign out",
-			action: () => supabase.auth.signOut(),
+			action: () => {
+				push("/");
+				supabase.auth.signOut();
+			},
 		},
 	];
 	return (

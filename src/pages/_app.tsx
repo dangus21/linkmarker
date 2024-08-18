@@ -12,7 +12,7 @@ import {
 	type Session,
 	SessionContextProvider,
 } from "@supabase/auth-helpers-react";
-import "../components/supa_auth/SupaAuth.css";
+import "../components/background/Background.css";
 
 export default function App({
 	Component,
@@ -23,6 +23,7 @@ export default function App({
 	return (
 		<>
 			<Head>
+				<title>Linkmarker - Save and Share Your Links</title>
 				<meta charSet="utf-8" />
 				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 				<meta

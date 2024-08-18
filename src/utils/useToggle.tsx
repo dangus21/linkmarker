@@ -1,47 +1,32 @@
+import type React from "react";
+import { useMemo } from "react";
+
 function useToggle() {
-	return {
-		renderToggle: (
+	const renderToggle = useMemo(() => {
+		return (
 			component: React.ReactElement,
-			{
-				toggle,
-				exceptions,
-				additionalToggles,
-			}: {
-				toggle: string | boolean | undefined;
+			props?: {
+				toggle?: string | boolean | undefined;
 				exceptions?: boolean[];
-				additionalToggles?: boolean[];
 			},
 		) => {
-			let Component: React.ReactElement;
-
 			if (
-				exceptions &&
-				exceptions.length > 0 &&
-				exceptions.every(Boolean)
+				props?.exceptions &&
+				props?.exceptions.length > 0 &&
+				props?.exceptions.every(Boolean)
 			) {
-				Component = component;
-				return Component;
+				return component;
 			}
 
-			if (toggle === "off" || toggle === false) {
+			if (props?.toggle === "off" || props?.toggle === false) {
 				return null;
 			}
 
-			if (
-				additionalToggles &&
-				additionalToggles.length > 0 &&
-				additionalToggles?.every(Boolean)
-			) {
-				Component = component;
-				return Component;
-			}
+			return component;
+		};
+	}, []); // Empty dependency array as this function never needs to change
 
-			if (!additionalToggles) {
-				Component = component;
-				return Component;
-			}
-		},
-	};
+	return { renderToggle };
 }
 
 export { useToggle };

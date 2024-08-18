@@ -273,10 +273,6 @@ function Links() {
 													toggle: process.env
 														.NEXT_PUBLIC_TOGGLE_ARCHIVE,
 													exceptions: [isAdmin],
-													additionalToggles: [
-														ownershipFilter !==
-															TABS.ARCHIVED,
-													],
 												},
 											)}
 											{renderToggle(
