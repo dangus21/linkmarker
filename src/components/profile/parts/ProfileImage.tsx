@@ -26,16 +26,17 @@ function ProfileImage() {
 		<div className="bg-grey-lighter flex items-center justify-center">
 			<label className="hover:bg-blue flex w-full cursor-pointer flex-col items-center px-4 py-6 uppercase tracking-wide hover:text-slate-400 sm:rounded-lg sm:px-10">
 				{globalUserState.avatar.img ? (
-					<div className="overflow-hidden rounded-full hover:opacity-70">
+					<div className="overflow-hidden rounded-full hover:opacity-70 w-[150px] h-[150px]">
 						<Image
-							className="aspect-square h-[150px] w-[150px]"
 							src={
 								globalUserState.avatar.img ||
 								"/avatar_placeholder.png"
 							}
 							alt="Profile Picture"
-							width={150}
-							height={150}
+							width={200}
+							height={160}
+							sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw,33vw"
+							className="w-100 h-100"
 						/>
 					</div>
 				) : (

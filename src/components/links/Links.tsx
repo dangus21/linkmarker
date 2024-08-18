@@ -7,9 +7,9 @@ import {
 	useLinkGlobalState,
 	useLinkMultiEditState,
 } from "@/state";
-import { useUser } from "@supabase/auth-helpers-react";
+import { useSession, useUser } from "@supabase/auth-helpers-react";
 
-import { getLinkValues, normalizeLinkTitle, useViewport } from "@/utils";
+import { getLinkValues, normalizeLinkTitle } from "@/utils";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import {
@@ -29,7 +29,7 @@ import { useToggle } from "@/utils/useToggle";
 
 function Links() {
 	const user = useUser();
-	const { width } = useViewport();
+	const session = useSession();
 	const { renderToggle } = useToggle();
 	const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
@@ -45,23 +45,25 @@ function Links() {
 	const { linksBeingEdited, setLinkForEdit } = useLinkMultiEditState();
 
 	useEffect(() => {
-		async function getUsers() {
-			const { data, error } = await supabase
-				.from("profiles")
-				.select("is_admin")
-				.eq("id", user?.id ?? "");
-			if (error) {
-				console.error({ usersError: error });
-			} else {
-				setIsAdmin(data[0].is_admin ?? false);
+		if (user || session) {
+			async function getUsers() {
+				const { data, error } = await supabase
+					.from("profiles")
+					.select("is_admin")
+					.eq("id", user?.id ?? "");
+				if (error) {
+					console.error({ usersError: error });
+				} else {
+					setIsAdmin(data[0].is_admin ?? false);
+				}
 			}
+			getUsers();
 		}
-		getUsers();
 
 		return () => {
 			setIsAdmin(false);
 		};
-	}, [user?.id]);
+	}, [user?.id, session, user]);
 
 	// TODO
 	// useEffect(() => {
@@ -111,7 +113,9 @@ function Links() {
 	return (
 		<div className="mx-auto flex w-full max-w-[81rem] justify-center">
 			<div className="sm:pb-2 w-full sm:mx-10 sm:max-w-7xl">
-				{width <= 630 && <NewLinkButton isMobile />}
+				<div className="md:invisible visible">
+					<NewLinkButton isMobile />
+				</div>
 				<ul
 					role="list"
 					className={twMerge(
@@ -186,11 +190,15 @@ function Links() {
 												title={virtualRow.title}
 												toggleEdit={toggleEdit}
 											/>
-											<div className="grid sm:grid-cols-4 sm:items-center [&>div]:max-w-[20%] [&>div]:mt-3 mb-2">
-												<LinkOpenedStatus
-													opened={virtualRow.opened}
-												/>
-												<div className="-mb-1 flex items-center max-w-[40%]">
+											<div className="grid lg:grid-cols-4 lg:items-center [&>div]:max-w-[20%] [&>div]:mt-3 mb-2">
+												<div className="min-w-24">
+													<LinkOpenedStatus
+														opened={
+															virtualRow.opened
+														}
+													/>
+												</div>
+												<div className="-mb-1 flex items-center min-w-24 max-w-[40%]">
 													<UsersIcon
 														className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
 														aria-hidden="true"
@@ -199,7 +207,7 @@ function Links() {
 														{virtualRow.who}
 													</p>
 												</div>
-												<div className="-mb-1 flex items-center max-w-[40%]">
+												<div className="-mb-1 flex items-center min-w-24 max-w-[40%]">
 													<MapPinIcon
 														className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
 														aria-hidden="true"
@@ -208,11 +216,13 @@ function Links() {
 														{virtualRow.origin}
 													</p>
 												</div>
-												<LinkDate
-													postedDate={
-														virtualRow.posted_date
-													}
-												/>
+												<div className="min-w-24 -mb-1 flex items-center max-w-[40%]">
+													<LinkDate
+														postedDate={
+															virtualRow.posted_date
+														}
+													/>
+												</div>
 											</div>
 										</>
 									}

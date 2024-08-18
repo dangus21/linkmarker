@@ -1,10 +1,20 @@
 import { Navbar, NewLink } from "@/components";
-import { SupaAuth } from "@/components/supa_auth";
+import { useGetProfileInfo } from "@/hooks";
 import { supabase } from "@/hooks/links";
 import type { User } from "@/state";
+import { useSession, useUser } from "@supabase/auth-helpers-react";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 function NewPage() {
+	const session = useSession();
+	const user = useUser();
+	const { push } = useRouter();
+	useGetProfileInfo({ user, session });
+	useEffect(() => {
+		if (!user || !session) push("/");
+	}, [user, session, push]);
+
 	const [users, setUsers] = useState<User[]>([]);
 
 	useEffect(() => {
@@ -26,10 +36,10 @@ function NewPage() {
 	}, []);
 
 	return (
-		<SupaAuth>
+		<>
 			<Navbar />
 			<NewLink users={users} />
-		</SupaAuth>
+		</>
 	);
 }
 

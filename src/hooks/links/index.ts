@@ -159,30 +159,32 @@ async function useGetLinks(currentUser: User | null) {
 	const { set: setLinks, setLoading } = useLinkGlobalState();
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
-		async function getLinks() {
-			setLoading(true);
-			const { data, error } = await supabase
-				.from(link_source)
-				.select()
-				.or(
-					`share_with.cs.{${
-						currentUser!.id
-					}},or(is_public.eq.true),or(by.eq.${currentUser!.id})`,
-				)
-				.order("posted_date", { ascending: false });
+		if (currentUser) {
+			async function getLinks() {
+				setLoading(true);
+				const { data, error } = await supabase
+					.from(link_source)
+					.select()
+					.or(
+						`share_with.cs.{${
+							currentUser?.id
+						}},or(is_public.eq.true),or(by.eq.${currentUser?.id})`,
+					)
+					.order("posted_date", { ascending: false });
 
-			if (error) {
-				console.warn({ error });
-				setLoading(false);
-				throw error;
-			}
+				if (error) {
+					console.warn({ error });
+					setLoading(false);
+					throw error;
+				}
 
-			if (data) {
-				setLoading(false);
-				setLinks(data);
+				if (data) {
+					setLoading(false);
+					setLinks(data);
+				}
 			}
+			getLinks();
 		}
-		getLinks();
 	}, [currentUser]);
 }
 

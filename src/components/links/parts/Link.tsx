@@ -15,7 +15,7 @@ type TLinkLocal = {
 function Link(props: TLinkLocal) {
 	const Element = props.openOrArchiveLinkFn ? "a" : "div";
 	return (
-		<li key={props.key} className="flex justify-between hover:bg-gray-800">
+		<li key={props.id} className="flex justify-between hover:bg-gray-800">
 			<Element
 				{...(Element === "a"
 					? {
@@ -29,7 +29,7 @@ function Link(props: TLinkLocal) {
 			>
 				{props.left}
 			</Element>
-			<div data-id="link_actions" className="flex flex-col sm:flex-row">
+			<div data-id="link_actions" className="flex flex-col lg:flex-row">
 				{props.right}
 			</div>
 		</li>

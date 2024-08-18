@@ -5,7 +5,7 @@ function LinkOpenedStatus({ opened }: { opened: boolean }) {
 	const OpenCloseIcon = opened ? CheckCircleIcon : XCircleIcon;
 	return (
 		<div className="-mb-1 flex items-center">
-			<div className="flex flex-row sm:flex-row">
+			<div className="flex">
 				<span className="relative mr-1 grid place-content-center">
 					<OpenCloseIcon
 						className={twMerge(

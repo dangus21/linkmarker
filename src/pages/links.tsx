@@ -1,10 +1,11 @@
-import { Navbar, Profile } from "@/components";
+import { Links, Navbar } from "@/components";
+import { Tabs } from "@/components/tabs";
 import { useGetProfileInfo } from "@/hooks";
 import { useSession, useUser } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-function ProfilePage() {
+function Main() {
 	const session = useSession();
 	const user = useUser();
 	const { push } = useRouter();
@@ -16,9 +17,10 @@ function ProfilePage() {
 	return (
 		<>
 			<Navbar />
-			<Profile />
+			<Tabs />
+			<Links />
 		</>
 	);
 }
 
-export default ProfilePage;
+export default Main;
