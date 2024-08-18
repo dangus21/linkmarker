@@ -1,48 +1,72 @@
-import type { ReactNode } from "react";
-
-import { useSession, useUser } from "@supabase/auth-helpers-react";
-import { Auth } from "@supabase/auth-ui-react";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
-
 import { LoadingSpinner } from "@/components";
 import { useGetProfileInfo } from "@/hooks";
 import { supabase } from "@/hooks/links";
 import { useUserGlobalState } from "@/state";
+import { useSession, useUser } from "@supabase/auth-helpers-react";
+import { Auth } from "@supabase/auth-ui-react";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
 import Head from "next/head";
-import { twMerge } from "tailwind-merge";
+import type { ReactNode } from "react";
 
 function SupaAuth({ children }: { children: ReactNode }) {
 	const session = useSession();
 	const user = useUser();
-
 	useGetProfileInfo({ user, session });
 	const globalUserState = useUserGlobalState();
 
 	return (
-		<div className="min-h-screen bg-gray-900">
+		<div className="min-h-screen bg-gray-900 text-white">
 			<Head>
-				<title>Linkmarker</title>
+				<title>Linkmarker - Save and Share Your Links</title>
 			</Head>
 			{!session || !user ? (
 				<>
-					<div
-						className={twMerge(
-							"relative z-10 flex flex-col",
-							"flex h-screen w-screen text-white",
-							"items-center justify-center ",
-							"[&>div]:w-[30rem] [&>div]:bg-neutral-900",
-							"[&>div]:rounded-lg [&>div]:px-6 [&>div]:py-4",
-						)}
-					>
-						<p className="font-mono text-[4rem]">Linkmarker</p>
-						<Auth
-							dark
-							theme="dark"
-							supabaseClient={supabase}
-							appearance={{ theme: ThemeSupa }}
-							providers={["google", "facebook"]}
-							socialLayout="vertical"
-						/>
+					<div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4">
+						<header className="text-center mb-8">
+							<h1 className="text-5xl font-bold mb-4">
+								Linkmarker
+							</h1>
+							<p className="text-xl">
+								Your personal link library and sharing platform
+							</p>
+						</header>
+
+						<main className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl">
+							<div className="md:w-1/2 mb-8 md:mb-0">
+								<h2 className="text-3xl font-semibold mb-4">
+									Save, Organize, and Share
+								</h2>
+								<ul className="list-disc list-inside space-y-2">
+									<li>Save links from anywhere on the web</li>
+									<li>
+										Organize your links with tags and
+										collections
+									</li>
+									<li>
+										Share your curated lists with friends
+										and colleagues
+									</li>
+									<li>Access your links from any device</li>
+								</ul>
+							</div>
+
+							<div className="w-3/4 bg-neutral-800 p-6 rounded-lg">
+								<h3 className="text-2xl font-semibold mb-4">
+									Get Started
+								</h3>
+								<Auth
+									supabaseClient={supabase}
+									appearance={{ theme: ThemeSupa }}
+									theme="dark"
+									providers={["google", "facebook"]}
+									socialLayout="vertical"
+								/>
+							</div>
+						</main>
+
+						<footer className="mt-16 text-center">
+							<p>&copy; 2024 Linkmarker. All rights reserved.</p>
+						</footer>
 					</div>
 					<div id="bg" className="fixed top-0 let-0 z-0">
 						<svg
@@ -179,7 +203,7 @@ function SupaAuth({ children }: { children: ReactNode }) {
 					</div>
 				</>
 			) : globalUserState.hasAvatar && !globalUserState.avatar.img ? (
-				<div className="pt-[7rem]">
+				<div className="flex items-center justify-center min-h-screen">
 					<LoadingSpinner />
 				</div>
 			) : (
