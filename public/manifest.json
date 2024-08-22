@@ -5,8 +5,8 @@
 	"method": "GET",
 	"scope": "/",
 	"start_url": "/new",
-	"name": "linkmarker",
-	"short_name": "linkmarker",
+	"name": "Linkmarker",
+	"short_name": "LM",
 	"share_target": {
 		"action": "/new",
 		"params": {

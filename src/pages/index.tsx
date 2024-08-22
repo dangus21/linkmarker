@@ -1,7 +1,7 @@
-import { SupaAuth } from "@/components/supa_auth";
+import { Auth } from "@/components/auth";
 
 function Main() {
-	return <SupaAuth />;
+	return <Auth />;
 }
 
 export default Main;

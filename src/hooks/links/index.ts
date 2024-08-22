@@ -8,7 +8,7 @@ import {
 	useLinkGlobalState,
 } from "@/state";
 import { extractTopLevelDomain } from "@/utils";
-import { createClient } from "@/utils/supabase/component";
+import { createClient } from "@/utils/supabase/static-props";
 import type { User } from "@supabase/auth-helpers-react";
 import type { NextRouter } from "next/router";
 import { toast } from "react-hot-toast";

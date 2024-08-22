@@ -1,47 +1,8 @@
-import { supabase } from "@/hooks/links";
-import {
-	type Session,
-	type User,
-	useSession,
-	useUser,
-} from "@supabase/auth-helpers-react";
-import { Auth } from "@supabase/auth-ui-react";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { useLocalStorage } from "usehooks-ts";
+import {} from "@supabase/auth-helpers-react";
 import { Background } from "../background";
+import { Login } from "../login";
 
-function SupaAuth() {
-	const { push } = useRouter();
-	const [loading, setLoading] = useState(true);
-	const [, setLocalUser] = useLocalStorage<User | null>("user", null);
-	const [, setLocalSession] = useLocalStorage<Session | null>(
-		"session",
-		null,
-	);
-	const session = useSession();
-	const user = useUser();
-
-	useEffect(() => {
-		setLocalUser(user);
-		setLocalSession(session);
-
-		if (user || session) {
-			push("/links");
-		} else {
-			setLoading(false);
-		}
-	}, [session, user, push, setLocalUser, setLocalSession]);
-
-	if (loading) {
-		return (
-			<div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
-				<div className="text-2xl">Loading...</div>
-			</div>
-		);
-	}
-
+function Auth() {
 	return (
 		<div className="min-h-screen bg-gray-900 text-white">
 			<div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
@@ -136,28 +97,7 @@ function SupaAuth() {
 						</ul>
 					</div>
 
-					<div className="w-full md:w-1/2 bg-gray-800 p-6 rounded-lg shadow-lg">
-						<h3 className="text-2xl md:text-3xl font-semibold mb-6 text-purple-400">
-							Get Started
-						</h3>
-						<Auth
-							supabaseClient={supabase}
-							appearance={{
-								theme: ThemeSupa,
-								variables: {
-									default: {
-										colors: {
-											brand: "rgb(124 58 237)",
-											brandAccent: "rgb(139 92 246)",
-										},
-									},
-								},
-							}}
-							theme="dark"
-							providers={["google", "facebook"]}
-							socialLayout="vertical"
-						/>
-					</div>
+					<Login />
 				</main>
 
 				<footer className="mt-12 text-center text-sm text-gray-400">
@@ -169,4 +109,4 @@ function SupaAuth() {
 	);
 }
 
-export { SupaAuth };
+export { Auth };

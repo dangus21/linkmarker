@@ -65,14 +65,6 @@ function Links() {
 		};
 	}, [user?.id, session, user]);
 
-	// TODO
-	// useEffect(() => {
-	// 	setTimeout(() => {
-	// 		const activeTextarea = document.activeElement;
-	// 		console.log("LOG ~ activeTextarea:", activeTextarea);
-	// 	}, 50);
-	// }, [linksBeingEdited]);
-
 	const ownershipLinksList =
 		ownershipFilter === TABS.ALL
 			? currentLinks.filter((link) => !link.archived)
