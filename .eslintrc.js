@@ -18,9 +18,11 @@ module.exports = {
 		"import",
 		"unused-imports",
 		"@typescript-eslint",
-		"sort-imports-es6-autofix"
+		"sort-imports-es6-autofix",
+		"eslint-plugin-react-compiler"
 	],
 	rules: {
+		"react-compiler/react-compiler": "error",
 		"sort-imports-es6-autofix/sort-imports-es6": [2, {
       "ignoreCase": false,
       "ignoreMemberSort": false,

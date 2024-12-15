@@ -1,4 +1,4 @@
-import { type CSSProperties, useEffect } from "react";
+import { type CSSProperties, useCallback, useEffect } from "react";
 
 import {
 	type LinkState,
@@ -159,37 +159,38 @@ async function updateLinkInfo({
 }
 
 async function useGetLinks(currentUser: User | null) {
-	const { set: setLinks, setLoading } = useLinkGlobalState();
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-	useEffect(() => {
-		if (currentUser) {
-			async function getLinks() {
-				setLoading(true);
-				const { data, error } = await supabase
-					.from(link_source)
-					.select()
-					.or(
-						`share_with.cs.{${
-							currentUser?.id
-						}},or(is_public.eq.true),or(by.eq.${currentUser?.id})`
-					)
-					.order("posted_date", { ascending: false });
+  const { set: setLinks, setLoading } = useLinkGlobalState();
 
-				if (error) {
-					console.warn({ error });
-					setLoading(false);
-					throw error;
-				}
+  const getLinks = useCallback(async () => {
+    if (!currentUser) return;
 
-				if (data) {
-					setLoading(false);
-					setLinks(data);
-				}
-			}
-			getLinks();
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+    setLoading(true);
+    const { data, error } = await supabase
+      .from(link_source)
+      .select()
+      .or(
+        `share_with.cs.{${
+          currentUser?.id
+        }},or(is_public.eq.true),or(by.eq.${currentUser?.id})`
+      )
+      .order('posted_date', { ascending: false });
+
+    if (error) {
+      console.warn({ error });
+      setLoading(false);
+      throw error;
+    }
+
+    if (data) {
+      setLinks(data);
+      setLoading(false);
+    }
+  }, [currentUser, setLinks, setLoading]); // Add getLinks dependencies
+
+  useEffect(() => {
+    getLinks();
+  }, [getLinks]); // Only runs on mount since getLinks is stable
+
 }
 
 export { createLink, deleteLink, updateLinkInfo, useGetLinks };

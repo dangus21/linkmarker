@@ -1,7 +1,7 @@
 import { Switch } from "@headlessui/react";
 
 import { twMerge } from "tailwind-merge";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useLinkGlobalState } from "@/state";
 
 function NewLinkArchivable() {
@@ -9,13 +9,16 @@ function NewLinkArchivable() {
 
 	const isLinkArchivable = globalLinkState.new.is_archivable;
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: onMount
-	useEffect(() => {
+	// Ensure the create function has a stable reference
+	const createLink = useCallback(() => {
 		globalLinkState.create({
 			is_archivable: true
 		});
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [globalLinkState]);
+
+	useEffect(() => {
+		createLink();
+	}, [createLink]); // The effect runs only once, and linter is happy
 
 	return (
 		<div className="relative">

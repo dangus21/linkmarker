@@ -7,9 +7,6 @@
 		"build": "next build",
 		"start": "next start",
 		"nlint": "next lint --fix",
-		"blint": "biome lint --write --unsafe ./src",
-		"bformat": "cls && biome format src --write && biome lint src --write --unsafe",
-		"b": "pnpm blint && pnpm bformat",
 		"lint": "eslint --fix src",
 		"pretty": "prettier src --write",
 		"format": "pnpm pretty && pnpm lint",
@@ -69,5 +66,9 @@
 		"uuid": "^10.0.0",
 		"zod": "^3.23.8",
 		"zustand": "^4.5.5"
+	},
+	"devDependencies": {
+		"babel-plugin-react-compiler": "19.0.0-beta-37ed2a7-20241206",
+		"eslint-plugin-react-compiler": "19.0.0-beta-37ed2a7-20241206"
 	}
 }

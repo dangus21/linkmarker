@@ -16,12 +16,12 @@ function Input({
 	focusOnMount?: boolean;
 }) {
 	const inputRef = useRef<HTMLInputElement | null>(null);
-	// biome-ignore lint/correctness/useExhaustiveDependencies: mount only
+	const focusOnMountRef = useRef(focusOnMount);
+
 	useEffect(() => {
-		if (focusOnMount && inputRef.current) {
+		if (focusOnMountRef.current && inputRef.current) {
 			setTimeout(() => inputRef.current?.focus(), 0);
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
