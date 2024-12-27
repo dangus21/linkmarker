@@ -50,11 +50,11 @@ function LinkTitle({
 						onChange={(event) => {
 							setLocalTitle(event.currentTarget.value);
 						}}
-						onKeyDown={(key) => {
-							if (key.code === "Escape") {
+						onKeyDown={(event) => {
+							if ([event.code, event.key].includes("Escape")) {
 								toggleEdit({ shouldCancel: true });
 							}
-							if (key.code === "Enter") {
+							if ([event.code, event.key].includes("Enter")) {
 								if (currentLink?.title === localTitle) {
 									toggleEdit({ shouldCancel: true });
 								} else {

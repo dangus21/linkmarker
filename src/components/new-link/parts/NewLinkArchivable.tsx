@@ -1,4 +1,4 @@
-import { Switch } from "@headlessui/react";
+import { Field, Label, Switch } from "@headlessui/react";
 
 import { twMerge } from "tailwind-merge";
 import { useCallback, useEffect } from "react";
@@ -22,18 +22,15 @@ function NewLinkArchivable() {
 
 	return (
 		<div className="relative">
-			<Switch.Group
-				as="div"
-				className="flex items-center justify-between"
-			>
+			<Field as="div" className="flex items-center justify-between">
 				<span className="flex grow flex-col">
-					<Switch.Label
+					<Label
 						as="span"
 						className="text-sm font-medium leading-6 text-gray-300"
 						passive
 					>
 						Is this link archivable?
-					</Switch.Label>
+					</Label>
 				</span>
 				<Switch
 					checked={isLinkArchivable}
@@ -62,7 +59,7 @@ function NewLinkArchivable() {
 						)}
 					/>
 				</Switch>
-			</Switch.Group>
+			</Field>
 		</div>
 	);
 }

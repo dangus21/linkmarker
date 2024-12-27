@@ -27,7 +27,7 @@ function Input({
 	return (
 		<input
 			ref={inputRef}
-			type={id}
+			type="search"
 			name={id}
 			id={id}
 			className={twMerge(

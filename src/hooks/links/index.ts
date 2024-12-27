@@ -159,38 +159,37 @@ async function updateLinkInfo({
 }
 
 async function useGetLinks(currentUser: User | null) {
-  const { set: setLinks, setLoading } = useLinkGlobalState();
+	const { set: setLinks, setLoading } = useLinkGlobalState();
 
-  const getLinks = useCallback(async () => {
-    if (!currentUser) return;
+	const getLinks = useCallback(async () => {
+		if (!currentUser) return;
 
-    setLoading(true);
-    const { data, error } = await supabase
-      .from(link_source)
-      .select()
-      .or(
-        `share_with.cs.{${
-          currentUser?.id
-        }},or(is_public.eq.true),or(by.eq.${currentUser?.id})`
-      )
-      .order('posted_date', { ascending: false });
+		setLoading(true);
+		const { data, error } = await supabase
+			.from(link_source)
+			.select()
+			.or(
+				`share_with.cs.{${
+					currentUser?.id
+				}},or(is_public.eq.true),or(by.eq.${currentUser?.id})`
+			)
+			.order("posted_date", { ascending: false });
 
-    if (error) {
-      console.warn({ error });
-      setLoading(false);
-      throw error;
-    }
+		if (error) {
+			console.warn({ error });
+			setLoading(false);
+			throw error;
+		}
 
-    if (data) {
-      setLinks(data);
-      setLoading(false);
-    }
-  }, [currentUser, setLinks, setLoading]); // Add getLinks dependencies
+		if (data) {
+			setLinks(data);
+			setLoading(false);
+		}
+	}, [currentUser, setLinks, setLoading]); // Add getLinks dependencies
 
-  useEffect(() => {
-    getLinks();
-  }, [getLinks]); // Only runs on mount since getLinks is stable
-
+	useEffect(() => {
+		getLinks();
+	}, [getLinks]); // Only runs on mount since getLinks is stable
 }
 
 export { createLink, deleteLink, updateLinkInfo, useGetLinks };
