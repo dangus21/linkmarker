@@ -62,14 +62,6 @@ function Links() {
 		};
 	}, [user?.id, session, user]);
 
-	// TODO
-	// useEffect(() => {
-	// 	setTimeout(() => {
-	// 		const activeTextarea = document.activeElement;
-	// 		console.log("LOG ~ activeTextarea:", activeTextarea);
-	// 	}, 50);
-	// }, [linksBeingEdited]);
-
 	const ownershipLinksList =
 		ownershipFilter === TABS.ALL
 			? currentLinks.filter((link) => !link.archived)
@@ -195,7 +187,7 @@ function Links() {
 												title={filteredLink.title}
 												toggleEdit={toggleEdit}
 											/>
-											<div className="mb-2 grid lg:grid-cols-4 lg:items-center [&>div]:mt-3 [&>div]:max-w-[20%]">
+											<div className="mb-2 grid lg:grid-cols-4 lg:items-center [&>div]:mt-3">
 												<div className="min-w-24">
 													<LinkOpenedStatus
 														opened={
@@ -203,25 +195,25 @@ function Links() {
 														}
 													/>
 												</div>
-												<div className="-mb-1 flex min-w-24 max-w-[40%] items-center">
+												<div className="-mb-1 flex min-w-24 max-w-full items-center">
 													<UsersIcon
 														className="mr-1.5 size-5 shrink-0 text-gray-400"
 														aria-hidden="true"
 													/>
-													<p className="mr-8 text-sm text-gray-500 md:mr-8">
+													<p className="mr-8 w-full truncate text-sm text-gray-500 md:mr-8">
 														{filteredLink.who}
 													</p>
 												</div>
-												<div className="-mb-1 flex min-w-24 max-w-[40%] items-center">
+												<div className="-mb-1 flex min-w-24 max-w-full items-center">
 													<MapPinIcon
 														className="mr-1.5 size-5 shrink-0 text-gray-400"
 														aria-hidden="true"
 													/>
-													<p className="mr-8 text-nowrap text-sm text-gray-500">
+													<p className="mr-8 w-full truncate text-nowrap text-sm text-gray-500">
 														{filteredLink.origin}
 													</p>
 												</div>
-												<div className="-mb-1 flex min-w-24 max-w-[40%] items-center">
+												<div className="-mb-1 flex min-w-24 max-w-full items-center">
 													<LinkDate
 														postedDate={
 															filteredLink.posted_date

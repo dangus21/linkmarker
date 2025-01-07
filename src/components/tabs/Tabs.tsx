@@ -5,7 +5,7 @@ import { useState } from "react";
 function Tabs() {
 	const { ownershipFilter, setOwnershipFilter } = useLinkGlobalState();
 
-	const [currentTab, setCurrentTab] = useState<TABS>(TABS.ALL);
+	const [currentTab, setCurrentTab] = useState<TABS>(TABS.MINE);
 
 	const tabs = [
 		{ id: TABS.ALL, name: "All" },

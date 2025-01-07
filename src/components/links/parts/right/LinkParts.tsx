@@ -21,13 +21,15 @@ function LinkParts({
 
 	return (
 		<div
-			onMouseDown={(event) =>
-				validateIsLeftClick(event)
-					? hasNoPermissions
-						? null
-						: onMouseDown(false)
-					: null
-			}
+			onMouseDown={(event) => {
+				if (event.button === 0) {
+					validateIsLeftClick(event)
+						? hasNoPermissions
+							? null
+							: onMouseDown(false)
+						: null;
+				}
+			}}
 			className={twMerge(
 				hasNoPermissions ? "pointer-events-none opacity-20" : "",
 				"relative flex h-1/3 w-16 flex-grow cursor-pointer items-center justify-center hover:bg-gray-900/50 sm:h-full sm:w-20",

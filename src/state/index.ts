@@ -112,7 +112,7 @@ const useLinkGlobalState = create<LinkState>()((set) => ({
 		by: "",
 		share_with: []
 	},
-	ownershipFilter: TABS.ALL,
+	ownershipFilter: TABS.MINE,
 	textFilter: "",
 	setTextFilter: (filter) => set({ textFilter: filter }),
 	setOwnershipFilter: (filter) => set({ ownershipFilter: filter }),
