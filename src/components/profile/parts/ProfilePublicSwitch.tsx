@@ -26,7 +26,7 @@ function ProfilePublicSwitch() {
 				</span>
 				<Switch
 					checked={globalUserState.is_public || false}
-					onChange={globalUserState.setis_public}
+					onChange={globalUserState.setIsPublic}
 					className={twMerge(
 						globalUserState.is_public
 							? "bg-slate-700"

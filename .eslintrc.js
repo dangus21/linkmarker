@@ -22,6 +22,7 @@ module.exports = {
 		"eslint-plugin-react-compiler"
 	],
 	rules: {
+		"unused-imports/no-unused-imports": "warn",
 		"react-compiler/react-compiler": "error",
 		"sort-imports-es6-autofix/sort-imports-es6": [2, {
       "ignoreCase": false,

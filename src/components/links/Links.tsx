@@ -4,7 +4,8 @@ import {
 	TABS,
 	type TLink,
 	useLinkGlobalState,
-	useLinkMultiEditState
+	useLinkMultiEditState,
+	useUserGlobalState
 } from "@/state";
 import { updateLinkInfo } from "@/hooks";
 import type { User } from "@supabase/auth-helpers-react";
@@ -38,6 +39,8 @@ function Links() {
 		ownershipFilter,
 		textFilter
 	} = useLinkGlobalState();
+
+	const { usersList } = useUserGlobalState();
 
 	const { linksBeingEdited, setLinkForEdit } = useLinkMultiEditState();
 
@@ -201,7 +204,11 @@ function Links() {
 														aria-hidden="true"
 													/>
 													<p className="mr-8 w-full truncate text-sm text-gray-500 md:mr-8">
-														{filteredLink.who}
+														{
+															usersList?.get(
+																filteredLink.by
+															)?.username
+														}
 													</p>
 												</div>
 												<div className="-mb-1 flex min-w-24 max-w-full items-center">

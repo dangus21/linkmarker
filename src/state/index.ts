@@ -38,6 +38,7 @@ export type WindowSize = {
 };
 
 export type UserState = {
+	usersList: Map<string, User> | null;
 	id: string;
 	userName: string;
 	email: string;
@@ -46,7 +47,8 @@ export type UserState = {
 	hasAvatar: null | boolean;
 	modified: boolean;
 	is_public: boolean;
-	setis_public: (is_public: boolean) => void;
+	setUsersList: (userList: User[]) => void;
+	setIsPublic: (is_public: boolean) => void;
 	setModified: (isModified: boolean) => void;
 	setId: (id: string) => void;
 	setUserName: (id: string) => void;
@@ -56,6 +58,7 @@ export type UserState = {
 };
 
 const useUserGlobalState = create<UserState>()((set) => ({
+	usersList: null,
 	id: "",
 	userName: "",
 	email: "",
@@ -68,7 +71,15 @@ const useUserGlobalState = create<UserState>()((set) => ({
 	hasAvatar: null,
 	modified: false,
 	is_public: false,
-	setis_public: (is_public) => set(() => ({ is_public })),
+	setUsersList: (usersList) =>
+		set(() => {
+			const userMap: Map<string, User> = new Map<string, User>();
+			for (const user of usersList) {
+				userMap.set(user.id, user);
+			}
+			return { usersList: userMap };
+		}),
+	setIsPublic: (is_public) => set(() => ({ is_public })),
 	setId: (id) => set(() => ({ id })),
 	setUserName: (userName) => set(() => ({ userName })),
 	setEmail: (email) => set(() => ({ email })),
@@ -188,6 +199,6 @@ if (process.env.NODE_ENV === "development") {
 export {
 	useUserGlobalState,
 	useLinkGlobalState,
-	NAVBAR_OPTIONS,
-	useLinkMultiEditState
+	useLinkMultiEditState,
+	NAVBAR_OPTIONS
 };

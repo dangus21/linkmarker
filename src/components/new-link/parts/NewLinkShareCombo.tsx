@@ -1,20 +1,24 @@
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { Combobox } from "@headlessui/react";
-import { type User, useLinkGlobalState, useUserGlobalState } from "@/state";
 import { twMerge } from "tailwind-merge";
+import { useLinkGlobalState, useUserGlobalState } from "@/state";
 
-function NewLinkShareCombo({ users }: { users: User[] }) {
+function NewLinkShareCombo() {
 	const globalLinkState = useLinkGlobalState();
 	const globalUserState = useUserGlobalState();
 
-	const productionUsers =
-		process.env.NODE_ENV === "production"
-			? users.filter(
-					(user) => user.id !== "6550a93e-69c4-45ae-870e-c45f47586ceb"
-				)
-			: users;
+	const productionUsers = globalUserState.usersList
+		? process.env.NODE_ENV === "production"
+			? Array.from(globalUserState.usersList)
+					.filter(
+						([, user]) =>
+							user.id !== "6550a93e-69c4-45ae-870e-c45f47586ceb"
+					)
+					.map(([, user]) => user)
+			: Array.from(globalUserState.usersList).map(([, user]) => user)
+		: [];
 
-	const publicUsers = productionUsers.filter(
+	const publicUsers = productionUsers?.filter(
 		(user) => user.id !== globalUserState.id
 	);
 

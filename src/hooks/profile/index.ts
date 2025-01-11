@@ -32,8 +32,24 @@ async function updateProfileInfo({ userState }: { userState: UserState }) {
 		}
 	} catch (error) {
 		console.error("Failed to update profile:", error);
-		// Here you might want to set an error state or show a notification to the user
 	}
+}
+
+async function useGetUsersList() {
+	const { setUsersList, usersList } = useUserGlobalState();
+	if (usersList && usersList.size > 0) {
+		return;
+	}
+
+	const { data, error } = await supabase
+		.from("profiles")
+		.select("username, id");
+	if (error) {
+		console.error("Failed to get users list.", error);
+		return;
+	}
+
+	setUsersList(data);
 }
 
 function useGetProfileInfo(): { user: boolean; session: boolean } {
@@ -48,7 +64,7 @@ function useGetProfileInfo(): { user: boolean; session: boolean } {
 		setEmail,
 		setId,
 		setUserName,
-		setis_public,
+		setIsPublic,
 		setHasAvatar,
 		setAvatar
 	} = useUserGlobalState();
@@ -92,7 +108,7 @@ function useGetProfileInfo(): { user: boolean; session: boolean } {
 
 				if (profileData?.username) {
 					setUserName(profileData.username);
-					setis_public(profileData.is_account_public);
+					setIsPublic(profileData.is_account_public);
 				}
 
 				if (avatarData) {
@@ -107,7 +123,7 @@ function useGetProfileInfo(): { user: boolean; session: boolean } {
 		setEmail,
 		setId,
 		setUserName,
-		setis_public,
+		setIsPublic,
 		setHasAvatar,
 		setAvatar,
 		setLocalSession,
@@ -129,4 +145,4 @@ function useGetProfileInfo(): { user: boolean; session: boolean } {
 	};
 }
 
-export { updateProfileInfo, useGetProfileInfo };
+export { updateProfileInfo, useGetProfileInfo, useGetUsersList };

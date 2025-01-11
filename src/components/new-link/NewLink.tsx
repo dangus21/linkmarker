@@ -1,6 +1,6 @@
-import { type User, useLinkGlobalState, useUserGlobalState } from "@/state";
 import { createLink } from "@/hooks";
 import { useEffect } from "react";
+import { useLinkGlobalState, useUserGlobalState } from "@/state";
 
 import { isLink, parseEnvToggles } from "@/utils";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -14,7 +14,7 @@ import {
 	NewLinkUrl
 } from "./parts";
 
-function NewLink({ users }: { users: User[] }) {
+function NewLink() {
 	const globalUserState = useUserGlobalState();
 	const globalLinkState = useLinkGlobalState();
 
@@ -83,9 +83,7 @@ function NewLink({ users }: { users: User[] }) {
 								process.env.NEXT_PUBLIC_TOGGLE_DELETE_ON_CREATE
 							) && <NewLinkDeletable />}
 							<NewLinkPublic />
-							{isLinkShareable && (
-								<NewLinkShareCombo users={users} />
-							)}
+							{isLinkShareable && <NewLinkShareCombo />}
 						</div>
 
 						<div className="mt-12">
