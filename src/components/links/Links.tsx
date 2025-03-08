@@ -44,6 +44,50 @@ function Links() {
 
 	const { linksBeingEdited, setLinkForEdit } = useLinkMultiEditState();
 
+	function openOrArchiveLinkFn(
+		filteredLink: TLink | null,
+		op: "opened" | "archived",
+		status?: boolean
+	) {
+		return updateLinkInfo({
+			link: {
+				[op]: filteredLink ? !filteredLink.opened : status
+			},
+			id: filteredLink?.id ?? "",
+			updateLink
+		});
+	}
+
+	function updateLinkTitle(filteredLink: Partial<TLink>) {
+		return updateLinkInfo({
+			link: {
+				title: filteredLink.title
+			},
+			id: filteredLink.id ?? "",
+			updateLink
+		});
+	}
+
+	function toggleEdit({
+		link,
+		shouldCancel,
+		isLinkBeingEdited
+	}: {
+		link: Partial<TLink>;
+		shouldCancel: boolean;
+		isLinkBeingEdited?: boolean;
+	}) {
+		console.log("🔥 » ", {
+			link,
+			shouldCancel,
+			isLinkBeingEdited
+		});
+		if (!shouldCancel && isLinkBeingEdited && link) {
+			updateLinkTitle(link);
+		}
+		setLinkForEdit(link.id);
+	}
+
 	useEffect(() => {
 		if (user || session) {
 			async function getUsers() {
@@ -116,46 +160,6 @@ function Links() {
 				>
 					{hasLength ? (
 						textFilterLinksList.map((filteredLink) => {
-							function openOrArchiveLinkFn(
-								status: boolean,
-								op: "opened" | "archived"
-							) {
-								return updateLinkInfo({
-									link: {
-										[op]: status
-									},
-									id: filteredLink.id,
-									updateLink
-								});
-							}
-
-							function updateLinkTitle(title: string) {
-								return updateLinkInfo({
-									link: {
-										title
-									},
-									id: filteredLink.id,
-									updateLink
-								});
-							}
-
-							function toggleEdit({
-								title,
-								shouldCancel
-							}: {
-								title?: string;
-								shouldCancel: boolean;
-							}) {
-								if (
-									!shouldCancel &&
-									isLinkBeingEdited &&
-									title
-								) {
-									updateLinkTitle(title);
-								}
-								setLinkForEdit(filteredLink.id);
-							}
-
 							const {
 								canDeleteLink,
 								isLinkBeingEdited,
@@ -179,15 +183,8 @@ function Links() {
 									left={
 										<>
 											<LinkTitle
-												id={filteredLink.id}
+												link={filteredLink}
 												edit={isLinkBeingEdited}
-												isPublic={
-													filteredLink.is_public
-												}
-												shareWith={
-													filteredLink.share_with
-												}
-												title={filteredLink.title}
 												toggleEdit={toggleEdit}
 											/>
 											<div className="mb-2 grid lg:grid-cols-4 lg:items-center [&>div]:mt-3">
@@ -233,6 +230,7 @@ function Links() {
 									right={
 										<>
 											<LinkEdit
+												link={filteredLink}
 												isAdmin={isAdmin}
 												invalidation={[!userIsOwner]}
 												toggleEdit={toggleEdit}
@@ -250,7 +248,7 @@ function Links() {
 												opened={filteredLink.opened}
 												toggleSeenStatus={() =>
 													openOrArchiveLinkFn(
-														!filteredLink.opened,
+														filteredLink,
 														"opened"
 													)
 												}
@@ -266,8 +264,9 @@ function Links() {
 												]}
 												toggleArchivedStatus={() =>
 													openOrArchiveLinkFn(
-														true,
-														"archived"
+														filteredLink,
+														"archived",
+														true
 													)
 												}
 											/>

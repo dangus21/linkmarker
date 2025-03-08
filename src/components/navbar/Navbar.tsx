@@ -3,7 +3,12 @@ import { Disclosure } from "@headlessui/react";
 import { Filter, NewLinkButton } from "@/components";
 import { NavbarLogo, NavbarProfile } from "./parts";
 
-function Navbar() {
+interface Props {
+	hideFilter?: boolean;
+}
+
+function Navbar(props: Props) {
+	const { hideFilter } = props;
 	return (
 		<Disclosure as="nav" className="sticky top-0 z-20 bg-gray-800">
 			<div className="px-4 sm:px-8 lg:px-8">
@@ -11,11 +16,13 @@ function Navbar() {
 					<div className="flex flex-row">
 						<NavbarLogo />
 					</div>
-					<div className="flex w-full items-center">
-						<Filter />
-					</div>
+					{!hideFilter ? (
+						<div className="flex w-full items-center">
+							<Filter />
+						</div>
+					) : null}
 					<div className="flex items-center justify-end">
-						<div className="invisible md:visible">
+						<div className="invisible hidden md:visible md:block">
 							<NewLinkButton />
 						</div>
 						<div className="flex shrink-0 items-center">

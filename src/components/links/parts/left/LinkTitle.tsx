@@ -1,41 +1,66 @@
 import { Input } from "@/components";
+import { KeyboardEvent, useState } from "react";
 import {
 	LockClosedIcon,
 	LockOpenIcon,
 	ShareIcon
 } from "@heroicons/react/20/solid";
-import { useLinkGlobalState } from "@/state";
-import { useState } from "react";
+import { TLink, useLinkGlobalState } from "@/state";
 
 function LinkTitle({
-	id,
-	title,
-	isPublic,
-	shareWith,
+	link,
 	edit,
 	toggleEdit
 }: {
-	id: string;
-	title: string;
-	isPublic: boolean;
-	shareWith: string[];
+	link: TLink;
 	edit: boolean;
 	toggleEdit: ({
-		title,
+		link,
+		isLinkBeingEdited,
 		shouldCancel
 	}: {
-		title?: string;
+		link: Partial<TLink>;
+		isLinkBeingEdited: boolean;
 		shouldCancel: boolean;
 	}) => void;
 }) {
+	const { title, is_public, share_with } = link;
 	const [localTitle, setLocalTitle] = useState(title);
-	const { values, update: updateLink } = useLinkGlobalState();
-	const currentLink = values.find((value) => value.id === id);
-	const LockedIcon = isPublic
+	const { update: updateLink } = useLinkGlobalState();
+	const LockedIcon = is_public
 		? LockOpenIcon
-		: shareWith.length
+		: share_with.length
 			? ShareIcon
 			: LockClosedIcon;
+
+	function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
+		if ([event.code, event.key].includes("Escape")) {
+			toggleEdit({
+				link,
+				isLinkBeingEdited: true,
+				shouldCancel: true
+			});
+		}
+		if ([event.code, event.key].includes("Enter")) {
+			if (link?.title === localTitle) {
+				toggleEdit({
+					link,
+					isLinkBeingEdited: true,
+					shouldCancel: true
+				});
+			} else {
+				toggleEdit({
+					link: { ...link, title: localTitle },
+					shouldCancel: false,
+					isLinkBeingEdited: true
+				});
+				updateLink({
+					...link,
+					title: localTitle
+				});
+			}
+		}
+	}
 
 	return (
 		<div className="max-w-full sm:max-w-full">
@@ -50,25 +75,7 @@ function LinkTitle({
 						onChange={(event) => {
 							setLocalTitle(event.currentTarget.value);
 						}}
-						onKeyDown={(event) => {
-							if ([event.code, event.key].includes("Escape")) {
-								toggleEdit({ shouldCancel: true });
-							}
-							if ([event.code, event.key].includes("Enter")) {
-								if (currentLink?.title === localTitle) {
-									toggleEdit({ shouldCancel: true });
-								} else {
-									toggleEdit({
-										shouldCancel: false,
-										title: localTitle
-									});
-									updateLink({
-										...currentLink,
-										title: localTitle
-									});
-								}
-							}
-						}}
+						onKeyDown={handleKeyDown}
 						id="textFilter"
 						value={localTitle}
 						className="-mt-1 bg-gray-950 pl-4"

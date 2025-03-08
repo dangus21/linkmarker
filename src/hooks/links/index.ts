@@ -126,6 +126,7 @@ async function updateLinkInfo({
 	id: string;
 	updateLink: (link: TLinkUpdate) => void;
 }) {
+	console.log("🔥 » {", link);
 	try {
 		const { error } = await supabase
 			.from(link_source)

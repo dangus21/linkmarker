@@ -12,7 +12,7 @@ function NewPage() {
 	return (
 		<>
 			<NextProgress />
-			<Navbar />
+			<Navbar hideFilter />
 			<NewLink />
 		</>
 	);

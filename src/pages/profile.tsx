@@ -7,7 +7,7 @@ function ProfilePage() {
 	return (
 		<>
 			<NextProgress />
-			<Navbar />
+			<Navbar hideFilter />
 			<Profile />
 		</>
 	);
