@@ -1,7 +1,7 @@
 import { Field, Label, Switch } from "@headlessui/react";
 
 import { twMerge } from "tailwind-merge";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { useLinkGlobalState } from "@/state";
 
 function NewLinkArchivable() {
@@ -9,12 +9,11 @@ function NewLinkArchivable() {
 
 	const isLinkArchivable = globalLinkState.new.is_archivable;
 
-	// Ensure the create function has a stable reference
-	const createLink = useCallback(() => {
+	function createLink() {
 		globalLinkState.create({
 			is_archivable: true
 		});
-	}, [globalLinkState]);
+	}
 
 	useEffect(() => {
 		createLink();
@@ -26,7 +25,7 @@ function NewLinkArchivable() {
 				<span className="flex grow flex-col">
 					<Label
 						as="span"
-						className="text-sm font-medium leading-6 text-gray-300"
+						className="text-sm leading-6 font-medium text-gray-300"
 						passive
 					>
 						Is this link archivable?
@@ -43,7 +42,7 @@ function NewLinkArchivable() {
 						isLinkArchivable ? "bg-slate-700" : "bg-slate-400",
 						"relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer",
 						"rounded-full border-2 border-transparent transition-colors",
-						"duration-200 ease-in-out focus:outline-none focus:ring-2",
+						"duration-200 ease-in-out focus:ring-2 focus:outline-none",
 						"focus:ring-slate-600 focus:ring-offset-2"
 					)}
 				>

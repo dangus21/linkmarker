@@ -1,6 +1,6 @@
 import { type UserState, useUserGlobalState } from "@/state";
 import { supabase } from "../links";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { useLocalStorage } from "usehooks-ts";
 import { usePathname, useRouter } from "next/navigation";
 import type { Session, User } from "@supabase/auth-helpers-react";
@@ -69,7 +69,7 @@ function useGetProfileInfo(): { user: boolean; session: boolean } {
 		setAvatar
 	} = useUserGlobalState();
 
-	const getUserAndProfile = useCallback(async () => {
+	async function getUserAndProfile() {
 		if (!user?.id) {
 			const {
 				data: { user }
@@ -118,17 +118,7 @@ function useGetProfileInfo(): { user: boolean; session: boolean } {
 				console.error("Failed loading user data:", error);
 			}
 		}
-	}, [
-		user,
-		setEmail,
-		setId,
-		setUserName,
-		setIsPublic,
-		setHasAvatar,
-		setAvatar,
-		setLocalSession,
-		setLocalUser
-	]);
+	}
 
 	useEffect(() => {
 		if (user && session) {
@@ -137,7 +127,7 @@ function useGetProfileInfo(): { user: boolean; session: boolean } {
 		if (pathName !== "/privacy_policy" && !user) {
 			push("/");
 		}
-	}, [user, session, pathName, getUserAndProfile, push]);
+	}, [user, session, pathName, push]);
 
 	return {
 		user: !!user,

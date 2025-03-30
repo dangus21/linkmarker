@@ -33,27 +33,26 @@ function Links() {
 	const session = useReadLocalStorage("session");
 	const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
-	const {
-		values: currentLinks,
-		update: updateLink,
-		ownershipFilter,
-		textFilter
-	} = useLinkGlobalState();
+	const { values: currentLinks } = useLinkGlobalState();
+	const { update: updateLink } = useLinkGlobalState();
+	const { ownershipFilter } = useLinkGlobalState();
+	const { textFilter } = useLinkGlobalState();
 
 	const { usersList } = useUserGlobalState();
 
-	const { linksBeingEdited, setLinkForEdit } = useLinkMultiEditState();
+	const { linksBeingEdited } = useLinkMultiEditState();
+	const { setLinkForEdit } = useLinkMultiEditState();
 
 	function openOrArchiveLinkFn(
-		filteredLink: TLink | null,
+		id: string,
 		op: "opened" | "archived",
-		status?: boolean
+		status: boolean
 	) {
 		return updateLinkInfo({
 			link: {
-				[op]: filteredLink ? !filteredLink.opened : status
+				[op]: status
 			},
-			id: filteredLink?.id ?? "",
+			id,
 			updateLink
 		});
 	}
@@ -195,7 +194,7 @@ function Links() {
 														}
 													/>
 												</div>
-												<div className="-mb-1 flex min-w-24 max-w-full items-center">
+												<div className="-mb-1 flex max-w-full min-w-24 items-center">
 													<UsersIcon
 														className="mr-1.5 size-5 shrink-0 text-gray-400"
 														aria-hidden="true"
@@ -208,16 +207,16 @@ function Links() {
 														}
 													</p>
 												</div>
-												<div className="-mb-1 flex min-w-24 max-w-full items-center">
+												<div className="-mb-1 flex max-w-full min-w-24 items-center">
 													<MapPinIcon
 														className="mr-1.5 size-5 shrink-0 text-gray-400"
 														aria-hidden="true"
 													/>
-													<p className="mr-8 w-full truncate text-nowrap text-sm text-gray-500">
+													<p className="mr-8 w-full truncate text-sm text-nowrap text-gray-500">
 														{filteredLink.origin}
 													</p>
 												</div>
-												<div className="-mb-1 flex min-w-24 max-w-full items-center">
+												<div className="-mb-1 flex max-w-full min-w-24 items-center">
 													<LinkDate
 														postedDate={
 															filteredLink.posted_date
@@ -248,8 +247,9 @@ function Links() {
 												opened={filteredLink.opened}
 												toggleSeenStatus={() =>
 													openOrArchiveLinkFn(
-														filteredLink,
-														"opened"
+														filteredLink.id,
+														"opened",
+														!filteredLink.opened
 													)
 												}
 											/>
@@ -264,9 +264,9 @@ function Links() {
 												]}
 												toggleArchivedStatus={() =>
 													openOrArchiveLinkFn(
-														filteredLink,
+														filteredLink.id,
 														"archived",
-														true
+														!filteredLink.archived
 													)
 												}
 											/>

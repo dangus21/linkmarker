@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 export default function PrivacyPolicy() {
 	return (
 		<div data-custom-class="body">

@@ -1,4 +1,4 @@
-import { type CSSProperties, useCallback, useEffect } from "react";
+import { type CSSProperties, useEffect } from "react";
 
 import {
 	type LinkState,
@@ -126,7 +126,6 @@ async function updateLinkInfo({
 	id: string;
 	updateLink: (link: TLinkUpdate) => void;
 }) {
-	console.log("🔥 » {", link);
 	try {
 		const { error } = await supabase
 			.from(link_source)
@@ -162,7 +161,7 @@ async function updateLinkInfo({
 async function useGetLinks(currentUser: User | null) {
 	const { set: setLinks, setLoading } = useLinkGlobalState();
 
-	const getLinks = useCallback(async () => {
+	async function getLinks() {
 		if (!currentUser) return;
 
 		setLoading(true);
@@ -186,11 +185,11 @@ async function useGetLinks(currentUser: User | null) {
 			setLinks(data);
 			setLoading(false);
 		}
-	}, [currentUser, setLinks, setLoading]); // Add getLinks dependencies
+	}
 
 	useEffect(() => {
 		getLinks();
-	}, [getLinks]); // Only runs on mount since getLinks is stable
+	}, []); // Only runs on mount since getLinks is stable
 }
 
 export { createLink, deleteLink, updateLinkInfo, useGetLinks };

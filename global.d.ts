@@ -10,9 +10,9 @@ const envVariables = z.object({
 	NEXT_PUBLIC_TOGGLE_DELETE: z.union([z.literal("on"), z.literal("off")]),
 	NEXT_PUBLIC_TOGGLE_DELETE_ON_CREATE: z.union([
 		z.literal("on"),
-		z.literal("off"),
+		z.literal("off")
 	]),
-	NEXT_PUBLIC_TOGGLE_EDIT: z.union([z.literal("on"), z.literal("off")]),
+	NEXT_PUBLIC_TOGGLE_EDIT: z.union([z.literal("on"), z.literal("off")])
 });
 
 envVariables.parse(process.env);

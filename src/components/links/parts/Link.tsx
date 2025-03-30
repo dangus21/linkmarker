@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import type { TLink } from "@/state";
 
 type TLinkLocal = {
@@ -5,7 +6,7 @@ type TLinkLocal = {
 	id: string;
 	virtualRow: TLink;
 	openOrArchiveLinkFn?: (
-		link: TLink,
+		id: string,
 		op: "opened" | "archived",
 		status: boolean
 	) => Promise<void>;
@@ -27,7 +28,7 @@ function Link(props: TLinkLocal) {
 						}
 					: {})}
 				onMouseDown={() =>
-					openOrArchiveLinkFn?.(virtualRow, "opened", true)
+					openOrArchiveLinkFn?.(virtualRow.id, "opened", true)
 				}
 				className="w-full cursor-pointer px-6 py-2"
 			>

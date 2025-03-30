@@ -32,14 +32,15 @@
 		]
 	},
 	"include": [
-		".eslintrc.js",
+		"eslint.config.mjs",
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
 		"**/*.js",
 		".next/types/**/*.ts",
 		"next.config.mjs",
-		".prettierrc.js"
+		".prettierrc.js",
+		"postcss.config.mjs"
 	],
 	"exclude": [
 		"supabase",

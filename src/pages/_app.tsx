@@ -6,7 +6,7 @@ import Head from "next/head";
 import NextNProgress from "nextjs-progressbar";
 
 import "../components/background/Background.css";
-import "../styles/globals.css";
+import "../globals.css";
 import {
 	type Session,
 	SessionContextProvider
