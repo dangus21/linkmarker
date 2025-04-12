@@ -38,7 +38,7 @@ function Login() {
 		if (localUser) {
 			push("/links");
 		}
-	}, [localUser, push]);
+	}, [localUser]);
 
 	return (
 		<div className="w-full rounded-lg bg-gray-800 p-6 shadow-lg md:w-1/2">
@@ -50,7 +50,8 @@ function Login() {
 					supabase.auth.signInWithOAuth({
 						provider: "google",
 						options: {
-							redirectTo: "http://linkmarker.app/links"
+							redirectTo:
+								"http://lhttps://linkmarker.vercel.app/links"
 						}
 					})
 				}
@@ -66,7 +67,8 @@ function Login() {
 					supabase.auth.signInWithOAuth({
 						provider: "facebook",
 						options: {
-							redirectTo: "http://linkmarker.app/links"
+							redirectTo:
+								"http://lhttps://linkmarker.vercel.app/links"
 						}
 					})
 				}

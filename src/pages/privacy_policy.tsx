@@ -91,7 +91,9 @@ export default function PrivacyPolicy() {
 							<span data-custom-class="body_text">
 								Visit our website
 								<span className="block-component" /> at{" "}
-								<span className="question">linkmarker.app</span>
+								<span className="question">
+									linkmarker.vercel.app
+								</span>
 								<span style={{ fontSize: 15 }}>
 									<span style={{ color: "rgb(89, 89, 89)" }}>
 										<span data-custom-class="body_text">
