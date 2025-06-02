@@ -20,7 +20,7 @@ function NewLink() {
 
 	const isLinkShareable = globalLinkState.new.is_shareable;
 
-	const { push } = useRouter();
+	const { replace } = useRouter();
 	const query = useSearchParams();
 
 	useEffect(() => {
@@ -60,7 +60,7 @@ function NewLink() {
 			createLink({
 				userState: globalUserState,
 				link: globalLinkState.new,
-				push
+				replace
 			});
 			globalLinkState.resetNewLink();
 		}

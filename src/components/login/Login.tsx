@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 import { useRouter } from "next/navigation";
 import type { Session, User } from "@supabase/auth-js";
+import { twJoin, twMerge } from "tailwind-merge";
 
 function Login() {
-	const { push } = useRouter();
+	const { replace } = useRouter();
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -36,44 +37,48 @@ function Login() {
 
 	useEffect(() => {
 		if (localUser) {
-			push("/links");
+			replace("/links");
 		}
 	}, [localUser]);
-
+	console.log("🔥 » process.env.NODE_ENV", process.env.NODE_ENV);
 	return (
 		<div className="w-full rounded-lg bg-gray-800 p-6 shadow-lg md:w-1/2">
 			<h3 className="mb-6 text-2xl font-semibold text-purple-400 md:text-3xl">
 				Get Started
 			</h3>
 			<button
-				onClick={() =>
-					supabase.auth.signInWithOAuth({
+				onClick={async () =>
+					await supabase.auth.signInWithOAuth({
 						provider: "google",
 						options: {
 							redirectTo:
-								"http://lhttps://linkmarker.vercel.app/links"
+								process.env.NODE_ENV === "development"
+									? "http://localhost:3000/links"
+									: "https://linkmarker.vercel.app/links"
 						}
 					})
 				}
 				type="button"
-				className="mb-3 flex w-full items-center justify-center rounded bg-white px-4 py-2 text-gray-700"
+				className="mb-3 flex w-full cursor-pointer items-center justify-center rounded bg-white px-4 py-2 text-gray-700"
 			>
 				<IconGoogle />
 				<span className="ml-2">Sign in with Google</span>
 			</button>
 
 			<button
-				onClick={() =>
-					supabase.auth.signInWithOAuth({
+				onClick={async () =>
+					await supabase.auth.signInWithOAuth({
 						provider: "facebook",
 						options: {
 							redirectTo:
-								"http://lhttps://linkmarker.vercel.app/links"
+								process.env.NODE_ENV === "development"
+									? "http://localhost:3000/links"
+									: "https://linkmarker.vercel.app/links"
 						}
 					})
 				}
 				type="button"
-				className="mb-6 flex w-full items-center justify-center rounded bg-blue-600 px-4 py-2 text-white"
+				className="mb-6 flex w-full cursor-pointer items-center justify-center rounded bg-blue-600 px-4 py-2 text-white"
 			>
 				<IconFacebook />
 				<span className="ml-2">Sign in with Facebook</span>
@@ -121,7 +126,13 @@ function Login() {
 
 					<button
 						type="button"
-						className="mb-4 w-full rounded bg-purple-600 px-4 py-2 text-white"
+						className={twMerge(
+							"mb-4 w-full rounded bg-purple-900/10 px-4 py-2 text-white/10",
+							email &&
+								password &&
+								"cursor-pointer bg-purple-600 text-white"
+						)}
+						disabled={!email || !password}
 						onClick={logIn}
 					>
 						Sign in

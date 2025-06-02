@@ -41,7 +41,7 @@ function NavbarProfile() {
 	];
 	return (
 		<Popover className="relative ml-4 pt-2">
-			<PopoverButton className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+			<PopoverButton className="inline-flex items-center gap-x-1 text-sm leading-6 font-semibold text-gray-900">
 				<div
 					className={twMerge(
 						"flex rounded-full bg-gray-800 text-sm focus:outline-none",
@@ -49,7 +49,7 @@ function NavbarProfile() {
 						"focus:ring-offset-gray-800"
 					)}
 				>
-					<div className="size-10 overflow-hidden rounded-full hover:opacity-90">
+					<div className="size-10 cursor-pointer overflow-hidden rounded-full hover:opacity-90">
 						<Image
 							quality={50}
 							src={

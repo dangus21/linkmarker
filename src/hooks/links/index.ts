@@ -11,7 +11,7 @@ import { createClient } from "@/utils/supabase/component";
 import { extractTopLevelDomain } from "@/utils";
 import { toast } from "react-hot-toast";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import type { User } from "@supabase/auth-helpers-react";
+import { useUser, type User } from "@supabase/auth-helpers-react";
 
 export const supabase = createClient();
 
@@ -75,11 +75,11 @@ async function deleteLink({
 async function createLink({
 	userState,
 	link,
-	push
+	replace
 }: {
 	userState: UserState;
 	link: LinkState["new"];
-	push: AppRouterInstance["push"];
+	replace: AppRouterInstance["replace"];
 }) {
 	const url = link.origin?.startsWith("http")
 		? link.origin
@@ -110,7 +110,7 @@ async function createLink({
 			toast.error("Failed creating link", toast_config);
 		} else {
 			toast.success("Created new link", toast_config);
-			push("/links");
+			replace("/");
 		}
 	} catch (error) {
 		console.warn({ error });
@@ -158,11 +158,12 @@ async function updateLinkInfo({
 	}
 }
 
-async function useGetLinks(currentUser: User | null) {
+async function useGetLinks(user: User | null) {
 	const { set: setLinks, setLoading } = useLinkGlobalState();
 
 	async function getLinks() {
-		if (!currentUser) return;
+		if (!user) return;
+		console.log("🔥 » user", user?.id);
 
 		setLoading(true);
 		const { data, error } = await supabase
@@ -170,8 +171,8 @@ async function useGetLinks(currentUser: User | null) {
 			.select()
 			.or(
 				`share_with.cs.{${
-					currentUser?.id
-				}},or(is_public.eq.true),or(by.eq.${currentUser?.id})`
+					user?.id
+				}},or(is_public.eq.true),or(by.eq.${user?.id})`
 			)
 			.order("posted_date", { ascending: false });
 
@@ -189,7 +190,7 @@ async function useGetLinks(currentUser: User | null) {
 
 	useEffect(() => {
 		getLinks();
-	}, []); // Only runs on mount since getLinks is stable
+	}, [user]); // Only runs on mount since getLinks is stable
 }
 
 export { createLink, deleteLink, updateLinkInfo, useGetLinks };
