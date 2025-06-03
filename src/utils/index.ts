@@ -22,16 +22,22 @@ function classNames(...classes: string[]) {
 const dateFormatter = new Intl.DateTimeFormat("pt-PT");
 
 function extractTopLevelDomain(url: URL) {
-	// Regular expression to match the top-level domain
-	const topLevelDomainRegex = /(?:https?:\/\/)?(?:www\.)?([^.]+\.[a-z]+)/i;
+        const host = url.hostname.replace(/^www\./, "");
+        const segments = host.split(".");
 
-	// Use the regex to extract the top-level domain
-	const match = url.href.match(topLevelDomainRegex);
+        if (segments.length === 1) {
+                return segments[0];
+        }
 
-	if (match) {
-		return match[1].split(".")[0]; // Extract the top-level domain
-	}
-	return null; // Return null if no top-level domain is found
+        const secondLevelTlds = ["co", "com", "gov", "edu", "org", "net", "ac"];
+        const last = segments[segments.length - 1];
+        const secondLast = segments[segments.length - 2];
+
+        if (last.length === 2 && secondLevelTlds.includes(secondLast) && segments.length >= 3) {
+                return segments[segments.length - 3];
+        }
+
+        return secondLast;
 }
 
 function normalizeLinkTitle(param: string): string {
