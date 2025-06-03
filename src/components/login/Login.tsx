@@ -3,12 +3,12 @@ import { IconGoogle } from "./IconGoogle";
 import { supabase } from "@/hooks/links";
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import type { Session, User } from "@supabase/auth-js";
-import { twJoin, twMerge } from "tailwind-merge";
+import { twMerge } from "tailwind-merge";
 
 function Login() {
-	const { replace } = useRouter();
+	const router = useRouter();
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -37,46 +37,45 @@ function Login() {
 
 	useEffect(() => {
 		if (localUser) {
-			replace("/links");
+			router.replace("/links");
 		}
 	}, [localUser]);
-	console.log("🔥 » process.env.NODE_ENV", process.env.NODE_ENV);
+	const redirectTo =
+		process.env.NODE_ENV === "development"
+			? "http://localhost:3000/links"
+			: "https://linkmarker.vercel.app/links";
+
+	async function signInWithProvider(provider: "google" | "facebook") {
+		const { data, error } = await supabase.auth.signInWithOAuth({
+			provider,
+			options: { redirectTo, skipBrowserRedirect: true }
+		});
+
+		if (error) {
+			console.error(error);
+			return;
+		}
+
+		if (data?.url) {
+			window.location.href = data.url;
+		}
+	}
+
 	return (
 		<div className="w-full rounded-lg bg-gray-800 p-6 shadow-lg md:w-1/2">
 			<h3 className="mb-6 text-2xl font-semibold text-purple-400 md:text-3xl">
 				Get Started
 			</h3>
 			<button
-				onClick={async () =>
-					await supabase.auth.signInWithOAuth({
-						provider: "google",
-						options: {
-							redirectTo:
-								process.env.NODE_ENV === "development"
-									? "http://localhost:3000/links"
-									: "https://linkmarker.vercel.app/links"
-						}
-					})
-				}
+				onClick={() => signInWithProvider("google")}
 				type="button"
 				className="mb-3 flex w-full cursor-pointer items-center justify-center rounded bg-white px-4 py-2 text-gray-700"
 			>
 				<IconGoogle />
 				<span className="ml-2">Sign in with Google</span>
 			</button>
-
 			<button
-				onClick={async () =>
-					await supabase.auth.signInWithOAuth({
-						provider: "facebook",
-						options: {
-							redirectTo:
-								process.env.NODE_ENV === "development"
-									? "http://localhost:3000/links"
-									: "https://linkmarker.vercel.app/links"
-						}
-					})
-				}
+				onClick={() => signInWithProvider("facebook")}
 				type="button"
 				className="mb-6 flex w-full cursor-pointer items-center justify-center rounded bg-blue-600 px-4 py-2 text-white"
 			>
