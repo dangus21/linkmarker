@@ -1,7 +1,5 @@
 import { Auth } from "@/components/auth";
 
-function Main() {
+export default function MainPage() {
 	return <Auth />;
 }
-
-export default Main;

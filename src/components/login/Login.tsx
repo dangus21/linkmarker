@@ -3,7 +3,7 @@ import { IconGoogle } from "./IconGoogle";
 import { supabase } from "@/hooks/links";
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation"; // Changed from next/router to next/navigation
 import type { Session, User } from "@supabase/auth-js";
 import { twMerge } from "tailwind-merge";
 

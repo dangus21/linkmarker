@@ -8,12 +8,14 @@ import { useLinkGlobalState } from "@/state";
 import type { User } from "@supabase/auth-js";
 
 import { useReadLocalStorage } from "usehooks-ts";
+// NextProgress might need to be handled differently or within a layout if it's a global progress bar.
+// For now, keeping it here to see its behavior.
 import NextProgress from "nextjs-progressbar";
 
 function LinksPage() {
 	const user = useReadLocalStorage<User | null>("user");
 
-	useGetProfileInfo();
+	useGetProfileInfo(); // This hook is already in RootLayout, consider if needed here.
 	useGetUsersList();
 	useGetLinks(user);
 
