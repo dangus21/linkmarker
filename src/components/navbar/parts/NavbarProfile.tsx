@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useTransition } from "react"; // Import useTransition
 import { useRouter } from "next/navigation";
 import { useUserGlobalState } from "@/state";
 
@@ -22,23 +22,31 @@ function NavbarProfile() {
 	);
 
 	const globalUserState = useUserGlobalState();
-	const { push } = useRouter();
+	const router = useRouter();
+	const [isPending, startTransition] = useTransition();
+
+	const handleNavigation = (path: string, isSignOut?: boolean) => {
+		startTransition(async () => {
+			if (isSignOut) {
+				removeLocalSession();
+				removeLocalUser();
+				await supabase.auth.signOut();
+			}
+			router.push(path);
+		});
+	};
 
 	const userNavigation = [
 		{
 			name: "Profile",
-			action: () => push("/profile")
+			action: () => handleNavigation("/profile")
 		},
 		{
 			name: "Sign out",
-			action: async () => {
-				removeLocalSession();
-				removeLocalUser();
-				await supabase.auth.signOut();
-				push("/");
-			}
+			action: () => handleNavigation("/", true)
 		}
 	];
+
 	return (
 		<Popover className="relative ml-4 pt-2">
 			<PopoverButton className="inline-flex items-center gap-x-1 text-sm leading-6 font-semibold text-gray-900">
@@ -46,7 +54,8 @@ function NavbarProfile() {
 					className={twMerge(
 						"flex rounded-full bg-gray-800 text-sm focus:outline-none",
 						"focus:ring-2 focus:ring-gray-700 focus:ring-offset-2",
-						"focus:ring-offset-gray-800"
+						"focus:ring-offset-gray-800",
+						isPending && "opacity-75"
 					)}
 				>
 					<div className="size-10 cursor-pointer overflow-hidden rounded-full hover:opacity-90">
@@ -84,8 +93,13 @@ function NavbarProfile() {
 						{userNavigation.map((item) => (
 							<div
 								key={item.name}
-								onMouseDown={item.action}
-								className="relative cursor-pointer py-2 text-center hover:bg-gray-800/90"
+								onMouseDown={() => {
+									if (!isPending) item.action();
+								}}
+								className={twMerge(
+									"relative py-2 text-center",
+									isPending ? "cursor-default opacity-50" : "cursor-pointer hover:bg-gray-800/90"
+								)}
 							>
 								<div className="font-semibold text-gray-100">
 									{item.name}
