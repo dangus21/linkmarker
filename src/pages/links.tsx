@@ -2,14 +2,14 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { Links, LoadingSpinner, Navbar } from "@/components";
 import { Tabs } from "@/components/tabs";
+import { createClient } from "@/utils/supabase/component";
+import { useEffect, useState } from "react";
 import { useGetLinks, useGetProfileInfo } from "@/hooks";
 import { useGetUsersList } from "@/hooks/profile";
 import { useLinkGlobalState } from "@/state";
-import { createClient } from "@/utils/supabase/component";
+import { useRouter } from "next/navigation";
 import type { User } from "@supabase/auth-js"; // Keep this if `useGetLinks` or other hooks still expect a user object directly
 
 // import { useReadLocalStorage } from "usehooks-ts"; // No longer primarily relying on this for auth decision
@@ -22,10 +22,14 @@ function LinksPage() {
 	// const localUser = useReadLocalStorage<User | null>("user"); // Keep for now if hooks need it, but auth decision is separate
 	const [isAuthenticated, setIsAuthenticated] = useState(false); // Track auth status
 	const [checkingAuth, setCheckingAuth] = useState(true);
+	const [user, setUser] = useState<User | null>(null);
 
 	useEffect(() => {
 		async function checkCurrentUser() {
-			const { data: { user } } = await supabase.auth.getUser();
+			const {
+				data: { user }
+			} = await supabase.auth.getUser();
+			setUser(user);
 			if (user) {
 				setIsAuthenticated(true);
 			} else {
@@ -34,30 +38,24 @@ function LinksPage() {
 			setCheckingAuth(false);
 		}
 		checkCurrentUser();
-	}, [router]);
-
-	// The useGetLinks hook might need the user object.
-	// We need to ensure it's only called when authenticated and user is available.
-	// For now, let's assume useGetLinks can handle a null user or we adapt it.
-	// Or, we can fetch the user object once authenticated and pass it.
-	const { data: { user: authUser } } = supabase.auth.getUser(); // This gets user synchronously if available after initial load
+	}, []);
 
 	useGetProfileInfo(); // These hooks might also depend on auth state
-	useGetUsersList();   // Review these hooks if they make authenticated calls
-	useGetLinks(authUser); // Pass the authenticated user to the hook
+	useGetUsersList(); // Review these hooks if they make authenticated calls
+	useGetLinks(user); // Pass the authenticated user to the hook
 
 	const { loading: linksLoading } = useLinkGlobalState();
 
 	useEffect(() => {
 		const { data: authListener } = supabase.auth.onAuthStateChange(
-			async (event, session) => {
+			async (event) => {
 				if (event === "SIGNED_OUT") {
 					router.push("/");
 				}
 			}
 		);
 		return () => {
-			authListener?.unsubscribe();
+			authListener.subscription.unsubscribe();
 		};
 	}, [router]);
 

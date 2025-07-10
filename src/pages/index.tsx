@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { createClient } from "@/utils/supabase/component"; // Assuming this is the correct path for client-side Supabase
 import { Background } from "@/components/background";
-import { Login } from "@/components/login";
-import { LoadingSpinner } from "@/components"; // Assuming LoadingSpinner is in "@/components"
+import { LoadingSpinner } from "@/components";
+import { Login } from "@/components/login"; // Assuming this is the correct path for client-side Supabase
+import { createClient } from "@/utils/supabase/component";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation"; // Assuming LoadingSpinner is in "@/components"
 
 // Supabase client initialization
 const supabase = createClient();
@@ -15,8 +15,17 @@ function MainPage() {
 	useEffect(() => {
 		async function checkAuthAndRedirect() {
 			try {
-				const { data: { user } } = await supabase.auth.getUser();
-				const { data: { session } } = await supabase.auth.getSession();
+				const [
+					{
+						data: { user }
+					},
+					{
+						data: { session }
+					}
+				] = await Promise.all([
+					supabase.auth.getUser(),
+					supabase.auth.getSession()
+				]);
 
 				if (user && session) {
 					// User is authenticated, redirect to links page
@@ -31,7 +40,6 @@ function MainPage() {
 				setIsLoading(false);
 			}
 		}
-
 		checkAuthAndRedirect();
 	}, [router]);
 
@@ -45,13 +53,13 @@ function MainPage() {
 				// Handle other events like SIGNED_OUT if necessary
 				if (event === "SIGNED_OUT") {
 					setIsLoading(false); // Show login page again
-					router.push("/"); // Ensure they are on the index page
+					router.replace("/"); // Ensure they are on the index page
 				}
 			}
 		);
 
 		return () => {
-			authListener?.unsubscribe();
+			authListener.subscription.unsubscribe();
 		};
 	}, [router]);
 

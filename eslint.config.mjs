@@ -25,6 +25,7 @@ const compat = new FlatCompat({
 /** @type {import('eslint').Linter.Config[]} */
 export default [
 	...compat.extends("plugin:@typescript-eslint/recommended"),
+	reactHooks.configs['recommended-latest'],
 	{
 		files: ["**/*.{js,jsx,ts,tsx}"],
 		languageOptions: {
@@ -42,7 +43,6 @@ export default [
 			"sort-imports-es6-autofix": sortImportsES6,
 			"react-compiler": reactCompiler,
 			import: importPlugin,
-			"react-hooks": reactHooks,
 			'@next/next': nextPlugin,
 		},
 		settings: {
