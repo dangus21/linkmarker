@@ -76,11 +76,6 @@ function Links() {
 		shouldCancel: boolean;
 		isLinkBeingEdited?: boolean;
 	}) {
-		console.log("🔥 » ", {
-			link,
-			shouldCancel,
-			isLinkBeingEdited
-		});
 		if (!shouldCancel && isLinkBeingEdited && link) {
 			updateLinkTitle(link);
 		}

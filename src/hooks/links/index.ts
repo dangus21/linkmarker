@@ -163,8 +163,6 @@ async function useGetLinks(user: User | null) {
 
 	async function getLinks() {
 		if (!user) return;
-		console.log("🔥 » user", user?.id);
-
 		setLoading(true);
 		const { data, error } = await supabase
 			.from(link_source)

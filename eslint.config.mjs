@@ -23,8 +23,10 @@ const compat = new FlatCompat({
 });
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [
-	...compat.extends("plugin:@typescript-eslint/recommended"),
+const configs = [
+	...compat.config({
+		extends: ["next", "plugin:@typescript-eslint/recommended"]
+	}),
 	{
 		files: ["**/*.{js,jsx,ts,tsx}"],
 		languageOptions: {
@@ -40,27 +42,33 @@ export default [
 			"@typescript-eslint": typescriptEslint,
 			"unused-imports": unusedImports,
 			"sort-imports-es6-autofix": sortImportsES6,
-			"react-compiler": reactCompiler,
 			import: importPlugin,
-			"react-hooks": reactHooks,
-			'@next/next': nextPlugin,
+			"react-hooks": reactHooks
 		},
 		settings: {
 			react: { version: "detect" },
 			"import/resolver": { typescript: {} }
 		},
 		rules: {
-				...nextPlugin.configs.recommended.rules,
+			...nextPlugin.configs.recommended.rules,
+			"react-hooks/rules-of-hooks": "error",
+			"react-hooks/exhaustive-deps": "warn",
 			"unused-imports/no-unused-imports": "warn",
 			"react-compiler/react-compiler": "error",
-			"sort-imports-es6-autofix/sort-imports-es6": [2, {
-				"ignoreCase": false,
-				"ignoreMemberSort": false,
-				"memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
-			}],
+			"sort-imports-es6-autofix/sort-imports-es6": [
+				2,
+				{
+					ignoreCase: false,
+					ignoreMemberSort: false,
+					memberSyntaxSortOrder: ["none", "all", "multiple", "single"]
+				}
+			],
 			"react/react-in-jsx-scope": 0,
 			"@typescript-eslint/no-unused-expressions": 0,
-			"@typescript-eslint/no-unused-vars": [2, { ignoreRestSiblings: true }],
+			"@typescript-eslint/no-unused-vars": [
+				2,
+				{ ignoreRestSiblings: true }
+			],
 			"@typescript-eslint/naming-convention": [
 				"warn",
 				{
@@ -68,10 +76,10 @@ export default [
 					format: ["PascalCase"],
 					custom: {
 						regex: "^I[A-Z]",
-						match: false,
-					},
-				},
-			],
+						match: false
+					}
+				}
+			]
 		},
 		languageOptions: {
 			globals: {
@@ -81,4 +89,5 @@ export default [
 			parser: tsParser
 		}
 	},
+	reactCompiler.configs.recommended
 ];

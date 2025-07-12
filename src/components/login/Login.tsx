@@ -40,6 +40,7 @@ function Login() {
 			router.replace("/links");
 		}
 	}, [localUser]);
+
 	const redirectTo =
 		process.env.NODE_ENV === "development"
 			? "http://localhost:3000/links"
