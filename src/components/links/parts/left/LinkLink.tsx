@@ -1,11 +1,7 @@
 import { Input } from "@/components";
 import { KeyboardEvent, useState } from "react";
-import {
-	LockClosedIcon,
-	LockOpenIcon,
-	ShareIcon
-} from "@heroicons/react/20/solid";
 import { TLink, useLinkGlobalState } from "@/state";
+import { classNames } from "@/utils";
 
 function LinkTitle({
 	link,
@@ -24,14 +20,13 @@ function LinkTitle({
 		shouldCancel: boolean;
 	}) => void;
 }) {
-	const { title, is_public, share_with } = link;
-	const [localTitle, setLocalTitle] = useState(title);
+	if (!edit) {
+		return;
+	}
+
+	const { url } = link;
+	const [localLink, setLocalLink] = useState(url);
 	const { update: updateLink } = useLinkGlobalState();
-	const LockedIcon = is_public
-		? LockOpenIcon
-		: share_with.length
-			? ShareIcon
-			: LockClosedIcon;
 
 	function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
 		if ([event.code, event.key].includes("Escape")) {
@@ -42,7 +37,7 @@ function LinkTitle({
 			});
 		}
 		if ([event.code, event.key].includes("Enter")) {
-			if (link?.title === localTitle) {
+			if (link?.url === localLink) {
 				toggleEdit({
 					link,
 					isLinkBeingEdited: true,
@@ -50,13 +45,13 @@ function LinkTitle({
 				});
 			} else {
 				toggleEdit({
-					link: { ...link, title: localTitle },
+					link: { ...link, url: localLink },
 					shouldCancel: false,
 					isLinkBeingEdited: true
 				});
 				updateLink({
 					...link,
-					title: localTitle
+					url: localLink
 				});
 			}
 		}
@@ -64,29 +59,21 @@ function LinkTitle({
 
 	return (
 		<div className="max-w-full sm:max-w-full">
-			<p className="mt-4 mb-2 flex font-medium text-gray-300 sm:mt-2">
-				<LockedIcon
-					className="mt-1 mr-2 size-4 shrink-0 text-gray-600"
-					aria-hidden="true"
+			<p className="mt-4 mb-2 ml-6 flex font-medium text-gray-300 sm:mt-2">
+				<Input
+					focusOnMount
+					onChange={(event) => {
+						setLocalLink(event.currentTarget.value);
+					}}
+					onKeyDown={handleKeyDown}
+					id="textFilter"
+					value={localLink}
+					className="-mt-1 bg-gray-950 pl-4"
+					placeHolder="Link url"
 				/>
-				{edit ? (
-					<Input
-						focusOnMount
-						onChange={(event) => {
-							setLocalTitle(event.currentTarget.value);
-						}}
-						onKeyDown={handleKeyDown}
-						id="textFilter"
-						value={localTitle}
-						className="-mt-1 bg-gray-950 pl-4"
-						placeHolder="Link title"
-					/>
-				) : (
-					title
-				)}
 			</p>
 		</div>
 	);
 }
 
-export { LinkTitle };
+export { LinkTitle as LinkLink };

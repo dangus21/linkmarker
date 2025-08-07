@@ -84,6 +84,7 @@ async function createLink({
 	const url = link.origin?.startsWith("http")
 		? link.origin
 		: `http://${link.origin}`;
+
 	const newLink = {
 		reaction: null,
 		title: link.title?.trim(),

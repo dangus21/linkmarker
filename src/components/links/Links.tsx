@@ -20,13 +20,19 @@ import {
 	LinkSeenToggle,
 	LinkTitle
 } from "./parts";
-import { getLinkValues, normalizeLinkTitle, parseEnvToggles } from "@/utils";
+import {
+	extractTopLevelDomain,
+	getLinkValues,
+	normalizeLinkTitle,
+	parseEnvToggles
+} from "@/utils";
 import { twMerge } from "tailwind-merge";
 import { useEffect, useState } from "react";
 
 import { NewLinkButton } from "@/components";
 import { supabase } from "@/hooks/links";
 import { useReadLocalStorage } from "usehooks-ts";
+import { LinkLink } from "@/components/links/parts/left/LinkLink";
 
 function Links() {
 	const user = useReadLocalStorage<User | null>("user");
@@ -57,16 +63,6 @@ function Links() {
 		});
 	}
 
-	function updateLinkTitle(filteredLink: Partial<TLink>) {
-		return updateLinkInfo({
-			link: {
-				title: filteredLink.title
-			},
-			id: filteredLink.id ?? "",
-			updateLink
-		});
-	}
-
 	function toggleEdit({
 		link,
 		shouldCancel,
@@ -77,7 +73,19 @@ function Links() {
 		isLinkBeingEdited?: boolean;
 	}) {
 		if (!shouldCancel && isLinkBeingEdited && link) {
-			updateLinkTitle(link);
+			const newLinkObj = new URL(link.url ?? "");
+
+			const newOrigin =
+				extractTopLevelDomain(newLinkObj) ?? "unknown origin";
+
+			updateLinkInfo({
+				link: {
+					...link,
+					origin: newOrigin
+				},
+				id: link.id ?? "",
+				updateLink
+			});
 		}
 		setLinkForEdit(link.id);
 	}
@@ -177,6 +185,11 @@ function Links() {
 									left={
 										<>
 											<LinkTitle
+												link={filteredLink}
+												edit={isLinkBeingEdited}
+												toggleEdit={toggleEdit}
+											/>
+											<LinkLink
 												link={filteredLink}
 												edit={isLinkBeingEdited}
 												toggleEdit={toggleEdit}
