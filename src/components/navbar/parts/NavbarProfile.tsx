@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import { useRouter } from "next/navigation";
 import { useUserGlobalState } from "@/state";
 
 import {
@@ -11,8 +10,8 @@ import {
 import { supabase } from "@/hooks/links";
 import { twMerge } from "tailwind-merge";
 import { useLocalStorage } from "usehooks-ts";
-import Image from "next/image";
 import type { Session, User } from "@supabase/auth-js";
+import { useNavigate } from "@tanstack/react-router";
 
 function NavbarProfile() {
 	const [, , removeLocalUser] = useLocalStorage<User | null>("user", null);
@@ -22,12 +21,12 @@ function NavbarProfile() {
 	);
 
 	const globalUserState = useUserGlobalState();
-	const { push } = useRouter();
+	const push = useNavigate();
 
 	const userNavigation = [
 		{
 			name: "Profile",
-			action: () => push("/profile")
+			action: () => push({ to: "/profile" })
 		},
 		{
 			name: "Sign out",
@@ -35,7 +34,7 @@ function NavbarProfile() {
 				removeLocalSession();
 				removeLocalUser();
 				await supabase.auth.signOut();
-				push("/");
+				push({ to: "/" });
 			}
 		}
 	];
@@ -50,8 +49,7 @@ function NavbarProfile() {
 					)}
 				>
 					<div className="size-10 cursor-pointer overflow-hidden rounded-full hover:opacity-90">
-						<Image
-							quality={50}
+						<img
 							src={
 								globalUserState.avatar.img ||
 								"/avatar_placeholder.png"

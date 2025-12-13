@@ -7,11 +7,10 @@ import {
 	type UserState,
 	useLinkGlobalState
 } from "@/state";
-import { createClient } from "@/utils/supabase/component";
+import { createClient } from "@/lib/supabase/client";
 import { extractTopLevelDomain } from "@/utils";
 import { toast } from "react-hot-toast";
-import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { useUser, type User } from "@supabase/auth-helpers-react";
+import { type User } from "@supabase/auth-helpers-react";
 
 export const supabase = createClient();
 
@@ -75,11 +74,11 @@ async function deleteLink({
 async function createLink({
 	userState,
 	link,
-	replace
+	navigate
 }: {
 	userState: UserState;
 	link: LinkState["new"];
-	replace: AppRouterInstance["replace"];
+	navigate: (to: string) => void;
 }) {
 	const url = link.origin?.startsWith("http")
 		? link.origin
@@ -111,7 +110,7 @@ async function createLink({
 			toast.error("Failed creating link", toast_config);
 		} else {
 			toast.success("Created new link", toast_config);
-			replace("/");
+			navigate("/");
 		}
 	} catch (error) {
 		console.warn({ error });

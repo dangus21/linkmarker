@@ -8,7 +8,7 @@ function ProfileUsername() {
 		<div>
 			<label
 				htmlFor="username"
-				className="block text-sm font-medium leading-6 text-gray-300"
+				className="block text-sm leading-6 font-medium text-gray-300"
 			>
 				Username
 			</label>

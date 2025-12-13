@@ -2,8 +2,8 @@ import { type UserState, useUserGlobalState } from "@/state";
 import { supabase } from "../links";
 import { useEffect } from "react";
 import { useLocalStorage } from "usehooks-ts";
-import { usePathname, useRouter } from "next/navigation";
 import type { Session, User } from "@supabase/auth-helpers-react";
+import { useLocation, useNavigate } from "@tanstack/react-router";
 
 async function updateProfileInfo({ userState }: { userState: UserState }) {
 	try {
@@ -53,8 +53,8 @@ async function useGetUsersList() {
 }
 
 function useGetProfileInfo(): { user: boolean; session: boolean } {
-	const { push } = useRouter();
-	const pathName = usePathname();
+	const push = useNavigate();
+	const location = useLocation();
 	const [user, setLocalUser] = useLocalStorage<User | null>("user", null);
 	const [session, setLocalSession] = useLocalStorage<Session | null>(
 		"session",
@@ -124,10 +124,10 @@ function useGetProfileInfo(): { user: boolean; session: boolean } {
 		if (user && session) {
 			getUserAndProfile();
 		}
-		if (pathName !== "/privacy_policy" && !user) {
-			push("/");
+		if (location.pathname !== "/privacy_policy" && !user) {
+			push({ to: "/" });
 		}
-	}, [user, session, pathName, push]);
+	}, [user, session, push]);
 
 	return {
 		user: !!user,

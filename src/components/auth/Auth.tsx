@@ -3,11 +3,12 @@ import { Login } from "../login";
 import { supabase } from "@/hooks/links";
 import { useEffect } from "react";
 import { useLocalStorage } from "usehooks-ts";
-import { useRouter } from "next/navigation";
 import type { Session, User } from "@supabase/auth-js";
+import { useNavigate } from "@tanstack/react-router";
 
 function Auth() {
-	const { push } = useRouter();
+	const push = useNavigate();
+
 	const [localUser, setLocalUser] = useLocalStorage<User | null>(
 		"user",
 		null
@@ -30,9 +31,9 @@ function Auth() {
 		}
 		getUserAndSession();
 		if (localUser) {
-			push("/links");
+			push({ to: "/links" });
 		}
-	}, [localUser, localSession, push, setLocalUser, setLocalSession]);
+	}, [localUser, localSession, setLocalUser, setLocalSession]);
 
 	return (
 		<div className="min-h-screen bg-gray-900 text-white">

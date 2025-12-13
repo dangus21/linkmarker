@@ -34,7 +34,7 @@ function NewLinkShareCombo() {
 				}}
 				multiple
 			>
-				<Combobox.Label className="block text-sm font-medium leading-6 text-gray-300">
+				<Combobox.Label className="block text-sm leading-6 font-medium text-gray-300">
 					To whom?
 				</Combobox.Label>
 				<div className="relative mt-2">
@@ -43,7 +43,7 @@ function NewLinkShareCombo() {
 							"block w-full rounded-md border-0 bg-gray-900",
 							"py-1.5 pl-4 text-gray-100 ring-1 ring-inset",
 							"ring-black placeholder:text-gray-400 focus:ring-2",
-							"focus:ring-inset focus:ring-black sm:text-sm",
+							"focus:ring-black focus:ring-inset sm:text-sm",
 							"focus-visible:outline-1 focus-visible:outline-black",
 							"focus-visible:outline sm:leading-6"
 						)}
@@ -66,7 +66,7 @@ function NewLinkShareCombo() {
 							className={twMerge(
 								"absolute z-10 mt-1 max-h-56 w-full overflow-auto",
 								"rounded-md bg-gray-900 py-1 text-base shadow-lg",
-								"ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+								"ring-opacity-5 ring-1 ring-black focus:outline-none sm:text-sm"
 							)}
 						>
 							{publicUsers.map((user) => (
@@ -78,7 +78,7 @@ function NewLinkShareCombo() {
 											active
 												? "bg-gray-950"
 												: "text-gray-900",
-											"relative cursor-default select-none py-2 pl-3 pr-9 text-white"
+											"relative cursor-default py-2 pr-9 pl-3 text-white select-none"
 										)
 									}
 								>

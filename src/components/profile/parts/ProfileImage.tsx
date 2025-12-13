@@ -1,6 +1,5 @@
 import { ONE_MB_SIZE } from "@/utils";
 import { useUserGlobalState } from "@/state";
-import Image from "next/image";
 import type { ChangeEvent } from "react";
 
 function ProfileImage() {
@@ -24,10 +23,10 @@ function ProfileImage() {
 
 	return (
 		<div className="flex items-center justify-center">
-			<label className="flex w-full cursor-pointer flex-col items-center px-4 py-6 uppercase tracking-wide hover:text-slate-400 sm:rounded-lg sm:px-10">
+			<label className="flex w-full cursor-pointer flex-col items-center px-4 py-6 tracking-wide uppercase hover:text-slate-400 sm:rounded-lg sm:px-10">
 				{globalUserState.avatar.img ? (
 					<div className="size-[150px] overflow-hidden rounded-full hover:opacity-70">
-						<Image
+						<img
 							src={
 								globalUserState.avatar.img ||
 								"/avatar_placeholder.png"

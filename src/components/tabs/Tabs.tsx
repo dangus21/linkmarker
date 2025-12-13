@@ -31,7 +31,7 @@ function Tabs() {
 							tab.id === currentTab
 								? "bg-gray-700 hover:bg-gray-600"
 								: "hover:bg-gray-700",
-							"cursor-pointer select-none rounded-md px-3 py-2 text-sm font-medium text-gray-100"
+							"cursor-pointer rounded-md px-3 py-2 text-sm font-medium text-gray-100 select-none"
 						)}
 						aria-current={
 							tab.id === currentTab ? "page" : undefined

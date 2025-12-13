@@ -3,12 +3,12 @@ import { IconGoogle } from "./IconGoogle";
 import { supabase } from "@/hooks/links";
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
-import { useRouter } from "next/router";
 import type { Session, User } from "@supabase/auth-js";
 import { twMerge } from "tailwind-merge";
+import { useNavigate } from "@tanstack/react-router";
 
 function Login() {
-	const router = useRouter();
+	const navigate = useNavigate();
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -37,7 +37,7 @@ function Login() {
 
 	useEffect(() => {
 		if (localUser) {
-			router.replace("/links");
+			navigate({ to: "/links" });
 		}
 	}, [localUser]);
 

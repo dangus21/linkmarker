@@ -1,20 +1,20 @@
 import { Button } from "@/components";
 import { PlusIcon } from "@heroicons/react/20/solid";
+import { useNavigate } from "@tanstack/react-router";
 import { twMerge } from "tailwind-merge";
-import { useRouter } from "next/navigation";
 
 function NewLinkButton({ isMobile }: { isMobile?: boolean }) {
-	const { push } = useRouter();
+	const push = useNavigate();
 
 	return (
 		<Button
-			onMouseDown={() => push("/new")}
+			onMouseDown={() => push({ to: "/new" })}
 			isMobile={isMobile}
 			type="button"
 			className={twMerge(
 				"relative inline-flex items-center gap-x-1.5 whitespace-nowrap",
 				isMobile
-					? "fixed bottom-0 right-0 z-[99] h-14 w-14 rounded-lg border-2 bg-slate-950"
+					? "fixed right-0 bottom-0 z-[99] h-14 w-14 rounded-lg border-2 bg-slate-950"
 					: "w-auto"
 			)}
 		>

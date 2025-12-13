@@ -1,3 +1,5 @@
+import { createFileRoute } from "@tanstack/react-router";
+
 export default function PrivacyPolicy() {
 	return (
 		<div data-custom-class="body">
@@ -46,7 +48,7 @@ export default function PrivacyPolicy() {
 								<span className="block-component" />
 							</span>{" "}
 							(<span className="block-component" />
-							&quot;
+							&quot
 							<span className="block-component" />
 							<strong>Company</strong>
 							<span className="statement-end-if-in-editor" />
@@ -63,7 +65,7 @@ export default function PrivacyPolicy() {
 							<span className="statement-end-if-in-editor" />)
 							your information when you use our services (
 							<span className="block-component" />
-							&quot;
+							&quot
 							<strong>Services</strong>&quot;
 							<span className="statement-end-if-in-editor" />
 							), such as when you:
@@ -229,7 +231,7 @@ export default function PrivacyPolicy() {
 									privacy notice, but you can find out more
 									details about any of these topics by
 									clicking the link following each key point
-									or by using our&nbsp;
+									or by using our&nbsp
 								</em>
 							</strong>
 						</span>
@@ -420,7 +422,7 @@ export default function PrivacyPolicy() {
 							where you are located geographically, the applicable
 							privacy law may mean you have certain rights
 							regarding your personal information. Learn more
-							about&nbsp;
+							about&nbsp
 						</span>
 					</span>
 					<a data-custom-class="link" href="#privacyrights">
@@ -441,7 +443,7 @@ export default function PrivacyPolicy() {
 							<strong>How do you exercise your rights?</strong>{" "}
 							The easiest way to exercise your rights is by{" "}
 							<span className="block-component">
-								submitting a&nbsp;
+								submitting a&nbsp
 							</span>
 						</span>
 					</span>
@@ -930,7 +932,7 @@ export default function PrivacyPolicy() {
 								in this way, we will collect the information
 								described in the section called{" "}
 								<span className="block-component" />
-								&quot;
+								&quot
 								<span className="statement-end-if-in-editor" />
 								<span style={{ fontSize: 15 }}>
 									<span data-custom-class="body_text">
@@ -952,7 +954,7 @@ export default function PrivacyPolicy() {
 									</span>
 								</span>
 								<span className="block-component" />
-								&quot;
+								&quot
 								<span className="statement-end-if-in-editor" />{" "}
 								below.
 							</span>
@@ -1150,7 +1152,7 @@ export default function PrivacyPolicy() {
 									<strong>
 										To facilitate account creation and
 										authentication and otherwise manage user
-										accounts.&nbsp;
+										accounts.&nbsp
 									</strong>
 									We may process your information so you can
 									create and log in to your account, as well
@@ -1706,7 +1708,7 @@ export default function PrivacyPolicy() {
 																													<span data-custom-class="body_text">
 																														<strong>
 																															In
-																															Short:&nbsp;
+																															Short:&nbsp
 																														</strong>
 																														We
 																														only
@@ -1922,7 +1924,7 @@ export default function PrivacyPolicy() {
 																												>
 																													<span data-custom-class="body_text">
 																														<strong>
-																															Consent.&nbsp;
+																															Consent.&nbsp
 																														</strong>
 																														We
 																														may
@@ -1959,7 +1961,7 @@ export default function PrivacyPolicy() {
 																														time.
 																														Learn
 																														more
-																														about&nbsp;
+																														about&nbsp
 																													</span>
 																												</span>
 																												<a
@@ -2314,7 +2316,7 @@ export default function PrivacyPolicy() {
 																														implied
 																														consent).
 																														You
-																														can&nbsp;
+																														can&nbsp
 																													</span>
 																												</span>
 																												<a
@@ -3560,7 +3562,7 @@ export default function PrivacyPolicy() {
 																																			<strong>
 																																				<em>
 																																					In
-																																					Short:&nbsp;
+																																					Short:&nbsp
 																																				</em>
 																																			</strong>
 																																			<em>
@@ -3995,7 +3997,7 @@ export default function PrivacyPolicy() {
 																																			<strong>
 																																				<em>
 																																					In
-																																					Short:&nbsp;
+																																					Short:&nbsp
 																																				</em>
 																																			</strong>
 																																			<em>
@@ -4354,7 +4356,7 @@ export default function PrivacyPolicy() {
 																																			<strong>
 																																				<em>
 																																					In
-																																					Short:&nbsp;
+																																					Short:&nbsp
 																																				</em>
 																																			</strong>
 																																			<em>
@@ -4642,7 +4644,7 @@ export default function PrivacyPolicy() {
 																																				</em>
 																																			</strong>
 																																			<em>
-																																				&nbsp;
+																																				&nbsp
 																																				<span
 																																					style={{
 																																						color: "rgb(89, 89, 89)"
@@ -4710,7 +4712,7 @@ export default function PrivacyPolicy() {
 																																							</em>
 																																						</span>
 																																					</span>
-																																					&nbsp;
+																																					&nbsp
 																																				</span>
 																																				You
 																																				may
@@ -4811,7 +4813,7 @@ export default function PrivacyPolicy() {
 																																			request
 																																			rectification
 																																			or
-																																			erasure;
+																																			erasure
 																																			(iii)
 																																			to
 																																			restrict
@@ -4820,7 +4822,7 @@ export default function PrivacyPolicy() {
 																																			of
 																																			your
 																																			personal
-																																			information;
+																																			information
 																																			and
 																																			(iv)
 																																			if
@@ -4865,7 +4867,7 @@ export default function PrivacyPolicy() {
 																																			the
 																																			section{" "}
 																																			<span className="block-component" />
-																																			&quot;
+																																			&quot
 																																			<span className="statement-end-if-in-editor" />
 																																		</span>
 																																	</span>
@@ -4913,7 +4915,7 @@ export default function PrivacyPolicy() {
 																																	>
 																																		<span data-custom-class="body_text">
 																																			<span className="block-component" />
-																																			&quot;
+																																			&quot
 																																			<span className="statement-end-if-in-editor" />{" "}
 																																			below.
 																																		</span>
@@ -5007,7 +5009,7 @@ export default function PrivacyPolicy() {
 																																		color: "rgb(89, 89, 89)"
 																																	}}
 																																>
-																																	&nbsp;
+																																	&nbsp
 																																</span>
 																															</div>
 																															<div
@@ -5097,7 +5099,7 @@ export default function PrivacyPolicy() {
 																																					</span>
 																																				</span>
 																																			</span>{" "}
-																																			or&nbsp;
+																																			or&nbsp
 																																		</span>
 																																	</span>
 																																</span>
@@ -5324,7 +5326,7 @@ export default function PrivacyPolicy() {
 																																			the
 																																			section{" "}
 																																			<span className="block-component" />
-																																			&quot;
+																																			&quot
 																																			<span className="statement-end-if-in-editor" />
 																																		</span>
 																																	</span>
@@ -5372,7 +5374,7 @@ export default function PrivacyPolicy() {
 																																	>
 																																		<span data-custom-class="body_text">
 																																			<span className="block-component" />
-																																			&quot;
+																																			&quot
 																																			<span className="statement-end-if-in-editor" />{" "}
 																																			below
 																																			<span className="block-component" />
@@ -5862,7 +5864,7 @@ export default function PrivacyPolicy() {
 																																			Do-Not-Track
 																																			(
 																																			<span className="block-component" />
-																																			&quot;DNT&quot;
+																																			&quot;DNT&quot
 																																			<span className="statement-end-if-in-editor" />
 
 																																			)
@@ -6062,7 +6064,7 @@ export default function PrivacyPolicy() {
 																																			<strong>
 																																				<em>
 																																					In
-																																					Short:&nbsp;
+																																					Short:&nbsp
 																																				</em>
 																																			</strong>
 																																			<em>
@@ -6129,7 +6131,7 @@ export default function PrivacyPolicy() {
 																																			<span className="block-component" />
 																																			&quot;Shine
 																																			The
-																																			Light&quot;
+																																			Light&quot
 																																			<span className="statement-end-if-in-editor" />{" "}
 																																			law,
 																																			permits
@@ -6466,7 +6468,7 @@ export default function PrivacyPolicy() {
 																																			<em>
 																																				<strong>
 																																					In
-																																					Short:&nbsp;
+																																					Short:&nbsp
 																																				</strong>
 																																				Yes,
 																																				we
@@ -6534,7 +6536,7 @@ export default function PrivacyPolicy() {
 																																			an
 																																			updated{" "}
 																																			<span className="block-component" />
-																																			&quot;Revised&quot;
+																																			&quot;Revised&quot
 																																			<span className="statement-end-if-in-editor" />{" "}
 																																			date
 																																			and
@@ -6875,7 +6877,7 @@ export default function PrivacyPolicy() {
 																																			out
 																																			and
 																																			submit
-																																			a&nbsp;
+																																			a&nbsp
 																																		</span>
 																																		<span
 																																			style={{
@@ -6942,3 +6944,7 @@ export default function PrivacyPolicy() {
 		</div>
 	);
 }
+
+export const Route = createFileRoute("/privacy_policy")({
+	component: PrivacyPolicy
+});
